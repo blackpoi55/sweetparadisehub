@@ -33,7 +33,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",
-        donate: "50000",
+        donate: "150000",
     },
     {
         ocname: "ชมพู่",

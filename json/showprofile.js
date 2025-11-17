@@ -81,7 +81,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",
-        donate: "100000",
+        donate: "160000",
     },
     ,
     {

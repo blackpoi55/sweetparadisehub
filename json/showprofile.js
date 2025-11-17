@@ -29,7 +29,7 @@ export const shoeprofile = [
         icid: "kuyhom",
         caption: "เจ๊กล้วยหอมซีเคร็ท",
         icimage: "/images/showprofile/ickuyhom.png",
-        ocimage: "",
+        ocimage: "/images/showprofile/ockuyhom.png",
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",

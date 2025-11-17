@@ -341,7 +341,7 @@ export const itemall = [
         "icon": "/images/items/Textboard.png",
         "detail": "ใช้เขียนข้อความ เพื่อถือป้าวยไว้",
         "grouptype": "ทั่วไป",
-        "getby": "test",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "WaterGun",

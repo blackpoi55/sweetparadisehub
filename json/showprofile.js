@@ -93,7 +93,7 @@ export const shoeprofile = [
         facebookurl: "https://www.facebook.com/share/1KcY6znzuv/?mibextid=wwXIfr",
         instagramurl: "https://www.instagram.com/qitsucxh",
         tiktokurl: "",
-        donate: "50000",
+        donate: "1320000",
     },
     {
         ocname: "หมูหวาน หรือ หวาน",

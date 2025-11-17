@@ -12,25 +12,75 @@ export const shoeprofile = [
         donate: "Admin",
     },
     {
-        ocname: "Boat",
-        icname: "Blackpoi5",
-        icid: "Blackpoi5",
-        caption: "แก้วเป็นของแข็ง เบียร์เป็นของเหลว ส่วนหัวใจเป้นได้แค่ของเล่น",
-        icimage: "/images/showprofile/icBlackpoi5.png",
-        ocimage: "/images/showprofile/ocBlackpoi5.png",
+        ocname: "แบมแบม",
+        icname: "แบมแบม",
+        icid: "bamab1911",
+        caption: "นี่ไม่ใช่ตัวเลือก นี่ตัวซีเคร็ท",
+        icimage: "/images/showprofile/icbamab1911.png",
+        ocimage: "/images/showprofile/ocbamab1911.png",
         facebookurl: "",
-        instagramurl: "https://www.instagram.com/boatms",
-        tiktokurl: "https://www.tiktok.com/@boatmousay",
+        instagramurl: "https://www.instagram.com/bbbamabb?igsh=NzN6OHZpNHpmZmRt",
+        tiktokurl: "https://www.tiktok.com/@bbamabbb?_r=1&_t=ZS-91TGTCZpvec",
         donate: "500000",
-    }
-//     ชื่อoc =
-//     ชื่อic =
-//     ไอดีเกม =
-//     แคปชั่น =
-//     รูปic =
-//     รูปoc =
-//     ลิงค์facebook=
-// ลิงค์instagram=
-// ลิงค์tiktok=
-// ใส่เงินเพื่อนดันอันดับเท่าไหร่ = 
+    },
+    {
+        ocname: "สายป่าน",
+        icname: "kuyhom",
+        icid: "kuyhom",
+        caption: "เจ๊กล้วยหอมซีเคร็ท",
+        icimage: "/images/showprofile/ickuyhom.png",
+        ocimage: "",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        donate: "50000",
+    },
+    {
+        ocname: "",
+        icname: "",
+        icid: "",
+        caption: "",
+        icimage: "",
+        ocimage: "",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        donate: "100",
+    },
+    {
+        ocname: "",
+        icname: "",
+        icid: "",
+        caption: "",
+        icimage: "",
+        ocimage: "",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        donate: "200",
+    },
+    {
+        ocname: "",
+        icname: "",
+        icid: "",
+        caption: "",
+        icimage: "",
+        ocimage: "",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        donate: "300",
+    },
+    {
+        ocname: "",
+        icname: "",
+        icid: "",
+        caption: "",
+        icimage: "",
+        ocimage: "",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        donate: "400",
+    }, 
 ]

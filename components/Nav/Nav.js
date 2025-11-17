@@ -9,10 +9,7 @@ const navItems = [
     { href: "/items", label: "ไอเท็ม" },
     { href: "/song", label: "เพลง" },
     { href: "/fishing", label: "ตกปลา" },
-    // { href: "/Pass", label: "Pass" },
-    // { href: "/tricks", label: "ทริคเล่นเกม" },
-    // { href: "/fishing", label: "ตกปลา" },
-    // { href: "/players", label: "ข้อมูลผู้เล่น" },
+    { href: "/rule", label: "กฏ" }, 
 ];
 
 export default function Nav() {

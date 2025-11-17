@@ -340,6 +340,9 @@ export default function FishingPage() {
               <p className="text-[11px] text-yellow-200/80 md:text-xs">
                 หากมี VIP โชคจะ + อีก 200% ไม่ว่าจะถือเบ็ดไหน
               </p>
+               <p className="text-[11px] text-green-200/80 md:text-xs">
+                หากกดมินิเกมโดนจะได้รับโบนัส (ตกรอบต่อไปออโต้ ลดเวลาในการตกรอบต่อไป 2 วินาที +โชคทบไปเรื่อยๆ ราคาปลาตัวนั้น+20% )
+              </p>
             </div>
           </div>
 

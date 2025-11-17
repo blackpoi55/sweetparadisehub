@@ -533,7 +533,7 @@ export const itemall = [
         "icon": "/images/items/MotorWave110Tool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "ร้านค้า Admin Note",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "MotorWave125iTool",
@@ -541,7 +541,7 @@ export const itemall = [
         "icon": "/images/items/MotorWave125iTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "ร้านค้า Admin Note",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "MotorWave125sTool",
@@ -549,7 +549,7 @@ export const itemall = [
         "icon": "/images/items/MotorWave125sTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "ร้านค้า Admin Note",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "MotorZoomerXTool",
@@ -557,7 +557,7 @@ export const itemall = [
         "icon": "/images/items/MotorZoomerXTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "ร้านค้า Admin Note",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "NewsCamera",

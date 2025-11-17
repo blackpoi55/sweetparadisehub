@@ -381,7 +381,7 @@ export const itemall = [
         "icon": "/images/items/BmxTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "ปลาสีรุ้ง",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "HalloweenMotorTool",
@@ -565,7 +565,7 @@ export const itemall = [
         "icon": "/images/items/NewsCamera.png",
         "detail": "กล้องนักข่าว",
         "grouptype": "ทั่วไป",
-        "getby": "ไอเทมเริ่มต้น",
+        "getby": "ไอเท็มเริ่มต้น",
     },
     {
         "code": "NewsMic",
@@ -573,7 +573,7 @@ export const itemall = [
         "icon": "/images/items/NewsMic.png",
         "detail": "ไมค์นักข่าว",
         "grouptype": "ทั่วไป",
-        "getby": "ไอเทมเริ่มต้น",
+        "getby": "ไอเท็มเริ่มต้น",
     },
     {
         "code": "CarskylabTool",

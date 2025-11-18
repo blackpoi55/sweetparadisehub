@@ -117,7 +117,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: " https://www.instagram.com/i.iluminelle",
         tiktokurl: "",
-        donate: "2080000",
+        donate: "12080000",
     },
     {
         ocname: "เบส 「　ベース　」",

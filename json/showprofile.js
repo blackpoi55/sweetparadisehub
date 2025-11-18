@@ -33,7 +33,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",
-        donate: "150000",
+        donate: "200000",
     },
     {
         ocname: "ชมพู่",
@@ -117,7 +117,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: " https://www.instagram.com/i.iluminelle",
         tiktokurl: "",
-        donate: "2030000",
+        donate: "2080000",
     },
     {
         ocname: "เบส 「　ベース　」",

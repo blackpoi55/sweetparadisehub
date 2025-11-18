@@ -11,6 +11,7 @@ const navItems = [
     { href: "/song", label: "เพลง" },
     { href: "/fishing", label: "ตกปลา" },
     { href: "/event", label: "กิจกรรม" },
+    { href: "/manual", label: "คู่มือ" },
     { href: "/rule", label: "กฏ" }, 
 ];
 

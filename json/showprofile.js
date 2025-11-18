@@ -57,7 +57,7 @@ export const shoeprofile = [
         facebookurl: "https://www.facebook.com/sareeta.khianhin.9",
         instagramurl: "https://www.instagram.com/sareeta_taaaaaa?igsh=MXZlYnJ6aXZ0cHYwbg%3D%3D&utm_source=qr",
         tiktokurl: "https://www.tiktok.com/@sareeta_2550?_r=1&_t=ZS-91TSbcKmhsG",
-        donate: "3000000",
+        donate: "5000000",
     },
     {
         ocname: "เตยหอม",

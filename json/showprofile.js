@@ -81,7 +81,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",
-        donate: "160000",
+        donate: "180000",
     },
     {
         ocname: "ชมพู",
@@ -105,7 +105,7 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/hmu__2008",
         tiktokurl: "https://www.tiktok.com/@moowan17_2008",
-        donate: "50000",
+        donate: "100000",
     },
     {
         ocname: "แอมแปร์",

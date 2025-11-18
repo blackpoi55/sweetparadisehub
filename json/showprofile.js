@@ -131,6 +131,18 @@ export const shoeprofile = [
         tiktokurl: "",
         donate: "350000",
     },
+    {
+        ocname: "แพรวา",
+        icname: "โซเฟีย",
+        icid: "Prae_pat",
+        caption: "ถ้าเธอไม่มีใจ ไม่เป็นไรเรามีเงิน",
+        icimage: "/images/showprofile/icPrae_pat.png",
+        ocimage: "/images/showprofile/ocPrae_pat.png",
+        facebookurl: "",
+        instagramurl: "https://www.instagram.com/prae_ptrtj?igsh=MWpkeGd4cDFyZDdicA%3D%3D&utm_source=qr",
+        tiktokurl: "",
+        donate: "300000",
+    },
     // {
     //     ocname: "",
     //     icname: "",

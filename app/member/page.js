@@ -5,8 +5,10 @@ import { shoeprofile } from "@/json/showprofile";
 
 const LOLLIPOP_PLACEHOLDER = "/images/showprofile/lollipop.png";
 
-function isAdminDonate(p) {
-  return (p.donate || "").toString().toLowerCase() === "admin";
+/* ----------------- Helpers ----------------- */
+
+function isAdminProfile(p) {
+  return (p.role || "").toString().toLowerCase() === "admin";
 }
 
 function safeText(v) {
@@ -14,10 +16,9 @@ function safeText(v) {
   return s === "" ? "-" : s;
 }
 
-function formatDonate(donate) {
-  if (!donate || donate === "Admin") return "Admin";
-  const num = Number(donate);
-  if (Number.isNaN(num) || num === 0) return "-";
+function formatDonateAmount(amount) {
+  const num = Number(amount || 0);
+  if (Number.isNaN(num) || num <= 0) return "-";
   return num.toLocaleString("th-TH");
 }
 
@@ -63,8 +64,12 @@ function SocialLinkButton({ type, url, size = "normal" }) {
   );
 }
 
+/* ----------------- Main Page ----------------- */
+
 export default function ShowProfilePage() {
   const [preview, setPreview] = useState(null); // { src, alt } | null
+  const [donateModal, setDonateModal] = useState(null); // { profile, total, items }
+  const [donorSummaryModal, setDonorSummaryModal] = useState(null); // { total, items }
 
   const openPreview = (src, alt) => {
     if (!src) return;
@@ -72,18 +77,90 @@ export default function ShowProfilePage() {
   };
   const closePreview = () => setPreview(null);
 
-  const adminProfiles = shoeprofile.filter((p) => isAdminDonate(p));
+  // สร้าง list admin / member + คำนวณยอดโดเนทรวมต่อคน
+  const adminProfiles = shoeprofile.filter((p) => isAdminProfile(p));
 
   const memberProfiles = shoeprofile
-    .filter((p) => !isAdminDonate(p))
-    .map((p) => ({
-      ...p,
-      donateAmount: Number(p.donate || 0) || 0,
-    }))
+    .filter((p) => !isAdminProfile(p))
+    .map((p) => {
+      const donations = Array.isArray(p.donate) ? p.donate : [];
+      const donateAmount = donations.reduce(
+        (sum, d) => sum + (Number(d.donate) || 0),
+        0
+      );
+      return {
+        ...p,
+        donateAmount,
+      };
+    })
     .sort((a, b) => b.donateAmount - a.donateAmount);
+
+  // ✅ ยอดโดเนทรวมของสายเปย์ทั้งหมด (ไม่รวมแอดมิน)
+  const totalDonate = memberProfiles.reduce(
+    (sum, p) => sum + (p.donateAmount || 0),
+    0
+  );
 
   const podium = memberProfiles.slice(0, 3);
   const others = memberProfiles.slice(3);
+
+  // เปิด Modal ดูรายละเอียดว่า "ใครโดเนทให้คนนี้" (ต่อโปรไฟล์)
+  const openDonateModal = (profile) => {
+    const raw = Array.isArray(profile.donate) ? profile.donate : [];
+
+    const aggregate = new Map();
+    for (const d of raw) {
+      const who = (d.whodonate || "-").toString();
+      const amt = Number(d.donate) || 0;
+      if (!amt) continue;
+      aggregate.set(who, (aggregate.get(who) || 0) + amt);
+    }
+
+    const items = Array.from(aggregate.entries())
+      .map(([who, amount]) => ({ who, amount }))
+      .sort((a, b) => b.amount - a.amount);
+
+    const total =
+      profile.donateAmount ||
+      items.reduce((sum, it) => sum + (it.amount || 0), 0);
+
+    setDonateModal({
+      profile: {
+        ocname: profile.ocname,
+        icname: profile.icname,
+        icid: profile.icid,
+      },
+      total,
+      items,
+    });
+  };
+
+  const closeDonateModal = () => setDonateModal(null);
+
+  // ⭐ เปิด Modal สรุป "คนที่โดเนททั้งหมด" (รวมทุกโปรไฟล์)
+  const openDonorSummaryModal = () => {
+    const aggregate = new Map();
+
+    for (const p of shoeprofile) {
+      const donations = Array.isArray(p.donate) ? p.donate : [];
+      for (const d of donations) {
+        const who = (d.whodonate || "-").toString();
+        const amt = Number(d.donate) || 0;
+        if (!amt) continue;
+        aggregate.set(who, (aggregate.get(who) || 0) + amt);
+      }
+    }
+
+    const items = Array.from(aggregate.entries())
+      .map(([who, amount]) => ({ who, amount }))
+      .sort((a, b) => b.amount - a.amount);
+
+    const total = items.reduce((sum, it) => sum + (it.amount || 0), 0);
+
+    setDonorSummaryModal({ total, items });
+  };
+
+  const closeDonorSummaryModal = () => setDonorSummaryModal(null);
 
   return (
     <>
@@ -106,7 +183,7 @@ export default function ShowProfilePage() {
               <span className="text-pink-300">Sweet Paradise</span>
             </h1>
             <p className="mt-3 text-sm text-pink-100/85 md:text-base">
-             ติดต่อแอดมินเพื่อมาเป็นดารา เริ่มต้นที่ 50K SweetDollar 💖
+              ติดต่อแอดมินเพื่อมาเป็นดารา เริ่มต้นที่ 50K SweetDollar 💖
             </p>
           </header>
 
@@ -148,7 +225,9 @@ export default function ShowProfilePage() {
                               onClick={() =>
                                 openPreview(
                                   ocSrc,
-                                  `OC: ${safeText(p.ocname)} / IC: ${safeText(p.icname)}`
+                                  `OC: ${safeText(p.ocname)} / IC: ${safeText(
+                                    p.icname
+                                  )}`
                                 )
                               }
                               className="h-full w-full overflow-hidden rounded-2xl border border-pink-300/70 bg-black/80 shadow-md shadow-pink-500/50 focus:outline-none focus:ring-2 focus:ring-pink-400"
@@ -166,7 +245,9 @@ export default function ShowProfilePage() {
                               onClick={() =>
                                 openPreview(
                                   icSrc,
-                                  `IC: ${safeText(p.icname)} (${safeText(p.icid)})`
+                                  `IC: ${safeText(p.icname)} (${safeText(
+                                    p.icid
+                                  )})`
                                 )
                               }
                               className="absolute -bottom-1 -right-1 h-14 w-14 overflow-hidden rounded-xl border-2 border-black bg-black/90 shadow shadow-pink-500/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
@@ -178,7 +259,6 @@ export default function ShowProfilePage() {
                               />
                             </button>
                           </div>
-
                         </div>
 
                         {/* Info */}
@@ -187,15 +267,25 @@ export default function ShowProfilePage() {
                             Admin / Creator
                           </div>
                           <div className="grid grid-cols-[auto,1fr] gap-x-2 gap-y-1 text-[13px] text-pink-100/90">
-                            <span className="text-pink-200/80">ชื่อ OC:{safeText(p.ocname)}</span>
+                            <span className="text-pink-200/80">
+                              ชื่อ OC:{safeText(p.ocname)}
+                            </span>
 
-                            <span className="text-pink-200/80">ชื่อ IC:{safeText(p.icname)}</span>
+                            <span className="text-pink-200/80">
+                              ชื่อ IC:{safeText(p.icname)}
+                            </span>
 
-                            <span className="text-pink-200/80">ID:{safeText(p.icid)}</span>
+                            <span className="text-pink-200/80">
+                              ID:{safeText(p.icid)}
+                            </span>
 
-                            <span className="text-pink-200/80">แคปชั่น:{safeText(p.caption)}</span>
+                            <span className="text-pink-200/80">
+                              แคปชั่น:{safeText(p.caption)}
+                            </span>
 
-                            <span className="text-pink-200/80">สถานะ:Admin</span>
+                            <span className="text-pink-200/80">
+                              สถานะ:{safeText(p.role) || "Admin"}
+                            </span>
                           </div>
 
                           {/* Social */}
@@ -229,11 +319,11 @@ export default function ShowProfilePage() {
 
           {/* Donator Ranking */}
           <section>
-            <div className="mb-4 flex items-center gap-3">
+            <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 via-pink-500 to-fuchsia-500 text-lg">
                 🏆
               </div>
-              <div>
+              <div className="flex-1">
                 <h2 className="text-sm font-semibold text-pink-50 md:text-base">
                   อันดับสายเปย์ / ผู้สนับสนุนแมพ
                 </h2>
@@ -241,6 +331,29 @@ export default function ShowProfilePage() {
                   เรียงตามยอดโดเนทจากสูงไปต่ำ อันดับ 1–3 ขึ้นแท่นรับรางวัล
                   คนที่ 4 เป็นต้นไปต่อแถวด้านล่าง
                 </p>
+
+                {/* ✅ ยอดโดเนทรวมทั้งหมด + ปุ่มดูสรุปผู้โดเนท */}
+                {totalDonate > 0 && (
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
+                    <p className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 px-3 py-1 text-[11px] font-medium text-amber-200 md:text-xs">
+                      <span>✨</span>
+                      <span>
+                        ยอดโดเนทรวมทั้งหมด:{" "}
+                        <span className="font-semibold text-amber-300">
+                          {formatDonateAmount(totalDonate)}
+                        </span>{" "}
+                        SweetDollar
+                      </span>
+                    </p>
+                    <button
+                      type="button"
+                      onClick={openDonorSummaryModal}
+                      className="text-[11px] md:text-xs rounded-full border border-pink-400/70 bg-black/60 px-3 py-1 font-medium text-pink-100 hover:bg-pink-500/20 hover:text-white transition"
+                    >
+                      ดูผู้โดเนททั้งหมด
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -251,29 +364,44 @@ export default function ShowProfilePage() {
                   Top Donators
                 </div>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                  {/* อันดับ 2 — mobile ให้เป็นลำดับที่ 2, desktop ซ้ายมือ (ลำดับ 1) */}
                   {podium[1] && (
-                    <PodiumCard
-                      rank={2}
-                      profile={podium[1]}
-                      openPreview={openPreview}
-                    />
+                    <div className="order-2 md:order-1">
+                      <PodiumCard
+                        rank={2}
+                        profile={podium[1]}
+                        openPreview={openPreview}
+                        openDonateModal={openDonateModal}
+                      />
+                    </div>
                   )}
+
+                  {/* อันดับ 1 — mobile ให้เป็นลำดับที่ 1, desktop อยู่กลาง (ลำดับ 2) */}
                   {podium[0] && (
-                    <PodiumCard
-                      rank={1}
-                      profile={podium[0]}
-                      highlight
-                      openPreview={openPreview}
-                    />
+                    <div className="order-1 md:order-2">
+                      <PodiumCard
+                        rank={1}
+                        profile={podium[0]}
+                        highlight
+                        openPreview={openPreview}
+                        openDonateModal={openDonateModal}
+                      />
+                    </div>
                   )}
+
+                  {/* อันดับ 3 — mobile/desktop ลำดับที่ 3 เหมือนเดิม */}
                   {podium[2] && (
-                    <PodiumCard
-                      rank={3}
-                      profile={podium[2]}
-                      openPreview={openPreview}
-                    />
+                    <div className="order-3 md:order-3">
+                      <PodiumCard
+                        rank={3}
+                        profile={podium[2]}
+                        openPreview={openPreview}
+                        openDonateModal={openDonateModal}
+                      />
+                    </div>
                   )}
                 </div>
+
               </div>
             ) : (
               <div className="mb-6 rounded-2xl border border-pink-500/40 bg-black/80 px-4 py-5 text-center text-sm text-pink-100/80">
@@ -296,10 +424,10 @@ export default function ShowProfilePage() {
                     return (
                       <li
                         key={`member-${idx}-${p.icid || p.icname || p.ocname || "x"}`}
-                        className="group flex items-center gap-3 rounded-2xl border border-pink-500/25 bg-black/80 px-3 py-2.5 text-xs text-pink-50 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-400/70 hover:shadow-pink-500/40 md:px-4 md:py-3 md:text-sm"
+                        className="group flex flex-col gap-3 rounded-2xl border border-pink-500/25 bg-black/80 px-3 py-2.5 text-xs text-pink-50 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-400/70 hover:shadow-pink-500/40 md:flex-row md:items-center md:px-4 md:py-3 md:text-sm"
                       >
                         {/* Rank + รูป OC+IC */}
-                        <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                        <div className="flex items-center gap-2 flex-shrink-0 md:flex-col md:items-center md:gap-1">
                           <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500/60 to-fuchsia-500/60 text-[12px] font-bold text-black">
                             #{rank}
                           </div>
@@ -340,7 +468,6 @@ export default function ShowProfilePage() {
                               />
                             </button>
                           </div>
-
                         </div>
 
                         {/* ข้อมูลตัวละคร */}
@@ -363,11 +490,15 @@ export default function ShowProfilePage() {
                         </div>
 
                         {/* Donate + Social */}
-                        <div className="flex flex-col items-end gap-1 text-[11px] text-pink-200/80">
-                          <span className="rounded-full bg-pink-500/15 px-2 py-0.5 font-semibold text-pink-100">
-                            {formatDonate(p.donate)}{" "}
-                            {p.donate && p.donate !== "Admin" && "SweetDollar"}
-                          </span>
+                        <div className="flex flex-col items-start gap-1 text-[11px] text-pink-200/80 md:items-end">
+                          <button
+                            type="button"
+                            onClick={() => openDonateModal(p)}
+                            className="rounded-full bg-pink-500/15 px-2 py-0.5 font-semibold text-pink-100 hover:bg-pink-500/30 hover:text-white transition"
+                          >
+                            {formatDonateAmount(p.donateAmount)}{" "}
+                            {p.donateAmount > 0 && "SweetDollar"}
+                          </button>
                           <div className="flex gap-1">
                             <SocialLinkButton
                               type="facebook"
@@ -387,6 +518,7 @@ export default function ShowProfilePage() {
                           </div>
                         </div>
                       </li>
+
                     );
                   })}
                 </ul>
@@ -432,13 +564,154 @@ export default function ShowProfilePage() {
           </div>
         </div>
       )}
+
+      {/* Donate Detail Modal (ต่อ 1 โปรไฟล์) */}
+      {donateModal && (
+        <div
+          className="fixed inset-0 z-[95] flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          onClick={closeDonateModal}
+        >
+          <div
+            className="relative max-h-[80vh] w-full max-w-md overflow-hidden rounded-3xl border border-pink-400/80 bg-gradient-to-b from-slate-950 via-black to-slate-950 p-4 md:p-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-3 text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-pink-300">
+                Donation Detail
+              </p>
+              <h2 className="mt-1 text-sm font-bold text-pink-50 md:text-base">
+                รายละเอียดการโดเนทของ {safeText(donateModal.profile.ocname)}
+              </h2>
+              <p className="mt-1 text-[11px] text-pink-200/85">
+                IC: {safeText(donateModal.profile.icname)} (
+                {safeText(donateModal.profile.icid)})
+              </p>
+              <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-amber-400/15 px-3 py-1 text-[11px] font-medium text-amber-200">
+                <span>💖 ยอดรวม :</span>
+                <span className="font-semibold text-amber-300">
+                  {formatDonateAmount(donateModal.total)}
+                </span>
+                <span>SweetDollar</span>
+              </div>
+            </div>
+
+            <div className="max-h-60 overflow-y-auto rounded-2xl bg-black/60 p-3">
+              {donateModal.items.length === 0 ? (
+                <div className="py-6 text-center text-[12px] text-pink-200/80">
+                  ยังไม่มีข้อมูลโดเนทสำหรับคนนี้
+                </div>
+              ) : (
+                <ul className="space-y-2">
+                  {donateModal.items.map((item, idx) => (
+                    <li
+                      key={`${item.who}-${idx}`}
+                      className="flex items-center justify-between rounded-xl bg-black/70 px-3 py-2 text-[11px] text-pink-50 md:text-xs"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-2xl bg-pink-500/30 text-[11px] font-bold text-black">
+                          #{idx + 1}
+                        </span>
+                        <span className="font-medium text-pink-50">
+                          {item.who}
+                        </span>
+                      </div>
+                      <div className="font-semibold text-amber-300">
+                        {formatDonateAmount(item.amount)}{" "}
+                        <span className="text-[10px] text-amber-200/80">
+                          SweetDollar
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={closeDonateModal}
+              className="mt-3 w-full rounded-2xl border border-pink-400/70 bg-black/80 px-3 py-2 text-[12px] font-medium text-pink-100 hover:bg-pink-500/20 transition"
+            >
+              ปิดหน้ารายละเอียด
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ⭐ Global Donor Summary Modal (รวมทุกคนที่โดเนท) */}
+      {donorSummaryModal && (
+        <div
+          className="fixed inset-0 z-[96] flex items-center justify-center bg-black/75 backdrop-blur-sm"
+          onClick={closeDonorSummaryModal}
+        >
+          <div
+            className="relative max-h-[80vh] w-full max-w-md overflow-hidden rounded-3xl border border-amber-400/80 bg-gradient-to-b from-black via-slate-950 to-black p-4 md:p-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-3 text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-300">
+                Global Donor Ranking
+              </p>
+              <h2 className="mt-1 text-sm font-bold text-pink-50 md:text-base">
+                สรุปรายชื่อผู้โดเนททั้งหมด
+              </h2>
+              <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-amber-400/15 px-3 py-1 text-[11px] font-medium text-amber-200">
+                <span>💎 ยอดรวมทุกคน :</span>
+                <span className="font-semibold text-amber-300">
+                  {formatDonateAmount(donorSummaryModal.total)}
+                </span>
+                <span>SweetDollar</span>
+              </div>
+            </div>
+
+            <div className="max-h-60 overflow-y-auto rounded-2xl bg-black/70 p-3">
+              {donorSummaryModal.items.length === 0 ? (
+                <div className="py-6 text-center text-[12px] text-pink-200/80">
+                  ยังไม่มีข้อมูลผู้โดเนทในระบบ
+                </div>
+              ) : (
+                <ul className="space-y-2">
+                  {donorSummaryModal.items.map((item, idx) => (
+                    <li
+                      key={`${item.who}-${idx}`}
+                      className="flex items-center justify-between rounded-xl bg-black/80 px-3 py-2 text-[11px] text-pink-50 md:text-xs"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-2xl bg-amber-400/70 text-[11px] font-bold text-black">
+                          #{idx + 1}
+                        </span>
+                        <span className="font-medium text-pink-50">
+                          {item.who}
+                        </span>
+                      </div>
+                      <div className="font-semibold text-amber-300">
+                        {formatDonateAmount(item.amount)}{" "}
+                        <span className="text-[10px] text-amber-200/80">
+                          SweetDollar
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={closeDonorSummaryModal}
+              className="mt-3 w-full rounded-2xl border border-amber-400/70 bg-black/80 px-3 py-2 text-[12px] font-medium text-amber-100 hover:bg-amber-500/20 transition"
+            >
+              ปิดหน้าสรุปผู้โดเนท
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
 
 /* ----------------- Podium Card (Top 1–3) ----------------- */
-/* ----------------- Podium Card (Top 1–3) ----------------- */
-function PodiumCard({ rank, profile, highlight, openPreview }) {
+function PodiumCard({ rank, profile, highlight, openPreview, openDonateModal }) {
   const rankLabel =
     rank === 1 ? "อันดับ 1" : rank === 2 ? "อันดับ 2" : "อันดับ 3";
 
@@ -519,10 +792,14 @@ function PodiumCard({ rank, profile, highlight, openPreview }) {
       <div className="text-[11px] text-pink-200/85">
         IC: {safeText(profile.icname)} ({safeText(profile.icid)})
       </div>
-      <div className="mt-2 rounded-full bg-pink-500/15 px-3 py-1 text-[11px] font-semibold text-pink-100">
-        ยอดโดเนท: {formatDonate(profile.donate)}{" "}
-        {profile.donate && profile.donate !== "Admin" && "SweetDollar"}
-      </div>
+      <button
+        type="button"
+        onClick={() => openDonateModal(profile)}
+        className="mt-2 rounded-full bg-pink-500/15 px-3 py-1 text-[11px] font-semibold text-pink-100 hover:bg-pink-500/30 hover:text-white transition"
+      >
+        ยอดโดเนท: {formatDonateAmount(profile.donateAmount)}{" "}
+        {profile.donateAmount > 0 && "SweetDollar"}
+      </button>
       <div className="mt-2 text-[11px] text-pink-200/90">
         แคปชั่น: {safeText(profile.caption)}
       </div>
@@ -544,4 +821,3 @@ function PodiumCard({ rank, profile, highlight, openPreview }) {
     </div>
   );
 }
-

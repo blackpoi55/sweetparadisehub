@@ -9,7 +9,8 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/boatms",
         tiktokurl: "https://www.tiktok.com/@boatmousay",
-        donate: "Admin",
+        role: "Admin",
+        donate: []
     },
     {
         ocname: "แบมแบม",
@@ -21,7 +22,17 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/bbbamabb?igsh=NzN6OHZpNHpmZmRt",
         tiktokurl: "https://www.tiktok.com/@bbamabbb?_r=1&_t=ZS-91TGTCZpvec",
-        donate: "800000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "bamab1911",
+                donate: "500000",
+            },
+            {
+                whodonate: "bamab1911",
+                donate: "300000",
+            }
+        ],
     },
     {
         ocname: "สายป่าน",
@@ -33,7 +44,17 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",
-        donate: "200000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "kuyhom",
+                donate: "150000",
+            },
+            {
+                whodonate: "masadaru06",
+                donate: "50000",
+            }
+        ],
     },
     {
         ocname: "ชมพู่",
@@ -45,7 +66,13 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/c_chompoo_51/",
         tiktokurl: "",
-        donate: "50000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "chom_25511",
+                donate: "50000",
+            },
+        ],
     },
     {
         ocname: "ต้า",
@@ -57,7 +84,13 @@ export const shoeprofile = [
         facebookurl: "https://www.facebook.com/sareeta.khianhin.9",
         instagramurl: "https://www.instagram.com/sareeta_taaaaaa?igsh=MXZlYnJ6aXZ0cHYwbg%3D%3D&utm_source=qr",
         tiktokurl: "https://www.tiktok.com/@sareeta_2550?_r=1&_t=ZS-91TSbcKmhsG",
-        donate: "7210000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "Ta_255007",
+                donate: "7210000",
+            },
+        ],
     },
     {
         ocname: "เตยหอม",
@@ -69,7 +102,13 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/tt_eerarat?igsh=MWF2bzRkYTd3czZ1aA%3D%3D&utm_source=qr",
         tiktokurl: "",
-        donate: "300000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "toeyhom72",
+                donate: "300000",
+            },
+        ],
     },
     {
         ocname: "บอส",
@@ -81,7 +120,17 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",
-        donate: "180000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "iAm_BossEiEi",
+                donate: "160000",
+            },
+            {
+                whodonate: "mixza93123",
+                donate: "20000",
+            },
+        ],
     },
     {
         ocname: "ชมพู",
@@ -93,7 +142,13 @@ export const shoeprofile = [
         facebookurl: "https://www.facebook.com/share/1KcY6znzuv/?mibextid=wwXIfr",
         instagramurl: "https://www.instagram.com/qitsucxh",
         tiktokurl: "",
-        donate: "1320000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "Puji_Saka",
+                donate: "1320000",
+            },
+        ],
     },
     {
         ocname: "หมูหวาน หรือ หวาน",
@@ -105,7 +160,17 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/hmu__2008",
         tiktokurl: "https://www.tiktok.com/@moowan17_2008",
-        donate: "100000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "Khaiharn",
+                donate: "50000",
+            },
+            {
+                whodonate: "mixza93123",
+                donate: "50000",
+            },
+        ],
     },
     {
         ocname: "แอมแปร์",
@@ -117,7 +182,21 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: " https://www.instagram.com/i.iluminelle",
         tiktokurl: "",
-        donate: "12080000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "Tuna_lmm",
+                donate: "1030000",
+            },
+            {
+                whodonate: "markteleport",
+                donate: "11000000",
+            },
+            {
+                whodonate: "masadaru06",
+                donate: "50000",
+            },
+        ],
     },
     {
         ocname: "เบส 「　ベース　」",
@@ -129,7 +208,13 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/gojira_bro",
         tiktokurl: "",
-        donate: "350000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "bestiiz1235",
+                donate: "350000",
+            },
+        ],
     },
     {
         ocname: "แพรวา",
@@ -141,18 +226,12 @@ export const shoeprofile = [
         facebookurl: "",
         instagramurl: "https://www.instagram.com/prae_ptrtj?igsh=MWpkeGd4cDFyZDdicA%3D%3D&utm_source=qr",
         tiktokurl: "",
-        donate: "300000",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "Prae_pat",
+                donate: "350000",
+            },
+        ],
     },
-    // {
-    //     ocname: "",
-    //     icname: "",
-    //     icid: "",
-    //     caption: "",
-    //     icimage: "",
-    //     ocimage: "",
-    //     facebookurl: "",
-    //     instagramurl: "",
-    //     tiktokurl: "",
-    //     donate: "0",
-    // },
 ]

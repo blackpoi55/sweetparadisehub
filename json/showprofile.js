@@ -143,7 +143,7 @@ export const shoeprofile = [
                 donate: "1100000",
             },
             {
-                whodonate: "Veterans_Glory ",
+                whodonate: "Veterans_Glory",
                 donate: "4700000",
             },
             {
@@ -155,16 +155,20 @@ export const shoeprofile = [
                 donate: "880000",
             },
             {
-                whodonate: "lotharallseeing09 ",
+                whodonate: "lotharallseeing09",
                 donate: "1000000",
             },
             {
-                whodonate: "Baii_Tongq ",
+                whodonate: "Baii_Tongq",
                 donate: "470000",
             },
             {
-                whodonate: "wisdomxpp ",
+                whodonate: "wisdomxpp",
                 donate: "500000",
+            },
+            {
+                whodonate: "8xpd",
+                donate: "1640000",
             },
         ],
     },
@@ -237,11 +241,11 @@ export const shoeprofile = [
                 donate: "500000",
             },
             {
-                whodonate: "lotharallseeing09 ",
+                whodonate: "lotharallseeing09",
                 donate: "500000",
             },
             {
-                whodonate: "jyphtt ",
+                whodonate: "jyphtt",
                 donate: "290000",
             },
             {
@@ -345,7 +349,7 @@ export const shoeprofile = [
                 donate: "100000",
             },
             {
-                whodonate: "wisdomxpp ",
+                whodonate: "wisdomxpp",
                 donate: "500000",
             },
         ],

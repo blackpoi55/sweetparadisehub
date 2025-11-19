@@ -734,5 +734,31 @@ export const itemall = [
         "detail": "อัญเชิญ ตู้ปลาที่มาพร้อมรับป้องกันด้วยการนับจำนวนคน ใส่คนได้ 2 คน",
         "grouptype": "อัญเชิญ",
         "getby": "ซื้อ Pass",
+    },
+    {
+        "code": "No1",
+        "nameTH": "ดาราNo.1)",
+        "icon": "/images/items/No1.png",
+        "detail": "มงกุฏดาราอันดับ1 ไอเท็มจะเปลี่ยนผู้รับทุกเดือนตามลำดับ",
+        "grouptype": "ดารา",
+        "getby": "ติดTop1-3ดารา",
+    },
+    {
+        "code": "No2",
+        "nameTH": "ดาราNo.2)",
+        "icon": "/images/items/No2.png",
+        "detail": "มงกุฏดาราอันดับ2 ไอเท็มจะเปลี่ยนผู้รับทุกเดือนตามลำดับ",
+        "grouptype": "ดารา",
+        "getby": "ติดTop1-3ดารา",
+    },
+    {
+        "code": "No3",
+        "nameTH": "ดาราNo.3)",
+        "icon": "/images/items/No3.png",
+        "detail": "มงกุฏดาราอันดับ3 ไอเท็มจะเปลี่ยนผู้รับทุกเดือนตามลำดับ",
+        "grouptype": "ดารา",
+        "getby": "ติดTop1-3ดารา",
     }
+
+    
 ]

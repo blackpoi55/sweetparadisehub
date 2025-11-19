@@ -354,4 +354,22 @@ export const shoeprofile = [
             },
         ],
     },
+    {
+        ocname: "ซ่า",
+        icname: "ต้อต",
+        icid: "Panggiboy76",
+        caption: "ลิงหื่นมาแว้ว",
+        icimage: "/images/showprofile/icPanggiboy76.png",
+        ocimage: "/images/showprofile/ocPanggiboy76.png",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "kuyhom44",
+                donate: "50000",
+            },
+        ],
+    },
 ]

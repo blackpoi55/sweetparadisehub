@@ -52,6 +52,10 @@ export const shoeprofile = [
                 whodonate: "kuyhom44",
                 donate: "50000",
             },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
         ],
     },
     {
@@ -81,7 +85,11 @@ export const shoeprofile = [
             {
                 whodonate: "gamhomm10",
                 donate: "50000",
-            }
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
         ],
     },
     {
@@ -111,6 +119,10 @@ export const shoeprofile = [
             {
                 whodonate: "Lala_enya",
                 donate: "100000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
             },
         ],
     },
@@ -170,6 +182,10 @@ export const shoeprofile = [
                 whodonate: "8xpd",
                 donate: "1640000",
             },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
         ],
     },
     {
@@ -191,6 +207,10 @@ export const shoeprofile = [
             {
                 whodonate: "DASH_0150",
                 donate: "100000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
             },
         ],
     },
@@ -217,6 +237,10 @@ export const shoeprofile = [
             {
                 whodonate: "kuyhom44",
                 donate: "20000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
             },
         ],
     },
@@ -252,6 +276,10 @@ export const shoeprofile = [
                 whodonate: "Puji_Saka",
                 donate: "170000",
             },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
         ],
     },
     {
@@ -272,6 +300,10 @@ export const shoeprofile = [
             },
             {
                 whodonate: "mixza93123",
+                donate: "50000",
+            },
+            {
+                whodonate: "Oooo508124",
                 donate: "50000",
             },
         ],
@@ -300,6 +332,10 @@ export const shoeprofile = [
                 whodonate: "masadaru06",
                 donate: "50000",
             },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
         ],
     },
     {
@@ -317,6 +353,10 @@ export const shoeprofile = [
             {
                 whodonate: "bestiiz1235",
                 donate: "350000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
             },
         ],
     },
@@ -352,6 +392,10 @@ export const shoeprofile = [
                 whodonate: "wisdomxpp",
                 donate: "500000",
             },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
         ],
     },
     {
@@ -368,6 +412,10 @@ export const shoeprofile = [
         donate: [
             {
                 whodonate: "kuyhom44",
+                donate: "50000",
+            },
+            {
+                whodonate: "Oooo508124",
                 donate: "50000",
             },
         ],

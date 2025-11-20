@@ -45,7 +45,7 @@ export const shoeprofile = [
                 donate: "200000",
             },
             {
-                whodonate: "toeyhom72",
+                whodonate: "Toeyhom72",
                 donate: "100000",
             },
             {
@@ -55,6 +55,10 @@ export const shoeprofile = [
             {
                 whodonate: "Oooo508124",
                 donate: "50000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "1400000",
             },
         ],
     },
@@ -191,7 +195,7 @@ export const shoeprofile = [
     {
         ocname: "เตยหอม",
         icname: "เตยหอม",
-        icid: "toeyhom72",
+        icid: "Toeyhom72",
         caption: "แคปชั่นไม่รู้ แคปหมูแน่นอน",
         icimage: "/images/showprofile/ictoeyhom72.png",
         ocimage: "/images/showprofile/octoeyhom72.png",
@@ -201,7 +205,7 @@ export const shoeprofile = [
         role: "Member",
         donate: [
             {
-                whodonate: "toeyhom72",
+                whodonate: "Toeyhom72",
                 donate: "300000",
             },
             {
@@ -211,6 +215,10 @@ export const shoeprofile = [
             {
                 whodonate: "Oooo508124",
                 donate: "50000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "1400000",
             },
         ],
     },

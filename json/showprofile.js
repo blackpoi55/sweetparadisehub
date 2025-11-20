@@ -337,7 +337,7 @@ export const shoeprofile = [
             {
                 whodonate: "Oooo508124",
                 donate: "50000",
-            }, 
+            },
             {
                 whodonate: "lotharallseeing09",
                 donate: "500000",
@@ -441,6 +441,28 @@ export const shoeprofile = [
         caption: "ลิงหื่นมาแว้ว",
         icimage: "/images/showprofile/icPanggiboy76.png",
         ocimage: "/images/showprofile/ocPanggiboy76.png",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "kuyhom44",
+                donate: "50000",
+            },
+            {
+                whodonate: "Oooo508124",
+                donate: "50000",
+            },
+        ],
+    },
+    {
+        ocname: "ซีน",
+        icname: "ซีน",
+        icid: "8xpd",
+        caption: "รถไม่มีขับ โทรศัพท์ก็เสีย ข้อดีไม่มีเมีย ข้อเสียไม่มีตัง",
+        icimage: "/images/showprofile/ic8xpd.png",
+        ocimage: "/images/showprofile/oc8xpd.png",
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "",

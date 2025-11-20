@@ -469,13 +469,9 @@ export const shoeprofile = [
         role: "Member",
         donate: [
             {
-                whodonate: "kuyhom44",
-                donate: "50000",
-            },
-            {
-                whodonate: "Oooo508124",
-                donate: "50000",
-            },
+                whodonate: "8xpd",
+                donate: "2500000",
+            }, 
         ],
     },
 ]

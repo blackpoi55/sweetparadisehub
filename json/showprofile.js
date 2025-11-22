@@ -474,4 +474,22 @@ export const shoeprofile = [
             }, 
         ],
     },
+    {
+        ocname: "เบลล์",
+        icname: "nemo",
+        icid: "persprincess2",
+        caption: "บ่สะออนดอก",
+        icimage: "/images/showprofile/icpersprincess2.png",
+        ocimage: "/images/showprofile/ocpersprincess2.png",
+        facebookurl: "",
+        instagramurl: "https://www.instagram.com/saltypers",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "persprincess2",
+                donate: "500000", 
+            }, 
+        ],
+    },
 ]

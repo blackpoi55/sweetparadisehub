@@ -499,17 +499,17 @@ export const shoeprofile = [
     {
         ocname: "เปตอง",
         icname: "patty",
-        icid: "ppettong",
+        icid: "ppptonq",
         caption: "patty ready to talk with u ❤️",
-        icimage: "/images/showprofile/icppettong.png",
-        ocimage: "/images/showprofile/ocppettong.png",
+        icimage: "/images/showprofile/icppptonq.png",
+        ocimage: "/images/showprofile/ocppptonq.png",
         facebookurl: "",
         instagramurl: "https://www.instagram.com/ppettong",
         tiktokurl: "",
         role: "Member",
         donate: [
             {
-                whodonate: "ppettong",
+                whodonate: "ppptonq",
                 donate: "50000", 
             }, 
              {

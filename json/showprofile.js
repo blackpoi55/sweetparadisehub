@@ -496,4 +496,26 @@ export const shoeprofile = [
             }, 
         ],
     },
+    {
+        ocname: "เปตอง",
+        icname: "patty",
+        icid: "ppettong",
+        caption: "patty ready to talk with u ❤️",
+        icimage: "/images/showprofile/icppettong.png",
+        ocimage: "/images/showprofile/ocppettong.png",
+        facebookurl: "",
+        instagramurl: "https://www.instagram.com/ppettong",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "ppettong",
+                donate: "50000", 
+            }, 
+             {
+                whodonate: "Oooo508124",
+                donate: "100000", 
+            }, 
+        ],
+    },
 ]

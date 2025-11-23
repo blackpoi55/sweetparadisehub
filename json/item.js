@@ -758,7 +758,14 @@ export const itemall = [
         "detail": "มงกุฏดาราอันดับ3 ไอเท็มจะเปลี่ยนผู้รับทุกเดือนตามลำดับ",
         "grouptype": "ดารา",
         "getby": "ติดTop1-3ดารา",
-    }
+    },
+    {
+        "code": "PunchFight",
+        "nameTH": "ต่อยแม่ม",
+        "icon": "/images/items/PunchFight.png",
+        "detail": "ไว้ให้เด็กที่ทะเลาะกันต่อยกัน",
+        "grouptype": "แกล้ง",
+        "getby": "test",
+    },
 
-    
 ]

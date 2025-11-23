@@ -144,6 +144,10 @@ export const shoeprofile = [
                 whodonate: "lotharallseeing09",
                 donate: "500000",
             },
+            {
+                whodonate: "chom_25511",
+                donate: "200000",
+            },
         ],
     },
     {

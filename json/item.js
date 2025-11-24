@@ -767,5 +767,28 @@ export const itemall = [
         "grouptype": "แกล้ง",
         "getby": "test",
     },
-
+    {
+        "code": "SnowRod",
+        "nameTH": "เบ็ดหิมะ",
+        "icon": "/images/items/SnowRod.png",
+        "detail": "เบ็ดตกปลาสายรีบ+โชค",
+        "grouptype": "เบ็ด",
+        "getby": "test",
+    },
+    {
+        "code": "ChristmasRod",
+        "nameTH": "เบ็ดคริสต์มาส",
+        "icon": "/images/items/ChristmasRod.png",
+        "detail": "เบ็ดตกปลาสายรีบ",
+        "grouptype": "เบ็ด",
+        "getby": "test",
+    },
+    {
+        "code": "CandyRod",
+        "nameTH": "เบ็ดลูกอม",
+        "icon": "/images/items/CandyRod.png",
+        "detail": "เบ็ดตกปลาสายรีบ+เงิน",
+        "grouptype": "เบ็ด",
+        "getby": "test",
+    },
 ]

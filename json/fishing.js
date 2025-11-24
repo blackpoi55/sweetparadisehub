@@ -109,4 +109,7 @@ export const rodall = [
     { rodname: "คันเบ็ด (VIP)", rodimage: "/images/items/VIPFishingRod.png", cooldown: "12", Luck: "200%", money: "200%", Score: "200%" },
     { rodname: "เบ็ดฮัลโลวีน", rodimage: "/images/items/HalloweenRod.png", cooldown: "15", Luck: "700%", money: "110%", Score: "110%" },
     { rodname: "เบ็ดฮัลโลวีนพรีเมี่ยม", rodimage: "/images/items/LuckyHalloweenRod.png", cooldown: "14", Luck: "1000%", money: "130%", Score: "130%" },
+    { rodname: "เบ็ดหิมะ", rodimage: "/images/items/SnowRod.png", cooldown: "8", Luck: "300%", money: "100%", Score: "130%" },
+    { rodname: "เบ็ดลูกอม", rodimage: "/images/items/CandyRod.png", cooldown: "8", Luck: "110%", money: "130%", Score: "130%" },
+    { rodname: "เบ็ดคริสต์มาส", rodimage: "/images/items/ChristmasRod.png", cooldown: "8", Luck: "100%", money: "100%", Score: "130%" },
 ]

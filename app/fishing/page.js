@@ -108,8 +108,8 @@ function RodCard({ rod }) {
         <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500/40 via-fuchsia-500/30 to-slate-900">
           {rod.rodimage ? (
             <img
-              src={rod.rodimage}
-              alt={rod.rodname}
+              src={rod?.rodimage}
+              alt={rod?.rodname}
               className="h-full w-full object-contain transition-transform group-hover:scale-110"
             />
           ) : (
@@ -120,10 +120,10 @@ function RodCard({ rod }) {
         </div>
         <div className="min-w-0">
           <h3 className="truncate text-sm font-semibold text-pink-50 md:text-base">
-            {rod.rodname}
+            {rod?.rodname}
           </h3>
           <p className="mt-1 text-[11px] text-pink-200/80">
-            สายโหดประจำแมพ Sweet Paradise
+           {rod?.detail}
           </p>
         </div>
       </div>

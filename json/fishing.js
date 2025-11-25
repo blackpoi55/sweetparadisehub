@@ -67,8 +67,9 @@ export const fishall = [
     { name: "มังกรคาบเพชร", rarity: "เทพนิยาย", price: 6500, score: 300, rate: 0.05, status: "Active" },
     { name: "เงือกมุกแดง", rarity: "เทพนิยาย", price: 8000, score: 360, rate: 0.05, status: "Active" },
     { name: "ราชานาคเรนโบว์", rarity: "สายรุ้ง", price: 15000, score: 480, rate: 0.03, status: "Active" },
-    { name: "HBD Admin Boat", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.5, status: "UnActive" },
-    { name: "ปลาแจ็กโอแลนเทิร์น", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.3, status: "UnActive" },
+    { name: "HBD Admin Boat", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.3, status: "Active" },
+    { name: "ปลาแจ็กโอแลนเทิร์น", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.3, status: "Active" },
+    { name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.3, status: "Active" },
     { name: "คราเคนเจ็ดสี", rarity: "สายรุ้ง", price: 45000, score: 560, rate: 0.01, status: "Active" },
     { name: "มังกรมหาเทพรุ้ง", rarity: "สายรุ้ง", price: 45000, score: 560, rate: 0.01, status: "Active" },
     { name: "ปลากระป๋องหมดอายุ", rarity: "สายรุ้ง", price: 45000, score: 560, rate: 0.01, status: "Active" },
@@ -103,6 +104,7 @@ export const fishgiveitem = [
     { fishname: "ปลาคราฟจักรพรรดิ์เรนโบว์", itemname: "เก้าอี้ซากุระชิงช้า", itemimage: "/images/items/ChairSakuratreeswingTool.png" },
     { fishname: "ปลาTeenสีรุ้ง", itemname: "ขมับแม่ม", itemimage: "/images/items/SlipperSlap.png" },
     { fishname: "วาฬจักรวาลสีรุ้ง", itemname: "ตู้ปลาหรรษาเล็ก", itemimage: "/images/items/FishTankSmallTool.png" },
+    { fishname: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", itemname: "เบ็ดคริสต์มาส", itemimage: "/images/items/ChristmasRod.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

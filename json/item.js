@@ -773,7 +773,7 @@ export const itemall = [
         "icon": "/images/items/SnowRod.png",
         "detail": "เบ็ดตกปลาสายรีบ+โชค",
         "grouptype": "เบ็ด",
-        "getby": "test",
+        "getby": "ซื้อ Pass",
     },
     {
         "code": "ChristmasRod",
@@ -781,7 +781,7 @@ export const itemall = [
         "icon": "/images/items/ChristmasRod.png",
         "detail": "เบ็ดตกปลาสายรีบ",
         "grouptype": "เบ็ด",
-        "getby": "test",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "CandyRod",
@@ -789,6 +789,6 @@ export const itemall = [
         "icon": "/images/items/CandyRod.png",
         "detail": "เบ็ดตกปลาสายรีบ+เงิน",
         "grouptype": "เบ็ด",
-        "getby": "test",
+        "getby": "ซื้อ Pass",
     },
 ]

@@ -3,12 +3,12 @@ export const eventall = [
         name: "กิจกรรมตกฉันสิ ตกฉันสิ!!",
         description: "ปลาสีรุ้ง ทุกตัว เพิ่มโอกาสในการตกได้ x10 ตลอดระยะเวลากิจกรรม",
         startdate: "2025-12-25",
-        enddate: "2025-1-2",
+        enddate: "2026-1-2",
     },
     {
-        name: "Merry'x Mas",
-        description: "สุขสันต์วันคริสต์มาส",
+        name: "Merry'x Mas & Happy New Year",
+        description: "ฉลองปีใหม่แบบเบิ้มๆ โดยการเอาปลา และ ไอเท็มในร้านค้า และ Pass ที่เอาออกไปแล้วทั้งหมดกลับมาอีกครั้ง แค่ 7วันเท่านั้น",
         startdate: "2025-12-25",
-        enddate: "2025-12-25",
+        enddate: "2026-1-2",
     }
 ]

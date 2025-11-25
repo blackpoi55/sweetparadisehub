@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Swal from "sweetalert2";
-import { djsongall, eventsongall, muansongall, songall } from "@/json/song";
+import { djsongall, eventsongall, keliasong, muansongall, songall } from "@/json/song";
 
 export default function SongPage() {
   const [search, setSearch] = useState("");
@@ -32,6 +32,12 @@ export default function SongPage() {
         label: "เพลงอีเวนต์ / เทศกาล",
         color: "from-indigo-400/70 to-sky-500/70",
         items: eventsongall,
+      },
+      {
+        id: "kelia",
+        label: "Kelia Song (Indonesia Song)",
+        color: "from-blue-400/70 to-green-500/70",
+        items: keliasong,
       },
     ],
     []

@@ -300,6 +300,7 @@ export const djsongall = [
     { name: "สระอู   g2  V Pao Remix", songid: "102747630356639" },
     { name: "ถ้าฉันรักแล้วอย่าเลว - g2  V Pao Remix", songid: "82833052225374" },
     { name: "MIMICUCU", songid: "113795136878346" },
+    { name: "i love mama muntu", songid: "124649118735035" },
 ]
 export const muansongall = [
     { name: "หักคอไอ้เท่ง - ลำไย", songid: "118537352258828" },

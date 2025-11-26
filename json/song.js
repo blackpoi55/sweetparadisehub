@@ -299,6 +299,8 @@ export const djsongall = [
     { name: "ร้กแค่เธอคนเดียว - V Pao Remix", songid: "89112963994390" },
     { name: "สระอู   g2  V Pao Remix", songid: "102747630356639" },
     { name: "ถ้าฉันรักแล้วอย่าเลว - g2  V Pao Remix", songid: "82833052225374" },
+    { name: "MIMICUCU", songid: "113795136878346" },
+    { name: "i love mama muntu", songid: "124649118735035" },
 ]
 export const muansongall = [
     { name: "หักคอไอ้เท่ง - ลำไย", songid: "118537352258828" },
@@ -361,4 +363,14 @@ export const eventsongall = [
     { name: "ลอยกระทง remix", songid: "88522468894949" },
     { name: "ลอยกระทง dance", songid: "88948117949108 " },
     { name: "Do You Want to Build a Snowman (Piano Cover)", songid: "103831309416932" },
+    { name: "มวยไทย", songid: "1837213982" },
+    { name: "เหมียวๆ", songid: "105276875646446" },
+]
+
+export const keliasong = [
+   { name: "MIMICUCU", songid: "113795136878346" },
+   { name: "i love mama muntu", songid: "124649118735035" },
+   { name: "Bernadya ft. Adrian Khalif - Satu Bulan", songid: "127718197714157" },
+   { name: "Rombongan pondok koplo-calon mantu idaman", songid: "113241770326229" },
+
 ]

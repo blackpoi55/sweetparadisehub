@@ -12,6 +12,7 @@ const navItems = [
     { href: "/fishing", label: "ตกปลา" },
     { href: "/event", label: "กิจกรรม" },
     { href: "/marketitems", label: "เจ้าของไอเทม" },
+    { href: "/map", label: "แผนที่" },
     { href: "/manual", label: "คู่มือ" },
     { href: "/rule", label: "กฏ" }, 
 ];

@@ -797,7 +797,7 @@ export const itemall = [
         "icon": "/images/items/ChistmasHat.png",
         "detail": "หมวกคริสต์มาสสุดน่ารัก",
         "grouptype": "แฟชั่น",
-        "getby": "ซื้อ Pass",
+        "getby": "ร้านค้า Admin Note",
     },
     {
         "code": "SlipperSlapPass",

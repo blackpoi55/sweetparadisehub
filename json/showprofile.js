@@ -452,6 +452,10 @@ export const shoeprofile = [
                 whodonate: "Fxrern07",
                 donate: "1000000",
             },
+            {
+                whodonate: "Oooo508124",
+                donate: "1000000",
+            },
         ],
     },
     {
@@ -558,6 +562,10 @@ export const shoeprofile = [
                 whodonate: "crazyZA555",
                 donate: "1800000",
             },
+            {
+                whodonate: "Prae_pat",
+                donate: "1200000",
+            },
         ],
     },
     {
@@ -578,6 +586,28 @@ export const shoeprofile = [
             },
             {
                 whodonate: "shinng_7",
+                donate: "1000000", 
+            },
+        ],
+    },
+    {
+        ocname: "เชอร์รี่",
+        icname: "เชอร์รี่",
+        icid: "supichaya06",
+        caption: "คนนั้นที่ว่าเด็ด สู้หมาเด็กแบบเค้าได้ไหม",
+        icimage: "/images/showprofile/icsupichaya06.png",
+        ocimage: "/images/showprofile/ocsupichaya06.png",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "https://www.tiktok.com/@ch3rry._ch",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "supichaya06",
+                donate: "1000000", 
+            },
+            {
+                whodonate: "Oooo508124",
                 donate: "1000000", 
             },
         ],

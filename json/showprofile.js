@@ -552,4 +552,22 @@ export const shoeprofile = [
             },
         ],
     },
+    {
+        ocname: "สายขิม",
+        icname: "เดอบรอย",
+        icid: "jaoyingsaijimmu",
+        caption: "คำคมไม่มี ปากดีก็พอใจ",
+        icimage: "/images/showprofile/icjaoyingsaijimmu.png",
+        ocimage: "/images/showprofile/ocjaoyingsaijimmu.png",
+        facebookurl: "",
+        instagramurl: "https://www.instagram.com/qhim.sq",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "jaoyingsaijimmu",
+                donate: "1000000", 
+            }
+        ],
+    },
 ]

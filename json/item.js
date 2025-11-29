@@ -791,4 +791,20 @@ export const itemall = [
         "grouptype": "เบ็ด",
         "getby": "ซื้อ Pass",
     },
+    {
+        "code": "ChistmasHat",
+        "nameTH": "หมวกคริสต์มาส",
+        "icon": "/images/items/ChistmasHat.png",
+        "detail": "หมวกคริสต์มาสสุดน่ารัก",
+        "grouptype": "แฟชั่น",
+        "getby": "ร้านค้า Admin Note",
+    },
+    {
+        "code": "SlipperSlapPass",
+        "nameTH": "ร้องเท้าแตะแป๊ะที่หัว",
+        "icon": "/images/items/SlipperSlapPass.png",
+        "detail": "ร้องเท้าใช้ตบคนให้หน้าทิ่ม",
+        "grouptype": "แกล้ง",
+        "getby": "ซื้อ Pass",
+    },
 ]

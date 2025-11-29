@@ -6,7 +6,7 @@ export const eventall = [
         enddate: "2026-1-2",
     },
     {
-        name: "Merry'x Mas & Happy New Year",
+        name: "Merry'ChristMas X Happy New Year",
         description: "ฉลองปีใหม่แบบเบิ้มๆ โดยการเอาปลา และ ไอเท็มในร้านค้า และ Pass ที่เอาออกไปแล้วทั้งหมดกลับมาอีกครั้ง แค่ 7วันเท่านั้น",
         startdate: "2025-12-25",
         enddate: "2026-1-2",

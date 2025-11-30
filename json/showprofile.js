@@ -624,4 +624,22 @@ export const shoeprofile = [
             },
         ],
     },
+    {
+        ocname: "การ์ตูน",
+        icname: "พี่ตูน , มาสด้า ,อ้ายตูน",
+        icid: "masadaru06",
+        caption: "พี่จะตกปลา",
+        icimage: "/images/showprofile/icmasadaru06.png",
+        ocimage: "/images/showprofile/ocmasadaru06.png",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "masadaru06",
+                donate: "500000", 
+            }, 
+        ],
+    },
 ]

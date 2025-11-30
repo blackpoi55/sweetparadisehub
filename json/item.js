@@ -807,4 +807,13 @@ export const itemall = [
         "grouptype": "แกล้ง",
         "getby": "ซื้อ Pass",
     },
+    {
+        "code": "Megaphone",
+        "nameTH": "แหกปากทั่วเซิร์ฟ",
+        "icon": "/images/items/Megaphone.png",
+        "detail": "ใช้ประกาศข้อความให้ทั้งเซิร์ฟเห็น",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
+    },
+    
 ]

@@ -702,4 +702,22 @@ export const shoeprofile = [
             },
         ],
     },
+    {
+        ocname: "-",
+        icname: "มังกี้",
+        icid: "wretop004",
+        caption: "เป็นลิง ก็พาฟินได้เหมือนกัน",
+        icimage: "/images/showprofile/icwretop004.png",
+        ocimage: "/images/showprofile/ocwretop004.png",
+        facebookurl: "",
+        instagramurl: "",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "wretop004",
+                donate: "1000000",
+            },
+        ],
+    },
 ]

@@ -710,7 +710,7 @@ export const shoeprofile = [
         icimage: "/images/showprofile/icwretop004.png",
         ocimage: "/images/showprofile/ocwretop004.png",
         facebookurl: "",
-        instagramurl: "",
+        instagramurl: "https://www.instagram.com/xiix.bb/",
         tiktokurl: "",
         role: "Member",
         donate: [

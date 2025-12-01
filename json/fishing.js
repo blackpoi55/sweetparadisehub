@@ -66,6 +66,7 @@ export const fishall = [
     { name: "คาร์พอัญมณี", rarity: "เทพนิยาย", price: 5000, score: 250, rate: 0.06, status: "Active" },
     { name: "มังกรคาบเพชร", rarity: "เทพนิยาย", price: 6500, score: 300, rate: 0.05, status: "Active" },
     { name: "เงือกมุกแดง", rarity: "เทพนิยาย", price: 8000, score: 360, rate: 0.05, status: "Active" },
+    { name: "ราชาวาฬเพลิง", rarity: "เทพนิยาย", price: 10000, score: 420, rate: 0.04, status: "Active" },
     { name: "ราชานาคเรนโบว์", rarity: "สายรุ้ง", price: 15000, score: 480, rate: 0.03, status: "Active" },
     { name: "HBD Admin Boat", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.3, status: "Active" },
     { name: "ปลาแจ็กโอแลนเทิร์น", rarity: "สายรุ้ง", price: 10000, score: 480, rate: 0.3, status: "Active" },

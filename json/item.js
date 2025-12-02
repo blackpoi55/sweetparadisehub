@@ -815,5 +815,13 @@ export const itemall = [
         "grouptype": "ทั่วไป",
         "getby": "ไอเท็มเริ่มต้น",
     },
+    {
+        "code": "timesetting",
+        "nameTH": "ท้องฟ้ายังเปลี่ยนสี",
+        "icon": "/images/items/timesetting.png",
+        "detail": "ใช้ปรับแต่งเวลา ท้องฟ้า และหมอก",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
+    },
     
 ]

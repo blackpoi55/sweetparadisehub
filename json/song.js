@@ -254,6 +254,18 @@ export const songall = [
     { name: "บังขายถั่ว - ไททศมิตร", songid: "120096696127577" },
     { name: "Amazing Thailand - ไททศมิตร", songid: "110865980514504" },
     { name: "เป็นตะลิโตน - ไททศมิตร", songid: "77604360570825" },
+    { name: "วันที่ฉันกลัว-Hobbit", songid: "119594369544247" },
+    { name: "ความกล้า-Hobbit", songid: "82777817143547" },
+    { name: "ถูกที่ผิดเวลา-Hobbit", songid: "91721038295828" },
+    { name: "Txrbo - เหลินขูน", songid: "91634397518682" },
+    { name: "LEGENDBOY - จิ๊กโก๋เมืองชัย", songid: "137783331793486" },
+    { name: "ลบ - Daimon", songid: "109178981451395" },
+    { name: "THUNX - โจรปล้นใจ", songid: "90875210293106" },
+    { name: "ล่องแม่ปิง - ออร์แกน", songid: "138899905410101" },
+    { name: "สาวเชียงใหม่ - ออร์แกน", songid: "107696454144643" },
+    { name: "ฮัก - แบม ไพลิน", songid: "118065105883922" },
+    { name: "อ้ายนี้ยังกอยอยู่-ออร์แกน", songid: "124116662347118" },
+    { name: "คุณนายตื่นสาย - TEMI", songid: "115667984936339" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -368,9 +380,9 @@ export const eventsongall = [
 ]
 
 export const keliasong = [
-   { name: "MIMICUCU", songid: "113795136878346" },
-   { name: "i love mama muntu", songid: "124649118735035" },
-   { name: "Bernadya ft. Adrian Khalif - Satu Bulan", songid: "127718197714157" },
-   { name: "Rombongan pondok koplo-calon mantu idaman", songid: "113241770326229" },
+    { name: "MIMICUCU", songid: "113795136878346" },
+    { name: "i love mama muntu", songid: "124649118735035" },
+    { name: "Bernadya ft. Adrian Khalif - Satu Bulan", songid: "127718197714157" },
+    { name: "Rombongan pondok koplo-calon mantu idaman", songid: "113241770326229" },
 
 ]

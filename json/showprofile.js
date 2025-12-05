@@ -750,4 +750,34 @@ export const shoeprofile = [
             },
         ],
     },
+    {
+        ocname: "จุ้นจ้าน",
+        icname: "KraTos",
+        icid: "Jarn_001",
+        caption: "ลองชากาแฟก่อนไหม ถ้าไม่ใช่ค่อยไปชาบู",
+        icimage: "/images/showprofile/icJarn_001.png",
+        ocimage: "/images/showprofile/ocJarn_001.png",
+        facebookurl: "",
+        instagramurl: "https://www.instagram.com/noc_ten_",
+        tiktokurl: "",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "Jarn_001",
+                donate: "800000",
+            },
+            {
+                whodonate: "Prae_pat",
+                donate: "1000000",
+            },
+            {
+                whodonate: "Hana_200778",
+                donate: "2000000",
+            },
+            {
+                whodonate: "Jarn_001",
+                donate: "100000",
+            },
+        ],
+    },
 ]

@@ -823,5 +823,36 @@ export const itemall = [
         "grouptype": "ทั่วไป",
         "getby": "ไอเท็มเริ่มต้น",
     },
-    
+    {
+        "code": "TextAFKHat",
+        "nameTH": "ป้ายAFK",
+        "icon": "/images/items/TextAFKHat.png",
+        "detail": "ป้ายคำพูด",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
+    },
+    {
+        "code": "TextShutHat",
+        "nameTH": "ป้ายหุบปาก",
+        "icon": "/images/items/TextShutHat.png",
+        "detail": "ป้ายคำพูด",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
+    },
+    {
+        "code": "TextSingleHat",
+        "nameTH": "ป้ายโสด",
+        "icon": "/images/items/TextSingleHat.png",
+        "detail": "ป้ายคำพูด",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
+    },
+    {
+        "code": "CustomSignTextTool",
+        "nameTH": "ป้ายปักพื้น",
+        "icon": "/images/items/CustomSignTextTool.png",
+        "detail": "ป้ายสำหรับปักพื้นเขียนข้อความ",
+        "grouptype": "อัญเชิญ",
+        "getby": "test",
+    },
 ]

@@ -532,6 +532,10 @@ export const shoeprofile = [
                 whodonate: "8xpd",
                 donate: "2500000",
             },
+            {
+                whodonate: "virusnam25",
+                donate: "1000000",
+            },
         ],
     },
     {
@@ -781,6 +785,24 @@ export const shoeprofile = [
             {
                 whodonate: "Jarn_001",
                 donate: "100000",
+            },
+        ],
+    },
+    {
+        ocname: "หนุงหนิง",
+        icname: "ซีน่า",
+        icid: "ening94",
+        caption: "ตัวเล็กสเปคใครไม่รู้",
+        icimage: "/images/showprofile/icening94.png",
+        ocimage: "/images/showprofile/ocening94.png",
+        facebookurl: "",
+        instagramurl: "https://www.instagram.com/nning_suruetai",
+        tiktokurl: "https://www.tiktok.com/@ning_37",
+        role: "Member",
+        donate: [
+            {
+                whodonate: "ening94",
+                donate: "50000",
             },
         ],
     },

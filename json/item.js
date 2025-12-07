@@ -855,4 +855,12 @@ export const itemall = [
         "grouptype": "อัญเชิญ",
         "getby": "test",
     },
+    {
+        "code": "LanternyellowTool",
+        "nameTH": "โคมไฟเหลืองพกพา",
+        "icon": "/images/items/LanternyellowTool.png",
+        "detail": "วางเพื่อเพิ่มความสว่าง",
+        "grouptype": "อัญเชิญ",
+        "getby": "test",
+    },
 ]

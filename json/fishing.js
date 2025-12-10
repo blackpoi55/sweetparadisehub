@@ -80,6 +80,7 @@ export const fishall = [
     { name: "ปลาคราฟจักรพรรดิ์เรนโบว์", rarity: "สายรุ้ง", price: 150000, score: 1560, rate: 0.003, status: "Active" },
     { name: "วาฬจักรวาลสีรุ้ง", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.002, status: "Active" },
     { name: "ปลาTeenสีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
+    { name: "เรือน้อยคอยรักสีรุ้ง", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.002, status: "Active" },
 ]
 export const trashall = [
     { name: "สาหร่าย", type: "trash", rate: 14 },
@@ -106,6 +107,7 @@ export const fishgiveitem = [
     { fishname: "ปลาTeenสีรุ้ง", itemname: "ขมับแม่ม", itemimage: "/images/items/SlipperSlap.png" },
     { fishname: "วาฬจักรวาลสีรุ้ง", itemname: "ตู้ปลาหรรษาเล็ก", itemimage: "/images/items/FishTankSmallTool.png" },
     { fishname: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", itemname: "เบ็ดคริสต์มาส", itemimage: "/images/items/ChristmasRod.png" },
+    { fishname: "เรือน้อยคอยรักสีรุ้ง", itemname: "อัญเชิญเรือจิ๋ว", itemimage: "/images/items/BoatminiTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

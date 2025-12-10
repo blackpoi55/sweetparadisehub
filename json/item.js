@@ -575,6 +575,14 @@ export const itemall = [
         "grouptype": "ทั่วไป",
         "getby": "ไอเท็มเริ่มต้น",
     },
+     {
+        "code": "Boommic",
+        "nameTH": "ไมค์ยาว",
+        "icon": "/images/items/Boommic.png",
+        "detail": "ไมค์ยาว",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
+    },
     {
         "code": "CarskylabTool",
         "nameTH": "อัญเชิญมอไซค์รถตุ๊กๆ",

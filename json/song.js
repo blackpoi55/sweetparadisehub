@@ -297,6 +297,14 @@ export const songall = [
     { name: "ละลาย - Fora Kwan", songid: "79202457924349" },
     { name: "ริมหาดทราย - Z9", songid: "87346873176082" },
     { name: "ว่าแต่ผู้สาว - ตาเนม", songid: "76012179904602" },
+    { name: "ขาดใจ - แพนเค้ก", songid: "95813736354624" },
+    { name: "ความคิดถึงไม่พึ่งปาฏิหาริย์-แพนเค้ก", songid: "121000985549375" },
+    { name: "แผ่วปลาย - Freshen", songid: "135926111193604" },
+    { name: "จริงใจไม่จริงจัง-แพนเค้ก", songid: "128181158622854" },
+    { name: "วันแห่งความรัก-แพนเค้ก", songid: "80949856158426" },
+    { name: "สวมเขา - แพรว", songid: "94825328350370" },
+    { name: "ถึงเวลาก็ลืมเอง - อะตอม", songid: "104048983867238" },
+    { name: "Uncle Ben - เพลงก่อนนอน", songid: "116296046508001" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -413,7 +421,7 @@ export const foreignsongall = [
     { name: "ส้วมตันส้วมตั้น", songid: "105250772279482" },
     { name: "Nyanpasu", songid: "86610816786025" },
 ]
-export const keliasong = [ 
+export const keliasong = [
     { name: "MIMICUCU", songid: "113795136878346" },
     { name: "i love mama muntu", songid: "124649118735035" },
     { name: "Bernadya ft. Adrian Khalif - Satu Bulan", songid: "127718197714157" },

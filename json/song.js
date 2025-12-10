@@ -416,6 +416,7 @@ export const eventsongall = [
     { name: "Do You Want to Build a Snowman (Piano Cover)", songid: "103831309416932" },
     { name: "มวยไทย", songid: "1837213982" },
     { name: "เหมียวๆ", songid: "105276875646446" },
+    { name: "องค์หญิงปิ๊ใหญ่", songid: "130072526467957" },
 ]
 export const foreignsongall = [
     { name: "ส้วมตันส้วมตั้น", songid: "105250772279482" },

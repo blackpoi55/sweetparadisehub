@@ -870,5 +870,13 @@ export const itemall = [
         "detail": "วางเพื่อเพิ่มความสว่าง",
         "grouptype": "อัญเชิญ",
         "getby": "test",
+    }, 
+    {
+        "code": "CinemaCamera",
+        "nameTH": "ถ่ายหนัง",
+        "icon": "/images/items/CinemaCamera.png",
+        "detail": "ใช้เพื่อถ่ายทำวิดีโอ แพลนกล้องสวยๆ",
+        "grouptype": "ทั่วไป",
+        "getby": "ไอเท็มเริ่มต้น",
     },
 ]

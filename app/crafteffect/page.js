@@ -192,7 +192,7 @@ export default function RunFXCraftTablePage() {
                   <div className="col-span-4">Name</div>
                   <div className="col-span-3">Effect</div>
                   <div className="col-span-1 text-right">Rate</div>
-                  <div className="col-span-1 text-right">Req</div>
+                  <div className="col-span-1 text-right">Level</div>
                   <div className="col-span-2 text-right">Cost</div>
                 </div>
 

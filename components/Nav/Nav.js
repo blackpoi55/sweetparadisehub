@@ -10,6 +10,7 @@ const navItems = [
     { href: "/items", label: "ไอเท็ม" },
     { href: "/song", label: "เพลง" },
     { href: "/fishing", label: "ตกปลา" },
+    { href: "/crafteffect", label: "คราฟเอฟเฟค" },
     { href: "/event", label: "กิจกรรม" },
     { href: "/marketitems", label: "เจ้าของไอเทม" },
     { href: "/map", label: "แผนที่" },

@@ -305,6 +305,10 @@ export const songall = [
     { name: "สวมเขา - แพรว", songid: "94825328350370" },
     { name: "ถึงเวลาก็ลืมเอง - อะตอม", songid: "104048983867238" },
     { name: "Uncle Ben - เพลงก่อนนอน", songid: "116296046508001" },
+    { name: "แหลก-Season Five", songid: "101951729912373" },
+    { name: "จันทร์สะท้อนใจ - Kamin", songid: "104712515700962" },
+    { name: "When I Fall In Love - แมทธิว", songid: "102009036542910" },
+    { name: "ลืม - ขอนแก่น", songid: "116185071155984" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },

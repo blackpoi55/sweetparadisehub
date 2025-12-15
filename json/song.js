@@ -102,7 +102,7 @@ export const songall = [
     { name: "รองเท้าเก่า - tattoo colour", songid: "108475157409698" },
     { name: "โดยปราศจากฉัน - WHATFALSE", songid: "76755570595326" },
     { name: "ขอใจเธอแลกเบอร์โทร - หญิงลี", songid: "75800932505947" },
-    { name: "รักแรกพบ - Tattoo Colour", songid: "106588597331822" },
+    { name: "จำทำไม - Tattoo colour", songid: "106588597331822" },
     { name: "คิดยาว - Television off", songid: "115282322915505" },
     { name: "ร่มสีเทา - วัชราวลี", songid: "109289410716806" },
     { name: "ArchySay It (Visualizer)", songid: "104053959706054" },

@@ -397,7 +397,7 @@ export const itemall = [
         "icon": "/images/items/BoatminiTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "test",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "RedPlasticChairTool",
@@ -613,7 +613,7 @@ export const itemall = [
         "icon": "/images/items/MotorHorseTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "test",
+        "getby": "Pass",
     },
     {
         "code": "MotorDinoTool",
@@ -621,7 +621,7 @@ export const itemall = [
         "icon": "/images/items/MotorDinoTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "test",
+        "getby": "Pass",
     },
     {
         "code": "Minion",
@@ -661,7 +661,7 @@ export const itemall = [
         "icon": "/images/items/Slapcolorflash.png",
         "detail": "มือตบหน้าจอหลายสี+สกิลหน้าจอหลายสี คลูดาวน์ ตบ 1 นาที 20 วินาที สกิล  1 นาที 20 วินาที",
         "grouptype": "มือตบ",
-        "getby": "test",
+        "getby": "เป็นเทพเซียน",
     },
     {
         "code": "Slapemoji_rain",
@@ -861,7 +861,7 @@ export const itemall = [
         "icon": "/images/items/CustomSignTextTool.png",
         "detail": "ป้ายสำหรับปักพื้นเขียนข้อความ",
         "grouptype": "อัญเชิญ",
-        "getby": "test",
+        "getby": "เป็นเทพเซียน",
     },
     {
         "code": "LanternyellowTool",
@@ -869,7 +869,7 @@ export const itemall = [
         "icon": "/images/items/LanternyellowTool.png",
         "detail": "วางเพื่อเพิ่มความสว่าง",
         "grouptype": "อัญเชิญ",
-        "getby": "test",
+        "getby": "เป็นเทพเซียน",
     }, 
     {
         "code": "CinemaCamera",

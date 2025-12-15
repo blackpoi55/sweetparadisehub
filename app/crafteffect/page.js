@@ -1,42 +1,8 @@
 'use client'
 
+import { craftgiveitem, LEVELS } from '@/json/craftfx'
 import React, { useMemo, useState } from 'react'
 
-/** ========= DATA =========
- * ใส่รายการจาก RunFXConfig ของคุณได้เลย
- * baseChance ควรเป็น 0..1
- */
-const LEVELS = [
-  { lv: 1,  name: 'Trail Feet White',  desc: 'เส้นลมวิ่ง ซ้ายขวา สีขาว',  baseChance: 0.60, reqLevel: 20,  costMoney: 50000,  costFishing: 50,  effectType: 'TRAIL_FEET_White' },
-  { lv: 2,  name: 'Trail Feet Green',  desc: 'เส้นลมวิ่ง ซ้ายขวา เขียว',  baseChance: 0.58, reqLevel: 20,  costMoney: 50000,  costFishing: 50,  effectType: 'TRAIL_FEET_Green' },
-  { lv: 3,  name: 'Trail Feet Blue',   desc: 'เส้นลมวิ่ง ซ้ายขวา ฟ้า',    baseChance: 0.56, reqLevel: 20,  costMoney: 50000,  costFishing: 50,  effectType: 'TRAIL_FEET_Blue' },
-  { lv: 4,  name: 'Trail Feet Pink',   desc: 'เส้นลมวิ่ง ซ้ายขวา ชมพู',   baseChance: 0.54, reqLevel: 20,  costMoney: 50000,  costFishing: 50,  effectType: 'TRAIL_FEET_Pink' },
-
-  { lv: 5,  name: 'Spark Steps White', desc: 'ประกายสปาร์คตอนก้าวเท้า สีขาว', baseChance: 0.50, reqLevel: 50,  costMoney: 100000, costFishing: 100, effectType: 'SPARK_STEPS_White' },
-  { lv: 6,  name: 'Spark Steps Green', desc: 'ประกายสปาร์คตอนก้าวเท้า เขียว',  baseChance: 0.48, reqLevel: 50,  costMoney: 100000, costFishing: 100, effectType: 'SPARK_STEPS_Green' },
-  { lv: 7,  name: 'Spark Steps Blue',  desc: 'ประกายสปาร์คตอนก้าวเท้า ฟ้า',    baseChance: 0.46, reqLevel: 50,  costMoney: 100000, costFishing: 100, effectType: 'SPARK_STEPS_Blue' },
-  { lv: 8,  name: 'Spark Steps Pink',  desc: 'ประกายสปาร์คตอนก้าวเท้า ชมพู',   baseChance: 0.44, reqLevel: 50,  costMoney: 100000, costFishing: 100, effectType: 'SPARK_STEPS_Pink' },
-
-  { lv: 9,  name: 'Wind Ring White',   desc: 'วงลมใต้ตัว สีขาว',   baseChance: 0.40, reqLevel: 100, costMoney: 200000, costFishing: 150, effectType: 'WIND_RING_White' },
-  { lv: 10, name: 'Wind Ring Green',   desc: 'วงลมใต้ตัว เขียว',  baseChance: 0.38, reqLevel: 100, costMoney: 200000, costFishing: 150, effectType: 'WIND_RING_Green' },
-  { lv: 11, name: 'Wind Ring Blue',    desc: 'วงลมใต้ตัว ฟ้า',    baseChance: 0.36, reqLevel: 100, costMoney: 200000, costFishing: 150, effectType: 'WIND_RING_Blue' },
-  { lv: 12, name: 'Wind Ring Pink',    desc: 'วงลมใต้ตัว ชมพู',   baseChance: 0.34, reqLevel: 100, costMoney: 200000, costFishing: 150, effectType: 'WIND_RING_Pink' },
-
-  { lv: 13, name: 'Dust Burst White',  desc: 'ฝุ่นปะทุเป็นจังหวะ สีขาว', baseChance: 0.30, reqLevel: 500, costMoney: 300000, costFishing: 200, effectType: 'DUST_BURST_White' },
-  { lv: 14, name: 'Dust Burst Green',  desc: 'ฝุ่นปะทุเป็นจังหวะ เขียว',  baseChance: 0.28, reqLevel: 500, costMoney: 300000, costFishing: 200, effectType: 'DUST_BURST_Green' },
-  { lv: 15, name: 'Dust Burst Blue',   desc: 'ฝุ่นปะทุเป็นจังหวะ ฟ้า',    baseChance: 0.26, reqLevel: 500, costMoney: 300000, costFishing: 200, effectType: 'DUST_BURST_Blue' },
-  { lv: 16, name: 'Dust Burst Pink',   desc: 'ฝุ่นปะทุเป็นจังหวะ ชมพู',   baseChance: 0.24, reqLevel: 500, costMoney: 300000, costFishing: 200, effectType: 'DUST_BURST_Pink' },
-
-  { lv: 17, name: 'Heart Runner White', desc: 'รอยเท้ารูปหัวใจ สีขาว', baseChance: 0.20, reqLevel: 1000, costMoney: 400000, costFishing: 250, effectType: 'HEART_White' },
-  { lv: 18, name: 'Heart Runner Green', desc: 'รอยเท้ารูปหัวใจ เขียว',  baseChance: 0.18, reqLevel: 1000, costMoney: 400000, costFishing: 250, effectType: 'HEART_Green' },
-  { lv: 19, name: 'Heart Runner Blue',  desc: 'รอยเท้ารูปหัวใจ ฟ้า',    baseChance: 0.16, reqLevel: 1000, costMoney: 400000, costFishing: 250, effectType: 'HEART_Blue' },
-  { lv: 20, name: 'Heart Runner Pink',  desc: 'รอยเท้ารูปหัวใจ ชมพู',   baseChance: 0.14, reqLevel: 1000, costMoney: 400000, costFishing: 250, effectType: 'HEART_Pink' },
-
-  { lv: 21, name: 'Aura Runner White', desc: 'ออร่าหมอกรอบตัว สีขาว', baseChance: 0.10, reqLevel: 1500, costMoney: 500000, costFishing: 300, effectType: 'AURA_White' },
-  { lv: 22, name: 'Aura Runner Green', desc: 'ออร่าหมอกรอบตัว เขียว',  baseChance: 0.08, reqLevel: 1500, costMoney: 500000, costFishing: 300, effectType: 'AURA_Green' },
-  { lv: 23, name: 'Aura Runner Blue',  desc: 'ออร่าหมอกรอบตัว ฟ้า',    baseChance: 0.06, reqLevel: 1500, costMoney: 500000, costFishing: 300, effectType: 'AURA_Blue' },
-  { lv: 24, name: 'Aura Runner Pink',  desc: 'ออร่าหมอกรอบตัว ชมพู',   baseChance: 0.04, reqLevel: 1500, costMoney: 500000, costFishing: 300, effectType: 'AURA_Pink' },
-]
 
 /** ========= helpers ========= */
 const fmtNum = (n) => {
@@ -90,7 +56,6 @@ export default function RunFXCraftTablePage() {
         <div className="absolute -top-24 left-1/2 h-[380px] w-[780px] -translate-x-1/2 rounded-full bg-pink-500/10 blur-3xl" />
         <div className="absolute -bottom-24 right-1/4 h-[320px] w-[640px] rounded-full bg-fuchsia-500/10 blur-3xl" />
       </div>
-
       <div className="relative mx-auto w-full max-w-[1280px] px-4 py-8">
         {/* Header card (Hub vibe) */}
         <div className="mb-4 overflow-hidden rounded-3xl border border-pink-500/15 bg-neutral-950/50 shadow-[0_0_0_1px_rgba(236,72,153,0.08)]">
@@ -117,6 +82,27 @@ export default function RunFXCraftTablePage() {
           </div>
         </div>
 
+        <section className="mt-8 md:mt-10">
+          <div className="mb-3 flex items-center justify-between gap-2">
+            <div>
+              <h2 className="text-sm font-semibold text-pink-50 md:text-base">
+                 ไอเท็มพิเศษที่ได้รับจากการคราฟเอฟเฟค
+              </h2>
+              <p className="text-[11px] text-pink-200/80 md:text-xs">
+                รายการไอเท็มพิเศษที่จะได้รับเมื่อคราฟเอฟเฟคตามระดับที่กำหนด
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 mb-2">
+            {craftgiveitem.map((entry) => (
+              <CraftfxToItemCard
+                key={entry.craftlevel + entry.itemname}
+                entry={entry}
+              />
+            ))}
+          </div>
+        </section>
         {/* Controls */}
         <div className="mb-4 grid grid-cols-1 gap-2 md:grid-cols-12 md:items-center">
           <div className="md:col-span-6">
@@ -328,4 +314,44 @@ export default function RunFXCraftTablePage() {
       </div>
     </div>
   )
+}
+
+function CraftfxToItemCard({ entry }) {
+  return (
+    <article className="group flex flex-col gap-3 rounded-2xl border border-pink-500/30 bg-black/80 p-4 text-xs text-pink-50 shadow-sm transition hover:-translate-y-1 hover:border-pink-400/80 hover:shadow-pink-500/40 md:flex-row md:items-center md:text-sm">
+      <div className="flex-1">
+        <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-pink-200/90">
+          เลเวลคราฟเอฟเฟคที่กำหนด:
+        </div>
+        <div className="mt-1 text-sm font-semibold text-pink-50 md:text-base">
+          {entry.craftlevel}
+        </div>
+        <div className="mt-2 text-[11px] text-pink-200/80">
+          จะได้รับไอเท็มสุดพิเศษต่อไปนี้:
+        </div>
+      </div>
+      <div className="flex flex-1 items-center gap-3 md:justify-end">
+        <div className="hidden text-lg md:block">💥</div>
+        <div className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-pink-500/10 px-3 py-2">
+          {entry.itemimage && (
+            <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-pink-500/40 via-fuchsia-500/30 to-slate-900">
+              <img
+                src={entry.itemimage}
+                alt={entry.itemname}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          )}
+          <div className="min-w-0">
+            <div className="text-[11px] text-pink-200/80">
+              ไอเท็มที่ได้รับ
+            </div>
+            <div className="truncate text-sm font-semibold text-pink-50">
+              {entry.itemname}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
 }

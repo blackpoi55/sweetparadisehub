@@ -102,7 +102,7 @@ export const songall = [
     { name: "รองเท้าเก่า - tattoo colour", songid: "108475157409698" },
     { name: "โดยปราศจากฉัน - WHATFALSE", songid: "76755570595326" },
     { name: "ขอใจเธอแลกเบอร์โทร - หญิงลี", songid: "75800932505947" },
-    { name: "รักแรกพบ - Tattoo Colour", songid: "106588597331822" },
+    { name: "จำทำไม - Tattoo colour", songid: "106588597331822" },
     { name: "คิดยาว - Television off", songid: "115282322915505" },
     { name: "ร่มสีเทา - วัชราวลี", songid: "109289410716806" },
     { name: "ArchySay It (Visualizer)", songid: "104053959706054" },
@@ -305,6 +305,10 @@ export const songall = [
     { name: "สวมเขา - แพรว", songid: "94825328350370" },
     { name: "ถึงเวลาก็ลืมเอง - อะตอม", songid: "104048983867238" },
     { name: "Uncle Ben - เพลงก่อนนอน", songid: "116296046508001" },
+    { name: "แหลก-Season Five", songid: "101951729912373" },
+    { name: "จันทร์สะท้อนใจ - Kamin", songid: "104712515700962" },
+    { name: "When I Fall In Love - แมทธิว", songid: "102009036542910" },
+    { name: "ลืม - ขอนแก่น", songid: "116185071155984" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },

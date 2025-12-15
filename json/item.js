@@ -878,5 +878,13 @@ export const itemall = [
         "detail": "ใช้เพื่อถ่ายทำวิดีโอ แพลนกล้องสวยๆ",
         "grouptype": "ทั่วไป",
         "getby": "ไอเท็มเริ่มต้น",
+    }, 
+    {
+        "code": "GlowStick",
+        "nameTH": "แท่งหรรษา",
+        "icon": "/images/items/GlowStick.png",
+        "detail": "แสงเส้นหลากสี",
+        "grouptype": "ทั่วไป",
+        "getby": "test",
     },
 ]

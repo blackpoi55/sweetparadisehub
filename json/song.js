@@ -309,6 +309,7 @@ export const songall = [
     { name: "จันทร์สะท้อนใจ - Kamin", songid: "104712515700962" },
     { name: "When I Fall In Love - แมทธิว", songid: "102009036542910" },
     { name: "ลืม - ขอนแก่น", songid: "116185071155984" },
+    { name: "กลัวความเสียใจ - SARAN", songid: "75107013848013" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },

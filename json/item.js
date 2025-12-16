@@ -884,7 +884,7 @@ export const itemall = [
         "nameTH": "แท่งหรรษา",
         "icon": "/images/items/GlowStick.png",
         "detail": "แสงเส้นหลากสี",
-        "grouptype": "ทั่วไป",
-        "getby": "test",
+        "grouptype": "เดินทาง",
+        "getby": "ซื้อ Pass",
     },
 ]

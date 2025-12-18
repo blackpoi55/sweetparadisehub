@@ -665,17 +665,17 @@ export const shoeprofile = [
     {
         ocname: "เชอร์รี่",
         icname: "เชอร์รี่",
-        icid: "supichaya06",
+        icid: "Mysteria_ST",
         caption: "คนนั้นที่ว่าเด็ด สู้หมาเด็กแบบเค้าได้ไหม",
-        icimage: "/images/showprofile/icsupichaya06.png",
-        ocimage: "/images/showprofile/ocsupichaya06.png",
+        icimage: "/images/showprofile/icMysteria_ST.png",
+        ocimage: "/images/showprofile/ocMysteria_ST.png",
         facebookurl: "",
         instagramurl: "",
         tiktokurl: "https://www.tiktok.com/@ch3rry._ch",
         role: "Member",
         donate: [
             {
-                whodonate: "supichaya06",
+                whodonate: "Mysteria_ST",
                 donate: "1000000",
             },
             {
@@ -687,7 +687,7 @@ export const shoeprofile = [
                 donate: "300000",
             },
             {
-                whodonate: "supichaya06",
+                whodonate: "Mysteria_ST",
                 donate: "500000",
             },
             {
@@ -707,7 +707,7 @@ export const shoeprofile = [
                 donate: "2220000",
             },
             {
-                whodonate: "supichaya06",
+                whodonate: "Mysteria_ST",
                 donate: "800000",
             },
         ],

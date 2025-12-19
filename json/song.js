@@ -311,6 +311,8 @@ export const songall = [
     { name: "ลืม - ขอนแก่น", songid: "116185071155984" },
     { name: "กลัวความเสียใจ - SARAN", songid: "75107013848013" },
     { name: "ที่ว่างของความเสียใจ-นัตตี้", songid: "136408159475806" },
+    { name: "ยื้อ - เบนชลาทิศ", songid: "103930483242174" },
+    { name: "Room39 - Restart", songid: "113980686474926" }, 
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -396,7 +398,7 @@ export const djsongall = [
     { name: "โดนของ", songid: "83362807615938" },
     { name: "ชาติหน้าอาจไม่มีจริง", songid: "88683369308860" },
     { name: "แกล้งngo", songid: "77498299560423" },
-    { name: "ลูกเทวดาเขมร", songid: "84773128096693" },
+    { name: "ลูกเทวดาเขมร", songid: "84773128096693" }, 
 ]
 export const muansongall = [
     { name: "หักคอไอ้เท่ง - ลำไย", songid: "118537352258828" },
@@ -462,6 +464,15 @@ export const eventsongall = [
     { name: "มวยไทย", songid: "1837213982" },
     { name: "เหมียวๆ", songid: "105276875646446" },
     { name: "องค์หญิงปิ๊ใหญ่", songid: "130072526467957" },
+    { name: "Sweet Paradis สวรรค์หวานเจี๊ยบ TH", songid: "100859381575722" },
+    { name: "Sweet Paradise Rap TH", songid: "126251655214637" },
+    { name: "Sweet Paradises anime TH", songid: "107101206913065" },
+    { name: "Sweet Paradise แก๊งสเตอร์ TH", songid: "75360181027558" },
+    { name: "Sweet Paradise สวรรค์หวานเจี๊ยบ ไทยแก๊ง TH", songid: "104465098066194" },
+    { name: "Sweet Paradise Sa Whan Whran Jeab EN 1", songid: "91147569775612" },
+    { name: "Sweet Paradise Sa Whan Whran Jeab EN 2", songid: "116407390476725" },
+    { name: "Sweet Paradise Sa Whan Whran Jeab EN 3", songid: "132147068212658" },
+    { name: "Sweet Paradise Sa Whan Whran Jeab EN 4", songid: "70970131092123" }, 
 ]
 export const foreignsongall = [
     { name: "ส้วมตันส้วมตั้น", songid: "105250772279482" },

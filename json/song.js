@@ -313,6 +313,7 @@ export const songall = [
     { name: "ที่ว่างของความเสียใจ-นัตตี้", songid: "136408159475806" },
     { name: "ยื้อ - เบนชลาทิศ", songid: "103930483242174" },
     { name: "Room39 - Restart", songid: "113980686474926" }, 
+    { name: "ATLAS - แกล้งลืม", songid: "103714497113516" }, 
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },

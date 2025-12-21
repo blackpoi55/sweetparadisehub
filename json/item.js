@@ -887,4 +887,12 @@ export const itemall = [
         "grouptype": "เดินทาง",
         "getby": "ซื้อ Pass",
     },
+    {
+        "code": "changeskincambo",
+        "nameTH": "เสกCambo",
+        "icon": "/images/items/changeskincambo.png",
+        "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น Cambo",
+        "grouptype": "แกล้ง",
+        "getby": "ซื้อ Pass",
+    },
 ]

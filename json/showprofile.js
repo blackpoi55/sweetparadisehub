@@ -756,28 +756,28 @@ export const shoeprofile = [
             },
         ],
     },
-    {
-        ocname: "-",
-        icname: "gimme",
-        icid: "skittyhomi",
-        caption: "แมวส้ม แมวส้วม แมวเป้า",
-        icimage: "/images/showprofile/icskittyhomi.png",
-        ocimage: "/images/showprofile/ocskittyhomi.png",
-        facebookurl: "",
-        instagramurl: "",
-        tiktokurl: "",
-        role: "Member",
-        donate: [
-            {
-                whodonate: "skittyhomi",
-                donate: "500000",
-            },
-            {
-                whodonate: "Psuae24",
-                donate: "2000000",
-            },
-        ],
-    },
+    // {
+    //     ocname: "-",
+    //     icname: "gimme",
+    //     icid: "skittyhomi",
+    //     caption: "แมวส้ม แมวส้วม แมวเป้า",
+    //     icimage: "/images/showprofile/icskittyhomi.png",
+    //     ocimage: "/images/showprofile/ocskittyhomi.png",
+    //     facebookurl: "",
+    //     instagramurl: "",
+    //     tiktokurl: "",
+    //     role: "Member",
+    //     donate: [
+    //         {
+    //             whodonate: "skittyhomi",
+    //             donate: "500000",
+    //         },
+    //         {
+    //             whodonate: "Psuae24",
+    //             donate: "2000000",
+    //         },
+    //     ],
+    // },
     {
         ocname: "จุ้นจ้าน",
         icname: "KraTos",

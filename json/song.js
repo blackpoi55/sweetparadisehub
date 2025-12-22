@@ -314,6 +314,10 @@ export const songall = [
     { name: "ยื้อ - เบนชลาทิศ", songid: "103930483242174" },
     { name: "Room39 - Restart", songid: "113980686474926" }, 
     { name: "ATLAS - แกล้งลืม", songid: "103714497113516" }, 
+    { name: "ขอใครสักคน - Leo Putt", songid: "81917627919071" }, 
+    { name: "ขอเพียงโอกาส - สุนทรี", songid: "99932011283387" }, 
+    { name: "เธอกลับมาฯ - Bandwagon", songid: "90379292717407" }, 
+    { name: "รู้สึกอย่างไร - Raptor", songid: "74242353205599" },  
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },

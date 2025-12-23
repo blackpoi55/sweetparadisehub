@@ -312,12 +312,23 @@ export const songall = [
     { name: "กลัวความเสียใจ - SARAN", songid: "75107013848013" },
     { name: "ที่ว่างของความเสียใจ-นัตตี้", songid: "136408159475806" },
     { name: "ยื้อ - เบนชลาทิศ", songid: "103930483242174" },
-    { name: "Room39 - Restart", songid: "113980686474926" }, 
-    { name: "ATLAS - แกล้งลืม", songid: "103714497113516" }, 
-    { name: "ขอใครสักคน - Leo Putt", songid: "81917627919071" }, 
-    { name: "ขอเพียงโอกาส - สุนทรี", songid: "99932011283387" }, 
-    { name: "เธอกลับมาฯ - Bandwagon", songid: "90379292717407" }, 
-    { name: "รู้สึกอย่างไร - Raptor", songid: "74242353205599" },  
+    { name: "Room39 - Restart", songid: "113980686474926" },
+    { name: "ATLAS - แกล้งลืม", songid: "103714497113516" },
+    { name: "ขอใครสักคน - Leo Putt", songid: "81917627919071" },
+    { name: "ขอเพียงโอกาส - สุนทรี", songid: "99932011283387" },
+    { name: "เธอกลับมาฯ - Bandwagon", songid: "90379292717407" },
+    { name: "รู้สึกอย่างไร - Raptor", songid: "74242353205599" },
+    { name: "เพ้อเจ้อ - Alarm 9", songid: "90361054408686" },
+    { name: "แฟน - Lipta", songid: "77784624467557" },
+    { name: "เพลงส่วนบุคคล -  fellow fellow", songid: "115169077821103" },
+    { name: "17 - dept", songid: "109639498702909" },
+    { name: "ข้างกาย - Safeplanet", songid: "114681206499665" },
+    { name: "รู้งี้เป็นแฟนกันตั้งนานแล้ว - Three Man Down", songid: "83205632867427" },
+    { name: "Merry Kiss Me -  2Ectasy", songid: "134053695054418" },
+    { name: "รักไม่รัก  - PONCHET", songid: "108694573612379" },
+    { name: "ลิตเติ้ลจ้อนห์ Jeaw Lek - สามานย์", songid: "129471769085134" },
+    { name: "ทำไมต้องรักเธอ - คริส หอวัง x อุ๋ย Buddha Bless", songid: "138179051521730" },
+    { name: "ปฏิเสธอย่างไร - Lipta", songid: "91513776327377" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -403,7 +414,7 @@ export const djsongall = [
     { name: "โดนของ", songid: "83362807615938" },
     { name: "ชาติหน้าอาจไม่มีจริง", songid: "88683369308860" },
     { name: "แกล้งngo", songid: "77498299560423" },
-    { name: "ลูกเทวดาเขมร", songid: "84773128096693" }, 
+    { name: "ลูกเทวดาเขมร", songid: "84773128096693" },
 ]
 export const muansongall = [
     { name: "หักคอไอ้เท่ง - ลำไย", songid: "118537352258828" },
@@ -477,7 +488,7 @@ export const eventsongall = [
     { name: "Sweet Paradise Sa Whan Whran Jeab EN 1", songid: "91147569775612" },
     { name: "Sweet Paradise Sa Whan Whran Jeab EN 2", songid: "116407390476725" },
     { name: "Sweet Paradise Sa Whan Whran Jeab EN 3", songid: "132147068212658" },
-    { name: "Sweet Paradise Sa Whan Whran Jeab EN 4", songid: "70970131092123" }, 
+    { name: "Sweet Paradise Sa Whan Whran Jeab EN 4", songid: "70970131092123" },
 ]
 export const foreignsongall = [
     { name: "ส้วมตันส้วมตั้น", songid: "105250772279482" },

@@ -610,36 +610,36 @@ export const shoeprofile = [
             },
         ],
     },
-    {
-        ocname: "เฟิร์น",
-        icname: "เฟิร์น",
-        icid: "Fxrern07",
-        caption: "ไม่มีลิมิต ชีวิตนอนน้อย",
-        icimage: "/images/showprofile/icFxrern07.png",
-        ocimage: "/images/showprofile/ocFxrern07.png",
-        facebookurl: "",
-        instagramurl: "",
-        tiktokurl: "",
-        role: "Member",
-        donate: [
-            {
-                whodonate: "Fxrern07",
-                donate: "500000",
-            },
-            {
-                whodonate: "Prae_pat",
-                donate: "800000",
-            },
-            {
-                whodonate: "crazyZA555",
-                donate: "1800000",
-            },
-            {
-                whodonate: "Prae_pat",
-                donate: "1200000",
-            },
-        ],
-    },
+    // {
+    //     ocname: "เฟิร์น",
+    //     icname: "เฟิร์น",
+    //     icid: "Fxrern07",
+    //     caption: "ไม่มีลิมิต ชีวิตนอนน้อย",
+    //     icimage: "/images/showprofile/icFxrern07.png",
+    //     ocimage: "/images/showprofile/ocFxrern07.png",
+    //     facebookurl: "",
+    //     instagramurl: "",
+    //     tiktokurl: "",
+    //     role: "Member",
+    //     donate: [
+    //         {
+    //             whodonate: "Fxrern07",
+    //             donate: "500000",
+    //         },
+    //         {
+    //             whodonate: "Prae_pat",
+    //             donate: "800000",
+    //         },
+    //         {
+    //             whodonate: "crazyZA555",
+    //             donate: "1800000",
+    //         },
+    //         {
+    //             whodonate: "Prae_pat",
+    //             donate: "1200000",
+    //         },
+    //     ],
+    // },
     {
         ocname: "สายขิม",
         icname: "เดอบรอย",

@@ -329,6 +329,11 @@ export const songall = [
     { name: "ลิตเติ้ลจ้อนห์ Jeaw Lek - สามานย์", songid: "129471769085134" },
     { name: "ทำไมต้องรักเธอ - คริส หอวัง x อุ๋ย Buddha Bless", songid: "138179051521730" },
     { name: "ปฏิเสธอย่างไร - Lipta", songid: "91513776327377" },
+    { name: "ขี้หึง - ซิลลี่ ฟูลล์", songid: "82913371231154" },
+    { name: "องศาเดียว - Cream", songid: "109131120876629" },
+    { name: "มอง 2568 - YOUNGOHM", songid: "114083937708696" },
+    { name: "อ๊ะป่าว - The 38 Years Ago", songid: "115553450896970" },
+    { name: "ข้าแค่โดนทิ้ง - little john", songid: "70991426043154" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },

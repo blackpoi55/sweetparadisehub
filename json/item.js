@@ -331,9 +331,9 @@ export const itemall = [
         "code": "Rocketrandom",
         "nameTH": "พลุเล็ก",
         "icon": "/images/items/Rocketrandom.png",
-        "detail": "พลุขนาดเล็ก",
+        "detail": "พลุขนาดเล็ก ฉลองวันปีใหม่",
         "grouptype": "ทั่วไป",
-        "getby": "test",
+        "getby": "ร้านค้า Admin Note",
     },
     {
         "code": "Textboard",

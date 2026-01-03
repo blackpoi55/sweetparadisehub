@@ -894,5 +894,21 @@ export const itemall = [
         "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น Cambo",
         "grouptype": "แกล้ง",
         "getby": "ซื้อ Pass",
-    },
+    }, 
+    {
+        "code": "Hoverboardlevel24",
+        "nameTH": "บอร์ดเทพเซียน",
+        "icon": "/images/items/Hoverboardlevel24.png",
+        "detail": "บอร์ดสำหรับขี่",
+        "grouptype": "เดินทาง",
+        "getby": "เป็นเทพเซียน",
+    }, 
+    {
+        "code": "Hoverboardpink",
+        "nameTH": "บอร์ดชมพู",
+        "icon": "/images/items/Hoverboardpink.png",
+        "detail": "บอร์ดสำหรับขี่",
+        "grouptype": "เดินทาง",
+        "getby": "test",
+    }, 
 ]

@@ -34,5 +34,7 @@ export const craftgiveitem = [
     { craftlevel: "10", itemname: "โคมไฟเหลืองพกพา", itemimage: "/images/items/LanternyellowTool.png" },
     { craftlevel: "15", itemname: "ป้ายปักพื้น", itemimage: "/images/items/CustomSignTextTool.png" },
     { craftlevel: "20", itemname: "ตบแสงสี", itemimage: "/images/items/Slapcolorflash.png" }, 
+    { craftlevel: "20", itemname: "กระโดดกลางอากาศ+1", itemimage: "/images/items/airjump.png" }, 
     { craftlevel: "24", itemname: "บอร์ดเทพเซียน", itemimage: "/images/items/Hoverboardlevel24.png" }, 
+    { craftlevel: "24", itemname: "กระโดดกลางอากาศ+1", itemimage: "/images/items/airjump.png" }, 
 ] 

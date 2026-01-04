@@ -339,6 +339,17 @@ export const songall = [
     { name: "อยู่คนเดียว - เบิร์ด ธงไชย", songid: "101875614405190" },
     { name: "อาวรณ์ - POLYCAT", songid: "107981193722612" },
     { name: "ไทม์แมชชีน - ปอน นิพนธ์", songid: "117830412240035" },
+    { name: "ผ้าเหลืองเคืองสีกา - หมูเติ้ล", songid: "73510299358070" },
+    { name: "Tilly Birds - กระแซะเข้ามาซิ ", songid: "75220291040298" },
+    { name: "คืนจันทร์ - OZEEOOS", songid: "134334020605225" },
+    { name: "ใครคนนั้น - Bedroom", songid: "124711875850811" },
+    { name: "The Parkinson - เพื่อนรัก + รักยังคงไม่พอ", songid: "86428460762131" },
+    { name: "กรุ่นกลิ่นโปรยลมฝน - ดวงดาว เดียวดาย", songid: "128807220321286" },
+    { name: "หล่นหายระหว่างทาง - Phumin", songid: "113738101877362" },
+    { name: "ใครงามเลิศในปฐพี - Phumin x Warin", songid: "93791986146022" },
+    { name: "อย่ามากมาย - SISKA", songid: "70702001354833" },
+    { name: "ไม่ได้ยิน - Olives", songid: "93085489752486" },
+    { name: "Jam Siska - First Love", songid: "88611785332684" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -425,6 +436,11 @@ export const djsongall = [
     { name: "ชาติหน้าอาจไม่มีจริง", songid: "88683369308860" },
     { name: "แกล้งngo", songid: "77498299560423" },
     { name: "ลูกเทวดาเขมร", songid: "84773128096693" },
+    { name: "Megan Thee Stallion - Mamushi", name: "137997914110586" },
+    { name: "Camila Cabello  - Havana", name: "98262944506526" },
+    { name: "F.HERO - ไม่สนิทบิดหมด", name: "136088882229061" },
+    { name: "ฮาย อาภาพร - ชอบมั้ย", name: "138315288496908" },
+    { name: "OHM - หิ้วหวี", name: "139737483312955" },
 ]
 export const muansongall = [
     { name: "หักคอไอ้เท่ง - ลำไย", songid: "118537352258828" },
@@ -481,6 +497,7 @@ export const muansongall = [
     { name: "ปล่อยน้ำใส่นาน้อง -  เพชร สหรัตน์", songid: "117977094033689" },
     { name: "ชมรมสาวผัวเผลอ - แอน อรดี", songid: "133134861857378" },
     { name: "สาวเลยยังรอ - สาวแย้ เจติยา", songid: "106463451366068" },
+    { name: "แก้ ท่อน บน - พากันสูน", songid: "117132647988848" },
 ]
 export const eventsongall = [
     { name: "ลอยกระทง", songid: "127458582747833" },

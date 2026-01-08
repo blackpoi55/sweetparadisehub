@@ -350,6 +350,7 @@ export const songall = [
     { name: "อย่ามากมาย - SISKA", songid: "70702001354833" },
     { name: "ไม่ได้ยิน - Olives", songid: "93085489752486" },
     { name: "Jam Siska - First Love", songid: "88611785332684" },
+    { name: "ย้อนใจ - พริกไทย", songid: "126575961369755" },
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -526,6 +527,6 @@ export const keliasong = [
     { name: "i love mama muntu", songid: "124649118735035" },
     { name: "Bernadya ft. Adrian Khalif - Satu Bulan", songid: "127718197714157" },
     { name: "Rombongan pondok koplo-calon mantu idaman", songid: "113241770326229" },
-    { name: "CHESYLINO - ORANG BARU LEBE GACOR", songid: "79937326795469" }, 
+    { name: "CHESYLINO - ORANG BARU LEBE GACOR", songid: "79937326795469" },
 
 ]

@@ -351,8 +351,7 @@ export const songall = [
     { name: "ไม่ได้ยิน - Olives", songid: "93085489752486" },
     { name: "Jam Siska - First Love", songid: "88611785332684" },
     { name: "ย้อนใจ - พริกไทย", songid: "126575961369755" },
-    { name: "play girl - แอนอรดี", songid: "101954549779281" },  
-	{ name: "นักรบนิรนาม - ลำไย ไหทองคำ", songid: "72811968179542" },  
+
 ]
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
@@ -503,6 +502,8 @@ export const muansongall = [
     { name: "แก้ ท่อน บน - พากันสูน", songid: "117132647988848" },
     { name: "อดีตรักมักสาวครู - เบิ้ล ปทุมราช", songid: "87971135515334" },
     { name: "สาวกระโปรงเหี่ยน - เม้ก อภิสิทธิ์ ", songid: "73063176784299" },
+    { name: "play girl - แอนอรดี", songid: "101954549779281" },
+    { name: "นักรบนิรนาม - ลำไย ไหทองคำ", songid: "72811968179542" },
 ]
 export const eventsongall = [
     { name: "ลอยกระทง", songid: "127458582747833" },

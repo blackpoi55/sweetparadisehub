@@ -81,6 +81,9 @@ export const fishall = [
     { name: "วาฬจักรวาลสีรุ้ง", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.002, status: "Active" },
     { name: "ปลาTeenสีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
     { name: "เรือน้อยคอยรักสีรุ้ง", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.002, status: "Active" },
+    { name: "ปลาไก่โอ้คสีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
+    { name: "ปลาฮิปปี้สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
+    { name: "กุ้งแช่สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 ]
 export const trashall = [
     { name: "สาหร่าย", type: "trash", rate: 14 },
@@ -108,6 +111,9 @@ export const fishgiveitem = [
     { fishname: "วาฬจักรวาลสีรุ้ง", itemname: "ตู้ปลาหรรษาเล็ก", itemimage: "/images/items/FishTankSmallTool.png" },
     { fishname: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", itemname: "เบ็ดคริสต์มาส", itemimage: "/images/items/ChristmasRod.png" },
     { fishname: "เรือน้อยคอยรักสีรุ้ง", itemname: "อัญเชิญเรือจิ๋ว", itemimage: "/images/items/BoatminiTool.png" },
+    { fishname: "ปลาไก่โอ้คสีรุ้ง", itemname: "เสกเป็นไก่โอ้ค", itemimage: "/images/items/changeskinchick.png" },
+    { fishname: "ปลาฮิปปี้สีรุ้ง", itemname: "เสกเป็นฮิปโป", itemimage: "/images/items/changeskinhippo.png" },
+    { fishname: "กุ้งแช่สีรุ้ง", itemname: "เสกเป็นล็อปสเตอร์", itemimage: "/images/items/changeskinlobster.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

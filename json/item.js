@@ -911,4 +911,28 @@ export const itemall = [
         "grouptype": "เดินทาง",
         "getby": "test",
     }, 
+    {
+        "code": "changeskinchick",
+        "nameTH": "เสกเป็นไก่โอ้ค",
+        "icon": "/images/items/changeskinchick.png",
+        "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น ไก่โอ้ค",
+        "grouptype": "แกล้ง",
+        "getby": "ตกปลาสีรุ้ง",
+    }, 
+    {
+        "code": "changeskinhippo",
+        "nameTH": "เสกเป็นฮิปโป",
+        "icon": "/images/items/changeskinhippo.png",
+        "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น ฮิปโป",
+        "grouptype": "แกล้ง",
+        "getby": "ตกปลาสีรุ้ง",
+    }, 
+    {
+        "code": "changeskinlobster",
+        "nameTH": "เสกเป็นล็อปสเตอร์",
+        "icon": "/images/items/changeskinlobster.png",
+        "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น ล็อปสเตอร์",
+        "grouptype": "แกล้ง",
+        "getby": "ตกปลาสีรุ้ง",
+    }, 
 ]

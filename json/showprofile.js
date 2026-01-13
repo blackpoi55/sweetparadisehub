@@ -600,44 +600,44 @@ export const shoeprofile = [
             },
         ],
     },
-    {
-        ocname: "เปตอง",
-        icname: "patty",
-        icid: "ppptonq",
-        caption: "patty ready to talk with u ❤️",
-        icimage: "/images/showprofile/icppptonq.png",
-        ocimage: "/images/showprofile/ocppptonq.png",
-        facebookurl: "",
-        instagramurl: "https://www.instagram.com/ppettong",
-        tiktokurl: "",
-        role: "Member",
-        donate: [
-            {
-                whodonate: "ppptonq",
-                donate: "50000",
-            },
-            {
-                whodonate: "Oooo508124",
-                donate: "100000",
-            },
-            {
-                whodonate: "ppptonq",
-                donate: "500000",
-            },
-            {
-                whodonate: "jaoyingsaijimmu",
-                donate: "500000",
-            },
-            {
-                whodonate: "shinng_7",
-                donate: "1500000",
-            },
-            {
-                whodonate: "toeyhom72",
-                donate: "100000",
-            },
-        ],
-    },
+    // {
+    //     ocname: "เปตอง",
+    //     icname: "patty",
+    //     icid: "ppptonq",
+    //     caption: "patty ready to talk with u ❤️",
+    //     icimage: "/images/showprofile/icppptonq.png",
+    //     ocimage: "/images/showprofile/ocppptonq.png",
+    //     facebookurl: "",
+    //     instagramurl: "https://www.instagram.com/ppettong",
+    //     tiktokurl: "",
+    //     role: "Member",
+    //     donate: [
+    //         {
+    //             whodonate: "ppptonq",
+    //             donate: "50000",
+    //         },
+    //         {
+    //             whodonate: "Oooo508124",
+    //             donate: "100000",
+    //         },
+    //         {
+    //             whodonate: "ppptonq",
+    //             donate: "500000",
+    //         },
+    //         {
+    //             whodonate: "jaoyingsaijimmu",
+    //             donate: "500000",
+    //         },
+    //         {
+    //             whodonate: "shinng_7",
+    //             donate: "1500000",
+    //         },
+    //         {
+    //             whodonate: "toeyhom72",
+    //             donate: "100000",
+    //         },
+    //     ],
+    // },
     // {
     //     ocname: "เฟิร์น",
     //     icname: "เฟิร์น",

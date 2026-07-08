@@ -84,6 +84,11 @@ export const fishall = [
     { name: "ปลาไก่โอ้คสีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
     { name: "ปลาฮิปปี้สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
     { name: "กุ้งแช่สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
+    { name: "ปลาSadNoob", rarity: "สายรุ้ง", price: 150000, score: 1560, rate: 0.003, status: "Active" },
+    { name: "เพนกวินจักรพรรดิ์สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
+    { name: "StampSatangFish", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.006, status: "Active" },
+    // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" }, 
+
 ]
 export const trashall = [
     { name: "สาหร่าย", type: "trash", rate: 14 },
@@ -114,6 +119,9 @@ export const fishgiveitem = [
     { fishname: "ปลาไก่โอ้คสีรุ้ง", itemname: "เสกเป็นไก่โอ้ค", itemimage: "/images/items/changeskinchick.png" },
     { fishname: "ปลาฮิปปี้สีรุ้ง", itemname: "เสกเป็นฮิปโป", itemimage: "/images/items/changeskinhippo.png" },
     { fishname: "กุ้งแช่สีรุ้ง", itemname: "เสกเป็นล็อปสเตอร์", itemimage: "/images/items/changeskinlobster.png" },
+    { fishname: "ปลาSadNoob", itemname: "ปีกรุ้ง", itemimage: "/images/items/Rainbowwing.png" },
+    { fishname: "เพนกวินจักรพรรดิ์สีรุ้ง", itemname: "เสกเป็นเพนกวิน", itemimage: "/images/items/changeskinpenquin.png" },
+    { fishname: "StampSatangFish", itemname: "ดาบกระโดด", itemimage: "/images/items/JumpingSword.png" }, 
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

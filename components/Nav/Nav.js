@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const navItems = [
     { href: "/", label: "หน้าแรก" },
-    { href: "/member", label: "โชว์ตัว" },
+    // { href: "/member", label: "โชว์ตัว" },
     { href: "/items", label: "ไอเท็ม" },
     { href: "/song", label: "เพลง" },
     { href: "/fishing", label: "ตกปลา" },

@@ -22,8 +22,8 @@ export const PLACES = [
     },
     {
         id: "canival",
-        name: "สวนสนุก",
-        description: "โซนสวนสนุก / เครื่องเล่น",
+        name: "สวนสนุก / จุดเกิดผู้ตรวจการ",
+        description: "โซนสวนสนุก / เครื่องเล่น / จุดเกิดผู้ตรวจการสำหรับ event",
         x: 45,
         y: 80,
     },
@@ -110,5 +110,41 @@ export const PLACES = [
         description: "จุดนั่งตกปลาชิวๆ",
         x: 85,
         y: 69,
+    },
+    
+    {
+        id: "Worldboss",
+        name: "บอสโลก",
+        description: "จุดเกิดบอสโลก / บอสใหญ่ / บอสยักษ์",
+        x: 89,
+        y: 14,
+    },
+    {
+        id: "Craftingtable",
+        name: "โต๊ะคราฟไอเท็ม",
+        description: "จุดสร้างสรรค์ไอเท็ม / โต๊ะทำงาน",
+        x: 73,
+        y: 54,
+    },
+    {
+        id: "effecttable",
+        name: "เทพเซียน",
+        description: "อัพเกรดเอฟเฟคการวิ่ง และ รับพลังวิเศษ",
+        x: 70,
+        y: 57,
+    },
+    {
+        id: "steelfarm",
+        name: "ถ้ำฟาร์มเหล็ก",
+        description: "ฟาร์มเหล็ก / ฟาร์มเงิน",
+        x: 38,
+        y: 72,
+    },
+    {
+        id: "ricefarm",
+        name: "ฟาร์มข้าว",
+        description: "ฟาร์มข้าว / ฟาร์มยอดข้าว",
+        x: 63,
+        y: 48,
     },
 ];

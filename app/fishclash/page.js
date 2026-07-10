@@ -13,6 +13,7 @@ import {
   powerBonuses,
   collectionBonus,
   shopItems,
+  countCurve,
 } from "@/json/fishclash";
 
 function ElementChip({ el, active, onClick }) {
@@ -247,6 +248,30 @@ export default function FishClashPage() {
                   {collectionBonus.every} สายพันธุ์ (สูงสุด +{collectionBonus.max}%)
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* count curve */}
+          <div className="mt-3 rounded-xl border border-pink-500/15 bg-black/50 p-3">
+            <p className="mb-2 text-[11px] text-pink-300/70">
+              เส้นโค้งโบนัสจำนวนสะสม (ลดหลั่น — เข้าใกล้เพดาน +25%)
+            </p>
+            <div className="flex items-end justify-between gap-2">
+              {countCurve.map((c) => (
+                <div key={c.count} className="flex flex-1 flex-col items-center gap-1">
+                  <span className={"text-xs font-bold " + (c.cap ? "text-amber-200" : "text-pink-100")}>+{c.bonus}%</span>
+                  <div className="flex h-16 w-full items-end">
+                    <div
+                      className={"w-full rounded-t " + (c.cap ? "bg-gradient-to-t from-amber-500 to-pink-400" : "bg-pink-500/50")}
+                      style={{ height: `${(c.bonus / 25) * 100}%` }}
+                    />
+                  </div>
+                  <span className="text-[10px] text-pink-300/60">
+                    {c.count.toLocaleString("en-US")}
+                    {c.cap ? " (เพดาน)" : ""}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </Card>

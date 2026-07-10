@@ -14,6 +14,7 @@ import {
   collectionBonus,
   shopItems,
   countCurve,
+  clashModes,
 } from "@/json/fishclash";
 
 function ElementChip({ el, active, onClick }) {
@@ -99,6 +100,21 @@ export default function FishClashPage() {
             </p>
           </Card>
         </div>
+
+        {/* modes */}
+        <Card title="🎮 โหมดการเล่น" className="mb-6">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {clashModes.map((m) => (
+              <div key={m.name} className="rounded-xl border border-pink-500/20 bg-black/50 p-3">
+                <p className="mb-1 text-sm font-semibold text-pink-50">
+                  <span className="mr-1 text-lg">{m.icon}</span>
+                  {m.name}
+                </p>
+                <p className="text-xs text-pink-100/80">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </Card>
 
         {/* element type chart */}
         <Card title="🌈 ตารางธาตุ (Type Chart)" className="mb-6">

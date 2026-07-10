@@ -9,25 +9,26 @@ const cols = [
     links: [
       { href: "/fishing", label: "ตกปลา" },
       { href: "/fishclash", label: "ศึกปลา" },
+      { href: "/boss", label: "บอสโลก" },
       { href: "/farm", label: "ฟาร์ม" },
       { href: "/pets", label: "สัตว์เลี้ยง" },
     ],
   },
   {
-    title: "คราฟ & สุ่ม",
+    title: "คราฟ & กิจกรรม",
     links: [
       { href: "/craft", label: "สูตรคราฟ" },
       { href: "/gacha", label: "กาชา" },
       { href: "/wheel", label: "วงล้อรายวัน" },
-      { href: "/lucky", label: "ลอตเตอรี่" },
+      { href: "/schedule", label: "ตารางกิจกรรม" },
     ],
   },
   {
-    title: "ชุมชน & ข้อมูล",
+    title: "ตลาด & ชุมชน",
     links: [
+      { href: "/shop", label: "ร้านค้า NPC" },
+      { href: "/marketplace", label: "ตลาดฝากขาย" },
       { href: "/family", label: "ครอบครัว & คู่รัก" },
-      { href: "/marketitems", label: "เจ้าของไอเทม" },
-      { href: "/map", label: "แผนที่" },
       { href: "/rule", label: "กฏการเล่น" },
     ],
   },

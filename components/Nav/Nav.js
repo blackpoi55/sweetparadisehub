@@ -14,6 +14,7 @@ const navGroups = [
     items: [
       { href: "/fishing", label: "ตกปลา", icon: "🎣", desc: "ปลา 90+ ชนิด เรตดรอป" },
       { href: "/fishclash", label: "ศึกปลา", icon: "⚔️", desc: "PvP ออโต้จากปลาที่ตกได้" },
+      { href: "/boss", label: "บอสโลก", icon: "🐉", desc: "ตีบอสร่วมเซิร์ฟ" },
       { href: "/farm", label: "ฟาร์ม", icon: "🌾", desc: "เก็บเกี่ยวผลผลิต" },
       { href: "/pets", label: "สัตว์เลี้ยง", icon: "🐾", desc: "7 ตัว สกิลบัฟ" },
     ],
@@ -30,12 +31,23 @@ const navGroups = [
     ],
   },
   {
-    label: "ชุมชน",
-    icon: "💞",
+    label: "กิจกรรม",
+    icon: "🎉",
     items: [
+      { href: "/schedule", label: "ตารางกิจกรรม", icon: "🗓️", desc: "เวลากิจกรรมประจำ" },
+      { href: "/event", label: "อีเวนต์เทศกาล", icon: "🎊", desc: "อีเวนต์ตามช่วง" },
+      { href: "/referral", label: "ชวนเพื่อน", icon: "👥", desc: "รางวัลเชิญเพื่อน" },
+    ],
+  },
+  {
+    label: "ตลาด & ชุมชน",
+    icon: "🏬",
+    items: [
+      { href: "/shop", label: "ร้านค้า NPC", icon: "🛒", desc: "ซื้อของด้วยเงิน" },
+      { href: "/marketplace", label: "ตลาดฝากขาย", icon: "🏬", desc: "ซื้อขายผู้เล่น" },
       { href: "/family", label: "ครอบครัว & คู่รัก", icon: "👨‍👩‍👧", desc: "ข้อมูลสด + อันดับ" },
+      { href: "/poi", label: "จุดน่าสนใจ", icon: "📍", desc: "บวช/ATM/ดูดวง/เทรด" },
       { href: "/marketitems", label: "เจ้าของไอเทม", icon: "🏷️", desc: "ใครถืออะไรบ้าง" },
-      { href: "/event", label: "กิจกรรม", icon: "🎉", desc: "อีเวนต์ในเกม" },
     ],
   },
   {
@@ -43,6 +55,7 @@ const navGroups = [
     icon: "📚",
     items: [
       { href: "/items", label: "ไอเท็ม", icon: "🎒", desc: "ไอเทมทั้งหมด" },
+      { href: "/phone", label: "โทรศัพท์", icon: "📱", desc: "ฟีเจอร์มือถือ" },
       { href: "/song", label: "เพลง", icon: "🎵", desc: "รายชื่อเพลง" },
       { href: "/map", label: "แผนที่", icon: "🗺️", desc: "โซนในแมพ" },
       { href: "/manual", label: "คู่มือ", icon: "📖", desc: "วิธีเล่น" },

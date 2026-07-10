@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
-/* ค่าหลักของทั้งเว็บ — ใช้แค่ธีมสว่างอย่างเดียว */
+/* ===== ธีมหลัก (dark) ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05030a;
+  --foreground: #fdf2f8;
 
-  /* ถ้าใช้ next/font (เช่น geist) ก็จะมาแมพตรงนี้
-     แต่ถ้าไม่ได้ใช้ ก็ยังมี fallback เป็น system font */
   --font-sans: var(
     --font-geist-sans,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
+    "Noto Sans Thai",
     sans-serif
   );
   --font-mono: var(
@@ -22,13 +21,10 @@
     Menlo,
     Monaco,
     Consolas,
-    "Liberation Mono",
-    "Courier New",
     monospace
   );
 }
 
-/* ผูกตัวแปรให้ใช้ใน Tailwind (@theme inline ของ v4) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -36,10 +32,65 @@
   --font-mono: var(--font-mono);
 }
 
-/* ไม่สนใจ prefers-color-scheme แล้ว
-   ใช้พื้นหลัง/ตัวอักษรตาม :root ตลอด */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== การเลือกข้อความ ===== */
+::selection {
+  background: rgba(236, 72, 153, 0.35);
+  color: #fff;
+}
+
+/* ===== scrollbar สีชมพู ===== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 72, 153, 0.5) transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.6), rgba(168, 85, 247, 0.6));
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(244, 114, 182, 0.85), rgba(192, 132, 252, 0.85));
+  background-clip: padding-box;
+}
+
+/* ===== แอนิเมชันตกแต่ง ===== */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+.text-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+}
+
+/* โฟกัสให้ชัด (a11y) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(244, 114, 182, 0.7);
+  outline-offset: 2px;
+  border-radius: 8px;
 }

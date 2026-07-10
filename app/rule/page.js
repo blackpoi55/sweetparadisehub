@@ -108,8 +108,29 @@ export default function RulesPage() {
             </li>
 
             <li className="flex gap-3">
-              <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-pink-500/30 text-[11px] font-semibold text-pink-100">
+              <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-500/30 text-[11px] font-semibold text-red-100">
                 5
+              </span>
+              <div>
+                <span className="font-semibold text-red-300">
+                  ห้ามเล่นหลายตัว (Alt) เพื่อโอนของเข้าตัวหลัก
+                </span>
+                <p className="mt-1 text-[13px] text-pink-200/90">
+                  ห้ามสร้างหรือใช้บัญชีสำรอง (ตัวปลอม / หลายไอดี) เพื่อฟาร์มเงิน ปลา
+                  ไอเทม โค้ด รางวัลอีเวนต์ หรือของแจกฟรี แล้วโอน/เทรด/ส่งต่อเข้าตัวหลัก
+                  รวมถึงการปั่นระบบเชิญเพื่อน (Referral) ครอบครัว คู่รัก
+                  หรือกิจกรรมต่าง ๆ ด้วยตัวปลอมของตัวเอง
+                  ถือเป็นการเอาเปรียบเศรษฐกิจของเกมอย่างร้ายแรง
+                  <br />
+                  หากตรวจพบ แอดมินมีสิทธิ์ยึดของ/รีเซ็ตข้อมูลทั้งตัวหลักและตัวสำรอง
+                  และแบนได้ทุกบัญชีที่เกี่ยวข้อง
+                </p>
+              </div>
+            </li>
+
+            <li className="flex gap-3">
+              <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-pink-500/30 text-[11px] font-semibold text-pink-100">
+                6
               </span>
               <div>
                 <span className="font-semibold text-pink-200">
@@ -125,7 +146,7 @@ export default function RulesPage() {
 
             <li className="flex gap-3">
               <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-pink-500/30 text-[11px] font-semibold text-pink-100">
-                6
+                7
               </span>
               <div>
                 <span className="font-semibold text-pink-200">

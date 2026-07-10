@@ -1,4 +1,8 @@
+import { getMarketListings } from "@/lib/robloxCloud";
+import MarketListingsClient from "./MarketListingsClient";
+
 export const metadata = { title: "ตลาดฝากขาย — Sweet Paradise Hub" };
+export const dynamic = "force-dynamic";
 
 const steps = [
   { icon: "📦", title: "ฝากขาย (Consignment)", desc: "เอาผลผลิตฟาร์ม/กล่องกาชาที่มี มาตั้งราคาขายเอง ของจะถูกฝากไว้ (escrow) จนกว่าจะมีคนซื้อหรือหมดอายุ" },
@@ -10,7 +14,7 @@ const steps = [
 const rules = [
   { icon: "✂️", label: "หัก 15% ทุกการขาย", value: "ค่าธรรมเนียมถูกลบทิ้ง (sink) เพื่อลดเงินเฟ้อในเกม" },
   { icon: "⏳", label: "ประกาศอยู่ได้ 3 วัน", value: "หมดอายุแล้วของเด้งกลับเข้ากล่องจดหมาย" },
-  { icon: "🚀", label: "ดันโพสต์ 5,000 / 6 ชม.", value: "จ่ายค่าดันให้ประกาศขึ้นเด่น (Featured) 6 ชั่วโมง" },
+  { icon: "🚀", label: "ดันโพสต์ใช้ “ตั๋วดันตลาด” 1 ใบ", value: "คราฟตั๋วที่โต๊ะคราฟ → ดันประกาศขึ้นเด่น (Featured) 6 ชั่วโมง" },
   { icon: "🏪", label: "ขายได้ไม่จำกัดต่อคน", value: "เพดานรวมทั้งตลาด 2,000 ประกาศ (เพื่อความเสถียร)" },
 ];
 
@@ -18,7 +22,9 @@ function Card({ children, className = "" }) {
   return <div className={"rounded-2xl border border-pink-500/30 bg-black/70 p-4 md:p-5 " + className}>{children}</div>;
 }
 
-export default function MarketplacePage() {
+export default async function MarketplacePage() {
+  const { listings, ok } = await getMarketListings();
+
   return (
     <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl border border-pink-500/30 bg-black">
       <div className="absolute inset-0">
@@ -27,7 +33,7 @@ export default function MarketplacePage() {
         <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-fuchsia-500/25 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 py-8 md:px-6 md:py-10">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 py-8 md:px-6 md:py-10">
         <header className="mb-6 text-center md:mb-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-pink-400/50 bg-black/70 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-pink-300">
             🏬 Marketplace
@@ -68,6 +74,9 @@ export default function MarketplacePage() {
             ))}
           </div>
         </Card>
+
+        {/* สินค้าสดในตลาด */}
+        <MarketListingsClient listings={listings} live={ok} />
       </div>
     </div>
   );

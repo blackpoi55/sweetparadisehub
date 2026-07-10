@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 // กิจกรรมที่คำนวณเวลาได้ (อิงเวลาไทย UTC+7)
+// เฉพาะกิจกรรมที่ผูกกับ "เวลานาฬิกาไทย" เป๊ะ ๆ (Airdrop ไม่อยู่ในนี้ เพราะอิงตอนเซิร์ฟเปิด ทำนายไม่ได้)
 const EVENTS = [
   { key: "boss", icon: "🐉", name: "บอสโลก", kind: "boss" },
   { key: "adminquest", icon: "📜", name: "เควสแอดมิน", kind: "adminquest" },
-  { key: "airdrop", icon: "🪂", name: "Airdrop", kind: "airdrop", approx: true },
   { key: "clash", icon: "🐟", name: "ทัวร์ศึกปลา", kind: "tournament" },
   { key: "lucky", icon: "🍀", name: "หวยออก", kind: "lucky" },
   { key: "wheel", icon: "🎡", name: "รีเซ็ตวงล้อ", kind: "wheel" },
@@ -89,7 +89,7 @@ export default function ScheduleCountdown() {
       </div>
 
       {/* ทั้งหมด */}
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
         {rows.map((e) => (
           <div
             key={e.key}
@@ -107,7 +107,7 @@ export default function ScheduleCountdown() {
         ))}
       </div>
       <p className="mt-2 text-center text-[10px] text-pink-300/50">
-        🪂 Airdrop เป็นค่าโดยประมาณ (เวลาจริงอิงตอนเซิร์ฟเปิด)
+        🪂 Airdrop เกิดทุก ~1 ชม. แต่อิงตอนเซิร์ฟเปิด เลยไม่มีนับถอยหลังเป๊ะ ๆ
       </p>
     </div>
   );

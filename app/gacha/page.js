@@ -54,6 +54,19 @@ export default function GachaPage() {
   const [poolKey, setPoolKey] = useState(gachaPools[0].key);
   const pool = useMemo(() => gachaPools.find((p) => p.key === poolKey), [poolKey]);
   const rows = useMemo(() => (pool ? computeRows(pool) : []), [pool]);
+  const [roll, setRoll] = useState(null);
+
+  const doRoll = () => {
+    if (!pool) return;
+    const total = pool.items.reduce((s, it) => s + Number(it.weight || 0), 0);
+    let x = Math.random() * total;
+    let picked = pool.items[pool.items.length - 1];
+    for (const it of pool.items) {
+      x -= Number(it.weight || 0);
+      if (x <= 0) { picked = it; break; }
+    }
+    setRoll({ ...picked, at: (roll?.at || 0) + 1 });
+  };
 
   return (
     <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl border border-pink-500/30 bg-black">
@@ -84,7 +97,7 @@ export default function GachaPage() {
             return (
               <button
                 key={p.key}
-                onClick={() => setPoolKey(p.key)}
+                onClick={() => { setPoolKey(p.key); setRoll(null); }}
                 className={
                   "rounded-full border px-3.5 py-1.5 text-xs font-medium transition md:text-sm " +
                   (active
@@ -116,6 +129,36 @@ export default function GachaPage() {
                   {pool.items.length} ชิ้น
                 </span>
               </div>
+            </div>
+
+            {/* เสี่ยงดวง (จำลอง) */}
+            <div className="mb-4 flex items-center gap-3 rounded-2xl border border-fuchsia-400/30 bg-fuchsia-500/5 p-3">
+              <button
+                onClick={doRoll}
+                className="flex-shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-fuchsia-500 px-4 py-2 text-xs font-semibold text-black transition hover:-translate-y-0.5 md:text-sm"
+              >
+                🎲 ลองสุ่ม
+              </button>
+              {roll ? (
+                (() => {
+                  const a = resolveAsset(roll.item);
+                  const rs = rarityStyle(roll.rarity);
+                  return (
+                    <div className="flex min-w-0 flex-1 items-center gap-2">
+                      <AssetIcon img={a.img} emoji={a.emoji} alt={a.label} className="h-10 w-10 rounded-xl" />
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold text-pink-50">{a.label}</p>
+                        <span className={"inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium " + rs.className}>
+                          {rs.label}
+                        </span>
+                      </div>
+                      <span className="ml-auto text-[10px] text-pink-300/60">สุ่มครั้งที่ {roll.at}</span>
+                    </div>
+                  );
+                })()
+              ) : (
+                <span className="text-xs text-pink-200/70">กดเพื่อจำลองการสุ่ม 1 ครั้ง (เช็คดวงเล่น ๆ ไม่กระทบเกม)</span>
+              )}
             </div>
 
             {/* item list */}

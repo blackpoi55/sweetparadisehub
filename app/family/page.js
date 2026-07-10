@@ -1,5 +1,5 @@
 // app/family/page.js — ระบบครอบครัว & คู่รัก (ดึงข้อมูลสดจาก Roblox DataStore)
-import { getFamilyRegistry, getCoupleRegistry } from "@/lib/robloxCloud";
+import { getFamiliesFull, getCouplesFull } from "@/lib/robloxCloud";
 import FamilyBrowserClient from "./FamilyBrowserClient";
 
 export const dynamic = "force-dynamic";
@@ -18,9 +18,10 @@ function InfoRow({ icon, label, value }) {
 
 export default async function FamilyPage() {
   const [famRes, cplRes] = await Promise.all([
-    getFamilyRegistry(),
-    getCoupleRegistry(),
+    getFamiliesFull(),
+    getCouplesFull(),
   ]);
+  const userMap = { ...(famRes.userMap || {}), ...(cplRes.userMap || {}) };
 
   const live = famRes.ok || cplRes.ok;
 
@@ -78,7 +79,7 @@ export default async function FamilyPage() {
         <FamilyBrowserClient
           families={famRes.families || []}
           couples={cplRes.couples || []}
-          userMap={cplRes.userMap || {}}
+          userMap={userMap}
           live={live}
         />
       </div>

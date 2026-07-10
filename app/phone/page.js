@@ -1,14 +1,42 @@
 export const metadata = { title: "โทรศัพท์ — Sweet Paradise Hub" };
 
-const features = [
-  { icon: "📞", name: "โทร / วิดีโอคอล", desc: "โทรหาผู้เล่นอื่น หรือวิดีโอคอลเห็นหน้ากันแบบเรียลไทม์", gated: "วิดีโอคอลต้องมี Gamepass" },
-  { icon: "💸", name: "โอนเงิน", desc: "โอนเงินในเกมให้เพื่อนได้จากทุกที่" },
-  { icon: "🌀", name: "วาร์ปหาเพื่อน", desc: "เทเลพอร์ตไปหาผู้เล่นอื่น", gated: "ต้องมี Gamepass" },
-  { icon: "💬", name: "แชท", desc: "ส่งข้อความส่วนตัวหากัน" },
-  { icon: "📡", name: "เรดาร์", desc: "ดูตำแหน่ง/ระยะของผู้เล่นในแมพ" },
-  { icon: "🚫", name: "บล็อค", desc: "บล็อคผู้เล่นที่ไม่อยากให้ติดต่อ" },
-  { icon: "🤳", name: "เซลฟี่", desc: "ถ่ายเซลฟี่ในเกม" },
-  { icon: "🟢", name: "ตั้งสถานะ", desc: "ตั้งสถานะ + โหมดความเป็นส่วนตัว (ซ่อนตัวจากเรดาร์/สายโทร)" },
+const groups = [
+  {
+    title: "สื่อสาร",
+    apps: [
+      { icon: "📞", name: "โทร", desc: "โทรหาผู้เล่นอื่น" },
+      { icon: "📹", name: "วิดีโอคอล", desc: "เห็นหน้ากันแบบเรียลไทม์ (ViewportFrame)", gated: true },
+      { icon: "💬", name: "แชท", desc: "ส่งข้อความส่วนตัวหากัน" },
+      { icon: "📍", name: "เรดาร์", desc: "ดูตำแหน่ง/ระยะของผู้เล่นในแมพ" },
+      { icon: "🚫", name: "บล็อค", desc: "บล็อคผู้เล่นที่ไม่อยากให้ติดต่อ" },
+      { icon: "📇", name: "ประวัติ", desc: "ประวัติการโทร/ข้อความ" },
+    ],
+  },
+  {
+    title: "เงิน & เดินทาง",
+    apps: [
+      { icon: "💸", name: "โอนเงิน", desc: "โอนเงินในเกมให้เพื่อนจากทุกที่" },
+      { icon: "🌀", name: "วาร์ป", desc: "เทเลพอร์ตไปหาผู้เล่นอื่น", gated: true },
+    ],
+  },
+  {
+    title: "เปิดระบบอื่นจากมือถือ",
+    apps: [
+      { icon: "📅", name: "อีเวนต์", desc: "ดูตารางกิจกรรม" },
+      { icon: "🏪", name: "ตลาด", desc: "เปิดตลาดฝากขาย" },
+      { icon: "🎡", name: "วงล้อ", desc: "หมุนวงล้อรายวัน" },
+      { icon: "🍀", name: "ลอตเตอรี่", desc: "ซื้อหวย/ดูผล" },
+      { icon: "👨‍👩‍👧", name: "ครอบครัว/คู่รัก", desc: "จัดการครอบครัว & คู่รัก" },
+      { icon: "🐟", name: "ศึกปลา", desc: "เปิด Fish Clash" },
+    ],
+  },
+  {
+    title: "อื่น ๆ",
+    apps: [
+      { icon: "📸", name: "เซลฟี่", desc: "ถ่ายเซลฟี่ในเกม" },
+      { icon: "⚙️", name: "ตั้งค่า", desc: "โหมดความเป็นส่วนตัว (ซ่อนจากเรดาร์/สายโทร) + สถานะ" },
+    ],
+  },
 ];
 
 export default function PhonePage() {
@@ -27,28 +55,38 @@ export default function PhonePage() {
           </span>
           <h1 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">โทรศัพท์</h1>
           <p className="mx-auto mt-2 max-w-2xl text-xs text-pink-200/80 md:text-sm">
-            ไอเทมมือถือครบเครื่อง — ติดต่อ/โอนเงิน/วาร์ป/แชท และเข้าแอปต่าง ๆ (ตลาดฝากขาย ฯลฯ) ได้จากที่เดียว
+            ศูนย์รวม 16 แอปในเครื่องเดียว — ติดต่อ/โอนเงิน/วาร์ป และเปิดระบบต่าง ๆ (ตลาด/วงล้อ/หวย/ครอบครัว/ศึกปลา) ได้จากมือถือ
+            ทำงานแม้ไม่ได้ถือโทรศัพท์อยู่
           </p>
         </header>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {features.map((f) => (
-            <div key={f.name} className="flex items-start gap-3 rounded-2xl border border-pink-500/25 bg-black/70 p-4">
-              <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/25 to-fuchsia-500/15 text-xl">
-                {f.icon}
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-pink-50">{f.name}</p>
-                <p className="mt-0.5 text-xs text-pink-100/80">{f.desc}</p>
-                {f.gated && (
-                  <span className="mt-1 inline-flex rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-medium text-amber-300">
-                    🔒 {f.gated}
-                  </span>
-                )}
+        <div className="space-y-6">
+          {groups.map((g) => (
+            <section key={g.title}>
+              <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-pink-400/80">{g.title}</h2>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {g.apps.map((a) => (
+                  <div key={a.name} className="flex items-start gap-3 rounded-2xl border border-pink-500/25 bg-black/70 p-3">
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/25 to-fuchsia-500/15 text-lg">
+                      {a.icon}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="flex items-center gap-1 text-sm font-semibold text-pink-50">
+                        {a.name}
+                        {a.gated && <span title="ต้องมี Gamepass">🔒</span>}
+                      </p>
+                      <p className="text-[11px] text-pink-100/75">{a.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
+            </section>
           ))}
         </div>
+
+        <p className="mt-5 text-center text-[11px] text-pink-300/60">
+          🔒 = ต้องมี Gamepass (วิดีโอคอล / วาร์ป)
+        </p>
       </div>
     </div>
   );

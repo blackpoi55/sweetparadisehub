@@ -48,6 +48,13 @@ function CostRow({ c }) {
 
 function RecipeCard({ r }) {
   const ra = resultAsset(r.result);
+  const [last, setLast] = useState(null); // true/false ครั้งล่าสุด
+  const [stat, setStat] = useState({ t: 0, s: 0 });
+  const tryCraft = () => {
+    const ok = Math.random() < Number(r.chance || 0);
+    setLast(ok);
+    setStat((p) => ({ t: p.t + 1, s: p.s + (ok ? 1 : 0) }));
+  };
   return (
     <article className="flex flex-col rounded-2xl border border-pink-500/30 bg-black/80 p-4 text-xs text-pink-50 shadow-sm transition hover:-translate-y-1 hover:border-pink-400/80 hover:shadow-pink-500/30 md:text-sm">
       {/* หัวการ์ด: ผลลัพธ์ */}
@@ -79,6 +86,31 @@ function RecipeCard({ r }) {
           <CostRow key={i} c={c} />
         ))}
       </ul>
+
+      {/* เสี่ยงดวง (จำลอง ไม่กระทบเกมจริง) */}
+      <div className="mt-3 flex items-center gap-2 border-t border-pink-500/15 pt-3">
+        <button
+          onClick={tryCraft}
+          className="rounded-full bg-gradient-to-r from-pink-500 to-fuchsia-500 px-3 py-1.5 text-[11px] font-semibold text-black transition hover:-translate-y-0.5 md:text-xs"
+        >
+          🎲 ลองคราฟ
+        </button>
+        {last != null && (
+          <span
+            className={
+              "rounded-full px-2 py-1 text-[11px] font-bold " +
+              (last ? "bg-emerald-500/15 text-emerald-300" : "bg-rose-500/15 text-rose-300")
+            }
+          >
+            {last ? "✅ สำเร็จ!" : "❌ ไม่สำเร็จ"}
+          </span>
+        )}
+        {stat.t > 0 && (
+          <span className="ml-auto text-[10px] text-pink-300/60">
+            {stat.s}/{stat.t} ({Math.round((stat.s / stat.t) * 100)}%)
+          </span>
+        )}
+      </div>
     </article>
   );
 }

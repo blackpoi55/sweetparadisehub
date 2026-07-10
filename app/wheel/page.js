@@ -18,41 +18,44 @@ const SEG_COLORS = [
 function Wheel() {
   const n = wheelSegments.length;
   const step = 360 / n;
-  const stops = wheelSegments
-    .map((_, i) => `${SEG_COLORS[i % SEG_COLORS.length]} ${i * step}deg ${(i + 1) * step}deg`)
-    .join(", ");
+  const cx = 100,
+    cy = 100,
+    r = 96;
+  const toXY = (deg, rad) => {
+    const a = ((deg - 90) * Math.PI) / 180;
+    return [cx + rad * Math.cos(a), cy + rad * Math.sin(a)];
+  };
   return (
     <div className="relative mx-auto h-64 w-64 md:h-72 md:w-72">
-      {/* glow */}
       <div className="absolute inset-0 rounded-full bg-pink-500/30 blur-2xl" />
-      {/* wheel */}
-      <div
-        className="relative h-full w-full rounded-full border-4 border-white/20 shadow-2xl"
-        style={{ background: `conic-gradient(${stops})` }}
-      >
+      <svg viewBox="0 0 200 200" className="relative h-full w-full drop-shadow-2xl">
         {wheelSegments.map((s, i) => {
-          const angle = i * step + step / 2;
+          const a0 = i * step;
+          const a1 = (i + 1) * step;
+          const [x0, y0] = toXY(a0, r);
+          const [x1, y1] = toXY(a1, r);
+          const large = step > 180 ? 1 : 0;
+          const [ex, ey] = toXY(a0 + step / 2, r * 0.66);
+          const col = SEG_COLORS[i % SEG_COLORS.length];
           return (
-            <div
-              key={s.key}
-              className="absolute left-1/2 top-1/2 origin-top text-lg md:text-xl"
-              style={{
-                transform: `translate(-50%, 0) rotate(${angle}deg) translateY(18px)`,
-              }}
-            >
-              <span style={{ display: "inline-block", transform: `rotate(${-angle}deg)` }}>
+            <g key={s.key}>
+              <path
+                d={`M ${cx} ${cy} L ${x0.toFixed(2)} ${y0.toFixed(2)} A ${r} ${r} 0 ${large} 1 ${x1.toFixed(2)} ${y1.toFixed(2)} Z`}
+                fill={col}
+                stroke="rgba(255,255,255,0.25)"
+                strokeWidth="0.7"
+              />
+              <text x={ex.toFixed(2)} y={ey.toFixed(2)} fontSize="11" textAnchor="middle" dominantBaseline="central">
                 {s.emoji}
-              </span>
-            </div>
+              </text>
+            </g>
           );
         })}
-        {/* hub */}
-        <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white/30 bg-black text-2xl shadow-lg">
-          🎡
-        </div>
-      </div>
+        <circle cx={cx} cy={cy} r="17" fill="#000" stroke="rgba(255,255,255,0.35)" strokeWidth="2" />
+        <text x={cx} y={cy} fontSize="15" textAnchor="middle" dominantBaseline="central">🎡</text>
+      </svg>
       {/* pointer */}
-      <div className="absolute left-1/2 top-[-6px] h-0 w-0 -translate-x-1/2 border-x-8 border-t-[16px] border-x-transparent border-t-pink-300 drop-shadow" />
+      <div className="absolute left-1/2 top-[-4px] h-0 w-0 -translate-x-1/2 border-x-8 border-t-[16px] border-x-transparent border-t-pink-300 drop-shadow" />
     </div>
   );
 }

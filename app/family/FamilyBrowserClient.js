@@ -157,11 +157,11 @@ export default function FamilyBrowserClient({ families, couples, userMap, live }
                   {i + 1}
                 </span>
                 <div className="flex min-w-0 flex-1 items-center gap-2">
-                  <Avatar url={userMap[String(c.lo)]?.avatarUrl} label={c.a} />
-                  <span className="min-w-0 truncate text-xs text-pink-50 md:text-sm">{c.a}</span>
+                  <Avatar url={userMap[String(c.lo)]?.avatarUrl} label={userMap[String(c.lo)]?.name || c.a} />
+                  <span className="min-w-0 truncate text-xs text-pink-50 md:text-sm">{userMap[String(c.lo)]?.name || c.a}</span>
                   <span className="flex-shrink-0 text-pink-300">💍</span>
-                  <span className="min-w-0 truncate text-xs text-pink-50 md:text-sm">{c.b}</span>
-                  <Avatar url={userMap[String(c.hi)]?.avatarUrl} label={c.b} />
+                  <span className="min-w-0 truncate text-xs text-pink-50 md:text-sm">{userMap[String(c.hi)]?.name || c.b}</span>
+                  <Avatar url={userMap[String(c.hi)]?.avatarUrl} label={userMap[String(c.hi)]?.name || c.b} />
                 </div>
                 <span className="flex-shrink-0 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-100">
                   💗 {fmt(c.bond)}

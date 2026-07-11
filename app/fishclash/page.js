@@ -15,6 +15,8 @@ import {
   shopItems,
   countCurve,
   clashModes,
+  fishLevels,
+  fishLevelMeta,
 } from "@/json/fishclash";
 
 function ElementChip({ el, active, onClick }) {
@@ -290,6 +292,40 @@ export default function FishClashPage() {
               ))}
             </div>
           </div>
+        </Card>
+
+        {/* fish level */}
+        <Card title="🎚️ การคำนวณเลเวลปลา" className="mt-6">
+          <p className="mb-1 text-xs text-pink-200/75">
+            ปลาแต่ละตัวมี “เลเวล” ตามจำนวนที่คุณสะสมได้ (ยิ่งตกตัวเดิมได้เยอะ เลเวลยิ่งสูง)
+          </p>
+          <p className="mb-3 rounded-lg bg-black/50 px-3 py-2 font-mono text-[11px] text-pink-100/90">
+            level = 1 + floor( 19 × (n − 1) ÷ ((n − 1) + {fishLevelMeta.k}) ) &nbsp;
+            <span className="text-pink-300/60">// n = จำนวนปลาที่มี</span>
+          </p>
+          <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-5 lg:grid-cols-10">
+            {fishLevels.map((f) => (
+              <div
+                key={f.level}
+                className={
+                  "rounded-lg border px-1.5 py-2 text-center " +
+                  (f.level === fishLevelMeta.max
+                    ? "border-amber-400/40 bg-amber-500/10"
+                    : "border-pink-500/15 bg-black/50")
+                }
+              >
+                <p className={"text-sm font-bold " + (f.level === fishLevelMeta.max ? "text-amber-200" : "text-pink-100")}>
+                  Lv.{f.level}
+                </p>
+                <p className="text-[10px] text-pink-300/60">≥ {f.count.toLocaleString("en-US")} ตัว</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[11px] text-pink-300/60">
+            💡 เลเวลใช้ตัวแปรเดียวกับ “โบนัสจำนวนสะสม” — สูงสุดจริง <b className="text-amber-200">Lv.{fishLevelMeta.max}</b>{" "}
+            (ที่ ~{fishLevels[fishLevels.length - 1].count.toLocaleString("en-US")}+ ตัว) • Lv.20 ต้องมีปลาไม่จำกัดจึงไปไม่ถึง •
+            เก็บนับสูงสุด {fishLevelMeta.cap.toLocaleString("en-US")} ตัว/ชนิด
+          </p>
         </Card>
 
         {/* team synergy */}

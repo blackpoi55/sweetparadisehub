@@ -13,22 +13,44 @@ function PetCard({ p }) {
         </div>
         <div className="min-w-0 flex-1">
           <h2 className="truncate text-base font-semibold text-pink-50">{p.displayName}</h2>
-          <span
-            className={"mt-1 inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium " + rs.className}
-          >
-            {rs.label}
-          </span>
+          <div className="mt-1 flex flex-wrap items-center gap-1.5">
+            <span className={"inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium " + rs.className}>
+              {rs.label}
+            </span>
+            <span className="inline-flex rounded-full bg-pink-500/10 px-2 py-0.5 text-[10px] text-pink-200">
+              🍚 กิน{p.food.display}
+            </span>
+            {p.robux && (
+              <span className="inline-flex rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-200">
+                🛒 {p.robux} R$
+              </span>
+            )}
+          </div>
         </div>
       </div>
 
+      {/* ความสามารถ + สเกลเลเวล */}
       <div className="rounded-xl bg-pink-500/10 px-3 py-2">
         <p className="text-[11px] font-medium uppercase tracking-wide text-pink-300/70">ความสามารถ</p>
         <p className="mt-0.5 text-pink-50">⭐ {p.ability}</p>
+        <div className="mt-2 space-y-1 border-t border-pink-500/15 pt-2 text-[11px]">
+          <div className="flex items-start gap-2">
+            <span className="mt-0.5 flex-shrink-0 rounded bg-slate-600/50 px-1.5 py-0.5 font-bold text-slate-100">Lv.1</span>
+            <span className="text-pink-100/85">{p.abilityLv1}</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="mt-0.5 flex-shrink-0 rounded bg-amber-500/20 px-1.5 py-0.5 font-bold text-amber-200">Lv.50</span>
+            <span className="text-pink-100/90">{p.abilityLv50}</span>
+          </div>
+        </div>
       </div>
 
       <div className="mt-2 rounded-xl bg-fuchsia-500/5 px-3 py-2">
         <p className="text-[11px] font-medium uppercase tracking-wide text-pink-300/70">วิธีได้มา</p>
         <p className="mt-0.5 text-pink-100/90">{p.obtain}</p>
+        {p.gachaWeight > 0 && (
+          <p className="mt-1 text-[10px] text-pink-300/60">น้ำหนักในกาชาสัตว์เลี้ยง: {p.gachaWeight}</p>
+        )}
       </div>
     </article>
   );
@@ -57,12 +79,10 @@ export default function PetsPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-pink-400/50 bg-black/70 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-pink-300">
             🐾 Pets
           </span>
-          <h1 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">
-            สัตว์เลี้ยง
-          </h1>
+          <h1 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">สัตว์เลี้ยง</h1>
           <p className="mx-auto mt-2 max-w-2xl text-xs text-pink-200/80 md:text-sm">
-            สัตว์เลี้ยงทั้งหมด {petall.length} ตัว แต่ละตัวมีความสามารถ (บัฟ) ต่างกัน สวมใส่ได้พร้อมกันสูงสุด{" "}
-            {petMeta.maxEquip} ตัว (1 ชนิดต่อ 1 ตัว) เลี้ยงด้วย{petMeta.foodDisplay}เพื่อเพิ่มเลเวล
+            สัตว์เลี้ยงทั้งหมด {petall.length} ตัว — แต่ละตัวมีบัฟที่ <b>แรงขึ้นตามเลเวล</b> สวมพร้อมกันได้ {petMeta.maxEquip} ตัว
+            (1 ชนิดต่อ 1 ตัว) เลี้ยงด้วยอาหารเพื่อไต่เลเวลถึง Lv.{petMeta.maxLevel}
           </p>
         </header>
 
@@ -70,7 +90,7 @@ export default function PetsPage() {
         <div className="mx-auto mb-8 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
           <InfoTile label="เลเวลสูงสุด" value={`Lv.${petMeta.maxLevel}`} />
           <InfoTile label="สวมพร้อมกัน" value={`${petMeta.maxEquip} ตัว`} />
-          <InfoTile label={`อาหาร (${petMeta.foodDisplay})`} value={`+${petMeta.expPerFood} EXP`} />
+          <InfoTile label="อาหาร/เลเวล" value={`${petMeta.foodPerLevel} ชิ้น`} />
           <InfoTile label="กาชาสัตว์เลี้ยง" value={`${fmtNum(petMeta.gachaPrice / 1000000)}M`} />
         </div>
 
@@ -81,10 +101,19 @@ export default function PetsPage() {
           ))}
         </div>
 
-        <p className="mx-auto mt-6 max-w-3xl rounded-xl border border-pink-500/20 bg-black/50 px-4 py-3 text-center text-[11px] text-pink-200/75">
-          🍚 เลี้ยงถึง Lv.{petMeta.maxLevel} • ต้องใช้ {petMeta.expPerLevel / petMeta.expPerFood} {petMeta.foodDisplay}/เลเวล
-          ({petMeta.expPerLevel} EXP) • ได้ตัวซ้ำจากกาชาคืนเป็น {petMeta.foodDisplay} {petMeta.dupRefundAmount} ชิ้น
-        </p>
+        {/* leveling detail */}
+        <section className="mx-auto mt-8 max-w-3xl rounded-2xl border border-pink-500/30 bg-black/70 p-4 md:p-6">
+          <h2 className="mb-3 text-base font-semibold text-white">📈 การเลี้ยง &amp; ไต่เลเวล</h2>
+          <div className="grid grid-cols-1 gap-2 text-xs text-pink-100/90 sm:grid-cols-2 md:text-sm">
+            <div className="rounded-xl bg-pink-500/10 px-3 py-2">🍚 อาหาร 1 ชิ้น = +{petMeta.expPerFood} EXP</div>
+            <div className="rounded-xl bg-pink-500/10 px-3 py-2">⬆️ {petMeta.expPerLevel} EXP = +1 เลเวล ({petMeta.foodPerLevel} ชิ้น/เลเวล)</div>
+            <div className="rounded-xl bg-pink-500/10 px-3 py-2">🏁 เลี้ยงถึง Lv.{petMeta.maxLevel} ใช้ทั้งหมด ~{fmtNum(petMeta.foodToMax)} ชิ้น</div>
+            <div className="rounded-xl bg-pink-500/10 px-3 py-2">🔁 ได้ตัวซ้ำจากกาชา คืนเป็นอาหาร {petMeta.dupRefundAmount} ชิ้น</div>
+          </div>
+          <p className="mt-3 text-[11px] text-pink-300/60">
+            🍚 ส่วนใหญ่กิน “ต้นข้าว” • ดาร์คเดวิล/404 เดมอน กิน “ยอดข้าว” • แฮคเกอร์กิน “เหล็ก” • ยิ่งเลเวลสูง บัฟยิ่งแรง (ดู Lv.1 → Lv.50 ในแต่ละการ์ด)
+          </p>
+        </section>
       </div>
     </div>
   );

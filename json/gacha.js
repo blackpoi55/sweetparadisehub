@@ -64,6 +64,7 @@ export const gachaPools = [
       { item: "Chicken", isPet: true, rarity: "Rare", weight: 100 },
       { item: "Cat", isPet: true, rarity: "Epic", weight: 100 },
       { item: "DarkDevil", isPet: true, rarity: "Legendary", weight: 20 },
+      { item: "404Demon", isPet: true, rarity: "Legendary", weight: 5 },
     ],
   },
   {

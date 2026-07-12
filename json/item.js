@@ -1015,4 +1015,12 @@ export const itemall = [
         "grouptype": "แกล้ง",
         "getby": "โต๊ะคราฟ",
     },
+    {
+        "code": "HBDCake",
+        "nameTH": "เค้กวันเกิด",
+        "icon": "/images/items/HBDCake.png",
+        "detail": "อวยพรวันเกิด",
+        "grouptype": "ทั่วไป",
+        "getby": "ร้านค้า Admin Note",
+    },
 ]

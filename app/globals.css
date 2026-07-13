@@ -94,3 +94,15 @@ button:focus-visible {
   outline-offset: 2px;
   border-radius: 8px;
 }
+
+/* ===== safe-area (จอมีติ่ง / iPhone) — ใช้ class แทน inline style กัน hydration mismatch ===== */
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+.nav-safe-x {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}

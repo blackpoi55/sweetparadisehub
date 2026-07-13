@@ -92,7 +92,7 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="border-t border-pink-500/10 px-6 py-4 text-center text-[11px] text-pink-300/50">
+      <div className="pb-safe border-t border-pink-500/10 px-6 pt-4 text-center text-[11px] text-pink-300/50">
         © {2025} Sweet Paradise Hub · แฟนไซต์ข้อมูลเกม · ไม่ได้สังกัด Roblox Corporation
       </div>
     </footer>

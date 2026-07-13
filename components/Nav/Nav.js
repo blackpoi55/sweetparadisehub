@@ -84,9 +84,9 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* glass bar */}
-      <div className="border-b border-pink-500/25 bg-black/80 backdrop-blur-xl supports-[backdrop-filter]:bg-black/60">
-        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 px-4 py-2.5">
+      {/* glass bar — เผื่อ safe-area บนจอมีติ่ง (iPhone) */}
+      <div className="pt-safe border-b border-pink-500/25 bg-black/80 backdrop-blur-xl supports-[backdrop-filter]:bg-black/60">
+        <nav className="nav-safe-x mx-auto flex w-full max-w-7xl items-center justify-between gap-2 py-2.5">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-2.5">
             <div className="relative h-10 w-10 overflow-hidden rounded-2xl border border-pink-400/40 bg-gradient-to-br from-pink-500 via-fuchsia-500 to-purple-600 shadow-lg shadow-pink-500/40 transition group-hover:shadow-pink-400/60">
@@ -230,7 +230,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-pink-500/30 bg-black/95 backdrop-blur-xl lg:hidden">
-          <div className="mx-auto max-w-3xl space-y-4 px-4 py-4">
+          <div className="pb-safe mx-auto max-w-3xl space-y-4 px-4 pt-4">
             {navGroups.map((group) => {
               if (group.href) {
                 const active = pathname === group.href;

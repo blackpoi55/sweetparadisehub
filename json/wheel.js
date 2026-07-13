@@ -28,7 +28,7 @@ export const wheelMeta = {
 };
 
 // รางวัลพิเศษที่ให้ "เลือกเอง" เมื่อหมุนติด
-export const wheelPetChoices = ["Bunny", "SharkPet", "Dog", "frog", "Chicken", "Cat", "DarkDevil"];
+export const wheelPetChoices = ["Bunny", "SharkPet", "Dog", "frog", "Chicken", "Cat", "DarkDevil", "Haxigator"];
 export const wheelSeasonChoices = [
   "BaseBallss3",
   "FrozenHammer",

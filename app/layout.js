@@ -1,12 +1,27 @@
 import "./globals.css";
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer";
+import PwaRegister from "@/components/PwaRegister";
 
 export const metadata = {
   title: "Sweet Paradise Hub — รวมข้อมูลเกม",
   description:
     "เว็บรวมข้อมูลทุกระบบของแมพ Sweet Paradise บน Roblox — ตกปลา ศึกปลา ฟาร์ม คราฟ กาชา สัตว์เลี้ยง ครอบครัว วงล้อ ลอตเตอรี่ และอีกมากมาย",
   keywords: ["Sweet Paradise", "Roblox", "ตกปลา", "กาชา", "คราฟ", "สัตว์เลี้ยง"],
+  applicationName: "Sweet Paradise Hub",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Sweet Paradise",
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    icon: [
+      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "Sweet Paradise Hub",
     description: "รวมข้อมูลทุกระบบของแมพ Sweet Paradise",
@@ -14,10 +29,18 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#0d0711",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="th">
       <body className="bg-[#05030a] text-gray-100">
+        <PwaRegister />
         <Nav />
         <main className="relative min-h-screen bg-gradient-to-b from-[#05030a] via-slate-950 to-[#05030a]">
           {/* แสงฉากหลังฟุ้ง ๆ ทั้งเว็บ (เบา ๆ เพื่อความลื่น) */}

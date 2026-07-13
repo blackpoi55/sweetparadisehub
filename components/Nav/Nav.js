@@ -44,6 +44,7 @@ const navGroups = [
     label: "ตลาด & ชุมชน",
     icon: "🏬",
     items: [
+      { href: "/servers", label: "เซิร์ฟสด", icon: "🟢", desc: "คนออนไลน์ + เซิร์ฟเรียลไทม์" },
       { href: "/shop", label: "ร้านค้า NPC", icon: "🏪", desc: "ซื้อของด้วยเงินในเกม" },
       { href: "/marketplace", label: "ตลาดฝากขาย", icon: "🏬", desc: "ซื้อขายผู้เล่น" },
       { href: "/family", label: "ครอบครัว & คู่รัก", icon: "👨‍👩‍👧", desc: "ข้อมูลสด + อันดับ" },

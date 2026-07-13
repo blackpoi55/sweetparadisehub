@@ -8,6 +8,6 @@ export const orderConfig = {
   truewalletNumber: "0619917727", // 👈 ใส่เบอร์ทรูวอลเล็ทจริง
 
   // ลิงก์/ชื่อดิสคอร์ดแอดมินที่ให้ทักไปพร้อมสลิป
-  discordLabel: "@putsyhunter", // 👈 ชื่อ/แท็กดิสคอร์ดแอดมิน
+  discordLabel: "Admin Boat (@putsyhunter)", // 👈 ชื่อ/แท็กดิสคอร์ดแอดมิน
   discordUrl: "https://discord.com/users/335392827938832384", // 👈 (ถ้ามี) ลิงก์เชิญ/โปรไฟล์ดิสคอร์ด เช่น https://discord.gg/xxxx
 };

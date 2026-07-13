@@ -9,67 +9,92 @@ const SECTIONS = [
     emoji: "🎵",
     title: "การลงเพลง",
     tag: "Song Request / Boombox",
-    highlight: "ลงเพลงเข้าระบบ Boombox และ DJ แบบปลอดภัย ลดโอกาสโดนแบน",
+    highlight: "เปิดให้ทุกคนลงเพลงเองได้ฟรี! แต่ต้องใช้ไอดีใหม่ (ใช้แล้วทิ้ง) เท่านั้น",
     content: (
       <>
         <p className="text-sm text-pink-100/90">
-          อยากให้เพลงโปรดดังทั้งแมพ? อ่านเงื่อนไขให้ครบก่อนส่งเพลงมานะ 🍭
+          ตอนนี้ไม่ต้องรอแอดมินลงให้แล้ว — <span className="font-semibold text-pink-200">ทุกคนอัปโหลดเพลงเข้าแมพเองได้ฟรี</span> 🎉
         </p>
 
-        <div className="mt-3 space-y-2 text-sm text-pink-100/90">
-          <div>
-            <p className="font-semibold text-pink-200">เงื่อนไข</p>
-            <ul className="mt-1 list-disc space-y-1 pl-5">
-              <li>เพลงละ <span className="font-semibold text-pink-300">50,000 SweetDollar</span> เดี๋ยวแอดมินตามไปทวงหนี้เอง 💸</li>
-              <li>ไม่รับเพลงสากล เพราะโอกาสโดนแบน <span className="font-semibold text-red-400">แทบจะ 100%</span></li>
-              <li>เพลงแบ่งออกเป็น 4 หมวด ต้องระบุหมวดในแชทด้วย:</li>
-            </ul>
-            <ul className="mt-1 space-y-1 rounded-2xl bg-black/50 p-3 text-[13px]">
-              <li>1. <span className="font-semibold text-pink-200">เพลงทั่วไป</span> (อยู่ใน Boombox ทั้งแมพ และ Pass)</li>
-              <li>2. <span className="font-semibold text-pink-200">เพลงแดนซ์</span> (เปิดในผับ และเครื่องเล่นต่าง ๆ)</li>
-              <li>3. <span className="font-semibold text-pink-200">เพลงม่วนหน้าฮ้าน</span> (สายเสียงอีสาน)</li>
-              <li>4. <span className="font-semibold text-pink-200">ดนตรีกีต้าร์</span> (ต้องเป็นเวอร์ชัน <span className="underline">Finger Style เท่านั้น</span>)</li>
-            </ul>
-          </div>
+        <div className="mt-3 rounded-2xl border border-red-500/40 bg-red-500/10 p-3">
+          <p className="text-sm font-semibold text-red-300">⚠️ ใช้ “ไอดีใหม่” เท่านั้น (ย้ำ! ไอดีใหม่)</p>
+          <p className="mt-1 text-[13px] text-pink-100/90">
+            เพราะถ้าเพลงติดลิขสิทธิ์มาก ๆ <span className="font-semibold text-red-300">ไอดีจะโดนแบน</span> —
+            ห้ามใช้ไอดีหลักเด็ดขาด ให้สมัครไอดีใหม่แบบ “ใช้แล้วทิ้ง” มาลงเพลงโดยเฉพาะ
+          </p>
+        </div>
 
-          <div>
-            <p className="font-semibold text-pink-200">ไฟล์เพลงที่รับ</p>
-            <ul className="mt-1 list-disc space-y-1 pl-5">
-              <li>ต้องเป็นไฟล์ <span className="font-semibold text-pink-300">MP3 เท่านั้น</span></li>
-              <li>ต้องส่งมาเป็นไฟล์เพลงเลย เพื่อให้ได้เวอร์ชันตรงกับที่คนลงต้องการ 100%</li>
-              <li>
-                ตั้งชื่อไฟล์/ชื่อเพลงให้ครบ:{" "}
-                <span className="font-mono text-pink-100">
-                  ชื่อเพลง - ชื่อศิลปิน
-                </span>{" "}
-                เช่น{" "}
-                <span className="font-mono text-pink-100">
-                  ปี้จนป่น - เอ มหาหิงค์
-                </span>
-              </li>
-            </ul>
-          </div>
+        <div className="mt-4 space-y-2.5">
+          <p className="text-sm font-semibold text-pink-200">ขั้นตอน (4 สเต็ป)</p>
 
-          <div className="mt-3 rounded-2xl border border-pink-500/40 bg-pink-500/10 p-3 text-xs text-pink-100">
-            <p className="font-semibold text-pink-200">หมายเหตุ / ความเสี่ยง</p>
-            <ul className="mt-1 list-disc space-y-1 pl-5">
-              <li>
-                <span className="font-semibold">รับลงเพลงให้เรื่อย ๆ</span>{" "}
-                จนกว่าจะโดนแบล็กลิสต์ หรือโดนแบนห้ามสมัครอีกรอบ
-              </li>
-              <li>
-                การลงทุนมีความเสี่ยง หากเพลงไหนโดน Roblox แบน{" "}
-                <span className="font-semibold text-red-300">
-                  ไม่คืนเงินทุกกรณี
-                </span>
-              </li>
-              <li>
-                โอกาสรอดประมาณ{" "}
-                <span className="font-semibold text-pink-300">50 / 50</span>{" "}
-                โชคดีที่โทรติดก็ผ่านไป… 🎲
-              </li>
-            </ul>
-          </div>
+          {[
+            {
+              n: 1,
+              t: "สมัครไอดีใหม่ (ใช้แล้วทิ้ง)",
+              d: (
+                <>
+                  ตั้ง <span className="font-semibold">username + password ง่าย ๆ</span> ไม่ต้องใส่อีเมล ที่{" "}
+                  <a href="https://www.roblox.com/CreateAccount" target="_blank" rel="noreferrer" className="font-medium text-pink-300 underline">
+                    roblox.com/CreateAccount
+                  </a>
+                </>
+              ),
+            },
+            {
+              n: 2,
+              t: "ล็อกอินแล้วเปิดหน้าอัปโหลดเสียง",
+              d: (
+                <>
+                  ไปที่{" "}
+                  <a href="https://create.roblox.com/dashboard/creations?activeTab=Audio" target="_blank" rel="noreferrer" className="font-medium text-pink-300 underline">
+                    create.roblox.com → Audio
+                  </a>{" "}
+                  <span className="text-pink-100/70">(เมนู: การสร้างสรรค์ → ไอเท็มการพัฒนา → เสียง → อัปโหลดทรัพยากร)</span>
+                </>
+              ),
+            },
+            {
+              n: 3,
+              t: "อัปโหลดเพลง + ตั้งชื่อให้ถูกหลัก",
+              d: (
+                <>
+                  รูปแบบชื่อ:{" "}
+                  <span className="font-mono text-pink-100">ชื่อเพลง - ชื่อศิลปิน</span> เช่น{" "}
+                  <span className="font-mono text-pink-100">หนีห่าง - เขียนไข</span> แล้วกด “อัปโหลด”
+                  <span className="text-pink-100/70"> (ไฟล์ MP3/OGG/WAV, ยาวไม่เกิน 7 นาที, ≤ 20 MB)</span>
+                </>
+              ),
+            },
+            {
+              n: 4,
+              t: "ทักส่วนตัวแอดมิน ส่งไอดี+รหัสผ่าน",
+              d: (
+                <>
+                  ส่ง <span className="font-semibold text-pink-200">ไอดี + รหัสผ่าน</span> ของไอดีที่มีเพลงมาให้แอดมิน —
+                  เดี๋ยวแอดมินเอาเพลงเข้าแมพให้ <span className="font-semibold text-pink-300">(1 ไอดี ลงได้ 10 เพลง)</span>
+                </>
+              ),
+            },
+          ].map((s) => (
+            <div key={s.n} className="flex gap-3 rounded-xl bg-black/50 p-3">
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-fuchsia-500 text-[11px] font-bold text-black">
+                {s.n}
+              </span>
+              <div className="text-sm text-pink-100/90">
+                <p className="font-medium text-pink-100">{s.t}</p>
+                <p className="text-[13px] text-pink-100/80">{s.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-3 rounded-2xl border border-pink-500/40 bg-pink-500/10 p-3 text-xs text-pink-100">
+          <p className="font-semibold text-pink-200">หมายเหตุ</p>
+          <ul className="mt-1 list-disc space-y-1 pl-5">
+            <li>ตั้งชื่อเพลง + ศิลปินให้ถูกต้องตามหลัก (ชื่อเพลง - ศิลปิน) จะได้ค้นเจอง่ายและลดโอกาสโดนแบน</li>
+            <li>ไอดีที่ใช้ลงเพลง <span className="font-semibold text-red-300">มีโอกาสโดนแบน</span> ถ้าเพลงติดลิขสิทธิ์ — จึงต้องเป็นไอดีทิ้งเท่านั้น</li>
+            <li>บอกแอดมินด้วยว่าเพลงเป็นหมวดไหน (Boombox ทั่วไป / แดนซ์ / ม่วนหน้าฮ้าน / กีตาร์ Finger Style)</li>
+          </ul>
         </div>
       </>
     ),

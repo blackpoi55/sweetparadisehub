@@ -8,6 +8,7 @@ const GAME_URL = "https://www.roblox.com/th/games/115633751220614/Sweet-paradise
 
 const navGroups = [
   { label: "หน้าแรก", href: "/", icon: "🏠" },
+  { label: "สั่งซื้อเกมพาส", href: "/buypass", icon: "🛒", cta: true },
   {
     label: "ระบบเกม",
     icon: "🎮",
@@ -43,7 +44,7 @@ const navGroups = [
     label: "ตลาด & ชุมชน",
     icon: "🏬",
     items: [
-      { href: "/shop", label: "ร้านค้า NPC", icon: "🛒", desc: "ซื้อของด้วยเงิน" },
+      { href: "/shop", label: "ร้านค้า NPC", icon: "🏪", desc: "ซื้อของด้วยเงินในเกม" },
       { href: "/marketplace", label: "ตลาดฝากขาย", icon: "🏬", desc: "ซื้อขายผู้เล่น" },
       { href: "/family", label: "ครอบครัว & คู่รัก", icon: "👨‍👩‍👧", desc: "ข้อมูลสด + อันดับ" },
       { href: "/poi", label: "จุดน่าสนใจ", icon: "📍", desc: "บวช/ATM/ดูดวง/เทรด" },
@@ -105,6 +106,23 @@ export default function Nav() {
             {navGroups.map((group) => {
               const active = isGroupActive(group, pathname);
               if (group.href) {
+                if (group.cta) {
+                  return (
+                    <Link
+                      key={group.label}
+                      href={group.href}
+                      className={
+                        "flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-semibold transition hover:-translate-y-0.5 " +
+                        (active
+                          ? "border-amber-300 bg-gradient-to-r from-amber-400 to-pink-500 text-black shadow-lg shadow-pink-500/40"
+                          : "border-amber-300/70 bg-gradient-to-r from-amber-400/90 to-pink-500/90 text-black shadow-md shadow-pink-500/30 hover:shadow-pink-400/50")
+                      }
+                    >
+                      <span className="text-base">{group.icon}</span>
+                      {group.label}
+                    </Link>
+                  );
+                }
                 return (
                   <Link
                     key={group.label}
@@ -215,6 +233,18 @@ export default function Nav() {
             {navGroups.map((group) => {
               if (group.href) {
                 const active = pathname === group.href;
+                if (group.cta) {
+                  return (
+                    <Link
+                      key={group.label}
+                      href={group.href}
+                      className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-400 to-pink-500 px-3 py-2.5 text-sm font-semibold text-black shadow-lg shadow-pink-500/30"
+                    >
+                      <span className="text-base">{group.icon}</span>
+                      {group.label}
+                    </Link>
+                  );
+                }
                 return (
                   <Link
                     key={group.label}

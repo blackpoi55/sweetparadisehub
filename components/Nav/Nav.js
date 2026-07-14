@@ -16,6 +16,7 @@ const navGroups = [
       { href: "/fishing", label: "ตกปลา", icon: "🎣", desc: "ปลา 90+ ชนิด เรตดรอป" },
       { href: "/fishclash", label: "ศึกปลา", icon: "⚔️", desc: "PvP ออโต้จากปลาที่ตกได้" },
       { href: "/boss", label: "บอสโลก", icon: "🐉", desc: "ตีบอสร่วมเซิร์ฟ" },
+      { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม", icon: "🥊", desc: "ต่อยมอน อัพหมัด (ใหม่!)" },
       { href: "/farm", label: "ฟาร์ม", icon: "🌾", desc: "เก็บเกี่ยวผลผลิต" },
       { href: "/pets", label: "สัตว์เลี้ยง", icon: "🐾", desc: "7 ตัว สกิลบัฟ" },
     ],

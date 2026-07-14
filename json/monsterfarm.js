@@ -6,7 +6,7 @@ const MAX_LEVEL = 50;
 const PUNCH_RANGE = 13;
 
 // ===== สูตรจริงจาก config =====
-export const fistDamage = (lv) => Math.floor(10 + (Math.max(1, Math.min(MAX_LEVEL, lv)) - 1) * 4);
+export const fistDamage = (lv) => Math.floor(10 + (Math.max(1, Math.min(MAX_LEVEL, lv)) - 1) * 3);
 export const fistCooldown = (lv) => {
   const t = (Math.max(1, Math.min(MAX_LEVEL, lv)) - 1) / (MAX_LEVEL - 1);
   return 0.55 - (0.55 - 0.18) * t;
@@ -75,7 +75,7 @@ export const monsters = [
     hp: 900,
     money: 220,
     exp: 24,
-    spawn: "บางตัวที่เกิด (ราว ๆ 1 ใน 5)",
+    spawn: "เกิดเป็นบางตัว (ไม่บ่อย)",
     dropNote: "ลุ้นของเก่าเพิ่มขึ้น",
     dropBars: 2,
   },
@@ -87,7 +87,7 @@ export const monsters = [
     hp: 1800,
     money: 1600,
     exp: 110,
-    spawn: "โผล่แบบสุ่ม (หายาก)",
+    spawn: "โผล่แบบสุ่ม (หายากมาก)",
     dropNote: "ดรอปของบ่อย + มีลุ้นตั๋วหายาก/บัตร EXP",
     dropBars: 3,
     highlight: true,

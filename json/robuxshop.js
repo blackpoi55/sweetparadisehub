@@ -7,7 +7,7 @@ export const shopCategories = [
   { key: "gamepass", label: "เกมพาส", emoji: "🎟️" },
   { key: "limited", label: "ลิมิเต็ด", emoji: "💎" },
   { key: "currency", label: "เติมเงินในเกม", emoji: "💰" },
-  { key: "special", label: "พิเศษ (เพ็ท/ตั๋ว)", emoji: "✨" },
+  { key: "special", label: "พิเศษ (เพ็ท/ตั๋ว/บัตร)", emoji: "✨" },
 ];
 
 export const robuxItems = [
@@ -60,4 +60,10 @@ export const robuxItems = [
   { id: "sp-famcreate", cat: "special", name: "🏠 ตั๋วสร้างครอบครัว", desc: "สร้างครอบครัวของคุณเอง", price: 999, iconId: 103823514654103 },
   { id: "sp-famexpand", cat: "special", name: "➕ ตั๋วขยายครอบครัว", desc: "เพิ่มจำนวนสมาชิก", price: 599, iconId: 83662337440888 },
   { id: "sp-marry", cat: "special", name: "💍 ตั๋วขอแต่งงาน", desc: "ขอแต่งงานกับคนที่ใช่", price: 599, iconId: 118885569257669 },
+
+  // ===== บัตร EXP หมัด (มอนสเตอร์ฟาร์ม — ไอเทมฟาร์ม เทรดได้ ใช้ iconId ดึงรูป) =====
+  { id: "sp-mfexp100", cat: "special", name: "🃏 บัตร EXP หมัด +100", desc: "บัตรฟาร์มมอน • +100 EXP หมัดทันที (เทรดได้)", price: 99, iconId: 138443420054491 },
+  { id: "sp-mfexp500", cat: "special", name: "🃏 บัตร EXP หมัด +500", desc: "บัตรฟาร์มมอน • +500 EXP หมัดทันที (เทรดได้)", price: 449, iconId: 95693891337269 },
+  { id: "sp-mfexp1000", cat: "special", name: "🃏 บัตร EXP หมัด +1000", desc: "บัตรฟาร์มมอน • +1000 EXP หมัดทันที (เทรดได้)", price: 799, iconId: 93656820955999 },
+  { id: "sp-mfexpx2", cat: "special", name: "🃏 บัตร EXP หมัด x2 (10 นาที)", desc: "บัตรฟาร์มมอน • EXP หมัด ×2 นาน 10 นาที (เทรดได้)", price: 199, iconId: 134527392047996 },
 ];

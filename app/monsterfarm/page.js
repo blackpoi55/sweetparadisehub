@@ -353,6 +353,28 @@ export default function MonsterFarmPage() {
             <div className="rounded-2xl border border-emerald-500/25 bg-black/50 p-4">
               <h3 className="flex items-center gap-2 text-sm font-bold text-emerald-100">🤝 ช่วยกันตี (จองมอน)</h3>
               <p className="mt-1 text-[12px] leading-relaxed text-pink-100/80">{claim.desc}</p>
+              <div className="mt-2.5 space-y-1.5">
+                {claim.symbols.map((s) => (
+                  <div
+                    key={s.icon}
+                    className={
+                      "flex items-center gap-2.5 rounded-xl border px-2.5 py-1.5 " +
+                      (s.mine ? "border-emerald-400/40 bg-emerald-500/10" : "border-rose-400/40 bg-rose-500/10")
+                    }
+                  >
+                    <span className="text-xl leading-none">{s.icon}</span>
+                    <div className="min-w-0">
+                      <p className="text-[12px] font-semibold text-pink-50">
+                        {s.label}
+                        <span className={"ml-1.5 rounded-full px-1.5 py-0.5 text-[9px] " + (s.mine ? "bg-emerald-500/25 text-emerald-200" : "bg-rose-500/25 text-rose-200")}>
+                          {s.badge}
+                        </span>
+                      </p>
+                      <p className="text-[11px] leading-tight text-pink-200/70">{s.note}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="rounded-2xl border border-sky-500/25 bg-black/50 p-4">
               <h3 className="flex items-center gap-2 text-sm font-bold text-sky-100">🏃 ลู่วิ่ง AFK</h3>

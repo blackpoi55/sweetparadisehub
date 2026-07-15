@@ -40,8 +40,8 @@ export const fistTierOf = (lv) => {
   return t;
 };
 
-// ตารางตัวอย่างดาเมจต่อเลเวล (คำนวณจากสูตรจริง)
-export const fistTable = [1, 10, 20, 30, 40, 50].map((lv) => {
+// ตารางตัวอย่างดาเมจต่อเลเวล — ใช้ "จุดเริ่มของแต่ละเทียร์" (1/11/21/31/41/50) ให้ตรงกับป้ายไฟด้านบน + ครบทั้ง 6 เทียร์
+export const fistTable = [1, 11, 21, 31, 41, 50].map((lv) => {
   const dmg = fistDamage(lv);
   return {
     lv,

@@ -10,6 +10,9 @@ import {
   lockRules,
   howto,
   facts,
+  fxTable,
+  fxNotes,
+  fxChanges,
 } from "@/json/rodskin";
 import { resolveAsset, fmtNum } from "@/lib/gameAssets";
 import AssetIcon from "@/components/AssetIcon";
@@ -296,6 +299,76 @@ export default async function RodSkinPage() {
                   {r.req}
                 </p>
                 <p className="mt-1 text-[11px] leading-relaxed text-sky-100/70">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* FX SCALE */}
+        <Section
+          id="fx"
+          icon="🎨"
+          title="ยิ่งตีบวก เอฟเฟกต์ยิ่งสวย"
+          sub="ความแรงเอฟเฟกต์เพิ่มตามเลเวลของสกิน — +0 เห็นจาง ๆ ไล่ขึ้นจนเต็มสูบที่ +30"
+        >
+          <div className="rounded-2xl border border-fuchsia-500/25 bg-black/50 p-4 md:p-5">
+            {/* bars */}
+            <div className="flex items-end justify-between gap-2 sm:gap-4">
+              {fxTable.map((f) => (
+                <div key={f.lv} className="flex flex-1 flex-col items-center gap-1.5">
+                  <span className={"text-[11px] font-bold " + (f.max ? "text-amber-200" : "text-fuchsia-200/70")}>
+                    {f.pct}%
+                  </span>
+                  <div className="flex h-28 w-full max-w-[46px] items-end overflow-hidden rounded-lg bg-white/[0.05] sm:h-32">
+                    <div
+                      className={
+                        "w-full rounded-lg " +
+                        (f.max
+                          ? "bg-gradient-to-t from-amber-500 via-fuchsia-400 to-sky-300"
+                          : "bg-gradient-to-t from-fuchsia-600/70 to-sky-400/70")
+                      }
+                      style={{ height: `${f.pct}%` }}
+                    />
+                  </div>
+                  <span className={"text-[11px] font-semibold " + (f.max ? "text-amber-200" : "text-sky-100/70")}>
+                    +{f.lv}
+                    {f.max ? " 🔥" : ""}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* what changes */}
+            <div className="mt-4 grid grid-cols-1 gap-2 border-t border-white/10 pt-3.5 sm:grid-cols-2">
+              {fxChanges.map((c) => (
+                <div key={c.label} className="flex items-start gap-2.5 rounded-xl bg-white/[0.03] px-3 py-2">
+                  <span className="text-lg leading-none">{c.icon}</span>
+                  <div>
+                    <p className="text-[12px] font-semibold text-fuchsia-100">{c.label}</p>
+                    <p className="text-[11px] leading-tight text-sky-200/70">{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* notes */}
+          <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+            {fxNotes.map((n) => (
+              <div
+                key={n.title}
+                className={
+                  "rounded-2xl border p-4 " +
+                  (n.tone === "amber"
+                    ? "border-amber-400/35 bg-amber-500/[0.07]"
+                    : "border-sky-400/35 bg-sky-500/[0.07]")
+                }
+              >
+                <p className="flex items-center gap-2 text-sm font-bold text-white">
+                  <span className="text-lg">{n.icon}</span>
+                  {n.title}
+                </p>
+                <p className="mt-1 text-[11px] leading-relaxed text-sky-100/75">{n.desc}</p>
               </div>
             ))}
           </div>

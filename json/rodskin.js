@@ -83,6 +83,33 @@ export const skinBonus = (skin, lv) => {
   return out;
 };
 
+// ===== 🎨 ความแรงเอฟเฟกต์ตามเลเวล (สูตร fxScale ใน RodSkinServer) =====
+// +0 = 15% (จางมาก) → +30 = 100% (เต็มที่เท่าที่ทำไว้ในโมเดล)
+export const fxScale = (lv) => 0.15 + 0.85 * (Math.max(0, Math.min(MAX_LEVEL, lv)) / MAX_LEVEL);
+export const fxTable = [0, 5, 10, 15, 20, 30].map((lv) => ({
+  lv,
+  pct: Math.round(fxScale(lv) * 100),
+  max: lv === MAX_LEVEL,
+}));
+export const fxNotes = [
+  {
+    icon: "🎭",
+    title: "เอฟเฟกต์ยึดตาม “ลุค” ไม่ใช่ “ความสามารถ”",
+    desc: "ถ้าผสมสกิน เช่นใช้ลุค 🌸 ซากุระ (+10) แต่เอาพลัง 🔥 เปลวเพลิง (+30) → เอฟเฟกต์ที่เห็นจะแรงตามซากุระ +10 เท่านั้น อยากให้สวยสุดต้องตีบวก “ตัวที่ใส่เป็นลุค”",
+    tone: "amber",
+  },
+  {
+    icon: "👀",
+    title: "คนอื่นเห็นเอฟเฟกต์เราด้วย",
+    desc: "ระบบทำฝั่งเซิร์ฟเวอร์ → ทุกคนในเซิร์ฟเห็นสกินและเอฟเฟกต์ของคุณ ไม่ได้สวยอยู่คนเดียว",
+    tone: "sky",
+  },
+];
+export const fxChanges = [
+  { icon: "✨", label: "อนุภาค (Particle)", desc: "ยิ่งเลเวลสูง ยิ่งพ่นถี่ขึ้นและชัดขึ้น" },
+  { icon: "🌈", label: "ลำแสง (Beam)", desc: "ความโปร่งใสจางลงเรื่อย ๆ จนคมชัดเต็มที่ที่ +30" },
+];
+
 // ===== ตีบวก =====
 export const upgradeChance = (lv) => Math.max(0.1, 0.3 - lv * 0.0069);
 export const upgradeCost = (lv) => ({

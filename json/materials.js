@@ -18,6 +18,14 @@ export const materialMeta = {
   OldShoes: { name: "รองเท้าเก่า", emoji: "👟" },
   OldHat: { name: "หมวกเก่า", emoji: "🧢" },
 
+  // บัตร EXP หมัด (มอนสเตอร์ฟาร์ม) + บัตรสกินเบ็ด
+  MFExp100: { name: "บัตร EXP หมัด +100", emoji: "🃏" },
+  MFExp500: { name: "บัตร EXP หมัด +500", emoji: "🃏" },
+  MFExp1000: { name: "บัตร EXP หมัด +1000", emoji: "🎴" },
+  MFExpX2: { name: "บัตร EXP หมัด x2", emoji: "✨" },
+  RodSkinStartCard: { name: "บัตรการันตีตี +0", emoji: "🎴" },
+  RodSkinSafeCard: { name: "บัตรกันตีบวกแตก", emoji: "🛡️" },
+
   DollGachaBox: { name: "กล่องกาชาตุ๊กตา", emoji: "🎁" },
   ChairGachaBox: { name: "กล่องกาชาเก้าอี้", emoji: "🎁" },
   PetGachaBox: { name: "กล่องกาชาสัตว์เลี้ยง", emoji: "🎁" },

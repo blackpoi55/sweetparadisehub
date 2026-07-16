@@ -8,6 +8,7 @@ const cols = [
     title: "ระบบเกม",
     links: [
       { href: "/fishing", label: "ตกปลา" },
+      { href: "/rodskin", label: "สกินเบ็ด" },
       { href: "/fishclash", label: "ศึกปลา" },
       { href: "/boss", label: "บอสโลก" },
       { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม" },

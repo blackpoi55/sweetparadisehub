@@ -575,7 +575,7 @@ export const itemall = [
         "grouptype": "ทั่วไป",
         "getby": "ไอเท็มเริ่มต้น",
     },
-     {
+    {
         "code": "Boommic",
         "nameTH": "ไมค์ยาว",
         "icon": "/images/items/Boommic.png",
@@ -870,7 +870,7 @@ export const itemall = [
         "detail": "วางเพื่อเพิ่มความสว่าง",
         "grouptype": "อัญเชิญ",
         "getby": "เป็นเทพเซียน",
-    }, 
+    },
     {
         "code": "CinemaCamera",
         "nameTH": "ถ่ายหนัง",
@@ -878,7 +878,7 @@ export const itemall = [
         "detail": "ใช้เพื่อถ่ายทำวิดีโอ แพลนกล้องสวยๆ",
         "grouptype": "ทั่วไป",
         "getby": "ไอเท็มเริ่มต้น",
-    }, 
+    },
     {
         "code": "GlowStick",
         "nameTH": "แท่งหรรษา",
@@ -894,7 +894,7 @@ export const itemall = [
         "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น Cambo",
         "grouptype": "แกล้ง",
         "getby": "ซื้อ Pass",
-    }, 
+    },
     {
         "code": "Hoverboardlevel24",
         "nameTH": "บอร์ดเทพเซียน",
@@ -902,7 +902,7 @@ export const itemall = [
         "detail": "บอร์ดสำหรับขี่",
         "grouptype": "เดินทาง",
         "getby": "เป็นเทพเซียน",
-    }, 
+    },
     {
         "code": "Hoverboardpink",
         "nameTH": "บอร์ดชมพู",
@@ -910,7 +910,7 @@ export const itemall = [
         "detail": "บอร์ดสำหรับขี่",
         "grouptype": "เดินทาง",
         "getby": "test",
-    }, 
+    },
     {
         "code": "changeskinchick",
         "nameTH": "เสกเป็นไก่โอ้ค",
@@ -918,7 +918,7 @@ export const itemall = [
         "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น ไก่โอ้ค",
         "grouptype": "แกล้ง",
         "getby": "ตกปลาสีรุ้ง",
-    }, 
+    },
     {
         "code": "changeskinhippo",
         "nameTH": "เสกเป็นฮิปโป",
@@ -926,7 +926,7 @@ export const itemall = [
         "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น ฮิปโป",
         "grouptype": "แกล้ง",
         "getby": "ตกปลาสีรุ้ง",
-    }, 
+    },
     {
         "code": "changeskinlobster",
         "nameTH": "เสกเป็นล็อปสเตอร์",
@@ -934,24 +934,24 @@ export const itemall = [
         "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น ล็อปสเตอร์",
         "grouptype": "แกล้ง",
         "getby": "ตกปลาสีรุ้ง",
-    }, 
+    },
     {
         "code": "Rainbowwing",
         "nameTH": "ปีกรุ้ง",
         "icon": "/images/items/Rainbowwing.png",
-       "detail": "อุปกรณ์ในการบินอย่างอิสระ",
+        "detail": "อุปกรณ์ในการบินอย่างอิสระ",
         "grouptype": "เดินทาง",
         "getby": "ตกปลาสSadnoob หรือ กาชาSadnoob",
-    }, 
-     {
+    },
+    {
         "code": "IceWings",
         "nameTH": "ปีกน้ำแข็ง",
         "icon": "/images/items/IceWings.png",
-       "detail": "อุปกรณ์ในการบินอย่างอิสระ",
+        "detail": "อุปกรณ์ในการบินอย่างอิสระ",
         "grouptype": "เดินทาง",
         "getby": "ซื้อ Pass",
-    }, 
-     {
+    },
+    {
         "code": "Sniperinvite",
         "nameTH": "ปืนเชิญเทเลพอร์ต",
         "icon": "/images/items/Sniperinvite.png",
@@ -963,10 +963,10 @@ export const itemall = [
         "code": "Magicbook",
         "nameTH": "หนังสือวาร์ป",
         "icon": "/images/items/Magicbook.png",
-       "detail": "เลือกจุดหมาย + ชวนคนรอบข้างวาร์ปไปยังจุดต่างๆด้วยกัน",
+        "detail": "เลือกจุดหมาย + ชวนคนรอบข้างวาร์ปไปยังจุดต่างๆด้วยกัน",
         "grouptype": "เดินทาง",
         "getby": "โต๊ะคราฟ",
-    }, 
+    },
     {
         "code": "changeskinpenquin",
         "nameTH": "เสกเป็นเพนกวิน",
@@ -974,7 +974,7 @@ export const itemall = [
         "detail": "เปลี่ยนให้ผุ้เล่นอื่นเป็น เพนกวิน",
         "grouptype": "แกล้ง",
         "getby": "ตกปลาสีรุ้ง",
-    }, 
+    },
     {
         "code": "TipJar",
         "nameTH": "โดเนท",
@@ -987,18 +987,18 @@ export const itemall = [
         "code": "JumpingSword",
         "nameTH": "ดาบกระโดด",
         "icon": "/images/items/JumpingSword.png",
-       "detail": "อุปกรณ์ในการกระโดด และพุ่ง",
+        "detail": "อุปกรณ์ในการกระโดด และพุ่ง",
         "grouptype": "เดินทาง",
         "getby": "ตกปลาสีรุ้ง",
-    }, 
+    },
     {
         "code": "Umbrellagravity",
         "nameTH": "ร่มลอยตัว",
         "icon": "/images/items/Umbrellagravity.png",
-       "detail": "อุปกรณ์ในการกระโดด",
+        "detail": "อุปกรณ์ในการกระโดด",
         "grouptype": "เดินทาง",
         "getby": "ตกปลาสีรุ้ง",
-    }, 
+    },
     {
         "code": "KittyLove",
         "nameTH": "ตุ๊กตาคิตตี้หัวใจ",
@@ -1022,5 +1022,13 @@ export const itemall = [
         "detail": "อวยพรวันเกิด",
         "grouptype": "ทั่วไป",
         "getby": "ร้านค้า Admin Note",
+    },
+    {
+        "code": "BathroomToiletTool",
+        "nameTH": "ชักโครกนักตกปลา",
+        "icon": "/images/items/BathroomToiletTool.png",
+        "detail": "อัญเชิญส้วมออกมานั่งเพื่อ เพิ่อมโชคตกปลา+3% และรายได้จากการตกปลา+2%",
+        "grouptype": "อัญเชิญ",
+        "getby": "ตกปลาสีรุ้ง",
     },
 ]

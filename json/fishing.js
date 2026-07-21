@@ -123,7 +123,8 @@ export const fishgiveitem = [
     { fishname: "กุ้งแช่สีรุ้ง", itemname: "เสกเป็นล็อปสเตอร์", itemimage: "/images/items/changeskinlobster.png" },
     { fishname: "ปลาSadNoob", itemname: "ปีกรุ้ง", itemimage: "/images/items/Rainbowwing.png" },
     { fishname: "เพนกวินจักรพรรดิ์สีรุ้ง", itemname: "เสกเป็นเพนกวิน", itemimage: "/images/items/changeskinpenquin.png" },
-    { fishname: "StampSatangFish", itemname: "ดาบกระโดด", itemimage: "/images/items/JumpingSword.png" }, 
+    { fishname: "StampSatangFish", itemname: "ดาบกระโดด", itemimage: "/images/items/JumpingSword.png" },
+    { fishname: "ปลารารวดอึ", itemname: "ชักโครกนักตกปลา", itemimage: "/images/items/BathroomToiletTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

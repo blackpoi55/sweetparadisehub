@@ -88,7 +88,8 @@ export const fishall = [
     { name: "ปลาSadNoob", rarity: "สายรุ้ง", price: 150000, score: 1560, rate: 0.003, status: "Active" },
     { name: "เพนกวินจักรพรรดิ์สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
     { name: "StampSatangFish", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.006, status: "Active" },
-    // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" }, 
+    { name: "ปลารารวดอึ", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
 export const trashall = [

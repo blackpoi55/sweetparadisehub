@@ -379,8 +379,23 @@ export const songall = [
     { name: "ด้วยใจยินดี - LANDOKMAI", songid: "75041365334015" },
     { name: "ได้แค่เดินมาส่ง The Last Walk", songid: "102355555734445" },
     { name: "ส่วนต่าง - BOWKYLION", songid: "125332531217698" },
+    { name: "ฝันถึงแฟนเก่า - Three Man Down", songid: "99516538363101" },
+    { name: "เดาไม่เก่ง - Three Man Down", songid: "89636084650600" },
+    { name: "ทีมรอเธอ - Three Man Down", songid: "123885102518560" },
+    { name: "Kakagoesbackhome - EXP Expired ", songid: "100250017307907" },
+    { name: "รักนานๆ-โดม", songid: "130777887741316" },
+    { name: "เธอไม่ชอบฝน(Rainfall) -โดม", songid: "117165825530803" },
+    { name: "ปลายสายรุ้ง- paradox", songid: "107551930423951" },
+    { name: "หรือ (Or)", songid: "121630744802044" },
 
 ]
+export const kpopsongall = [
+    { name: "RHYTHM TA-IKON", songid: "133126620005604" },
+    { name: "Jungkook - If You", songid: "101797597296757" },
+    { name: "BIGBANG - LOSER", songid: "106152752134491" },
+    { name: "Love scenario-iKON", songid: "138142750571351" },
+]
+
 export const djsongall = [
     { name: "โดนทีเดียวได้ไปอยู่โพไซดอน", songid: "102963228488053" },
     { name: "แคปหมู แคปหมี", songid: "108538254666713" },

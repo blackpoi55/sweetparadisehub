@@ -154,6 +154,17 @@ export const craftRecipes = {
         { kind: "money", amount: 250000 },
       ],
     },
+    {
+      id: "DecorGachaBox", name: "กาชาของตกแต่งv1", chance: 0.8,
+      result: { kind: "farm", item: "DecorGachaBox" },
+      cost: [
+        { kind: "farm", item: "RiceTop", amount: 7 },
+        { kind: "farm", item: "Rice", amount: 40 },
+        { kind: "farm", item: "Iron", amount: 3 },
+        { kind: "farm", item: "GoldenTicket", amount: 2 },
+        { kind: "money", amount: 100000 },
+      ],
+    },
   ],
   Gamepass: [
     {

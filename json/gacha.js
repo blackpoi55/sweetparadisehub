@@ -130,6 +130,27 @@ export const gachaPools = [
       { item: "Rainbowwing", rarity: "Legendary", weight: 0.03 },
     ],
   },
+  {
+    key: "DecorV1",
+    boxItem: "DecorGachaBox",
+    displayName: "กาชาของตกแต่งv1",
+    price: 0,
+    source: "คราฟที่โต๊ะคราฟ (ไม่ขายในร้าน)",
+    items: [
+      { item: "BalloonsTool", rarity: "Common", weight: 100 },
+      { item: "PicnicBasketTool", rarity: "Common", weight: 90 },
+      { item: "PoolFloatTool", rarity: "Uncommon", weight: 60 },
+      { item: "StableTool", rarity: "Uncommon", weight: 55 },
+      { item: "TableParty4Tool", rarity: "Rare", weight: 35 },
+      { item: "PartyTable6Tool", rarity: "Rare", weight: 32 },
+      { item: "DiscoTool", rarity: "Rare", weight: 30 },
+      { item: "GrillTool", rarity: "Epic", weight: 15 },
+      { item: "BalloonDoorTool", rarity: "Epic", weight: 12 },
+      { item: "BlueConfettiTool", rarity: "Legendary", weight: 6 },
+      { item: "PurpleConfettiTool", rarity: "Legendary", weight: 6 },
+      { item: "SmokeMachineTool", rarity: "Legendary", weight: 3 },
+    ],
+  },
 ];
 
 export const gachaMeta = { rollSeconds: 10, maxPerBuy: 50 };

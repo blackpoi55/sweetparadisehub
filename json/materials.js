@@ -33,4 +33,5 @@ export const materialMeta = {
   EventGachaBox: { name: "กล่องกาชา Event", emoji: "🎁" },
   AdminGachaBox: { name: "กล่องกาชา Admin", emoji: "🎁" },
   SadnoobBossGachaBox: { name: "กล่องกาชาบอส", emoji: "🎁" },
+  DecorGachaBox: { name: "กาชาของตกแต่งv1", emoji: "🎉" },
 };

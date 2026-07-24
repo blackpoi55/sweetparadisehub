@@ -1127,4 +1127,28 @@ export const itemall = [
         "grouptype": "อัญเชิญ",
         "getby": "กาชาของตกแต่งv1",
     },
+    {
+        "code": "RideDuckTool",
+        "nameTH": "🦆 เป็ดน้อยขี่",
+        "icon": "/images/items/RideDuckTool.png",
+        "detail": "อัญเชิญเป็ดน้อยออกมาขี่ — เดินวอดแวด + กระโดดสูง",
+        "grouptype": "ของขี่",
+        "getby": "ตกปลาราเร็ดก้าบก้าบ",
+    },
+    {
+        "code": "RideUnicornTool",
+        "nameTH": "🦄 ยูนิคอร์นน่าขี่",
+        "icon": "/images/items/RideUnicornTool.png",
+        "detail": "อัญเชิญยูนิคอร์นออกมาขี่ — วิ่งเร็ว + ทิ้งรางสีรุ้ง",
+        "grouptype": "ของขี่",
+        "getby": "🤫 ยังเป็นความลับ",
+    },
+    {
+        "code": "RideCapybaraTool",
+        "nameTH": "🦫 คาปิบาราน่าขี่",
+        "icon": "/images/items/RideCapybaraTool.png",
+        "detail": "อัญเชิญคาปิบาราออกมาขี่ — เด้งสูง",
+        "grouptype": "ของขี่",
+        "getby": "🤫 ยังเป็นความลับ",
+    },
 ]

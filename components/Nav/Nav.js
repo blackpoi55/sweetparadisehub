@@ -26,6 +26,7 @@ const navGroups = [
     label: "คราฟ & สุ่ม",
     icon: "🎰",
     items: [
+      { href: "/wish", label: "ขอพร", icon: "🎫", desc: "รีล 25 รางวัล + บัตรแลกพาส (ใหม่!)" },
       { href: "/craft", label: "สูตรคราฟ", icon: "🛠️", desc: "23 สูตร โต๊ะคราฟ" },
       { href: "/gacha", label: "กาชา", icon: "🎁", desc: "อัตราออกทุก pool" },
       { href: "/wheel", label: "วงล้อรายวัน", icon: "🎡", desc: "หมุนฟรีวันละครั้ง" },

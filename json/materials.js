@@ -26,6 +26,11 @@ export const materialMeta = {
   RodSkinStartCard: { name: "บัตรการันตีตี +0", emoji: "🎴" },
   RodSkinSafeCard: { name: "บัตรกันตีบวกแตก", emoji: "🛡️" },
 
+  // บัตรระบบขอพร (แอพขอพร)
+  WishTicket: { name: "บัตรอธิษฐาน", emoji: "🙏" },
+  WishCard: { name: "บัตรขอพร", emoji: "🎫" },
+  HBDCard: { name: "บัตร Happy Birthday", emoji: "🎂" },
+
   DollGachaBox: { name: "กล่องกาชาตุ๊กตา", emoji: "🎁" },
   ChairGachaBox: { name: "กล่องกาชาเก้าอี้", emoji: "🎁" },
   PetGachaBox: { name: "กล่องกาชาสัตว์เลี้ยง", emoji: "🎁" },

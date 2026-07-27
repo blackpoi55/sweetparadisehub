@@ -290,7 +290,7 @@ export const howto = [
     step: 5,
     icon: "🎟️",
     title: "สะสมบัตรไปแลกเกมพาส",
-    desc: "บัตรขอพร (500R) + บัตร HBD (1500R) เอามารวมกันแลกเกมพาส/ลิมิเต็ดได้ทั้ง 33 ชิ้น — ที่แท็บ 🎫 บัตร → แลกเกมพาส",
+    desc: "บัตรขอพร (500R) + บัตร HBD (1500R) เอามารวมกันแลกเกมพาส/ลิมิเต็ด 33 ชิ้น + เพ็ท 404 เดมอน — ที่แท็บ 🎫 บัตร → แลกเกมพาส",
   },
 ];
 
@@ -354,7 +354,7 @@ export const facts = [
   {
     icon: "🎟️",
     title: "บัตร → เกมพาส",
-    desc: "สะสมบัตรแลกเกมพาส/ลิมิเต็ดได้ครบทั้ง 33 ชิ้น โดยไม่ใช้โรบัค",
+    desc: "สะสมบัตรแลกเกมพาส/ลิมิเต็ด + เพ็ท 404 เดมอน ได้ 34 ชิ้น โดยไม่ใช้โรบัค",
   },
 ];
 
@@ -364,6 +364,22 @@ export const facts = [
 //   2) ไม่มีทอน — ส่วนเกินหายไป
 //   3) ห้ามใส่เกินจำเป็น: เอาบัตรออก 1 ใบ (ชนิดใดก็ได้ที่ใช้อยู่) แล้วยังพอ = ไม่ผ่าน
 //   4) 1 การแลก = 1 เกมพาส
+
+// 🐾 นอกจากเกมพาส/ลิมิเต็ดแล้ว owner ยังเปิดให้แลก "สัตว์เลี้ยง dev-product" ด้วยบัตรได้
+//    (WishServer.PET_PASSES) — grant ผ่าน PetGrantFn ไม่ใช่ PassService.GrantGift
+//    404Demon เท่านั้น · Haxigator ไม่ใส่ เพราะเลือกฟรีได้อยู่แล้วในหมวดสัตว์เลี้ยง
+export const petPasses = [
+  {
+    id: "pet-404",
+    productId: 3609379061, // Developer Product id (ไม่ใช่ gamepass id)
+    petKey: "404Demon",
+    cat: "pet",
+    name: "👹 404 เดมอน (สัตว์เลี้ยง)",
+    desc: "เพ็ทตำนาน • ตีบอส + โชคปลารุ้ง + เงินตกปลา + แฮคแอร์ดรอป",
+    price: 4999,
+    iconId: 128134502313859,
+  },
+];
 
 /** คืน combo ที่ใช้ได้ทั้งหมดของราคานี้ (เรียงจากมูลค่ารวมน้อยสุด → ใบน้อยสุด) */
 export function redeemCombos(price, { wishValue = meta.wishCardValue, hbdValue = meta.hbdValue } = {}) {
@@ -410,6 +426,7 @@ export const logging = {
     { action: "ซื้อบัตรขอพร", pay: "เงิน 100,000,000" },
     { action: "ขอพร-เลือกของ", pay: "บัตรขอพร / บัตร Happy Birthday 1 ใบ" },
     { action: "แลกเกมพาส", pay: "ขอพร×n + HBD×m = รวม xR / พาส yR (ไม่มีทอน)" },
+    { action: "แลกสัตว์เลี้ยง", pay: "เหมือนแลกเกมพาส (แยก action เพราะแจกคนละทาง)" },
   ],
 };
 
@@ -417,4 +434,5 @@ export const logging = {
 export const iconIds = [
   ...cards.map((c) => c.iconId),
   ...rewards.filter((r) => r.iconId).map((r) => r.iconId),
+  ...petPasses.map((p) => p.iconId),
 ];

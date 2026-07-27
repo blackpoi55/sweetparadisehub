@@ -16,6 +16,7 @@ import {
   comboText,
   logging,
   iconIds,
+  petPasses,
 } from "@/json/wish";
 import { robuxItems } from "@/json/robuxshop";
 import { resolveAsset, fmtNum } from "@/lib/gameAssets";
@@ -44,10 +45,11 @@ async function fetchThumbs(url) {
   return map;
 }
 
-/* เกมพาสที่แลกด้วยบัตรได้ = Config.shopItems ทั้งหมด (เกมพาส + ลิมิเต็ด) */
-const passes = robuxItems
-  .filter((i) => (i.cat === "gamepass" || i.cat === "limited") && i.pid)
-  .sort((a, b) => a.price - b.price);
+/* ของที่แลกด้วยบัตรได้ = Config.shopItems (เกมพาส + ลิมิเต็ด) + สัตว์เลี้ยง dev-product (404Demon) */
+const passes = [
+  ...robuxItems.filter((i) => (i.cat === "gamepass" || i.cat === "limited") && i.pid),
+  ...petPasses,
+].sort((a, b) => a.price - b.price);
 
 const TOTAL_W = totalWeight();
 
@@ -232,7 +234,10 @@ export default async function WishPage() {
       `https://thumbnails.roblox.com/v1/assets?assetIds=${iconIds.join(",")}&size=150x150&format=Png&isCircular=false`
     ),
     fetchThumbs(
-      `https://thumbnails.roblox.com/v1/game-passes?gamePassIds=${passes.map((p) => p.pid).join(",")}&size=150x150&format=Png`
+      `https://thumbnails.roblox.com/v1/game-passes?gamePassIds=${passes
+        .filter((p) => p.pid)
+        .map((p) => p.pid)
+        .join(",")}&size=150x150&format=Png`
     ),
   ]);
 
@@ -270,7 +275,7 @@ export default async function WishPage() {
               { v: `${rewards.length} ช่อง`, l: "รางวัลในรีล" },
               { v: fmtNum(meta.costMoney), l: "ค่าหมุน / ครั้ง" },
               { v: `${categories.length} หมวด`, l: `ของเลือกได้ ${totalPickable} ชิ้น` },
-              { v: `${passes.length} ชิ้น`, l: "เกมพาสที่แลกได้" },
+              { v: `${passes.length} ชิ้น`, l: "แลกด้วยบัตรได้" },
             ].map((s) => (
               <div key={s.l} className="rounded-xl border border-violet-500/25 bg-black/50 px-3 py-2.5">
                 <p className="text-sm font-bold text-violet-100">{s.v}</p>
@@ -516,7 +521,7 @@ export default async function WishPage() {
           id="redeem"
           icon="🎟️"
           title="แลกเกมพาสด้วยบัตร"
-          sub={`บัตรขอพร 1 ใบ = ${meta.wishCardValue}R · บัตร Happy Birthday 1 ใบ = ${fmtNum(meta.hbdValue)}R — ผสมกันได้ ใช้แลกได้ครบทั้ง ${passes.length} ชิ้น (เกมพาส + ลิมิเต็ด) โดยไม่ใช้โรบัคจริง`}
+          sub={`บัตรขอพร 1 ใบ = ${meta.wishCardValue}R · บัตร Happy Birthday 1 ใบ = ${fmtNum(meta.hbdValue)}R — ผสมกันได้ ใช้แลกได้ครบทั้ง ${passes.length} ชิ้น (เกมพาส + ลิมิเต็ด + เพ็ท 404 เดมอน) โดยไม่ใช้โรบัคจริง`}
         >
           {/* กติกา */}
           <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2 lg:grid-cols-4">
@@ -581,13 +586,14 @@ export default async function WishPage() {
                 {passes.map((p) => {
                   const c = bestCombo(p.price);
                   const alt = redeemCombos(p.price).length;
+                  const icon = p.pid ? passIcons[String(p.pid)] : assetIcons[String(p.iconId)];
                   return (
                     <tr key={p.id} className="border-t border-violet-500/10 transition hover:bg-white/[0.03]">
                       <td className="px-3 py-2.5">
                         <div className="flex items-center gap-2.5">
                           <div className="h-8 w-8 flex-shrink-0 overflow-hidden rounded-lg bg-white/5">
-                            {passIcons[String(p.pid)] ? (
-                              <img src={passIcons[String(p.pid)]} alt={p.name} className="h-full w-full object-cover" />
+                            {icon ? (
+                              <img src={icon} alt={p.name} className="h-full w-full object-cover" />
                             ) : (
                               <span className="flex h-full w-full items-center justify-center text-sm">🎟️</span>
                             )}
@@ -601,11 +607,15 @@ export default async function WishPage() {
                       <td className="px-3 py-2.5">
                         <span
                           className={
-                            "inline-block rounded-full px-2 py-0.5 text-[10px] font-medium " +
-                            (p.cat === "limited" ? TONES.fuchsia.chip : TONES.sky.chip)
+                            "inline-block whitespace-nowrap rounded-full px-2 py-0.5 text-[10px] font-medium " +
+                            (p.cat === "pet"
+                              ? TONES.emerald.chip
+                              : p.cat === "limited"
+                                ? TONES.fuchsia.chip
+                                : TONES.sky.chip)
                           }
                         >
-                          {p.cat === "limited" ? "💎 ลิมิเต็ด" : "🎟️ เกมพาส"}
+                          {p.cat === "pet" ? "🐾 สัตว์เลี้ยง" : p.cat === "limited" ? "💎 ลิมิเต็ด" : "🎟️ เกมพาส"}
                         </span>
                       </td>
                       <td className="px-3 py-2.5 text-right font-mono text-[12px] font-semibold text-amber-200">
@@ -630,9 +640,27 @@ export default async function WishPage() {
               </tbody>
             </table>
           </div>
+          {/* กรณีพิเศษ: เพ็ท dev-product */}
+          <div className="mt-3 rounded-2xl border border-emerald-400/30 bg-emerald-500/[0.06] p-4">
+            <p className="flex items-center gap-2 text-sm font-bold text-emerald-200">
+              🐾 กรณีพิเศษ — เพ็ทที่แลกด้วยบัตรได้
+            </p>
+            <p className="mt-1.5 text-[11px] leading-relaxed text-emerald-100/70 md:text-xs">
+              <b className="text-white">👹 404 เดมอน</b> ไม่ใช่เกมพาส แต่เป็น{" "}
+              <b className="text-emerald-200">Developer Product</b> (ปกติซื้อ 4,999R เท่านั้น) — เจ้าของเปิดให้แลกด้วยบัตรได้เป็นกรณีพิเศษ
+              จึงโผล่อยู่ในลิสต์แลกพาสด้วย ระบบเช็ก “มีเพ็ทนี้แล้วหรือยัง” และแจกผ่านระบบสัตว์เลี้ยงคนละทางกับเกมพาส —
+              ถ้าแจกไม่สำเร็จหรือมีอยู่แล้ว <b className="text-white">บัตรจะไม่ถูกหัก</b>
+            </p>
+            <p className="mt-2 text-[11px] leading-relaxed text-emerald-100/55">
+              ส่วน <b className="text-emerald-200/90">👾 แฮคเกอร์ (Haxigator)</b> เป็น Developer Product เหมือนกัน แต่{" "}
+              <b className="text-white">ไม่อยู่ในลิสต์นี้</b> เพราะเลือกได้ฟรีอยู่แล้วในหมวด 🐾 สัตว์เลี้ยง (ไม่ต้องเปลืองบัตรแลก)
+            </p>
+          </div>
+
           <p className="mt-2 text-[10px] leading-relaxed text-white/35">
-            * ราคาที่ใช้คำนวณคือราคาในระบบเกม (Config.shopItems) ไม่ใช่ราคาขายสดบน Roblox — ถ้าเจ้าของลดราคาพาสในหน้า
-            Roblox ระบบแลกบัตรยังคิดตามราคานี้เสมอ · เกมพาสแบบลิมิเต็ดที่แถมไอเทมในตัว จะได้ไอเทมนั้นมาด้วยอัตโนมัติ
+            * ราคาที่ใช้คำนวณคือราคาในระบบเกม (Config.shopItems / PetConfig) ไม่ใช่ราคาขายสดบน Roblox —
+            ถ้าเจ้าของลดราคาพาสในหน้า Roblox ระบบแลกบัตรยังคิดตามราคานี้เสมอ · เกมพาสแบบลิมิเต็ดที่แถมไอเทมในตัว
+            จะได้ไอเทมนั้นมาด้วยอัตโนมัติ
           </p>
         </Section>
 

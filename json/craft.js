@@ -34,6 +34,14 @@ export const craftRecipes = {
       ],
     },
     {
+      id: "GuaranteeCraftTicket", name: "💯 Guarantee Craft Ticket", chance: 1,
+      result: { kind: "farm", item: "GuaranteeCraftTicket" },
+      cost: [
+        { kind: "farm", item: "RodSkinSafeCard", amount: 35 },
+        { kind: "money", amount: 1000000 },
+      ],
+    },
+    {
       id: "MarketBumpTicket", name: "🚀 ตั๋วดันตลาด", chance: 1,
       result: { kind: "farm", item: "MarketBumpTicket" },
       cost: [

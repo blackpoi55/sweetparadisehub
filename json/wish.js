@@ -215,8 +215,8 @@ export const categories = [
     grant: "permanent",
     dup: false,
     color: "#C8B478",
-    items: ["RideCapybaraTool", "RideDuckTool", "RideUnicornTool"],
-    note: "3 ตัวใหม่ล่าสุด — เป็ดน้อยปกติต้องตก “ปลาราเร็ดก้าบก้าบ” ถึงจะปลดล็อก",
+    items: ["RideCapybaraTool", "RideDuckTool", "RideUnicornTool", "RideBuffaloTool"],
+    note: "4 ตัว — เป็ดน้อยต้องตก “ปลาราเร็ดก้าบก้าบ” · ควายต้องตก “ปลาเจ้าทุยลุยแหลก” ถึงจะปลดล็อก (หรือลุ้นจากขอพร)",
     grantDesc: "ไอเทมถาวร เข้ากระเป๋าตลอดไป",
   },
   {
@@ -232,7 +232,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 23 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–91) =====
+// ===== ปลารุ้งทั้ง 24 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–92) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -254,10 +254,11 @@ export const rainbowFish = [
   { id: 85, name: "StampSatangFish", price: 200000, score: 650, rate: 0.006 },
   { id: 86, name: "ปลารารวดอึ", price: 250000, score: 888, rate: 0.001, unlock: "🚽 ชักโครกนักตกปลา" },
   { id: 87, name: "ปลาราเร็ดก้าบก้าบ", price: 250000, score: 888, rate: 0.001, unlock: "🦆 เป็ดน้อยขี่" },
-  { id: 88, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 89, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 90, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 91, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 88, name: "ปลาเจ้าทุยลุยแหลก", price: 250000, score: 900, rate: 0.0008, unlock: "🐃 ควายน่าขี่" },
+  { id: 89, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 90, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 91, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 92, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
 ];
 
 // ===== ขั้นตอนการเล่น =====

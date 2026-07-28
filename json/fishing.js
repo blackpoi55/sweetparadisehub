@@ -90,6 +90,7 @@ export const fishall = [
     { name: "StampSatangFish", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.006, status: "Active" },
     { name: "ปลารารวดอึ", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลาราเร็ดก้าบก้าบ", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลาเจ้าทุยลุยแหลก", rarity: "สายรุ้ง", price: 250000, score: 900, rate: 0.0008, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -127,6 +128,7 @@ export const fishgiveitem = [
     { fishname: "StampSatangFish", itemname: "ดาบกระโดด", itemimage: "/images/items/JumpingSword.png" },
     { fishname: "ปลารารวดอึ", itemname: "ชักโครกนักตกปลา", itemimage: "/images/items/BathroomToiletTool.png" },
     { fishname: "ปลาราเร็ดก้าบก้าบ", itemname: "🦆 เป็ดน้อยขี่", itemimage: "/images/items/RideDuckTool.png" },
+    { fishname: "ปลาเจ้าทุยลุยแหลก", itemname: "🐃 ควายน่าขี่", itemimage: "/images/items/RideBuffaloTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

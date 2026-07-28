@@ -1151,4 +1151,12 @@ export const itemall = [
         "grouptype": "ของขี่",
         "getby": "🤫 ยังเป็นความลับ",
     },
+    {
+        "code": "RideBuffaloTool",
+        "nameTH": "🐃 ควายน่าขี่",
+        "icon": "/images/items/RideBuffaloTool.png",
+        "detail": "อัญเชิญควายออกมาขี่ — พุ่งชน",
+        "grouptype": "ของขี่",
+        "getby": "ตกปลาเจ้าทุยลุยแหลก",
+    },
 ]

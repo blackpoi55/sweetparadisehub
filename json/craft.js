@@ -38,7 +38,7 @@ export const craftRecipes = {
       result: { kind: "farm", item: "GuaranteeCraftTicket" },
       cost: [
         { kind: "farm", item: "RodSkinSafeCard", amount: 35 },
-        { kind: "money", amount: 1000000 },
+        { kind: "money", amount: 5000000 },
       ],
     },
     {

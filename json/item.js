@@ -1160,6 +1160,14 @@ export const itemall = [
         "getby": "ตกปลาเจ้าทุยลุยแหลก",
     },
     {
+        "code": "GlowFootstepsTool",
+        "nameTH": "🐾 รอยเท้าเรืองแสง",
+        "icon": "/images/items/GlowFootstepsTool.png",
+        "detail": "เดินแล้วทิ้งรอยเท้าเรืองแสง — กดเปิด/ปิดได้",
+        "grouptype": "แฟชั่น",
+        "getby": "🎂 วันครบรอบ 1 ปี",
+    },
+    {
         "code": "BubbleGunTool",
         "nameTH": "🫧 ปืนฟองสบู่",
         "icon": "/images/items/BubbleGunTool.png",

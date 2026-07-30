@@ -1159,4 +1159,28 @@ export const itemall = [
         "grouptype": "ของขี่",
         "getby": "ตกปลาเจ้าทุยลุยแหลก",
     },
+    {
+        "code": "BubbleGunTool",
+        "nameTH": "🫧 ปืนฟองสบู่",
+        "icon": "/images/items/BubbleGunTool.png",
+        "detail": "ยิงใส่คนอื่นให้ติดฟองสบู่ลอยขึ้น",
+        "grouptype": "แกล้ง",
+        "getby": "ตกปลาฟองสบู่ฟรุ้งฟริ้ง",
+    },
+    {
+        "code": "RideWhaleTool",
+        "nameTH": "🐋 วาฬลอยฟ้า",
+        "icon": "/images/items/RideWhaleTool.png",
+        "detail": "อัญเชิญวาฬออกมาขี่ — บินได้",
+        "grouptype": "ของขี่",
+        "getby": "ตกปลาวาฬน้อยลอยลม",
+    },
+    {
+        "code": "RideBalloonTool",
+        "nameTH": "🎈 บอลลูนคู่ใจ",
+        "icon": "/images/items/RideBalloonTool.png",
+        "detail": "อัญเชิญบอลลูนออกมาขี่ — บินได้",
+        "grouptype": "ของขี่",
+        "getby": "ตกปลาบอลลูนหวานใจ",
+    },
 ]

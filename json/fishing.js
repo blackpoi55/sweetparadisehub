@@ -86,11 +86,14 @@ export const fishall = [
     { name: "ปลาฮิปปี้สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
     { name: "กุ้งแช่สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
     { name: "ปลาSadNoob", rarity: "สายรุ้ง", price: 150000, score: 1560, rate: 0.003, status: "Active" },
-    { name: "เพนกวินจักรพรรดิ์สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
+    { name: "เพนกวินจักรพรรดิ์สีรุ้ง", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.009, status: "Active" },
     { name: "StampSatangFish", rarity: "สายรุ้ง", price: 200000, score: 650, rate: 0.006, status: "Active" },
     { name: "ปลารารวดอึ", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลาราเร็ดก้าบก้าบ", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลาเจ้าทุยลุยแหลก", rarity: "สายรุ้ง", price: 250000, score: 900, rate: 0.0008, status: "Active" },
+    { name: "ปลาฟองสบู่ฟรุ้งฟริ้ง", rarity: "สายรุ้ง", price: 250000, score: 880, rate: 0.0012, status: "Active" },
+    { name: "ปลาวาฬน้อยลอยลม", rarity: "สายรุ้ง", price: 300000, score: 950, rate: 0.0007, status: "Active" },
+    { name: "ปลาบอลลูนหวานใจ", rarity: "สายรุ้ง", price: 280000, score: 920, rate: 0.0009, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -129,6 +132,9 @@ export const fishgiveitem = [
     { fishname: "ปลารารวดอึ", itemname: "ชักโครกนักตกปลา", itemimage: "/images/items/BathroomToiletTool.png" },
     { fishname: "ปลาราเร็ดก้าบก้าบ", itemname: "🦆 เป็ดน้อยขี่", itemimage: "/images/items/RideDuckTool.png" },
     { fishname: "ปลาเจ้าทุยลุยแหลก", itemname: "🐃 ควายน่าขี่", itemimage: "/images/items/RideBuffaloTool.png" },
+    { fishname: "ปลาฟองสบู่ฟรุ้งฟริ้ง", itemname: "🫧 ปืนฟองสบู่", itemimage: "/images/items/BubbleGunTool.png" },
+    { fishname: "ปลาวาฬน้อยลอยลม", itemname: "🐋 วาฬลอยฟ้า", itemimage: "/images/items/RideWhaleTool.png" },
+    { fishname: "ปลาบอลลูนหวานใจ", itemname: "🎈 บอลลูนคู่ใจ", itemimage: "/images/items/RideBalloonTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

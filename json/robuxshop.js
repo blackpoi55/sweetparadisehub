@@ -4,6 +4,7 @@
 export const RATE = 6;
 
 export const shopCategories = [
+  { key: "promo", label: "โปรโมชั่น", emoji: "🔥" },
   { key: "gamepass", label: "เกมพาส", emoji: "🎟️" },
   { key: "limited", label: "ลิมิเต็ด", emoji: "💎" },
   { key: "currency", label: "เติมเงินในเกม", emoji: "💰" },
@@ -11,6 +12,17 @@ export const shopCategories = [
 ];
 
 export const robuxItems = [
+  // ===== promo ===== (แพ็คคู่/ชุดลดราคา — bundle = id ของชิ้นในแพ็ค (ใช้ดึงรูป), origPrice = ราคาเต็มก่อนลด)
+  {
+    id: "promo-iron-spider",
+    cat: "promo",
+    name: "🎁 แพ็คคู่ Iron Suit + Spider Web Glove",
+    desc: "ซื้อคู่ลด 10% — ชุดบินไอรอน 🦾 + ถุงมือใยแมงมุม 🕸️ (พรีเมี่ยม พลังเต็ม + ชื่อ Rich ทั้งคู่)",
+    price: 8820, // 9800 − 10%
+    origPrice: 9800,
+    bundle: ["lm-ironsuit", "lm-spiderweb"],
+  },
+
   // ===== gamepass ===== (pid = gamepass id → รูปพาสจริง)
   { id: "gp-vip", cat: "gamepass", pid: 1373421368, name: "VIP", desc: "มงกุฎ • เลเวล ×2 • เบ็ดลิมิเต็ด • โชค ×3 • เงิน&คะแนน ×2", price: 199, iconId: 98214942625909 },
   { id: "gp-autofish", cat: "gamepass", pid: 1613785479, name: "Auto Fishing", desc: "ตกปลาออโต้ (AFK ได้ไม่เกิน 20 นาที)", price: 222, iconId: 109883680838444 },

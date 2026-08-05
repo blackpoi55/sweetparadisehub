@@ -613,7 +613,7 @@ export const itemall = [
         "icon": "/images/items/MotorHorseTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "Pass",
+        "getby": "ซื้อ Pass",
     },
     {
         "code": "MotorDinoTool",
@@ -621,7 +621,7 @@ export const itemall = [
         "icon": "/images/items/MotorDinoTool.png",
         "detail": "อัญเชิญออกมาเพื่อใช้เป็นพาหนะ",
         "grouptype": "อัญเชิญ",
-        "getby": "Pass",
+        "getby": "ซื้อ Pass",
     },
     {
         "code": "Minion",
@@ -941,7 +941,7 @@ export const itemall = [
         "icon": "/images/items/Rainbowwing.png",
         "detail": "อุปกรณ์ในการบินอย่างอิสระ",
         "grouptype": "เดินทาง",
-        "getby": "ตกปลาสSadnoob หรือ กาชาSadnoob",
+        "getby": "ตกปลาสีรุ้ง หรือ กาชา SadNoob",
     },
     {
         "code": "IceWings",
@@ -1133,7 +1133,7 @@ export const itemall = [
         "icon": "/images/items/RideDuckTool.png",
         "detail": "อัญเชิญเป็ดน้อยออกมาขี่ — เดินวอดแวด + เดินบนน้ำ",
         "grouptype": "ของขี่",
-        "getby": "ตกปลาราเร็ดก้าบก้าบ",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "RideUnicornTool",
@@ -1141,7 +1141,7 @@ export const itemall = [
         "icon": "/images/items/RideUnicornTool.png",
         "detail": "อัญเชิญยูนิคอร์นออกมาขี่ — วิ่งเร็ว + หางสีรุ้ง",
         "grouptype": "ของขี่",
-        "getby": "🤫 ยังเป็นความลับ",
+        "getby": "🎫 ขอพร",
     },
     {
         "code": "RideCapybaraTool",
@@ -1149,7 +1149,7 @@ export const itemall = [
         "icon": "/images/items/RideCapybaraTool.png",
         "detail": "อัญเชิญคาปิบาราออกมาขี่ — เด้งสูง และค่อยๆลอยลง",
         "grouptype": "ของขี่",
-        "getby": "🤫 ยังเป็นความลับ",
+        "getby": "🎫 ขอพร",
     },
     {
         "code": "RideBuffaloTool",
@@ -1157,7 +1157,7 @@ export const itemall = [
         "icon": "/images/items/RideBuffaloTool.png",
         "detail": "อัญเชิญควายออกมาขี่ — พุ่งชน",
         "grouptype": "ของขี่",
-        "getby": "ตกปลาเจ้าทุยลุยแหลก",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "SpiderWebGloveWhiteTool",
@@ -1165,7 +1165,7 @@ export const itemall = [
         "icon": "/images/items/SpiderWebGloveWhiteTool.png",
         "detail": "กดค้างโหนตัวไปข้างหน้า · A/D โยกซ้ายขวา · คูลดาวน์ 1.5 วิ",
         "grouptype": "เดินทาง",
-        "getby": "ตกปลาใยแมงมุมโหนลม",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "SpiderWebGloveTool",
@@ -1181,7 +1181,7 @@ export const itemall = [
         "icon": "/images/items/IronSuitPlayerTool.png",
         "detail": "คลิกสั้นลอย · คลิกค้างพุ่ง · มีพลังงานจำกัด",
         "grouptype": "เดินทาง",
-        "getby": "ตกปลาเหล็กน้อยลอยเจ็ต",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "IronSuitTool",
@@ -1205,7 +1205,7 @@ export const itemall = [
         "icon": "/images/items/BubbleGunTool.png",
         "detail": "ยิงใส่คนอื่นให้ติดฟองสบู่ลอยขึ้น",
         "grouptype": "แกล้ง",
-        "getby": "ตกปลาฟองสบู่ฟรุ้งฟริ้ง",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "RideWhaleTool",
@@ -1213,7 +1213,7 @@ export const itemall = [
         "icon": "/images/items/RideWhaleTool.png",
         "detail": "อัญเชิญวาฬออกมาขี่ — บินได้",
         "grouptype": "ของขี่",
-        "getby": "ตกปลาวาฬน้อยลอยลม",
+        "getby": "ตกปลาสีรุ้ง",
     },
     {
         "code": "RideBalloonTool",
@@ -1221,6 +1221,6 @@ export const itemall = [
         "icon": "/images/items/RideBalloonTool.png",
         "detail": "อัญเชิญบอลลูนออกมาขี่ — บินได้",
         "grouptype": "ของขี่",
-        "getby": "ตกปลาบอลลูนหวานใจ",
+        "getby": "ตกปลาสีรุ้ง",
     },
 ]

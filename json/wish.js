@@ -232,7 +232,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 27 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–95) =====
+// ===== ปลารุ้งทั้ง 29 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–97) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -258,10 +258,12 @@ export const rainbowFish = [
   { id: 89, name: "ปลาฟองสบู่ฟรุ้งฟริ้ง", price: 250000, score: 880, rate: 0.0012, unlock: "🫧 ปืนฟองสบู่" },
   { id: 90, name: "ปลาวาฬน้อยลอยลม", price: 300000, score: 950, rate: 0.0007, unlock: "🐋 วาฬลอยฟ้า" },
   { id: 91, name: "ปลาบอลลูนหวานใจ", price: 280000, score: 920, rate: 0.0009, unlock: "🎈 บอลลูนคู่ใจ" },
-  { id: 92, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 93, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 94, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 95, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 92, name: "ปลาใยแมงมุมโหนลม", price: 250000, score: 888, rate: 0.001, unlock: "🕸️ ถุงมือใยขาว" },
+  { id: 93, name: "ปลาเหล็กน้อยลอยเจ็ต", price: 250000, score: 888, rate: 0.001, unlock: "🦾 ชุดบินไอรอน" },
+  { id: 94, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 95, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 96, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 97, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
 ];
 
 // ===== ขั้นตอนการเล่น =====

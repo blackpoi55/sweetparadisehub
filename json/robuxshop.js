@@ -26,6 +26,8 @@ export const robuxItems = [
   { id: "lm-cloud", cat: "limited", pid: 1438076864, name: "Cloud Fly", desc: "บินได้ + ชื่อ Rich", price: 4900, iconId: 121434264300181 },
   { id: "lm-broom", cat: "limited", pid: 1446760866, name: "Broom Fly", desc: "บินได้ + ชื่อ Rich", price: 4900, iconId: 138181002324866 },
   { id: "lm-ice", cat: "limited", pid: 1896216550, name: "Ice Wings", desc: "บินได้ + ชื่อ Rich", price: 4900, iconId: 74455059183224 },
+  { id: "lm-ironsuit", cat: "limited", pid: 1935606702, name: "🦾 Iron Suit", desc: "ชุดบินไอรอน พลังไม่จำกัด · เร็วเต็ม + ชื่อ Rich", price: 4900, iconId: 80844064037784 },
+  { id: "lm-spiderweb", cat: "limited", pid: 1936428612, name: "🕸️ Spider Web Glove", desc: "ถุงมือใยโหนตัว แรงเต็ม · ยิงรัวได้ + ชื่อ Rich", price: 4900, iconId: 92106163571509 },
   { id: "lm-hwballoon", cat: "limited", pid: 1508966602, name: "Halloween Balloon Fly", desc: "บินได้ + ชื่อ Rich", price: 4900, iconId: 108399408848013 },
   { id: "lm-luckyhwrod", cat: "limited", pid: 1489316966, name: "เบ็ดฮัลโลวีนพรีเมี่ยม", desc: "ตกปลาเร็วมาก + โชค (ของซีซั่นฮัลโลวีน)", price: 399, iconId: 87565868981920 },
   { id: "lm-hwmotor", cat: "limited", pid: 1529625904, name: "อัญเชิญมอไซค์ฮัลโลวีน", desc: "มอเตอร์ไซค์ฮัลโลวีน (ของซีซั่น)", price: 289, iconId: 102648485950828 },

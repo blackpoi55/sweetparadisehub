@@ -94,6 +94,8 @@ export const fishall = [
     { name: "ปลาฟองสบู่ฟรุ้งฟริ้ง", rarity: "สายรุ้ง", price: 250000, score: 880, rate: 0.0012, status: "Active" },
     { name: "ปลาวาฬน้อยลอยลม", rarity: "สายรุ้ง", price: 300000, score: 950, rate: 0.0007, status: "Active" },
     { name: "ปลาบอลลูนหวานใจ", rarity: "สายรุ้ง", price: 280000, score: 920, rate: 0.0009, status: "Active" },
+    { name: "ปลาใยแมงมุมโหนลม", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลาเหล็กน้อยลอยเจ็ต", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -135,6 +137,8 @@ export const fishgiveitem = [
     { fishname: "ปลาฟองสบู่ฟรุ้งฟริ้ง", itemname: "🫧 ปืนฟองสบู่", itemimage: "/images/items/BubbleGunTool.png" },
     { fishname: "ปลาวาฬน้อยลอยลม", itemname: "🐋 วาฬลอยฟ้า", itemimage: "/images/items/RideWhaleTool.png" },
     { fishname: "ปลาบอลลูนหวานใจ", itemname: "🎈 บอลลูนคู่ใจ", itemimage: "/images/items/RideBalloonTool.png" },
+    { fishname: "ปลาใยแมงมุมโหนลม", itemname: "🕸️ ถุงมือใยขาว", itemimage: "/images/items/SpiderWebGloveWhiteTool.png" },
+    { fishname: "ปลาเหล็กน้อยลอยเจ็ต", itemname: "🦾 ชุดบินไอรอน", itemimage: "/images/items/IronSuitPlayerTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

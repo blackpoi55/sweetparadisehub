@@ -422,6 +422,9 @@ export const kpopsongall = [
     { name: "Jungkook - If You", songid: "101797597296757" },
     { name: "BIGBANG - LOSER", songid: "106152752134491" },
     { name: "Love scenario-iKON", songid: "138142750571351" },
+    { name: "The First Snow -EXO", songid: "106528052968705" },
+    { name: "My Destiny - Lyn", songid: "131177753941120" },
+    { name: "지드래곤 - 니가 뭔데(Who You)", songid: "92693954645705" },
 ]
 
 export const djsongall = [

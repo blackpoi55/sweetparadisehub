@@ -36,21 +36,38 @@ function CopyChip({ label, value }) {
 }
 
 /* ---------- SHOP ITEM ---------- */
-function ShopItem({ item, qty, add, sub, src }) {
+function ShopItem({ item, qty, add, sub, src, bundleSrcs }) {
   const [err, setErr] = useState(false);
+  const off = item.origPrice ? Math.round((1 - item.price / item.origPrice) * 100) : 0;
   return (
     <article className="flex items-center gap-3 rounded-2xl border border-pink-500/25 bg-black/70 p-3">
-      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-pink-500/25 to-fuchsia-500/15">
-        {src && !err ? (
-          <img src={src} alt="" className="h-full w-full object-cover" onError={() => setErr(true)} />
-        ) : (
-          <span className="text-xl">{catEmoji[item.cat] || "🎁"}</span>
-        )}
-      </div>
+      {bundleSrcs && bundleSrcs.length ? (
+        <div className="flex flex-shrink-0 -space-x-3">
+          {bundleSrcs.map((u, i) =>
+            u ? (
+              <img key={i} src={u} alt="" className="h-12 w-12 rounded-xl border-2 border-black object-cover" />
+            ) : (
+              <span key={i} className="flex h-12 w-12 items-center justify-center rounded-xl border-2 border-black bg-pink-500/20 text-lg">🎁</span>
+            )
+          )}
+        </div>
+      ) : (
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-pink-500/25 to-fuchsia-500/15">
+          {src && !err ? (
+            <img src={src} alt="" className="h-full w-full object-cover" onError={() => setErr(true)} />
+          ) : (
+            <span className="text-xl">{catEmoji[item.cat] || "🎁"}</span>
+          )}
+        </div>
+      )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-semibold text-pink-50">{item.name}</p>
         <p className="truncate text-[11px] text-pink-200/70">{item.desc}</p>
-        <p className="mt-0.5 text-xs font-bold text-amber-200">R$ {fmt(item.price)}</p>
+        <p className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs font-bold text-amber-200">
+          {item.origPrice && <span className="font-normal text-pink-300/50 line-through">R$ {fmt(item.origPrice)}</span>}
+          <span>R$ {fmt(item.price)}</span>
+          {off > 0 && <span className="rounded-full bg-rose-500/20 px-1.5 py-0.5 text-[10px] font-semibold text-rose-200">ลด {off}%</span>}
+        </p>
       </div>
       {qty > 0 ? (
         <div className="flex flex-shrink-0 items-center gap-2">
@@ -73,7 +90,7 @@ function ShopItem({ item, qty, add, sub, src }) {
 export default function BuyPassPage() {
   const [cart, setCart] = useState({}); // { itemId: qty }
   const [view, setView] = useState("shop"); // shop | order
-  const [cat, setCat] = useState("gamepass");
+  const [cat, setCat] = useState("promo");
   const [search, setSearch] = useState("");
   const [qrUrl, setQrUrl] = useState("");
   const [iconMap, setIconMap] = useState({});
@@ -244,7 +261,15 @@ export default function BuyPassPage() {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {visible.map((item) => (
-                  <ShopItem key={item.id} item={item} qty={cart[item.id] || 0} add={() => add(item.id)} sub={() => sub(item.id)} src={iconMap[item.id]} />
+                  <ShopItem
+                    key={item.id}
+                    item={item}
+                    qty={cart[item.id] || 0}
+                    add={() => add(item.id)}
+                    sub={() => sub(item.id)}
+                    src={iconMap[item.id]}
+                    bundleSrcs={item.bundle ? item.bundle.map((bid) => iconMap[bid]) : null}
+                  />
                 ))}
               </div>
 

@@ -409,7 +409,13 @@ export const songall = [
     { name: "ดาว - PARADOX", songid: "130733545828725" },
     { name: "ฤดูฝน  - PARADOX", songid: "84007080683807" },
     { name: "9 นาฬิกา - SPF", songid: "102932603911133" },
-
+    { name: "แรงโน้มถ่วง - 25 hours", songid: "118424772768529" },
+    { name: "สุขาอยู่หนใด - 25 Hours ", songid: "79997947554840" },
+    { name: "ละลาย-ต้าห์อู๋ พิทยา", songid: "138862504093980" },
+    { name: "ทีละน้อย - Hers", songid: "123626768909413" },
+    { name: "สักวันจะไม่แตกสลาย - FREEHAND", songid: "133115122837727" },
+    { name: "25 hours - ไม่ต่างกัน ", songid: "121030656487388" },
+    { name: "FOOL STEP - แค่ไม่ต้องรักใคร ", songid: "99747299765664" },
 ]
 export const kpopsongall = [
     { name: "RHYTHM TA-IKON", songid: "133126620005604" },

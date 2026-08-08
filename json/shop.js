@@ -15,6 +15,7 @@ export const shopVendors = [
       ["FrozenHammer", "SS4 หนาวนี้กอดใคร", 2800000, 50, true],
       ["RibbonRope", "SS5 โดนริบบิ้นอย่าดิ้นนะหนู", 3200000, 50, true],
       ["Sniperinvite", "SS6 สไนเปอร์อัญเชิญ", 5500000, 50, true],
+      ["SackBagTool", "ถุงจับคน", 10500000, 50, true],
       ["FishTankMediumTool", "ตู้หรรษาระดับกลาง", 9999999, 6, false],
     ],
   },

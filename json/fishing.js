@@ -96,6 +96,8 @@ export const fishall = [
     { name: "ปลาบอลลูนหวานใจ", rarity: "สายรุ้ง", price: 280000, score: 920, rate: 0.0009, status: "Active" },
     { name: "ปลาใยแมงมุมโหนลม", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลาเหล็กน้อยลอยเจ็ต", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลาถังขยะจอมแกล้ง", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลาลูกหนังจอมพลัง", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -139,6 +141,8 @@ export const fishgiveitem = [
     { fishname: "ปลาบอลลูนหวานใจ", itemname: "🎈 บอลลูนคู่ใจ", itemimage: "/images/items/RideBalloonTool.png" },
     { fishname: "ปลาใยแมงมุมโหนลม", itemname: "🕸️ ถุงมือใยขาว", itemimage: "/images/items/SpiderWebGloveWhiteTool.png" },
     { fishname: "ปลาเหล็กน้อยลอยเจ็ต", itemname: "🦾 ชุดบินไอรอน", itemimage: "/images/items/IronSuitPlayerTool.png" },
+    { fishname: "ปลาถังขยะจอมแกล้ง", itemname: "🗑️ ถังขยะแกล้งคน", itemimage: "/images/items/BinPrankTool.png" },
+    { fishname: "ปลาลูกหนังจอมพลัง", itemname: "⚽ ลูกฟุตบอล", itemimage: "/images/items/FootballTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

@@ -1,12 +1,11 @@
 import {
   meta, stats, actions, stages, species, traits, traitMinLv,
-  craving, events, eventMeta, visit, release, leaderboards, howto, facts, expNeed,
+  craving, events, eventMeta, visit, release, leaderboards, howto, facts,
 } from "@/json/tama";
 import { resolveAsset } from "@/lib/gameAssets";
 
 export const metadata = { title: "เลี้ยงทามาก็อต — Sweet Paradise Hub" };
 
-const fmt = (n) => Number(n || 0).toLocaleString("en-US");
 const statById = Object.fromEntries(stats.map((s) => [s.id, s]));
 
 function cdText(sec) {
@@ -184,7 +183,7 @@ export default function TamaPage() {
         </Section>
 
         {/* Events */}
-        <Section id="events" emoji="🎲" title="เหตุการณ์สุ่ม" sub={`เปิดแอพมีโอกาส ${Math.round(eventMeta.chance * 100)}% เจอ (เว้นห่างอย่างน้อย ${eventMeta.gapSec / 60} นาที) · เลือกทางแล้วได้ผลต่างกัน`}>
+        <Section id="events" emoji="🎲" title="เหตุการณ์สุ่ม" sub={`เปิดแอพมีโอกาส ${Math.round(eventMeta.chance * 100)}% เจอ (เว้นห่างอย่างน้อย ${eventMeta.gapSec / 60} นาที) · แต่ละเหตุการณ์มีให้เลือก 2 ทาง — ลองเลือกเองว่าทางไหนดี 😉`}>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {events.map((e) => (
               <div key={e.id} className="rounded-2xl border border-pink-500/25 bg-black/60 p-4">
@@ -192,8 +191,7 @@ export default function TamaPage() {
                 <div className="mt-2 space-y-1.5">
                   {e.choices.map((c, i) => (
                     <div key={i} className="rounded-lg border border-pink-500/15 bg-black/40 px-2.5 py-1.5">
-                      <p className="text-[11px] font-medium text-pink-100">{c.label} <span className="font-bold text-amber-200">+{c.exp} EXP</span></p>
-                      <p className="text-[10px] text-pink-200/60">{c.detail}</p>
+                      <p className="text-[11px] font-medium text-pink-100">{c.label}</p>
                     </div>
                   ))}
                 </div>
@@ -233,15 +231,6 @@ export default function TamaPage() {
               ))}
             </ul>
           </div>
-        </div>
-
-        {/* progression note */}
-        <div className="mt-8 rounded-2xl border border-amber-400/25 bg-amber-500/5 p-4 text-center">
-          <p className="text-sm font-semibold text-amber-100">📈 เส้นเลเวล</p>
-          <p className="mt-1 text-xs text-pink-200/80">
-            EXP ที่ต้องใช้ = 40 + (เลเวล × 12) · เช่น LV.1→2 ใช้ {expNeed(1)} · LV.50→51 ใช้ {fmt(expNeed(50))} · รวมถึง LV.{meta.maxLv} ={" "}
-            <span className="font-bold text-amber-200">{fmt(meta.totalExpToMax)} EXP</span> (~{meta.daysToMax} วันถ้าเล่นเต็มเพดานทุกวัน)
-          </p>
         </div>
       </div>
     </div>

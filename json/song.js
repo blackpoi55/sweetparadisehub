@@ -416,6 +416,17 @@ export const songall = [
     { name: "สักวันจะไม่แตกสลาย - FREEHAND", songid: "133115122837727" },
     { name: "25 hours - ไม่ต่างกัน ", songid: "121030656487388" },
     { name: "FOOL STEP - แค่ไม่ต้องรักใคร ", songid: "99747299765664" },
+    { name: "แค่บอกว่ารักเธอ - หมีพูห์", songid: "125074261095413" },
+    { name: "โปรดอย่าย้ำคนช้ำใจ - Release", songid: "74097224792871" },
+    { name: "ทิ้งไว้อย่างพอใจ (Consoled) - PURPEECH", songid: "119509071526029" },
+    { name: "กลัวว่าเธอจะหายไป - คอม พิสิฐ ", songid: "125259308968943" },
+    { name: "Tattoo Colour - ขาหมู", songid: "92000627573250" },
+    { name: "Moon - Blackbeans ", songid: "101851830621445" },
+    { name: "ไว้ใจฉันได้เสมอ-คิว สุวีระ", songid: "136537244803996" },
+    { name: "Proxie - ที่ไม่รัก", songid: "84008389772032" },
+    { name: "ตบปาก (On That Day) - PROXIE", songid: "79780604651474" },
+    { name: "จางหาย- ก้อย อรัชพร", songid: "93180611747349" },
+    { name: "ก่อนจะรักไปกว่านี้-ดิว อรุณพงศ์", songid: "129653473378145" },
 ]
 export const kpopsongall = [
     { name: "RHYTHM TA-IKON", songid: "133126620005604" },
@@ -600,6 +611,7 @@ export const eventsongall = [
 export const foreignsongall = [
     { name: "ส้วมตันส้วมตั้น", songid: "105250772279482" },
     { name: "Nyanpasu", songid: "86610816786025" },
+    { name: "lie", songid: "135988921892259" },
 ]
 export const keliasong = [
     { name: "MIMICUCU", songid: "113795136878346" },

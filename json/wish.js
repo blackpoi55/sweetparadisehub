@@ -152,8 +152,8 @@ export const categories = [
     grant: "pet",
     dup: false,
     color: "#78D2F0",
-    items: ["Bunny", "SharkPet", "Dog", "frog", "Chicken", "Cat", "DarkDevil", "Haxigator"],
-    note: "8 ตัว — 404 เดมอน ไม่อยู่ในลิสต์ (สงวนไว้ ซื้อด้วยโรบัคเท่านั้น)",
+    items: ["Bunny", "SharkPet", "Dog", "frog", "Chicken", "Cat", "Kookped", "DarkDevil", "Haxigator", "404Demon"],
+    note: "10 ตัว (ดึงสดจาก PetConfig.Order) — 🍪 มอคค่า + 🎀 ซินนามอนโรล ไม่อยู่ในลิสต์ (ติดธง noWishPick: บัตรใบเดียว 500R ห้ามได้ของ 799R) แต่ยังแลกได้ทางแท็บ 🎫 บัตร → แลกเกมพาส",
     grantDesc: "เข้ากระเป๋าสัตว์เลี้ยงทันที",
   },
   {
@@ -232,7 +232,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 31 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–99) =====
+// ===== ปลารุ้งทั้ง 32 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–100) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -262,10 +262,11 @@ export const rainbowFish = [
   { id: 93, name: "ปลาเหล็กน้อยลอยเจ็ต", price: 250000, score: 888, rate: 0.001, unlock: "🦾 ชุดบินไอรอน" },
   { id: 94, name: "ปลาถังขยะจอมแกล้ง", price: 250000, score: 888, rate: 0.001, unlock: "🗑️ ถังขยะแกล้งคน" },
   { id: 95, name: "ปลาลูกหนังจอมพลัง", price: 250000, score: 888, rate: 0.001, unlock: "⚽ ลูกฟุตบอล" },
-  { id: 96, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 97, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 98, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 99, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 96, name: "ปลารุ้งกุ๊กเป็ด", price: 250000, score: 888, rate: 0.001, unlock: "🐤 สัตว์เลี้ยงกุ๊กเป็ด" },
+  { id: 97, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 98, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 99, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 100, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
 ];
 
 // ===== ขั้นตอนการเล่น =====
@@ -374,8 +375,8 @@ export const facts = [
 //   4) 1 การแลก = 1 เกมพาส
 
 // 🐾 นอกจากเกมพาส/ลิมิเต็ดแล้ว owner ยังเปิดให้แลก "สัตว์เลี้ยง dev-product" ด้วยบัตรได้
-//    (WishServer.PET_PASSES) — grant ผ่าน PetGrantFn ไม่ใช่ PassService.GrantGift
-//    404Demon เท่านั้น · Haxigator ไม่ใส่ เพราะเลือกฟรีได้อยู่แล้วในหมวดสัตว์เลี้ยง
+//    (WishServer.PET_PASS_KEYS) — grant ผ่าน PetGrantFn ไม่ใช่ PassService.GrantGift
+//    404Demon + มอคค่า + ซินนามอนโรล · Haxigator ไม่ใส่ เพราะเลือกฟรีได้อยู่แล้วในหมวดสัตว์เลี้ยง
 export const petPasses = [
   {
     id: "pet-404",
@@ -386,6 +387,26 @@ export const petPasses = [
     desc: "เพ็ทตำนาน • ตีบอส + โชคปลารุ้ง + เงินตกปลา + แฮคแอร์ดรอป",
     price: 4999,
     iconId: 128134502313859,
+  },
+  {
+    id: "pet-mocha",
+    productId: 3705941320,
+    petKey: "Mocha",
+    cat: "pet",
+    name: "🍪 มอคค่า (สัตว์เลี้ยง)",
+    desc: "คราฟไม่ติดมีโอกาสไม่เสียวัตถุดิบ (Lv.50 = 15%)",
+    price: 799,
+    iconId: 87093448322245,
+  },
+  {
+    id: "pet-cinnamoroll",
+    productId: 3705938385,
+    petKey: "cinnamoroll",
+    cat: "pet",
+    name: "🎀 ซินนามอนโรล (สัตว์เลี้ยง)",
+    desc: "อยู่ใกล้เพื่อน = บัฟสัตว์ตัวอื่นแรงขึ้น (Lv.50 = +6%/คน สูงสุด +24%)",
+    price: 799,
+    iconId: 101230087824340,
   },
 ];
 

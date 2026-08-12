@@ -67,6 +67,7 @@ function ShopItem({ item, qty, add, sub, src, bundleSrcs }) {
           {item.origPrice && <span className="font-normal text-pink-300/50 line-through">R$ {fmt(item.origPrice)}</span>}
           <span>R$ {fmt(item.price)}</span>
           {off > 0 && <span className="rounded-full bg-rose-500/20 px-1.5 py-0.5 text-[10px] font-semibold text-rose-200">ลด {off}%</span>}
+          {item.bonus && <span className="rounded-full bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-200">แถม {item.bonus}</span>}
         </p>
       </div>
       {qty > 0 ? (

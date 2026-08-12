@@ -22,6 +22,16 @@ export const robuxItems = [
     origPrice: 9800,
     bundle: ["lm-ironsuit", "lm-spiderweb"],
   },
+  {
+    id: "promo-mocha-cinnamoroll",
+    cat: "promo",
+    name: "🎁 แพ็คคู่ มอคค่า + ซินนามอนโรล",
+    desc: "ซื้อคู่ลด 20% — 🍪 มอคค่า (คราฟพลาดไม่เสียของ) + 🎀 ซินนามอนโรล (อยู่กับเพื่อนบัฟแรงขึ้น) · แถมยอดข้าว 40 ต้น",
+    price: 1278, // 1598 − 20%
+    origPrice: 1598,
+    bundle: ["sp-mocha", "sp-cinnamoroll"],
+    bonus: "🌾 ยอดข้าว 40 ต้น",
+  },
 
   // ===== gamepass ===== (pid = gamepass id → รูปพาสจริง)
   { id: "gp-vip", cat: "gamepass", pid: 1373421368, name: "VIP", desc: "มงกุฎ • เลเวล ×2 • เบ็ดลิมิเต็ด • โชค ×3 • เงิน&คะแนน ×2", price: 199, iconId: 98214942625909 },
@@ -70,6 +80,8 @@ export const robuxItems = [
 
   // ===== special (Developer Products: เพ็ท + ตั๋วครอบครัว — ใช้ iconId ดึงรูป) =====
   { id: "sp-hax", cat: "special", name: "👾 แฮคเกอร์ (Haxigator)", desc: "เพ็ทอีเวนต์ • โชคปลา+เงินตกปลา+แฮคแอร์ดรอป", price: 799, iconId: 97263485065784 },
+  { id: "sp-mocha", cat: "special", name: "🍪 มอคค่า (สัตว์เลี้ยง)", desc: "คราฟพลาดแล้วไม่เสียวัตถุดิบ (Lv.50 = 15%)", price: 799, iconId: 87093448322245 },
+  { id: "sp-cinnamoroll", cat: "special", name: "🎀 ซินนามอนโรล (สัตว์เลี้ยง)", desc: "อยู่ใกล้เพื่อน = บัฟสัตว์ตัวอื่น +6%/คน (สูงสุด +24%)", price: 799, iconId: 101230087824340 },
   { id: "sp-404", cat: "special", name: "👹 404 เดมอน", desc: "เพ็ทตำนาน • ตีบอส+โชคปลา+เงิน+แฮคแอร์ดรอป", price: 4999, iconId: 128134502313859 },
   { id: "sp-famcreate", cat: "special", name: "🏠 ตั๋วสร้างครอบครัว", desc: "สร้างครอบครัวของคุณเอง", price: 999, iconId: 103823514654103 },
   { id: "sp-famexpand", cat: "special", name: "➕ ตั๋วขยายครอบครัว", desc: "เพิ่มจำนวนสมาชิก", price: 599, iconId: 83662337440888 },

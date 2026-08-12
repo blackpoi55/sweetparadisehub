@@ -122,6 +122,7 @@ export default function BuyPassPage() {
     () => Object.entries(cart).map(([id, qty]) => ({ item: byId[id], qty })).filter((l) => l.item),
     [cart, byId]
   );
+  const bonusLines = lines.filter((l) => l.item.bonus);   // ของแถมจากโปร — ต้องโชว์ทั้งตะกร้าและใบสั่งซื้อ (แอดมินแจกตามนี้)
   const totalItems = lines.reduce((s, l) => s + l.qty, 0);
   const totalRobux = lines.reduce((s, l) => s + l.item.price * l.qty, 0);
   const totalThb = Math.ceil(totalRobux / RATE);
@@ -299,7 +300,12 @@ export default function BuyPassPage() {
                           ) : (
                             <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md bg-pink-500/10 text-[11px]">{catEmoji[l.item.cat]}</span>
                           )}
-                          <span className="min-w-0 flex-1 truncate text-pink-100">{l.item.name} ×{l.qty}</span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-pink-100">{l.item.name} ×{l.qty}</span>
+                            {l.item.bonus && (
+                              <span className="block truncate text-[10px] text-emerald-300">🎁 แถม {l.item.bonus}</span>
+                            )}
+                          </span>
                           <span className="flex-shrink-0 font-mono text-amber-200">R$ {fmt(l.item.price * l.qty)}</span>
                         </div>
                       ))}
@@ -341,8 +347,13 @@ export default function BuyPassPage() {
                     ) : (
                       <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-md bg-pink-500/10 text-sm">{catEmoji[l.item.cat]}</span>
                     )}
-                    <span className="min-w-0 flex-1 truncate text-pink-100">
-                      {l.item.name} <span className="text-pink-300/60">×{l.qty}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-pink-100">
+                        {l.item.name} <span className="text-pink-300/60">×{l.qty}</span>
+                      </span>
+                      {l.item.bonus && (
+                        <span className="block truncate text-[10px] text-emerald-300">🎁 แถม {l.item.bonus} {l.qty > 1 ? `×${l.qty}` : ""}</span>
+                      )}
                     </span>
                     <span className="flex-shrink-0 font-mono text-pink-200">R$ {fmt(l.item.price * l.qty)}</span>
                   </div>
@@ -354,6 +365,19 @@ export default function BuyPassPage() {
                 <div className="flex justify-between text-[11px] text-pink-300/60"><span>เรท ÷ {RATE} (ปัดขึ้น)</span><span className="font-mono">{(totalRobux / RATE).toFixed(2)}</span></div>
                 <div className="flex items-baseline justify-between pt-1"><span className="font-semibold text-pink-50">ยอดชำระ</span><span className="text-3xl font-black text-emerald-300">฿{fmt(totalThb)}</span></div>
               </div>
+
+              {/* 🎁 ของแถมจากโปร — แยกให้เด่น แอดมินจะได้ไม่ลืมแจก */}
+              {bonusLines.length > 0 && (
+                <div className="mt-3 rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-2.5">
+                  <p className="text-[11px] font-semibold text-emerald-200">🎁 ของแถมในออเดอร์นี้ (ต้องแจกเพิ่ม)</p>
+                  {bonusLines.map((l) => (
+                    <p key={l.item.id} className="mt-0.5 text-[11px] text-emerald-100">
+                      • {l.item.bonus}{l.qty > 1 ? ` ×${l.qty}` : ""}{" "}
+                      <span className="text-emerald-200/60">(จาก {l.item.name})</span>
+                    </p>
+                  ))}
+                </div>
+              )}
 
               {/* payment */}
               <div className="mt-4 flex flex-col items-center gap-2 rounded-xl border border-pink-500/20 bg-black/40 p-4">

@@ -236,20 +236,7 @@ export default async function CarPage() {
                     <ObtainBox o={c.obtain} />
                   </div>
 
-                  <div className="grid grid-cols-3 gap-px border-t border-pink-500/15 bg-pink-500/10 text-center">
-                    {[
-                      { k: "ยาว", v: `${c.length.toFixed(1)}` },
-                      { k: "กว้าง", v: `${(c.halfWidth * 2).toFixed(1)}` },
-                      { k: "โหลดลงได้", v: `${c.rideDropMax.toFixed(2)}` },
-                    ].map((s) => (
-                      <div key={s.k} className="bg-black/70 px-2 py-2">
-                        <p className="text-sm font-bold text-pink-50">{s.v}</p>
-                        <p className="text-[10px] text-pink-200/60">{s.k} (stud)</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 p-3">
+                  <div className="flex flex-wrap gap-1.5 border-t border-pink-500/15 p-3">
                     {[
                       { k: "head", label: "🔦 ไฟหน้า" },
                       { k: "smoke", label: "💨 ควันยาง" },

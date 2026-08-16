@@ -37,10 +37,6 @@ export const cars = [
       minLevel: 6,
       note: "🎉 ช่วงทดลอง ลด 50% จากราคาปกติ 50,000,000",
     },
-    length: 18.09, // rear 9.12 + |front -8.97|
-    halfWidth: 4.38,
-    rideDropMax: 0.85,
-    paintParts: { main: ["Paint", "Paint L", "Paint R"], accent: ["Paint 2"] },
     fx: { head: true, smoke: true, ex: true, tint: true, horn: true },
   },
   {
@@ -66,10 +62,6 @@ export const cars = [
       note: "🎉 ช่วงทดลอง ลดของทุกอย่าง 25% (ราคาเต็ม 🎫200 · 🎁40 · 🔩120 · 💰4,000,000)",
       warn: "คราฟไม่ติดเสียวัตถุดิบ (โต๊ะคราฟหักของทุกครั้งที่กด)",
     },
-    length: 20.12, // rear 9.75 + |front -10.37|
-    halfWidth: 4.13,
-    rideDropMax: 0.8,
-    paintParts: { main: ["Paint", "Livery"] },
     fx: { head: true, smoke: true, ex: true, tint: true, horn: true },
   },
   {
@@ -88,10 +80,6 @@ export const cars = [
       altMoney: 15000000,
       note: "อยู่ในเกมสะสมเวลาครบตามที่กำหนด แล้วกดรับที่แอพ 🕐 ออนไลน์สะสม (ยืนเฉย ๆ ก็นับ)",
     },
-    length: 21.56, // rear 10.50 + |front -11.06|
-    halfWidth: 4.82,
-    rideDropMax: 0.52,
-    paintParts: { main: ["MeshPart", "untitled", "mesh", "xddd"] },
     fx: { head: true, smoke: true, ex: true, tint: true, horn: true },
   },
   {
@@ -108,10 +96,6 @@ export const cars = [
       label: "ยังไม่เปิดให้ผู้เล่นทั่วไป",
       note: "รอประกาศจากทีมงาน — ตอนนี้ยังไม่มีช่องทางได้สำหรับผู้เล่นทั่วไป (แต่งรถ/จูน/อัปเกรดรองรับไว้แล้ว)",
     },
-    length: 19.42, // rear 11.94 + |front -7.48|
-    halfWidth: 6.66,
-    rideDropMax: 0.3,
-    paintParts: { main: ["Body", "Logo"], accent: ["Union", "ฝาครอบล้อหลัง ซ้าย/ขวา"] },
     fx: { head: true, smoke: true, ex: true, tint: false, horn: true },
     fxNote: "คันนี้ไม่มีกระจกที่ติดฟิล์มได้ — ช่องฟิล์มกรองแสงจะไม่มีผล",
   },

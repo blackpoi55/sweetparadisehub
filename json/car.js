@@ -10,6 +10,12 @@ export const meta = {
   maxPlate: 8, // MAX_PLATE — ป้ายทะเบียนยาวสุด (ตัวอักษร)
 };
 
+// ⚠️ ประกาศช่วงทดลอง — โชว์เด่น ๆ บนหน้าเว็บ
+export const trialNotice = {
+  title: "ระบบรถอยู่ในช่วงทดลอง",
+  desc: "ราคา วิธีได้ ค่าจูน และความแรงของรถทุกคัน อาจมีการแก้ไข/ปรับสมดุลใหม่ได้ตลอดเวลาโดยไม่แจ้งล่วงหน้า",
+};
+
 // ===== รถทั้ง 4 คัน (CarCustomConfig.CARS + Config.ItemDefs + ShopConfig) =====
 // body = ขนาดตัวถังจริง วัดจากเทมเพลตสะอาด (stud) · rideDropMax = โหลดลงได้ลึกสุดก่อนท้องครูด
 // fx = ชิ้นส่วนที่คันนั้น "มีจริง" → ของที่ไม่มี กดแต่งยังไงก็ไม่เกิดอะไร
@@ -22,11 +28,15 @@ export const cars = [
     emoji: "🏎️",
     iconId: 79855832511312,
     tagline: "ซูเปอร์คาร์ตัวท็อป — ตัวถังยาว เกาะถนน",
-    obtain: "ร้านค้า Limited (NPC)",
-    price: 25000000,
-    priceFull: 50000000,
-    minLevel: 6,
-    saleNote: "🎉 ช่วงทดลอง ลด 50% จากราคาปกติ 50,000,000",
+    obtain: {
+      kind: "shop",
+      icon: "🏪",
+      label: "ซื้อที่ร้านค้า Limited (NPC)",
+      price: 25000000,
+      priceFull: 50000000,
+      minLevel: 6,
+      note: "🎉 ช่วงทดลอง ลด 50% จากราคาปกติ 50,000,000",
+    },
     length: 18.09, // rear 9.12 + |front -8.97|
     halfWidth: 4.38,
     rideDropMax: 0.85,
@@ -41,9 +51,21 @@ export const cars = [
     emoji: "🐎",
     iconId: 99489588415836,
     tagline: "ตัวยาวที่สุดในบรรดา 4 คัน — สายทางตรง",
-    obtain: "ยังไม่เปิดขาย (แอดมินแจก/อีเวนต์)",
-    price: null,
-    minLevel: null,
+    obtain: {
+      kind: "craft",
+      icon: "🛠️",
+      label: "คราฟที่โต๊ะคราฟ (หมวดไอเทม)",
+      chance: 0.5,
+      // ⬇️ ชุดช่วงทดลอง (ลด 25% จากราคาเต็ม)
+      cost: [
+        { item: "GoldenTicket", name: "🎫 Golden Ticket", amount: 150, full: 200 },
+        { item: "ChairGachaBox", name: "🎁 กาชาเก้าอี้ V1", amount: 30, full: 40 },
+        { item: "Iron", name: "🔩 เหล็ก", amount: 90, full: 120 },
+        { item: "money", name: "💰 เงิน", amount: 3000000, full: 4000000 },
+      ],
+      note: "🎉 ช่วงทดลอง ลดของทุกอย่าง 25% (ราคาเต็ม 🎫200 · 🎁40 · 🔩120 · 💰4,000,000)",
+      warn: "คราฟไม่ติดเสียวัตถุดิบ (โต๊ะคราฟหักของทุกครั้งที่กด)",
+    },
     length: 20.12, // rear 9.75 + |front -10.37|
     halfWidth: 4.13,
     rideDropMax: 0.8,
@@ -58,9 +80,14 @@ export const cars = [
     emoji: "💨",
     iconId: 79927841466364,
     tagline: "เกิดมาเพื่อสไลด์ — ท้ายออกง่าย ควันเยอะ",
-    obtain: "ยังไม่เปิดขาย (แอดมินแจก/อีเวนต์)",
-    price: null,
-    minLevel: null,
+    obtain: {
+      kind: "online",
+      icon: "🕐",
+      label: "รางวัลออนไลน์สะสม — ด่านที่ 1",
+      stage: 1,
+      altMoney: 15000000,
+      note: "อยู่ในเกมสะสมเวลาครบตามที่กำหนด แล้วกดรับที่แอพ 🕐 ออนไลน์สะสม (ยืนเฉย ๆ ก็นับ)",
+    },
     length: 21.56, // rear 10.50 + |front -11.06|
     halfWidth: 4.82,
     rideDropMax: 0.52,
@@ -75,9 +102,12 @@ export const cars = [
     emoji: "🛸",
     iconId: 102985592835094,
     tagline: "คันกว้างที่สุด ตัวเตี้ยติดดินอยู่แล้ว",
-    obtain: "ยังไม่เปิดขาย (แอดมินแจก/อีเวนต์)",
-    price: null,
-    minLevel: null,
+    obtain: {
+      kind: "locked",
+      icon: "🔒",
+      label: "ยังไม่เปิดให้ผู้เล่นทั่วไป",
+      note: "รอประกาศจากทีมงาน — ตอนนี้ยังไม่มีช่องทางได้สำหรับผู้เล่นทั่วไป (แต่งรถ/จูน/อัปเกรดรองรับไว้แล้ว)",
+    },
     length: 19.42, // rear 11.94 + |front -7.48|
     halfWidth: 6.66,
     rideDropMax: 0.3,
@@ -89,6 +119,20 @@ export const cars = [
 
 // assetId ทั้งหมดที่ต้องดึงรูปจาก Roblox
 export const iconIds = cars.map((c) => c.iconId);
+
+// ===== 🕐 ระบบออนไลน์สะสม (OnlineRewardConfig) — ทางได้รถดริฟต์/รถบิน =====
+// ⚠️ ไม่ระบุจำนวนชั่วโมงบนเว็บ เพราะยังอยู่ระหว่างปรับจูน (ค่าในเกมตอนนี้เป็นค่าทดสอบ)
+export const onlineReward = {
+  appName: "ออนไลน์สะสม",
+  appEmoji: "🕐",
+  openFrom: "โทรศัพท์ → แอพ 🕐 ออนไลน์สะสม",
+  rules: [
+    "นับทีละด่าน — รับด่านที่ 1 ครบก่อน ด่านที่ 2 ถึงเริ่มนับ และเริ่มจาก 0 ใหม่",
+    "นับทุกวินาทีที่อยู่ในเกม ยืนนิ่ง ๆ ก็นับ (ไม่หัก AFK)",
+    "เวลาสะสมแยกของใครของมัน เก็บถาวรในโปรไฟล์",
+    "ถ้ามีรถคันนั้นอยู่แล้ว ระบบจ่ายเงินชดเชยแทน",
+  ],
+};
 
 // ===== ช่องแต่งหน้าตา (ของสวย) =====
 export const bodyColors = [

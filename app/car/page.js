@@ -1,5 +1,5 @@
 import {
-  meta, cars, iconIds,
+  meta, trialNotice, cars, iconIds, onlineReward,
   bodyColors, glowColors, glowModes, headColors, smokeColors, tints,
   engineTones, hornTones, soundVols, rideSteps, looksGroups,
   tuneOptions, tunePresets,
@@ -90,9 +90,75 @@ function Pills({ list, render }) {
   );
 }
 
+/* ที่มาของรถ — แสดงต่างกันตามชนิด (ร้าน / คราฟ / ออนไลน์สะสม) */
+function ObtainBox({ o }) {
+  const tone =
+    o.kind === "shop"
+      ? "border-emerald-400/35 bg-emerald-500/[0.08]"
+      : o.kind === "craft"
+      ? "border-violet-400/35 bg-violet-500/[0.08]"
+      : o.kind === "locked"
+      ? "border-slate-400/30 bg-slate-500/[0.08]"
+      : "border-sky-400/35 bg-sky-500/[0.08]";
+  const textTone =
+    o.kind === "shop"
+      ? "text-emerald-100"
+      : o.kind === "craft"
+      ? "text-violet-100"
+      : o.kind === "locked"
+      ? "text-slate-200"
+      : "text-sky-100";
+
+  return (
+    <div className={"rounded-xl border p-3 " + tone}>
+      <p className={"text-xs font-bold " + textTone}>
+        {o.icon} {o.label}
+      </p>
+
+      {o.kind === "shop" && (
+        <p className="mt-1.5 flex flex-wrap items-baseline gap-1.5">
+          {o.priceFull && <span className="text-[11px] text-pink-300/50 line-through">{fmt(o.priceFull)}</span>}
+          <span className="text-lg font-black text-amber-200">{fmt(o.price)}</span>
+          {o.minLevel && <span className="text-[10px] text-pink-200/60">· ต้อง Lv.{o.minLevel}+</span>}
+        </p>
+      )}
+
+      {o.kind === "craft" && (
+        <>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {o.cost.map((c) => (
+              <span
+                key={c.item}
+                className="rounded-lg border border-violet-400/25 bg-black/40 px-2 py-1 text-[11px] text-violet-50"
+              >
+                {c.name} <span className="font-bold">{fmt(c.amount)}</span>
+                {c.full && c.full !== c.amount && (
+                  <span className="ml-1 text-[10px] text-pink-300/45 line-through">{fmt(c.full)}</span>
+                )}
+              </span>
+            ))}
+          </div>
+          <p className="mt-1.5 text-[11px] text-violet-100/90">
+            โอกาสคราฟติด <span className="font-bold text-violet-50">{Math.round(o.chance * 100)}%</span>
+          </p>
+        </>
+      )}
+
+      {o.kind === "online" && (
+        <p className="mt-1.5 text-[11px] text-sky-100/90">
+          มีรถคันนี้อยู่แล้ว → รับเป็นเงินแทน{" "}
+          <span className="font-bold text-amber-200">{fmt(o.altMoney)}</span>
+        </p>
+      )}
+
+      {o.note && <p className="mt-1.5 text-[10px] leading-relaxed text-pink-100/70">{o.note}</p>}
+      {o.warn && <p className="mt-1 text-[10px] text-rose-200/85">⚠️ {o.warn}</p>}
+    </div>
+  );
+}
+
 export default async function CarPage() {
   const icons = await fetchCarIcons();
-  const forSale = cars.filter((c) => c.price);
 
   return (
     <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl border border-pink-500/30 bg-black">
@@ -116,6 +182,15 @@ export default async function CarPage() {
             แล้วอัปเกรดเพิ่มพลังอีก 4 สาย — เปิดจาก <span className="text-pink-200">{meta.openFrom}</span>
           </p>
         </header>
+
+        {/* ⚠️ ประกาศช่วงทดลอง */}
+        <div className="mt-5 flex items-start gap-3 rounded-2xl border border-amber-400/40 bg-amber-500/[0.09] p-4">
+          <span className="text-2xl leading-none">🧪</span>
+          <div className="min-w-0">
+            <p className="text-sm font-bold text-amber-100">{trialNotice.title}</p>
+            <p className="mt-0.5 text-[11px] leading-relaxed text-amber-100/85 md:text-xs">{trialNotice.desc}</p>
+          </div>
+        </div>
 
         {/* สรุปเร็ว */}
         <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -154,29 +229,11 @@ export default async function CarPage() {
                       </h3>
                       <p className="text-[11px] text-pink-300/70">{c.fullName}</p>
                       <p className="mt-1 text-xs text-pink-100/85">{c.tagline}</p>
-
-                      <div className="mt-2">
-                        {c.price ? (
-                          <div className="inline-flex flex-wrap items-center gap-1.5">
-                            <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold text-emerald-200">
-                              🏪 {c.obtain}
-                            </span>
-                            {c.priceFull && (
-                              <span className="text-[11px] text-pink-300/50 line-through">{fmt(c.priceFull)}</span>
-                            )}
-                            <span className="text-xs font-bold text-amber-200">{fmt(c.price)}</span>
-                            {c.minLevel && (
-                              <span className="text-[10px] text-pink-200/60">· Lv.{c.minLevel}+</span>
-                            )}
-                          </div>
-                        ) : (
-                          <span className="rounded-full bg-slate-500/15 px-2 py-0.5 text-[11px] text-slate-300">
-                            🔒 {c.obtain}
-                          </span>
-                        )}
-                      </div>
-                      {c.saleNote && <p className="mt-1 text-[10px] text-amber-200/80">{c.saleNote}</p>}
                     </div>
+                  </div>
+
+                  <div className="px-4 pb-3">
+                    <ObtainBox o={c.obtain} />
                   </div>
 
                   <div className="grid grid-cols-3 gap-px border-t border-pink-500/15 bg-pink-500/10 text-center">
@@ -218,12 +275,24 @@ export default async function CarPage() {
               );
             })}
           </div>
-          {forSale.length < cars.length && (
-            <p className="mt-3 rounded-xl border border-slate-500/25 bg-slate-500/[0.06] p-3 text-[11px] text-slate-300">
-              ตอนนี้ซื้อเองได้แค่ <span className="font-semibold text-emerald-200">เจสโก้</span> ที่ร้าน Limited ·
-              อีก {cars.length - forSale.length} คันยังไม่เปิดขาย (ได้จากแอดมิน/อีเวนต์) — ถ้าเปิดขายเมื่อไหร่จะอัปเดตหน้านี้
+          {/* กติกาออนไลน์สะสม (ทางได้รถดริฟต์/รถบิน) */}
+          <div className="mt-4 rounded-2xl border border-sky-400/30 bg-sky-500/[0.07] p-4">
+            <p className="text-sm font-bold text-sky-100">
+              {onlineReward.appEmoji} {cars.filter((c) => c.obtain.kind === "online").map((c) => c.name).join(" · ")} ได้จาก
+              “{onlineReward.appName}” — กติกาสั้น ๆ
             </p>
-          )}
+            <ul className="mt-2 grid gap-1 sm:grid-cols-2">
+              {onlineReward.rules.map((r) => (
+                <li key={r} className="text-[11px] leading-relaxed text-sky-100/85">
+                  • {r}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-[11px] text-sky-200/70">เปิดจาก {onlineReward.openFrom}</p>
+            <p className="mt-1.5 rounded-lg bg-black/40 p-2 text-[11px] text-amber-100">
+              ⏳ จำนวนชั่วโมงของแต่ละด่านยังปรับจูนอยู่ — ดูเวลาที่ต้องใช้จริงในแอพ (หน้าเว็บไม่ระบุไว้ กันข้อมูลคลาดเคลื่อน)
+            </p>
+          </div>
         </Section>
 
         {/* ===== วิธีเล่น ===== */}

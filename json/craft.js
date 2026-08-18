@@ -17,6 +17,16 @@ export const craftMeta = {
 export const craftRecipes = {
   Item: [
     {
+      // 🔧 เหล็กงัด — ของสิ้นเปลืองสำหรับมินิเกมงัดตู้ร้าน (หักทิ้งทุกครั้งที่เริ่มงัด)
+      id: "Crowbar", name: "🔧 เหล็กงัด", chance: 0.3,
+      note: "ใช้งัดตู้สินค้าในร้าน — หักทิ้งทุกครั้งที่เริ่มงัด ไม่ว่าจะได้ของหรือไม่",
+      result: { kind: "farm", item: "Crowbar" },
+      cost: [
+        { kind: "farm", item: "RiceTop", amount: 10 },
+        { kind: "money", amount: 50000 },
+      ],
+    },
+    {
       id: "RiceTop", name: "ยอดข้าว", chance: 0.5,
       result: { kind: "farm", item: "RiceTop" },
       cost: [
@@ -110,6 +120,19 @@ export const craftRecipes = {
         { kind: "farm", item: "OldShoes", amount: 20 },
         { kind: "farm", item: "OldHat", amount: 20 },
         { kind: "money", amount: 50000 },
+      ],
+    },
+    {
+      // 🐎 เฟอร์รารี่ FXXK — รถอัญเชิญ ปลดล็อกถาวร (ดูหน้ารถแข่งประกอบ)
+      id: "FerrariFXXKTool", name: "🐎 อัญเชิญเฟอร์รารี่", chance: 0.5,
+      trialNote: "🎉 ช่วงทดลอง ลดของทุกอย่าง 25%",
+      note: "ราคาเต็ม 🎫200 · 🎁40 · 🔩120 · 💰4,000,000",
+      result: { kind: "permanent", item: "FerrariFXXKTool" },
+      cost: [
+        { kind: "farm", item: "GoldenTicket", amount: 150 },
+        { kind: "farm", item: "ChairGachaBox", amount: 30 },
+        { kind: "farm", item: "Iron", amount: 90 },
+        { kind: "money", amount: 3000000 },
       ],
     },
     {

@@ -4,6 +4,7 @@ export const materialMeta = {
   Rice: { name: "ข้าว", emoji: "🌾" },
   RiceTop: { name: "ยอดข้าว", emoji: "🌾" },
   Iron: { name: "เหล็ก", emoji: "🔩" },
+  Crowbar: { name: "เหล็กงัด", emoji: "🔧" },
   Money: { name: "เงิน", emoji: "💰" },
 
   GoldenTicket: { name: "Golden Ticket", emoji: "🎫" },

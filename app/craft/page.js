@@ -77,6 +77,14 @@ function RecipeCard({ r }) {
         </span>
       </div>
 
+      {/* 🎉 ป้ายช่วงทดลอง / หมายเหตุราคาเต็ม — เฉพาะสูตรที่มี */}
+      {(r.trialNote || r.note) && (
+        <div className="mb-3 rounded-xl border border-amber-400/30 bg-amber-500/[0.08] px-2.5 py-1.5">
+          {r.trialNote && <p className="text-[11px] font-semibold text-amber-100">{r.trialNote}</p>}
+          {r.note && <p className="text-[10px] leading-relaxed text-amber-100/80">{r.note}</p>}
+        </div>
+      )}
+
       {/* วัตถุดิบ */}
       <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-pink-300/70">
         วัตถุดิบ

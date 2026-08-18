@@ -97,7 +97,7 @@ export const itemSources = [
   {
     item: "Crowbar",
     uses: "ใช้เริ่มมินิเกมงัดตู้ร้าน (ของสิ้นเปลือง)",
-    from: [{ how: "🛠️ คราฟที่โต๊ะคราฟ", detail: "ยอดข้าว 10 + 50,000 → ติด 30%", main: true }],
+    from: [{ how: "🛠️ คราฟที่โต๊ะคราฟ", detail: "ยอดข้าว 5 + 10,000 → ติด 30%", main: true }],
   },
   {
     item: "GoldenTicket",

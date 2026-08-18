@@ -22,8 +22,8 @@ export const craftRecipes = {
       note: "ใช้งัดตู้สินค้าในร้าน — หักทิ้งทุกครั้งที่เริ่มงัด ไม่ว่าจะได้ของหรือไม่",
       result: { kind: "farm", item: "Crowbar" },
       cost: [
-        { kind: "farm", item: "RiceTop", amount: 10 },
-        { kind: "money", amount: 50000 },
+        { kind: "farm", item: "RiceTop", amount: 5 },
+        { kind: "money", amount: 10000 },
       ],
     },
     {

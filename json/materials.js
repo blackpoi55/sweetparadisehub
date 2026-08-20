@@ -5,6 +5,7 @@ export const materialMeta = {
   RiceTop: { name: "ยอดข้าว", emoji: "🌾" },
   Iron: { name: "เหล็ก", emoji: "🔩" },
   Crowbar: { name: "เหล็กงัด", emoji: "🔧" },
+  ChatTagCard: { name: "บัตรตั้งแท็กแชท", emoji: "🏷️" },
   Money: { name: "เงิน", emoji: "💰" },
 
   GoldenTicket: { name: "Golden Ticket", emoji: "🎫" },

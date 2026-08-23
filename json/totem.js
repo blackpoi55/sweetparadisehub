@@ -17,8 +17,8 @@ export const meta = {
   cardName: "🛡️ บัตรกันตีบวกแตก", // RodSkinConfig.SafeCardItem
   cardCode: "RodSkinSafeCard",
 
-  maxLuckSum: 1.5, // MAX_LUCK_SUM — โชครวมจากทุกโทเทมสูงสุด +150%
-  maxMoneySum: 0.35, // MAX_MONEY_SUM — เงินรวมสูงสุด +35% (ลดจาก 0.75 · 23 ส.ค. 2569)
+  maxLuckSum: 1.1, // MAX_LUCK_SUM — โชครวมจากทุกโทเทมสูงสุด +110% (ลดจาก 1.5 · 23 ส.ค. 2569)
+  maxMoneySum: 0.30, // MAX_MONEY_SUM — เงินรวมสูงสุด +30% (ลดจาก 0.75 → 0.35 → 0.30 · 23 ส.ค. 2569)
   promptDistance: 12, // ระยะกด E ดูบัฟของโทเทม
 };
 
@@ -38,26 +38,26 @@ export const slots = [
     emoji: "🍀",
     name: "โชคตกปลา",
     desc: "เพิ่มโอกาสได้ปลาหายาก (คูณกับโชคของคันเบ็ด/สกิน)",
-    range: [10, 50],
-    capText: "รวมทุกโทเทมสูงสุด +150%",
+    range: [7, 36],
+    capText: "รวมทุกโทเทมสูงสุด +110%",
   },
   {
     key: "money",
     emoji: "💰",
     name: "เงินขายปลา",
     desc: "เพิ่มเงินที่ได้ตอนตกปลาได้",
-    range: [3, 12],
-    capText: "รวมทุกโทเทมสูงสุด +35%",
+    range: [2, 10],
+    capText: "รวมทุกโทเทมสูงสุด +30%",
   },
 ];
 
 // ===== 5 ชั้นความหายาก (TIERS — น้ำหนักเป็นส่วนในพัน รวม = 1000) =====
 export const tiers = [
-  { name: "ธรรมดา", color: "#b8b2c4", weight: 580, luck: [10, 19], money: [3, 4] },
-  { name: "ดี", color: "#7ee08a", weight: 270, luck: [20, 29], money: [5, 6] },
-  { name: "หายาก", color: "#6db6ff", weight: 110, luck: [30, 39], money: [7, 8] },
-  { name: "หายากมาก", color: "#c88bff", weight: 32, luck: [40, 46], money: [9, 10] },
-  { name: "ตำนาน", color: "#ffd257", weight: 8, luck: [47, 50], money: [11, 12] },
+  { name: "ธรรมดา", color: "#b8b2c4", weight: 580, luck: [7, 13], money: [2, 3] },
+  { name: "ดี", color: "#7ee08a", weight: 270, luck: [14, 20], money: [4, 5] },
+  { name: "หายาก", color: "#6db6ff", weight: 110, luck: [21, 27], money: [6, 7] },
+  { name: "หายากมาก", color: "#c88bff", weight: 32, luck: [28, 33], money: [8, 8] },
+  { name: "ตำนาน", color: "#ffd257", weight: 8, luck: [34, 36], money: [9, 10] },
 ];
 
 export const totalWeight = tiers.reduce((s, t) => s + t.weight, 0); // 1000

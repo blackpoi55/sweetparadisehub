@@ -3,6 +3,9 @@ import {
   actions, howto, tips,
 } from "@/json/totem";
 
+// ชั้นที่มีค่าเดียว (เช่น [8, 8]) ให้ขึ้น "+8%" เฉย ๆ ไม่ใช่ "+8% – 8%"
+const range = ([a, b]) => (a === b ? `+${a}%` : `+${a}% – ${b}%`);
+
 export const revalidate = 3600;
 
 export const metadata = {
@@ -179,12 +182,8 @@ export default async function TotemPage() {
                         {t.name}
                       </span>
                     </td>
-                    <td className="px-3 py-2.5 text-center text-pink-100">
-                      +{t.luck[0]}% – {t.luck[1]}%
-                    </td>
-                    <td className="px-3 py-2.5 text-center text-pink-100">
-                      +{t.money[0]}% – {t.money[1]}%
-                    </td>
+                    <td className="px-3 py-2.5 text-center text-pink-100">{range(t.luck)}</td>
+                    <td className="px-3 py-2.5 text-center text-pink-100">{range(t.money)}</td>
                     <td className="px-3 py-2.5 text-right font-mono text-pink-200/85">
                       {tierPct(t.weight).toFixed(1)}%
                     </td>

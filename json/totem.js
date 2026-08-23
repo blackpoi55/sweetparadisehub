@@ -18,7 +18,7 @@ export const meta = {
   cardCode: "RodSkinSafeCard",
 
   maxLuckSum: 1.5, // MAX_LUCK_SUM — โชครวมจากทุกโทเทมสูงสุด +150%
-  maxMoneySum: 0.75, // MAX_MONEY_SUM — เงินรวมสูงสุด +75%
+  maxMoneySum: 0.35, // MAX_MONEY_SUM — เงินรวมสูงสุด +35% (ลดจาก 0.75 · 23 ส.ค. 2569)
   promptDistance: 12, // ระยะกด E ดูบัฟของโทเทม
 };
 
@@ -46,18 +46,18 @@ export const slots = [
     emoji: "💰",
     name: "เงินขายปลา",
     desc: "เพิ่มเงินที่ได้ตอนตกปลาได้",
-    range: [5, 25],
-    capText: "รวมทุกโทเทมสูงสุด +75%",
+    range: [3, 12],
+    capText: "รวมทุกโทเทมสูงสุด +35%",
   },
 ];
 
 // ===== 5 ชั้นความหายาก (TIERS — น้ำหนักเป็นส่วนในพัน รวม = 1000) =====
 export const tiers = [
-  { name: "ธรรมดา", color: "#b8b2c4", weight: 580, luck: [10, 19], money: [5, 9] },
-  { name: "ดี", color: "#7ee08a", weight: 270, luck: [20, 29], money: [10, 14] },
-  { name: "หายาก", color: "#6db6ff", weight: 110, luck: [30, 39], money: [15, 19] },
-  { name: "หายากมาก", color: "#c88bff", weight: 32, luck: [40, 46], money: [20, 23] },
-  { name: "ตำนาน", color: "#ffd257", weight: 8, luck: [47, 50], money: [24, 25] },
+  { name: "ธรรมดา", color: "#b8b2c4", weight: 580, luck: [10, 19], money: [3, 4] },
+  { name: "ดี", color: "#7ee08a", weight: 270, luck: [20, 29], money: [5, 6] },
+  { name: "หายาก", color: "#6db6ff", weight: 110, luck: [30, 39], money: [7, 8] },
+  { name: "หายากมาก", color: "#c88bff", weight: 32, luck: [40, 46], money: [9, 10] },
+  { name: "ตำนาน", color: "#ffd257", weight: 8, luck: [47, 50], money: [11, 12] },
 ];
 
 export const totalWeight = tiers.reduce((s, t) => s + t.weight, 0); // 1000
@@ -117,7 +117,7 @@ export const tips = [
   },
   {
     icon: "➕", tone: "sky", title: "หลายโทเทมบวกกันได้ แต่มีเพดาน",
-    desc: `โชครวมสูงสุด +${meta.maxLuckSum * 100}% · เงินรวมสูงสุด +${meta.maxMoneySum * 100}% — เกินจากนี้ปักเพิ่มก็ไม่ขึ้นแล้ว`,
+    desc: `โชครวมสูงสุด +${Math.round(meta.maxLuckSum * 100)}% · เงินรวมสูงสุด +${Math.round(meta.maxMoneySum * 100)}% — เกินจากนี้ปักเพิ่มก็ไม่ขึ้นแล้ว`,
   },
   {
     icon: "1️⃣", tone: "amber", title: "นับเจ้าของคนละ 1 อันเท่านั้น",

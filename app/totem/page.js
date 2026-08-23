@@ -102,8 +102,8 @@ export default async function TotemPage() {
               {[
                 { v: `${meta.radius}`, k: "รัศมีบัฟ (ช่อง)" },
                 { v: fmt(meta.rerollCost), k: "ค่าสุ่ม/ครั้ง" },
-                { v: `+${meta.maxLuckSum * 100}%`, k: "เพดานโชครวม", tone: "text-emerald-200" },
-                { v: `+${meta.maxMoneySum * 100}%`, k: "เพดานเงินรวม", tone: "text-amber-200" },
+                { v: `+${Math.round(meta.maxLuckSum * 100)}%`, k: "เพดานโชครวม", tone: "text-emerald-200" },
+                { v: `+${Math.round(meta.maxMoneySum * 100)}%`, k: "เพดานเงินรวม", tone: "text-amber-200" },
               ].map((s) => (
                 <div key={s.k} className="rounded-xl border border-pink-500/20 bg-black/50 px-2 py-2 text-center">
                   <p className={"text-sm font-bold " + (s.tone || "text-pink-100")}>{s.v}</p>

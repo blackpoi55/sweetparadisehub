@@ -99,6 +99,7 @@ export const fishall = [
     { name: "ปลาถังขยะจอมแกล้ง", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลาลูกหนังจอมพลัง", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลารุ้งกุ๊กเป็ด", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลาโทเทมเรียกทรัพย์", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -145,6 +146,7 @@ export const fishgiveitem = [
     { fishname: "ปลาถังขยะจอมแกล้ง", itemname: "🗑️ ถังขยะแกล้งคน", itemimage: "/images/items/BinPrankTool.png" },
     { fishname: "ปลาลูกหนังจอมพลัง", itemname: "⚽ ลูกฟุตบอล", itemimage: "/images/items/FootballTool.png" },
     { fishname: "ปลารุ้งกุ๊กเป็ด", itemname: "🐤 สัตว์เลี้ยงกุ๊กเป็ด", itemimage: "/images/items/Kookped.png" },
+    { fishname: "ปลาโทเทมเรียกทรัพย์", itemname: "🗿 โทเทมนำโชค", itemimage: "/images/items/TotemTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

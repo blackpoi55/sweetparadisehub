@@ -1192,6 +1192,14 @@ export const itemall = [
         "getby": "ซื้อ Pass",
     },
     {
+        "code": "TotemTool",
+        "nameTH": "🗿 โทเทมนำโชค",
+        "icon": "/images/items/TotemTool.png",
+        "detail": "ปักแล้วให้บัฟโชค+เงินตกปลากับทุกคนในระยะ 50 ช่อง · สุ่มบัฟได้ในแอพโทเทม",
+        "grouptype": "อัญเชิญ",
+        "getby": "ตกปลาสีรุ้ง",
+    },
+    {
         "code": "SackBagTool",
         "nameTH": "ถุงจับคน",
         "icon": "/images/items/SackBagTool.png",

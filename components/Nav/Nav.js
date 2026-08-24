@@ -14,22 +14,22 @@ const navGroups = [
     icon: "🎮",
     items: [
       { href: "/fishing", label: "ตกปลา", icon: "🎣", desc: "ปลา 90+ ชนิด เรตดรอป" },
-      { href: "/rodskin", label: "สกินเบ็ด", icon: "✨", desc: "สกิน 8 แบบ ตีบวก +30 (ใหม่!)" },
+      { href: "/rodskin", label: "สกินเบ็ด", icon: "✨", desc: "สกิน 8 แบบ ตีบวก +30", badge: "ใหม่" },
       { href: "/fishclash", label: "ศึกปลา", icon: "⚔️", desc: "PvP ออโต้จากปลาที่ตกได้" },
       { href: "/boss", label: "บอสโลก", icon: "🐉", desc: "ตีบอสร่วมเซิร์ฟ" },
-      { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม", icon: "🥊", desc: "ต่อยมอน อัพหมัด (ใหม่!)" },
+      { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม", icon: "🥊", desc: "ต่อยมอน อัพหมัด", badge: "ใหม่" },
       { href: "/farm", label: "ฟาร์ม", icon: "🌾", desc: "เก็บเกี่ยวผลผลิต" },
       { href: "/pets", label: "สัตว์เลี้ยง", icon: "🐾", desc: "7 ตัว สกิลบัฟ" },
       { href: "/tama", label: "เลี้ยงทามาก็อต", icon: "🥚", desc: "ฟักไข่เลี้ยงในโทรศัพท์" },
       { href: "/car", label: "รถแข่ง & แต่งรถ", icon: "🏎️", desc: "รถ 4 คัน · แต่ง จูน อัปเกรด" },
-      { href: "/totem", label: "โทเทมนำโชค", icon: "🗿", desc: "บัฟโชค+เงินตกปลาทั้งวง (ใหม่!)" },
+      { href: "/totem", label: "โทเทมนำโชค", icon: "🗿", desc: "บัฟโชค+เงินตกปลาทั้งวง", badge: "ใหม่" },
     ],
   },
   {
     label: "คราฟ & สุ่ม",
     icon: "🎰",
     items: [
-      { href: "/wish", label: "ขอพร", icon: "🎫", desc: "รีล 25 รางวัล + บัตรแลกพาส (ใหม่!)" },
+      { href: "/wish", label: "ขอพร", icon: "🎫", desc: "รีล 25 รางวัล + บัตรแลกพาส", badge: "ใหม่" },
       { href: "/craft", label: "สูตรคราฟ", icon: "🛠️", desc: "23 สูตร โต๊ะคราฟ" },
       { href: "/gacha", label: "กาชา", icon: "🎁", desc: "อัตราออกทุก pool" },
       { href: "/wheel", label: "วงล้อรายวัน", icon: "🎡", desc: "หมุนฟรีวันละครั้ง" },
@@ -64,7 +64,7 @@ const navGroups = [
     items: [
       { href: "/install", label: "ติดตั้งแอป", icon: "📲", desc: "เพิ่มลงหน้าจอ (PWA)" },
       { href: "/items", label: "ไอเท็ม", icon: "🎒", desc: "ไอเทมทั้งหมด" },
-      { href: "/passport", label: "พาสปอร์ต", icon: "🛂", desc: "แก้ข้อมูล + เพิ่มรูป (ใหม่!)" },
+      { href: "/passport", label: "พาสปอร์ต", icon: "🛂", desc: "แก้ข้อมูล + เพิ่มรูป", badge: "ใหม่" },
       { href: "/phone", label: "โทรศัพท์", icon: "📱", desc: "ฟีเจอร์มือถือ" },
       { href: "/song", label: "เพลง", icon: "🎵", desc: "รายชื่อเพลง" },
       { href: "/map", label: "แผนที่", icon: "🗺️", desc: "โซนในแมพ" },
@@ -73,6 +73,16 @@ const navGroups = [
     ],
   },
 ];
+
+// ป้าย "ใหม่" ข้างเมนู — ใช้ทั้งเมนูจอคอมและเมนูมือถือ
+function NavBadge({ text }) {
+  if (!text) return null;
+  return (
+    <span className="ml-auto shrink-0 rounded-full bg-pink-500/25 px-1 py-0.5 text-[9px] font-bold leading-none text-pink-200">
+      {text}
+    </span>
+  );
+}
 
 function isGroupActive(group, pathname) {
   if (group.href) return pathname === group.href;
@@ -181,9 +191,12 @@ export default function Nav() {
                             <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500/25 to-fuchsia-500/15 text-lg">
                               {it.icon}
                             </span>
-                            <span className="min-w-0">
-                              <span className={"block text-sm font-medium " + (itemActive ? "text-pink-200" : "text-gray-100")}>
-                                {it.label}
+                            <span className="flex min-w-0 flex-1 flex-col">
+                              <span className="flex items-center gap-1.5">
+                                <span className={"truncate text-sm font-medium " + (itemActive ? "text-pink-200" : "text-gray-100")}>
+                                  {it.label}
+                                </span>
+                                <NavBadge text={it.badge} />
                               </span>
                               {it.desc && <span className="block truncate text-[11px] text-pink-300/60">{it.desc}</span>}
                             </span>
@@ -282,12 +295,13 @@ export default function Nav() {
                           key={it.href}
                           href={it.href}
                           className={
-                            "flex items-center gap-2 rounded-xl px-3 py-2 text-sm transition " +
+                            "flex items-center gap-1.5 rounded-xl px-2.5 py-2 text-sm transition " +
                             (active ? "bg-pink-500/20 text-pink-200" : "text-gray-100 hover:bg-white/5")
                           }
                         >
                           <span className="text-base">{it.icon}</span>
                           <span className="truncate">{it.label}</span>
+                          <NavBadge text={it.badge} />
                         </Link>
                       );
                     })}

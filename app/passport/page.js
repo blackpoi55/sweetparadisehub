@@ -1,6 +1,7 @@
 import {
   meta, autoFields, editFields, jobs, colors, stamps,
-  editSteps, photoWays, assetTypes, troubleshoot, tips,
+  editSteps, photoWays, assetTypes, forbidden, consequences, photoMyths,
+  troubleshoot, tips,
 } from "@/json/passport";
 
 export const revalidate = 3600;
@@ -8,7 +9,7 @@ export const revalidate = 3600;
 export const metadata = {
   title: "พาสปอร์ตนักเดินทาง — Sweet Paradise Hub",
   description:
-    "คู่มือ 🛂 พาสปอร์ตนักเดินทาง — วิธีแก้ไขข้อมูลส่วนตัวบนการ์ด (ฉายา คำขวัญ อาชีพ สีปก ตราประทับ) และวิธีเพิ่มรูปพาสปอร์ตทั้งแบบค้นหาในเกมและอัปรูปเอง",
+    "คู่มือ 🛂 พาสปอร์ตนักเดินทาง — วิธีแก้ไขข้อมูลส่วนตัวบนการ์ด (ฉายา คำขวัญ อาชีพ สีปก ตราประทับ) วิธีเพิ่มรูปทั้งแบบค้นหาในเกมและอัปเอง พร้อมข้อห้ามว่ารูปแบบไหนอัปไม่ได้",
 };
 
 async function fetchIcon() {
@@ -273,7 +274,110 @@ export default async function PassportPage() {
               ปุ่ม <span className="text-white">“ล้างรูป”</span> ในหน้าเดียวกันใช้เอารูปออก กลับไปใช้รูปหัวอวตารตามเดิม
             </p>
           </div>
+
+          <p className="mt-3 rounded-2xl border border-rose-400/45 bg-rose-500/[0.1] px-3.5 py-3 text-[11px] font-semibold leading-relaxed text-rose-100 md:text-xs">
+            ⛔ ก่อนตั้งรูป อ่านข้อห้ามด้านล่างให้จบก่อน — ตั้งรูปผิดกฎมีผลถึงขั้น{" "}
+            <span className="text-white">โดนแบนบัญชี Roblox</span> ไม่ใช่แค่โดนลบรูป
+          </p>
         </Section>
+
+        {/* ===== ⛔ ข้อห้ามเรื่องรูป ===== */}
+        <section className="mt-9">
+          <div className="rounded-3xl border-2 border-rose-500/45 bg-rose-950/25 p-4 md:p-5">
+            <h2 className="flex flex-wrap items-center gap-2 text-lg font-bold text-white md:text-xl">
+              <span>⛔</span>
+              รูปแบบไหนห้ามอัป / ห้ามตั้งเด็ดขาด
+              <span className="rounded-full border border-rose-400/50 bg-rose-500/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-rose-200">
+                อ่านก่อนตั้งรูป
+              </span>
+            </h2>
+            <p className="mt-1.5 text-xs leading-relaxed text-rose-100/85 md:text-sm">
+              รูปพาสปอร์ตลอยเหนือหัวให้ <span className="font-semibold text-white">ทุกคนในระยะ {meta.viewDistance} ช่องเห็นพร้อมกัน</span> และเกมนี้มีผู้เล่นเด็ก
+              — ทุกข้อด้านล่างผิดทั้งกฎ Roblox และกฎของเซิร์ฟเรา
+            </p>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {forbidden.map((f) => (
+                <div
+                  key={f.title}
+                  className={`rounded-2xl border p-3.5 ${
+                    f.danger
+                      ? "border-rose-400/60 bg-rose-500/[0.14]"
+                      : "border-white/10 bg-black/40"
+                  }`}
+                >
+                  <div className="flex items-center gap-2 text-sm font-bold text-white">
+                    <span className="text-base">{f.icon}</span>
+                    {f.title}
+                    {f.danger && (
+                      <span className="rounded-full bg-rose-500/30 px-2 py-0.5 text-[9px] font-bold uppercase text-rose-100">
+                        ร้ายแรงสุด
+                      </span>
+                    )}
+                  </div>
+                  <ul className="mt-2 space-y-1.5">
+                    {f.items.map((it) => (
+                      <li key={it} className="flex gap-2 text-[11px] leading-relaxed text-rose-100/85">
+                        <span className="mt-[3px] shrink-0 text-rose-400">✕</span>
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* บทลงโทษ */}
+            <div className="mt-5">
+              <div className="text-sm font-bold text-white">🚨 ฝ่าฝืนแล้วเกิดอะไรขึ้น</div>
+              <div className="mt-2.5 grid gap-2.5 md:grid-cols-3">
+                {consequences.map((c) => (
+                  <div
+                    key={c.who}
+                    className="rounded-2xl border border-amber-400/30 bg-amber-500/[0.08] p-3.5"
+                  >
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-amber-100">
+                      <span className="text-base">{c.icon}</span>
+                      {c.who}
+                    </div>
+                    <p className="mt-1.5 text-[11px] leading-relaxed text-pink-100/85">{c.what}</p>
+                    <p className="mt-2 rounded-lg bg-black/35 px-2.5 py-1.5 text-[10px] leading-relaxed text-amber-200/85">
+                      {c.note}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* เข้าใจผิดบ่อย */}
+            <div className="mt-5">
+              <div className="text-sm font-bold text-white">🤔 ความเข้าใจผิดที่เจอบ่อย</div>
+              <div className="mt-2.5 space-y-2.5">
+                {photoMyths.map((m) => (
+                  <div
+                    key={m.myth}
+                    className="rounded-2xl border border-white/10 bg-black/40 p-3.5"
+                  >
+                    <div className="flex gap-2 text-xs font-semibold text-rose-200">
+                      <span className="shrink-0">❌</span>
+                      <span>“{m.myth}”</span>
+                    </div>
+                    <div className="mt-1.5 flex gap-2 text-[11px] leading-relaxed text-emerald-100/90 md:text-xs">
+                      <span className="shrink-0 text-emerald-400">✔</span>
+                      <span>{m.truth}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-5 rounded-xl border border-white/10 bg-black/45 px-3.5 py-3 text-[11px] leading-relaxed text-pink-100/85">
+              💡 <span className="font-semibold text-white">ไม่แน่ใจว่ารูปนี้ตั้งได้ไหม แปลว่าอย่าตั้ง</span> —
+              เลือกรูปการ์ตูนใส ๆ สัตว์ อาหาร วิว หรือปล่อยว่างให้ใช้รูปอวตารของตัวเองก็สวยแล้ว ·
+              เจอใครตั้งรูปไม่เหมาะสม แจ้งแอดมินได้เลย ระบบมีบันทึกไว้ครบ
+            </p>
+          </div>
+        </section>
 
         {/* ===== ตัวเลือกทั้งหมด ===== */}
         <Section icon="🎛️" title="ตัวเลือกทั้งหมดที่มีให้เลือก" sub="กด ◀ ▶ วนเลือกในแอพ">

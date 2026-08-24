@@ -1,5 +1,6 @@
 import {
-  meta, autoFields, editFields, jobs, colors, stamps,
+  meta, whatsNew, coreRows, optionalRows, lastRow, maxRows, headerParts,
+  editFields, jobGroups, jobs, colors, customColor, stamps, stampsOldCount,
   editSteps, photoWays, assetTypes, forbidden, consequences, photoMyths,
   troubleshoot, tips,
 } from "@/json/passport";
@@ -99,6 +100,28 @@ export default async function PassportPage() {
           </div>
         </div>
 
+        {/* ===== 🆕 อัปเดตล่าสุด ===== */}
+        <section className="mt-7 rounded-3xl border border-sky-400/40 bg-sky-500/[0.08] p-4 md:p-5">
+          <h2 className="flex flex-wrap items-center gap-2 text-base font-bold text-white md:text-lg">
+            <span>🆕</span>
+            อัปเดตล่าสุด
+            <span className="rounded-full border border-sky-400/50 bg-sky-500/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-200">
+              24 ส.ค. 2569
+            </span>
+          </h2>
+          <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            {whatsNew.map((n) => (
+              <div key={n.title} className="rounded-2xl border border-white/10 bg-black/40 p-3.5">
+                <div className="flex items-center gap-2 text-xs font-bold text-sky-100">
+                  <span className="text-base">{n.icon}</span>
+                  {n.title}
+                </div>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-pink-100/85">{n.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ===== กางการ์ดยังไง ===== */}
         <Section icon="👀" title="กางโชว์ให้คนอื่นดูยังไง" sub="ไม่ต้องกดอะไรเลย แค่หยิบถือ">
           <div className="grid gap-3 sm:grid-cols-3">
@@ -120,54 +143,115 @@ export default async function PassportPage() {
         <Section
           icon="🪪"
           title="บนการ์ดมีอะไรบ้าง"
-          sub="แบ่งเป็น 2 กลุ่มชัดเจน — ฝั่งซ้ายระบบเติมให้ แก้ไม่ได้ · ฝั่งขวาคุณแก้เองได้ทั้งหมด"
+          sub={`สถิติทั้งหมดระบบดึงของจริงมาเติมให้ แก้ไม่ได้ · การ์ดยาวสุด ${maxRows} แถว`}
         >
-          <div className="grid gap-4 lg:grid-cols-2">
-            {/* ระบบเติมเอง */}
-            <div className="rounded-2xl border border-slate-400/25 bg-slate-500/[0.07] p-4">
-              <div className="flex items-center gap-2 text-sm font-bold text-slate-100">
-                🔒 ระบบเติมเอง — แก้ไม่ได้
-              </div>
-              <p className="mt-1 text-[11px] text-pink-200/70">ตั้งใจล็อกไว้ กันคนโม้เลเวล/คะแนน</p>
-              <ul className="mt-3 space-y-2">
-                {autoFields.map((f) => (
-                  <li key={f.name} className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
-                    <span className="w-5 shrink-0 text-center text-sm">{f.icon}</span>
-                    <span className="min-w-0">
-                      <span className="block text-xs font-semibold text-white">{f.name}</span>
-                      <span className="block text-[11px] leading-relaxed text-pink-200/70">{f.desc}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+          {/* หัวการ์ด */}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <div className="text-sm font-bold text-white">🎫 หัวการ์ด</div>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              {headerParts.map((h) => (
+                <div key={h.name} className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
+                  <span className="w-5 shrink-0 text-center text-sm">{h.icon}</span>
+                  <span className="min-w-0">
+                    <span className="block text-xs font-semibold text-white">{h.name}</span>
+                    <span className="block text-[11px] leading-relaxed text-pink-200/70">{h.desc}</span>
+                  </span>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* แก้เองได้ */}
-            <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/[0.07] p-4">
-              <div className="flex items-center gap-2 text-sm font-bold text-emerald-100">
-                ✏️ คุณแก้เองได้ — 6 ช่อง
+          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            {/* 6 แถวหลัก */}
+            <div className="rounded-2xl border border-slate-400/25 bg-slate-500/[0.07] p-4">
+              <div className="text-sm font-bold text-slate-100">
+                📋 {coreRows.length} แถวหลัก — มีเหมือนกันทุกคน
               </div>
-              <p className="mt-1 text-[11px] text-pink-200/70">แก้ที่ {meta.openFrom}</p>
+              <p className="mt-1 text-[11px] text-pink-200/70">ระบบเติมให้ทั้งหมด กันคนโม้เลเวล/คะแนน</p>
               <ul className="mt-3 space-y-2">
-                {editFields.map((f) => (
-                  <li key={f.key} className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
+                {coreRows.map((f) => (
+                  <li key={f.name} className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
                     <span className="w-5 shrink-0 text-center text-sm">{f.icon}</span>
                     <span className="min-w-0">
                       <span className="block text-xs font-semibold text-white">
                         {f.name}
-                        <span className="ml-1.5 font-normal text-emerald-300/80">· {f.how}</span>
+                        {f.isNew && (
+                          <span className="ml-1.5 rounded-full bg-sky-500/25 px-1.5 py-0.5 text-[9px] font-bold text-sky-200">
+                            ใหม่
+                          </span>
+                        )}
                       </span>
                       <span className="block text-[11px] leading-relaxed text-pink-200/70">{f.desc}</span>
+                    </span>
+                  </li>
+                ))}
+                <li className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
+                  <span className="w-5 shrink-0 text-center text-sm">{lastRow.icon}</span>
+                  <span className="min-w-0">
+                    <span className="block text-xs font-semibold text-white">
+                      {lastRow.name}
+                      <span className="ml-1.5 font-normal text-pink-200/55">· ปิดท้ายเสมอ</span>
+                    </span>
+                    <span className="block text-[11px] leading-relaxed text-pink-200/70">{lastRow.desc}</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* แถวเสริม */}
+            <div className="rounded-2xl border border-amber-400/30 bg-amber-500/[0.07] p-4">
+              <div className="text-sm font-bold text-amber-100">
+                ➕ {optionalRows.length} แถวเสริม — โผล่เฉพาะคนที่มี
+              </div>
+              <p className="mt-1 text-[11px] text-pink-200/70">
+                ยิ่งเล่นหลายระบบ การ์ดยิ่งยาว — ระบบดึงมาจากที่อื่นในเกม ไม่ต้องตั้งเอง
+              </p>
+              <ul className="mt-3 space-y-2">
+                {optionalRows.map((f) => (
+                  <li key={f.name} className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
+                    <span className="w-5 shrink-0 text-center text-sm">{f.icon}</span>
+                    <span className="min-w-0">
+                      <span className="block text-xs font-semibold text-white">{f.name}</span>
+                      <span className="block text-[11px] leading-relaxed text-pink-200/70">
+                        โผล่เมื่อ: {f.when}
+                      </span>
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+
+          {/* แก้เองได้ */}
+          <div className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-500/[0.07] p-4">
+            <div className="text-sm font-bold text-emerald-100">
+              ✏️ คุณแก้เองได้ — {editFields.length} ช่อง
+            </div>
+            <p className="mt-1 text-[11px] text-pink-200/70">แก้ที่ {meta.openFrom}</p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              {editFields.map((f) => (
+                <div key={f.key} className="flex gap-2.5 rounded-xl bg-black/30 px-3 py-2">
+                  <span className="w-5 shrink-0 text-center text-sm">{f.icon}</span>
+                  <span className="min-w-0">
+                    <span className="block text-xs font-semibold text-white">
+                      {f.name}
+                      {f.updated && (
+                        <span className="ml-1.5 rounded-full bg-sky-500/25 px-1.5 py-0.5 text-[9px] font-bold text-sky-200">
+                          อัปเดต
+                        </span>
+                      )}
+                      <span className="ml-1.5 font-normal text-emerald-300/80">· {f.how}</span>
+                    </span>
+                    <span className="block text-[11px] leading-relaxed text-pink-200/70">{f.desc}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </Section>
 
         {/* ===== วิธีแก้ข้อมูล ===== */}
-        <Section icon="✍️" title="วิธีแก้ไขข้อมูลส่วนตัว" sub="5 ขั้นตอน ทำในโทรศัพท์ที่เดียวจบ">
+        <Section icon="✍️" title="วิธีแก้ไขข้อมูลส่วนตัว" sub={`${editSteps.length} ขั้นตอน ทำในโทรศัพท์ที่เดียวจบ`}>
           <ol className="space-y-2.5">
             {editSteps.map((s) => (
               <li
@@ -192,8 +276,8 @@ export default async function PassportPage() {
 
           <div className="mt-3 grid gap-2 sm:grid-cols-3">
             {[
-              { k: "ฉายา", v: `${meta.nickMax} ตัวอักษร` },
-              { k: "คำขวัญ", v: `${meta.mottoMax} ตัวอักษร` },
+              { k: "ฉายา (ไทยก็นับตัวจริง)", v: `${meta.nickMax} ตัวอักษร` },
+              { k: "คำขวัญ (ไทยก็นับตัวจริง)", v: `${meta.mottoMax} ตัวอักษร` },
               { k: "กดบันทึกซ้ำ", v: `เว้น ${meta.saveCd} วินาที` },
             ].map((x) => (
               <div
@@ -380,64 +464,119 @@ export default async function PassportPage() {
         </section>
 
         {/* ===== ตัวเลือกทั้งหมด ===== */}
-        <Section icon="🎛️" title="ตัวเลือกทั้งหมดที่มีให้เลือก" sub="กด ◀ ▶ วนเลือกในแอพ">
-          <div className="grid gap-4 lg:grid-cols-3">
-            {/* อาชีพ */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-sm font-bold text-white">
-                💼 อาชีพ
-                <span className="ml-1.5 text-[11px] font-normal text-pink-200/60">{jobs.length} แบบ</span>
-              </div>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {jobs.map((j) => (
-                  <span
-                    key={j}
-                    className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 text-[11px] text-pink-100/85"
-                  >
-                    {j}
-                  </span>
-                ))}
-              </div>
+        <Section
+          icon="🎛️"
+          title="ตัวเลือกทั้งหมดที่มีให้เลือก"
+          sub={`${jobs.length} อาชีพ · ${stamps.length} ตราประทับ · สีปกผสมเองได้ไม่จำกัด`}
+        >
+          {/* อาชีพ */}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-white">
+              💼 อาชีพ
+              <span className="rounded-full border border-sky-400/40 bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-200">
+                {jobs.length} แบบ
+              </span>
+              <span className="text-[11px] font-normal text-pink-200/60">
+                กดที่ช่องเพื่อเปิดรายการ แล้วพิมพ์ 🔎 ค้นหาได้
+              </span>
+            </div>
+            <div className="mt-3 space-y-3">
+              {jobGroups.map((g) => (
+                <div key={g.name}>
+                  <div className="text-[11px] font-semibold text-pink-200/75">
+                    {g.emoji} {g.name}
+                    <span className="ml-1.5 font-normal text-pink-200/45">({g.jobs.length})</span>
+                  </div>
+                  <div className="mt-1.5 flex flex-wrap gap-1.5">
+                    {g.jobs.map((j) => (
+                      <span
+                        key={j}
+                        className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 text-[11px] text-pink-100/85"
+                      >
+                        {j}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* สีปก */}
+          <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-white">
+              🎨 สีปกเล่ม
+              <span className="rounded-full border border-sky-400/40 bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-200">
+                ผสมเองได้แล้ว
+              </span>
             </div>
 
-            {/* สีปก */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-sm font-bold text-white">
-                🎨 สีปกเล่ม
-                <span className="ml-1.5 text-[11px] font-normal text-pink-200/60">{colors.length} สี</span>
+            <div className="mt-3 grid gap-4 lg:grid-cols-2">
+              <div>
+                <div className="text-[11px] font-semibold text-pink-200/75">
+                  สีสำเร็จรูป {colors.length} สี — กดปุ่มเดียวจบ
+                </div>
+                <ul className="mt-2 space-y-1.5">
+                  {colors.map((c) => (
+                    <li key={c.name} className="flex items-center gap-2.5">
+                      <span
+                        className="h-5 w-9 shrink-0 rounded-md border border-white/20"
+                        style={{ backgroundColor: c.hex }}
+                      />
+                      <span className="text-[11px] text-pink-100/85">{c.name}</span>
+                      <span className="ml-auto font-mono text-[10px] text-pink-200/45">{c.hex}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="mt-3 space-y-1.5">
-                {colors.map((c) => (
-                  <li key={c.name} className="flex items-center gap-2.5">
-                    <span
-                      className="h-5 w-9 shrink-0 rounded-md border border-white/20"
-                      style={{ backgroundColor: c.hex }}
-                    />
-                    <span className="text-[11px] text-pink-100/85">{c.name}</span>
-                    <span className="ml-auto font-mono text-[10px] text-pink-200/45">{c.hex}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            {/* ตราประทับ */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-sm font-bold text-white">
-                🔖 ตราประทับ
-                <span className="ml-1.5 text-[11px] font-normal text-pink-200/60">{stamps.length} แบบ</span>
-              </div>
-              <p className="mt-1 text-[11px] text-pink-200/70">ขึ้นนำหน้าชื่อบนหัวการ์ด</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {stamps.map((s) => (
-                  <span
-                    key={s}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-black/40 text-xl"
-                  >
-                    {s}
-                  </span>
-                ))}
+              <div>
+                <div className="text-[11px] font-semibold text-pink-200/75">ผสมสีเอง 3 วิธี</div>
+                <ul className="mt-2 space-y-2">
+                  {customColor.ways.map((w) => (
+                    <li key={w.title} className="flex gap-2.5 rounded-xl bg-black/35 px-3 py-2">
+                      <span className="w-5 shrink-0 text-center text-sm">{w.icon}</span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-semibold text-white">{w.title}</span>
+                        <span className="block text-[11px] leading-relaxed text-pink-200/75">{w.desc}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2.5 rounded-lg bg-black/35 px-2.5 py-2 text-[10px] leading-relaxed text-pink-200/70">
+                  💡 {customColor.note}
+                </p>
               </div>
             </div>
+          </div>
+
+          {/* ตราประทับ */}
+          <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-white">
+              🔖 ตราประทับ
+              <span className="rounded-full border border-sky-400/40 bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-200">
+                {stamps.length} แบบ
+              </span>
+              <span className="text-[11px] font-normal text-pink-200/60">ขึ้นนำหน้าชื่อบนหัวการ์ด</span>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {stamps.map((st, i) => (
+                <span
+                  key={st}
+                  title={i < stampsOldCount ? "ชุดเดิม" : "เพิ่มใหม่"}
+                  className={
+                    "flex h-10 w-10 items-center justify-center rounded-xl border bg-black/40 text-xl " +
+                    (i < stampsOldCount ? "border-white/10" : "border-sky-400/40")
+                  }
+                >
+                  {st}
+                </span>
+              ))}
+            </div>
+            <p className="mt-3 text-[10px] text-pink-200/60">
+              <span className="mr-1 inline-block h-2.5 w-2.5 rounded-sm border border-sky-400/60 align-middle" />
+              ขอบฟ้า = {stamps.length - stampsOldCount} อันที่เพิ่มมาใหม่รอบนี้
+            </p>
           </div>
         </Section>
 

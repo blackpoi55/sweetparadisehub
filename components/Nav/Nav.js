@@ -64,6 +64,7 @@ const navGroups = [
     items: [
       { href: "/install", label: "ติดตั้งแอป", icon: "📲", desc: "เพิ่มลงหน้าจอ (PWA)" },
       { href: "/items", label: "ไอเท็ม", icon: "🎒", desc: "ไอเทมทั้งหมด" },
+      { href: "/passport", label: "พาสปอร์ต", icon: "🛂", desc: "แก้ข้อมูล + เพิ่มรูป (ใหม่!)" },
       { href: "/phone", label: "โทรศัพท์", icon: "📱", desc: "ฟีเจอร์มือถือ" },
       { href: "/song", label: "เพลง", icon: "🎵", desc: "รายชื่อเพลง" },
       { href: "/map", label: "แผนที่", icon: "🗺️", desc: "โซนในแมพ" },

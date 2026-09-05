@@ -33,6 +33,13 @@ export const materialMeta = {
   WishCard: { name: "บัตรขอพร", emoji: "🎫" },
   HBDCard: { name: "บัตร Happy Birthday", emoji: "🎂" },
 
+  // 🎂 บัตรจัดงานวันเกิด / 🚔 บัตรจับเข้าคุก — บัตรชนิด "กดใช้ได้เลยในกระเป๋า"
+  BirthdayPartyCard: { name: "บัตรจัดงานวันเกิด", emoji: "🎂", icon: "/images/items/BirthdayPartyCard.png" },
+  JailCard1: { name: "บัตรจับเข้าคุก 1 นาที", emoji: "🚔", icon: "/images/items/JailCard1.png" },
+  JailCard3: { name: "บัตรจับเข้าคุก 3 นาที", emoji: "🚔", icon: "/images/items/JailCard3.png" },
+  JailCard5: { name: "บัตรจับเข้าคุก 5 นาที", emoji: "🚔", icon: "/images/items/JailCard5.png" },
+  JailCard10: { name: "บัตรจับเข้าคุก 10 นาที", emoji: "🚔", icon: "/images/items/JailCard10.png" },
+
   DollGachaBox: { name: "กล่องกาชาตุ๊กตา", emoji: "🎁" },
   ChairGachaBox: { name: "กล่องกาชาเก้าอี้", emoji: "🎁" },
   PetGachaBox: { name: "กล่องกาชาสัตว์เลี้ยง", emoji: "🎁" },

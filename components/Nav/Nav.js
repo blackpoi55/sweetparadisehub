@@ -42,6 +42,7 @@ const navGroups = [
     icon: "🎉",
     items: [
       { href: "/schedule", label: "ตารางกิจกรรม", icon: "🗓️", desc: "เวลากิจกรรมประจำ" },
+      { href: "/birthday", label: "งานวันเกิด", icon: "🎂", desc: "บัฟ ×512 + ของขวัญ 4 ทาง", badge: "ใหม่" },
       { href: "/event", label: "อีเวนต์เทศกาล", icon: "🎊", desc: "อีเวนต์ตามช่วง" },
       { href: "/referral", label: "ชวนเพื่อน", icon: "👥", desc: "รางวัลเชิญเพื่อน" },
     ],

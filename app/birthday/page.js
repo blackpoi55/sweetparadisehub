@@ -1,6 +1,6 @@
 import {
   card, meta, buffs, rewardWays, crowd, giftPool, giftTotalWeight, giftPct,
-  finale, hostSteps, tips, jailCards, jail,
+  finale, tips,
 } from "@/json/birthday";
 import { resolveAsset, rarityStyle, fmtNum } from "@/lib/gameAssets";
 
@@ -9,7 +9,7 @@ export const revalidate = 3600;
 export const metadata = {
   title: "งานวันเกิด — Sweet Paradise Hub",
   description:
-    "คู่มือ 🎂 งานวันเกิดในเกม — บัฟโชคปลารุ้ง ×512 เงินขายปลา +100% · 4 ทางรับของ (รอบแจก เป่าเทียน กล่องของขวัญ อวยพร) พร้อมตารางของขวัญเต็ม และข้อมูล 🚔 บัตรจับเข้าคุก",
+    "คู่มือ 🎂 งานวันเกิดในเกม — บัฟโชคปลารุ้ง ×512 เงินขายปลา +100% · 4 ทางรับของ (รอบแจก เป่าเทียน กล่องของขวัญ อวยพร) พร้อมตารางของขวัญเต็มและโบนัสตามจำนวนคน",
 };
 
 const TONES = {
@@ -92,9 +92,6 @@ export default function BirthdayPage() {
             <div className="text-base font-bold text-white">{card.name}</div>
             <div className="mt-0.5 font-mono text-[11px] text-pink-200/60">{card.code}</div>
             <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
-              <span className="rounded-full border border-amber-400/40 bg-amber-500/10 px-3 py-1 font-semibold text-amber-200">
-                🎁 {card.getby}
-              </span>
               <span className="rounded-full border border-sky-400/40 bg-sky-500/10 px-3 py-1 font-semibold text-sky-200">
                 🎒 {card.useFrom}
               </span>
@@ -277,26 +274,6 @@ export default function BirthdayPage() {
           </div>
         </Section>
 
-        {/* ===== วิธีจัดงาน ===== */}
-        <Section icon="🎈" title="อยากจัดงานเอง ทำยังไง" sub={`${hostSteps.length} ขั้นตอน`}>
-          <ol className="space-y-2.5">
-            {hostSteps.map((s) => (
-              <li key={s.step} className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-pink-400/40 bg-pink-500/15 text-sm font-bold text-pink-200">
-                  {s.step}
-                </span>
-                <span className="min-w-0">
-                  <span className="block text-sm font-bold text-white">
-                    <span className="mr-1.5">{s.icon}</span>
-                    {s.title}
-                  </span>
-                  <span className="mt-0.5 block text-[11px] leading-relaxed text-pink-200/80 md:text-xs">{s.desc}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
-        </Section>
-
         {/* ===== ข้อควรรู้ ===== */}
         <Section icon="📌" title="ข้อควรรู้">
           <div className="grid gap-3 md:grid-cols-2">
@@ -314,105 +291,6 @@ export default function BirthdayPage() {
             })}
           </div>
         </Section>
-
-        {/* ===== 🚔 บัตรจับเข้าคุก ===== */}
-        <section className="mt-12">
-          <div className="rounded-3xl border-2 border-slate-400/30 bg-slate-500/[0.08] p-4 md:p-5">
-            <h2 className="flex flex-wrap items-center gap-2 text-lg font-bold text-white md:text-xl">
-              <span>🚔</span>
-              บัตรจับเข้าคุก
-              <span className="rounded-full border border-slate-300/40 bg-slate-400/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-200">
-                บัตรใหม่
-              </span>
-            </h2>
-            <p className="mt-1.5 text-xs leading-relaxed text-pink-100/85 md:text-sm">
-              กดในกระเป๋า → เลือกคน → กรอกเหตุผล แล้วเขาโดนจับเข้าคุกทันที · มี 4 ระดับตามเวลา
-            </p>
-
-            {/* 4 ใบ */}
-            <div className="mt-4 grid grid-cols-2 gap-2.5 lg:grid-cols-4">
-              {jailCards.map((c) => (
-                <div
-                  key={c.code}
-                  className="rounded-2xl border border-white/10 bg-black/45 p-3 text-center"
-                >
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={c.icon} alt={c.name} className="h-full w-full object-contain" />
-                  </div>
-                  <div className="mt-1.5 text-lg font-bold text-slate-100">{c.minutes} นาที</div>
-                  <div className="font-mono text-[9px] text-pink-200/45">{c.code}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* ที่มา */}
-            <div className="mt-4 grid gap-2.5 md:grid-cols-2">
-              <div className="rounded-2xl border border-amber-400/30 bg-amber-500/[0.08] p-3.5">
-                <div className="text-xs font-bold text-amber-100">🎁 ได้มาจากไหน</div>
-                <p className="mt-1.5 text-[11px] leading-relaxed text-pink-100/85">{jail.getby}</p>
-              </div>
-              <div className="rounded-2xl border border-rose-400/35 bg-rose-500/[0.08] p-3.5">
-                <div className="text-xs font-bold text-rose-100">⛔ ไม่มีทางได้จาก</div>
-                <p className="mt-1.5 text-[11px] leading-relaxed text-pink-100/85">{jail.notFrom}</p>
-              </div>
-            </div>
-
-            {/* ขั้นตอน */}
-            <div className="mt-4">
-              <div className="text-sm font-bold text-white">วิธีใช้</div>
-              <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
-                {jail.steps.map((s, i) => (
-                  <div key={s.title} className="rounded-2xl border border-white/10 bg-black/45 p-3.5">
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-400/20 text-[10px] font-bold text-slate-100">
-                        {i + 1}
-                      </span>
-                      <span className="text-base">{s.icon}</span>
-                    </div>
-                    <div className="mt-1.5 text-xs font-bold text-white">{s.title}</div>
-                    <div className="mt-1 text-[11px] leading-relaxed text-pink-200/75">{s.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ผลที่เกิด + กติกา */}
-            <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <div className="text-sm font-bold text-white">โดนจับแล้วเป็นยังไง</div>
-                <ul className="mt-2.5 space-y-2">
-                  {jail.effects.map((e) => (
-                    <li key={e.name} className="flex gap-2.5 rounded-xl bg-black/35 px-3 py-2">
-                      <span className="w-5 shrink-0 text-center text-sm">{e.icon}</span>
-                      <span className="min-w-0">
-                        <span className="block text-xs font-semibold text-white">{e.name}</span>
-                        <span className="block text-[11px] leading-relaxed text-pink-200/70">{e.desc}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <div className="text-sm font-bold text-white">กติกาที่ต้องรู้</div>
-                <ul className="mt-2.5 space-y-1.5">
-                  {jail.rules.map((r) => (
-                    <li key={r.text} className="flex gap-2">
-                      <span className={"mt-[2px] shrink-0 " + (r.ok ? "text-emerald-400" : "text-rose-400")}>
-                        {r.ok ? "✔" : "✕"}
-                      </span>
-                      <span className="text-[11px] leading-relaxed text-pink-100/85">{r.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-3 rounded-lg bg-black/35 px-2.5 py-2 text-[10px] leading-relaxed text-pink-200/70">
-                  ✍️ เหตุผลต้องยาว {jail.reasonMin}–{jail.reasonMax} ตัวอักษร (ภาษาไทยนับเป็นตัวอักษรจริง ไม่ใช่ไบต์)
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <p className="mt-10 text-center text-[10px] text-pink-200/45">
           ข้อมูลอ้างอิงจากระบบในเกมจริง · อัปเดต 5 ก.ย. 2569

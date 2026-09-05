@@ -45,6 +45,9 @@ function Stat({ v, k, tone = "text-pink-200" }) {
 
 export default function BirthdayPage() {
   const sorted = [...giftPool].sort((a, b) => b.weight - a.weight);
+  // แยกกลุ่ม "ของตำนาน" ออก เพื่อคิดช่วง % ของกลุ่มบนแบบไม่ต้องฮาร์ดโค้ด
+  const legendCount = giftPool.filter((g) => g.rarity === "Legendary").length;
+  const commonCount = sorted.length - legendCount;
 
   return (
     <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl border border-pink-500/30 bg-black">
@@ -256,8 +259,9 @@ export default function BirthdayPage() {
             </table>
           </div>
           <p className="mt-2.5 text-[11px] leading-relaxed text-pink-200/70">
-            ⚖️ 8 อันแรกจงใจตั้งให้ห่างกันไม่มาก (17.3% ลงมา 7.5%) — เปิดแล้วได้ลุ้นทุกช่อง ไม่ใช่ได้ข้าวตลอด ·
-            ของตำนาน 2 ตัวกดไว้ต่ำมาก เพราะบัตรการันตีคราฟเอาไปเปิดประมูลจริง แจกเยอะราคาตก
+            ⚖️ ของกลุ่มบนจงใจตั้งให้ห่างกันไม่มาก ({giftPct(sorted[0].weight).toFixed(1)}% ลงมา{" "}
+            {giftPct(sorted[commonCount - 1].weight).toFixed(1)}%) — เปิดแล้วได้ลุ้นทุกช่อง ไม่ใช่ได้ข้าวตลอด ·
+            ของตำนาน {legendCount} ตัวกดไว้ต่ำมาก เพราะเอาไปเปิดประมูลจริง แจกเยอะราคาตก
           </p>
         </Section>
 

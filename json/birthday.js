@@ -138,11 +138,12 @@ export const giftPool = [
   { item: "GoldenTicket", rarity: "Rare", weight: 18, min: 1, max: 2 },
   { item: "LuckyCraftTicket", rarity: "Epic", weight: 15, min: 1, max: 1 },
   { item: "MarketBumpTicket", rarity: "Epic", weight: 13, min: 1, max: 1 },
+  { item: "WishTicket", rarity: "Epic", weight: 10, min: 1, max: 1 },
   { item: "GuaranteeCraftTicket", rarity: "Legendary", weight: 1, min: 1, max: 1 },
-  { item: "RodSkinSafeCard", rarity: "Legendary", weight: 1, min: 1, max: 1 },
+  { item: "RodSkinStartCard", rarity: "Legendary", weight: 1, min: 1, max: 1 },
 ];
 
-export const giftTotalWeight = giftPool.reduce((s, g) => s + g.weight, 0); // 173
+export const giftTotalWeight = giftPool.reduce((s, g) => s + g.weight, 0); // 183
 export function giftPct(w) {
   return (w / giftTotalWeight) * 100;
 }
@@ -166,7 +167,7 @@ export const tips = [
   },
   {
     icon: "🌟", tone: "violet", title: "ของตำนานประกาศทั้งเซิร์ฟ",
-    desc: "ใครเปิดได้บัตรการันตีคราฟหรือบัตรกันแตก ระบบป่าวประกาศให้ทั้งเซิร์ฟรู้ — คนนอกงานจะได้อยากเข้ามา",
+    desc: "ใครเปิดได้บัตรการันตีคราฟหรือบัตรการันตีตี +0 ระบบป่าวประกาศให้ทั้งเซิร์ฟรู้ — คนนอกงานจะได้อยากเข้ามา",
   },
   {
     icon: "🚪", tone: "sky", title: "ออกนอกเขตแล้วบัฟหลุดทันที",

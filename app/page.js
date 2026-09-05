@@ -19,9 +19,9 @@ export default function Home() {
             Sweet Paradise • Hangout Map
           </span>
 
-          <h1 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+          <h1 className="mt-4 text-3xl font-bold leading-[1.4] tracking-tight text-white md:text-4xl md:leading-[1.4] lg:text-5xl lg:leading-[1.4]">
             แฮงเอาต์โซนที่สร้างจากความสุข
-            <span className="block bg-gradient-to-r from-pink-400 via-fuchsia-300 to-rose-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-pink-400 via-fuchsia-300 to-rose-400 bg-clip-text leading-[1.4] text-transparent">
               ไม่ใช่ดราม่าจากคนแปลกหน้า
             </span>
           </h1>

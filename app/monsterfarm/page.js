@@ -69,7 +69,7 @@ export default function MonsterFarmPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-orange-400/50 bg-black/70 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-300">
             🥊 Monster Farm • ระบบใหม่
           </span>
-          <h1 className="mt-4 bg-gradient-to-r from-orange-300 via-amber-200 to-rose-300 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-4xl">
+          <h1 className="mt-4 bg-gradient-to-r from-orange-300 via-amber-200 to-rose-300 bg-clip-text text-3xl font-black leading-[1.4] tracking-tight text-transparent md:text-4xl md:leading-[1.4]">
             มอนสเตอร์ฟาร์ม
           </h1>
           <p className="mx-auto mt-2 max-w-2xl text-xs text-pink-100/80 md:text-sm">

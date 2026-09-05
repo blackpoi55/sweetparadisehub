@@ -260,7 +260,7 @@ export default async function WishPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-black/70 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300">
             🎫 Wish App • ระบบใหม่
           </span>
-          <h1 className="mt-4 bg-gradient-to-r from-violet-300 via-fuchsia-200 to-amber-200 bg-clip-text text-3xl font-black tracking-tight text-transparent md:text-5xl">
+          <h1 className="mt-4 bg-gradient-to-r from-violet-300 via-fuchsia-200 to-amber-200 bg-clip-text text-3xl font-black leading-[1.4] tracking-tight text-transparent md:text-5xl md:leading-[1.4]">
             ระบบขอพร
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-violet-100/80 md:text-sm">

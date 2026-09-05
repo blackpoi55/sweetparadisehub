@@ -64,8 +64,8 @@ export default function BirthdayPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-pink-400/50 bg-black/70 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-pink-300">
             🎂 Birthday Party
           </span>
-          <h1 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-4xl">
-            งาน<span className="bg-gradient-to-r from-pink-300 via-fuchsia-300 to-amber-200 bg-clip-text text-transparent">วันเกิด</span>ในเกม
+          <h1 className="mt-4 text-2xl font-bold leading-[1.45] tracking-tight text-white md:text-4xl md:leading-[1.45]">
+            งาน<span className="inline-block bg-gradient-to-r from-pink-300 via-fuchsia-300 to-amber-200 bg-clip-text leading-[1.45] text-transparent md:leading-[1.45]">วันเกิด</span>ในเกม
           </h1>
           <p className="mx-auto mt-2.5 max-w-3xl text-xs leading-relaxed text-pink-100/85 md:text-sm">
             ใช้บัตร 1 ใบเปิดงาน <span className="font-semibold text-white">{meta.durationMin} นาที</span> ตรงจุดที่ยืน —

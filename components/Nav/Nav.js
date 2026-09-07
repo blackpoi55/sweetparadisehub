@@ -19,6 +19,7 @@ const navGroups = [
       { href: "/boss", label: "บอสโลก", icon: "🐉", desc: "ตีบอสร่วมเซิร์ฟ" },
       { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม", icon: "🥊", desc: "ต่อยมอน อัพหมัด", badge: "ใหม่" },
       { href: "/farm", label: "ฟาร์ม", icon: "🌾", desc: "เก็บเกี่ยวผลผลิต" },
+      { href: "/garden", label: "สวนปลูกผลไม้", icon: "🌱", desc: "ปลูก ลุ้นสายพันธุ์ แข่งผลใหญ่", badge: "ใหม่" },
       { href: "/pets", label: "สัตว์เลี้ยง", icon: "🐾", desc: "7 ตัว สกิลบัฟ" },
       { href: "/tama", label: "เลี้ยงทามาก็อต", icon: "🥚", desc: "ฟักไข่เลี้ยงในโทรศัพท์" },
       { href: "/car", label: "รถแข่ง & แต่งรถ", icon: "🏎️", desc: "รถ 4 คัน · แต่ง จูน อัปเกรด" },

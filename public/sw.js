@@ -1,7 +1,7 @@
 // Sweet Paradise Hub — service worker (network-first หน้าเว็บ, cache-first ของ static)
 //  ⚠️ ขยับเลขเวอร์ชันทุกครั้งที่เมนู/โครงหน้าเปลี่ยน
 //     activate จะลบแคชชื่อเก่าทิ้งให้เอง = เครื่องที่ติดตั้ง PWA ไว้ได้ของใหม่ทันทีรอบถัดไป
-const CACHE = "sp-hub-v6";
+const CACHE = "sp-hub-v7";
 const CORE = ["/", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {

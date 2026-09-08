@@ -160,6 +160,18 @@ export default function GardenPage() {
                       {c.tag}
                     </span>
                   </div>
+                  <div className="mt-3 grid grid-cols-2 gap-2">
+                    <div className="rounded-xl bg-black/40 px-2 py-2 text-center">
+                      <div className="text-sm font-bold text-white">{dur(c.growSec)}</div>
+                      <div className="text-[10px] text-emerald-100/55">เวลาโต</div>
+                    </div>
+                    <div className="rounded-xl bg-black/40 px-2 py-2 text-center">
+                      <div className="text-sm font-bold text-white">
+                        {c.waters === 0 ? "ไม่ต้องรด" : `${c.waters} ครั้ง`}
+                      </div>
+                      <div className="text-[10px] text-emerald-100/55">รดน้ำ</div>
+                    </div>
+                  </div>
                   <p className="mt-2.5 text-[11px] leading-relaxed text-emerald-50/85 md:text-xs">{c.desc}</p>
                   <p className="mt-2 rounded-lg bg-black/35 px-2.5 py-2 text-[10px] leading-relaxed text-emerald-100/70">
                     👍 {c.good}
@@ -168,27 +180,31 @@ export default function GardenPage() {
               );
             })}
           </div>
-          <p className="mt-3 rounded-2xl border border-white/10 bg-black/40 px-3.5 py-3 text-[11px] leading-relaxed text-emerald-100/80">
-            💡 <span className="font-semibold text-white">เมล็ดปริศนาสุ่มตอนกดเก็บ ไม่ใช่ตอนปลูก</span> — {mystery.why}
-          </p>
+          <div className="mt-3 space-y-2">
+            <p className="rounded-2xl border border-violet-400/40 bg-violet-500/[0.1] px-3.5 py-3 text-[11px] leading-relaxed text-violet-50">
+              ⏱️ <span className="font-semibold text-white">เวลาโตไม่ขึ้นกับผลที่ออก</span> — {mystery.fixedTime}
+            </p>
+            <p className="rounded-2xl border border-white/10 bg-black/40 px-3.5 py-3 text-[11px] leading-relaxed text-emerald-100/80">
+              💡 <span className="font-semibold text-white">สุ่มตอนกดเก็บ ไม่ใช่ตอนปลูก</span> — {mystery.why}
+            </p>
+          </div>
         </Section>
 
         {/* ===== ตารางพืช ===== */}
         <Section
           icon="🌾"
           title={`พืชทั้ง ${crops.length} ชนิด`}
-          sub="ทุกชนิดจูนให้รายได้ต่อชั่วโมงต่อช่องใกล้เคียงกัน — ความต่างคือสไตล์การเล่น ไม่ใช่ตัวเลข"
+          sub="ผลที่เมล็ดปริศนาออกได้ · ทุกชนิดใช้เวลาโตเท่ากันหมด (45 นาที) ต่างกันแค่น้ำหนักกับราคา"
         >
           <div className="overflow-x-auto rounded-2xl border border-white/10">
             <table className="w-full min-w-[720px] border-collapse text-xs">
               <thead>
                 <tr className="bg-white/[0.06] text-left text-[11px] uppercase tracking-wide text-emerald-100/60">
                   <th className="px-3 py-2.5 font-semibold">พืช</th>
-                  <th className="px-3 py-2.5 text-center font-semibold">เวลาโต</th>
-                  <th className="px-3 py-2.5 text-center font-semibold">รดน้ำ</th>
                   <th className="px-3 py-2.5 text-center font-semibold">น้ำหนักปกติ</th>
                   <th className="px-3 py-2.5 text-center font-semibold">เพดานยักษ์</th>
                   <th className="px-3 py-2.5 text-right font-semibold">ราคา/กก.</th>
+                  <th className="px-3 py-2.5 text-right font-semibold">ผลยักษ์ขายได้</th>
                   <th className="px-3 py-2.5 text-right font-semibold">โอกาสจาก 🌟</th>
                 </tr>
               </thead>
@@ -209,16 +225,6 @@ export default function GardenPage() {
                         </span>
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-3 py-2.5 text-center text-emerald-100/90">{dur(c.growSec)}</td>
-                    <td className="px-3 py-2.5 text-center">
-                      {c.waters === 0 ? (
-                        <span className="rounded-full border border-emerald-400/40 bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-200">
-                          ไม่ต้องรด
-                        </span>
-                      ) : (
-                        <span className="font-mono text-sky-200">{c.waters} ครั้ง</span>
-                      )}
-                    </td>
                     <td className="whitespace-nowrap px-3 py-2.5 text-center font-mono text-emerald-100/90">
                       {c.wMin}–{c.wMax} กก.
                     </td>
@@ -227,6 +233,9 @@ export default function GardenPage() {
                     </td>
                     <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono text-lime-200">
                       {fmtNum(c.baht)}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono font-semibold text-amber-200">
+                      {fmtNum(c.giant * c.baht)}
                     </td>
                     <td className="px-3 py-2.5 text-right">
                       {c.rate === 0 ? (
@@ -240,6 +249,10 @@ export default function GardenPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-2.5 rounded-xl border border-white/10 bg-black/40 px-3 py-2.5 text-[11px] leading-relaxed text-emerald-100/75">
+            💰 “ผลยักษ์ขายได้” คิดที่สายพันธุ์ปกติ — ถ้าเป็น 🌈 รุ้งคูณอีก ×8 (ถั่ววิเศษรุ้ง 60 กก. ={" "}
+            <span className="font-semibold text-amber-200">{fmtNum(60 * 13000 * 8)}</span>)
+          </p>
           <div className="mt-2.5 grid gap-2 md:grid-cols-2">
             {crops.map((c) => (
               <p key={c.key} className="rounded-xl bg-black/35 px-3 py-2 text-[11px] leading-relaxed text-emerald-100/75">

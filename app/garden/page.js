@@ -1,6 +1,6 @@
 import {
   meta, crops, plantChoices, mystery, care, variants, variantOdds,
-  giant, sizeTiers, sizeNote, fertilizers, fertNote, night, helpers,
+  giant, sizeTiers, sizeNote, fertilizers, fertNote, night, bee, rain,
   seasons, seasonNote, plots, plotTotal, order, contest, steps, tips,
 } from "@/json/garden";
 import { fmtNum } from "@/lib/gameAssets";
@@ -286,19 +286,43 @@ export default function GardenPage() {
             </div>
 
             <div className="grid gap-3">
-              {helpers.map((h) => {
-                const t = TONES[h.tone];
-                return (
-                  <div key={h.name} className={`rounded-2xl border p-3.5 ${t.box}`}>
-                    <div className={`flex items-center gap-2 text-sm font-bold ${t.text}`}>
-                      <span className="text-lg">{h.icon}</span>
-                      {h.name}
+              {/* 🐝 ผึ้ง — ให้ผลต่างกันตามชนิดต้น */}
+              <div className="rounded-2xl border border-amber-400/35 bg-amber-500/[0.07] p-3.5">
+                <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-amber-200">
+                  <span className="text-lg">{bee.icon}</span>
+                  ผึ้ง
+                  <span className="rounded-full border border-amber-400/40 bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-200">
+                    ให้ผลต่างกันตามต้น
+                  </span>
+                </div>
+                <div className="mt-2.5 space-y-2">
+                  {bee.cases.map((c) => (
+                    <div key={c.on} className="rounded-xl bg-black/40 px-3 py-2">
+                      <div className="text-[11px] font-semibold text-white">
+                        {c.on} → <span className="text-amber-200">{c.effect}</span>
+                      </div>
+                      <div className="mt-0.5 text-[10px] leading-relaxed text-emerald-100/65">{c.detail}</div>
                     </div>
-                    <p className="mt-1.5 text-[11px] leading-relaxed text-emerald-50/85">{h.desc}</p>
-                    <p className="mt-1.5 text-[10px] text-emerald-100/60">{h.detail}</p>
-                  </div>
-                );
-              })}
+                  ))}
+                </div>
+                <p className="mt-2 text-[10px] leading-relaxed text-emerald-100/60">{bee.note}</p>
+              </div>
+
+              {/* 🌧️ ฝน */}
+              <div className="rounded-2xl border border-sky-400/35 bg-sky-500/[0.07] p-3.5">
+                <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-sky-200">
+                  <span className="text-lg">{rain.icon}</span>
+                  ฝน
+                  <span className="rounded-full border border-sky-400/40 bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-200">
+                    เฉลี่ยทุก {rain.avgMin} นาที
+                  </span>
+                </div>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-emerald-50/85">{rain.effect}</p>
+                <p className="mt-1.5 rounded-lg bg-black/35 px-2.5 py-1.5 text-[10px] leading-relaxed text-emerald-100/70">
+                  ⚠️ {rain.onlyOneWindow}
+                </p>
+                <p className="mt-1.5 text-[10px] leading-relaxed text-emerald-100/60">{rain.note}</p>
+              </div>
             </div>
           </div>
         </Section>

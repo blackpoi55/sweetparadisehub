@@ -1,7 +1,8 @@
 import {
   meta, crops, plantChoices, mystery, care, variants, variantOdds,
   giant, sizeTiers, sizeNote, spread, runt, megaRolls, megaNote,
-  displayRange, megaWeight, cropByKey, fertilizers, fertNote, night, bee, rain,
+  displayRange, megaWeight, cropByKey, hold, holdSizes,
+  fertilizers, fertNote, night, bee, rain,
   seasons, seasonNote, plots, plotTotal, order, contest, steps, tips,
 } from "@/json/garden";
 import { fmtNum } from "@/lib/gameAssets";
@@ -517,6 +518,68 @@ export default function GardenPage() {
             </p>
           </div>
         </section>
+
+        {/* ===== 💪 ขนาดตอนถือ ===== */}
+        <Section
+          icon="💪"
+          title="ขนาดตอนถือเดินอวด"
+          sub={hold.why}
+        >
+          <div className="overflow-x-auto rounded-2xl border border-white/10">
+            <table className="w-full min-w-[520px] border-collapse text-xs">
+              <thead>
+                <tr className="bg-white/[0.06] text-left text-[11px] uppercase tracking-wide text-emerald-100/60">
+                  <th className="px-3 py-2.5 font-semibold">พืช</th>
+                  <th className="px-3 py-2.5 text-right font-semibold">น้ำหนักกลาง</th>
+                  <th className="px-3 py-2.5 text-right font-semibold">ผลยักษ์</th>
+                  <th className="px-3 py-2.5 text-right font-semibold">ใหญ่สุดที่เป็นไปได้</th>
+                  <th className="px-3 py-2.5 text-right font-semibold">ต่างกัน</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/[0.06]">
+                {crops.map((c) => {
+                  const h = holdSizes(c);
+                  return (
+                    <tr key={c.key} className="bg-black/40">
+                      <td className="whitespace-nowrap px-3 py-2.5 font-semibold text-white">
+                        {c.icon} {c.name}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono text-emerald-100/85">
+                        {h.mid} ช่อง
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono text-amber-200">
+                        {h.giant} ช่อง
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono font-semibold text-lime-200">
+                        {h.max} ช่อง
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono text-violet-200">
+                        ×{Math.round(h.growth)}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-3 grid gap-2.5 md:grid-cols-3">
+            <div className="rounded-2xl border border-amber-400/35 bg-amber-500/[0.08] p-3.5">
+              <div className="text-xs font-bold text-amber-100">
+                📈 เพดานขยาย ×{hold.prevCapMult} → ×{hold.capMult}
+              </div>
+              <p className="mt-1.5 text-[11px] leading-relaxed text-emerald-50/85">{hold.capWhy}</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3.5">
+              <div className="text-xs font-bold text-white">🧱 ทำไมต้องมีเพดาน</div>
+              <p className="mt-1.5 text-[11px] leading-relaxed text-emerald-100/80">{hold.capNeeded}</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-3.5">
+              <div className="text-xs font-bold text-white">👻 ถือแล้วเดินได้ปกติ</div>
+              <p className="mt-1.5 text-[11px] leading-relaxed text-emerald-100/80">{hold.passThrough}</p>
+            </div>
+          </div>
+        </Section>
 
         {/* ===== ปุ๋ย ===== */}
         <Section icon="🧪" title="ปุ๋ย 3 ชนิด" sub="ใส่ได้ 1 ถุงต่อ 1 ต้น ตอนกดปลูก">

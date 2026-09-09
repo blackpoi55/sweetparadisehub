@@ -23,36 +23,42 @@ export const crops = [
   {
     key: "Pepper", name: "พริก", icon: "🌶️", img: "/images/garden/Pepper.png",
     growSec: 10 * 60, waters: 1, wMin: 0.1, wMax: 0.4, giant: 1, baht: 5000,
+    hMid: 0.7, hBig: 9,
     rate: 38, rarity: "ธรรมดา",
     note: "ออกบ่อยที่สุดจากเมล็ดปริศนา แต่เบาและถูกที่สุด — ผลยักษ์ก็ยังแค่ 1 กก.",
   },
   {
     key: "Apple", name: "แอปเปิล", icon: "🍎", img: "/images/garden/Apple.png",
     growSec: 45 * 60, waters: 3, wMin: 0.3, wMax: 1.2, giant: 4, baht: 7500,
+    hMid: 1.1, hBig: 24,
     rate: 30, rarity: "ธรรมดา",
     note: "ของกลาง ๆ ออกบ่อยรองจากพริก",
   },
   {
     key: "Mango", name: "มะม่วง", icon: "🥭", img: "/images/garden/Mango.png",
     growSec: 45 * 60, waters: 3, wMin: 0.5, wMax: 2, giant: 7, baht: 9000,
+    hMid: 1.3, hBig: 28,
     rate: 20, rarity: "ไม่ธรรมดา",
     note: "หนักกว่าและแพงกว่าแอปเปิลพอสมควร",
   },
   {
     key: "Coconut", name: "มะพร้าว", icon: "🥥", img: "/images/garden/Coconut.png",
     growSec: 2 * 3600, waters: 6, wMin: 1.5, wMax: 4, giant: 12, baht: 10500,
+    hMid: 1.4, hBig: 26,
     rate: 10, rarity: "หายาก",
     note: "เริ่มหายาก — น้ำหนักฐานสูง ผลยักษ์ได้ถึง 12 กก.",
   },
   {
     key: "Cactus", name: "กระบองเพชร", icon: "🌵", img: "/images/garden/Cactus.png",
     growSec: 4 * 3600, waters: 0, wMin: 2, wMax: 6, giant: 18, baht: 8000,
+    hMid: 1.6, hBig: 28,
     rate: 0, rarity: "ธรรมดา", afk: true, pickable: true,
     note: "ชนิดเดียวที่เลือกปลูกเองได้ · ไม่ต้องรดน้ำเลยแต่ได้โบนัสดูแลเต็ม ×1.6 อัตโนมัติ · กินช่อง 4 ชั่วโมง",
   },
   {
     key: "Beanstalk", name: "ถั่ววิเศษ", icon: "🌱", img: "/images/garden/Beanstalk.png",
     growSec: 8 * 3600, waters: 8, wMin: 5, wMax: 15, giant: 60, baht: 13000,
+    hMid: 2.2, hBig: 42,
     rate: 2, rarity: "ตำนาน", noOrder: true,
     note: "หายากที่สุด (2%) หนักที่สุดและแพงที่สุดในเกม · ไม่เข้าออเดอร์ประจำวัน",
   },
@@ -196,6 +202,32 @@ export function megaWeight(crop, m) {
   const lo = crop.wMin * care.min;
   const hi = crop.wMax * care.max;
   return { lo: lo + (hi - lo) * m.rLo, hi: lo + (hi - lo) * m.rHi };
+}
+
+// ===== 💪 ขนาดตอนถือ (holdSize) =====
+// hMid = ด้านที่ยาวที่สุดตอนน้ำหนักกลาง · hBig = ตอนผลยักษ์เต็มเพดาน (หน่วย stud)
+// โตตามน้ำหนักจริงแบบเลขชี้กำลัง ไม่มีการย่อ
+export const hold = {
+  capMult: 1.5, // เพดาน = hBig × 1.5 (ขยายจาก 1.15 เมื่อ 09/09/2026)
+  prevCapMult: 1.15,
+  minMult: 0.25, // พื้น = hMid × 0.25
+  why: "ของใหญ่ต้องถือใหญ่จริง ไม่งั้นจะอวดทำไม — ของธรรมดาจึงถูกย่อลงให้เท่าขนาดมือก่อน เวลาเจอของใหญ่จะได้รู้สึกว่าใหญ่จริง",
+  capWhy:
+    "ขยายเพดานเพราะมีชั้นโบนัสหางยาวแล้ว — ถ้าคงเพดานเดิม ของระดับมหากาฬกับโอเมกาจะถือออกมาเท่ากันเป๊ะ",
+  capNeeded:
+    "เอาเพดานออกไม่ได้ — ถั่ววิเศษโอเมกาหนักเกือบ 2 ตัน ไม่คุมจะสูงเป็นร้อยช่อง",
+  passThrough:
+    "ของขนาดนี้ตั้งให้ทะลุทุกอย่าง (ไม่ชนกำแพง ไม่ดันตัวเอง) ไม่งั้นถือแล้วเดินไม่ได้",
+};
+
+/** ขนาดตอนถือ 3 จุดสำคัญของพืชชนิดนั้น (stud) */
+export function holdSizes(crop) {
+  return {
+    mid: crop.hMid,
+    giant: crop.hBig,
+    max: crop.hBig * hold.capMult,
+    growth: crop.hBig / crop.hMid, // ใหญ่ขึ้นกี่เท่าจากกลาง → ยักษ์
+  };
 }
 
 // ===== 🧪 ปุ๋ย 3 ชนิด =====
@@ -357,7 +389,7 @@ export const tips = [
   },
   {
     icon: "💪", tone: "violet", title: "ถือเดินอวดได้ และใหญ่จริงตามน้ำหนัก",
-    desc: "หยิบผลจากตะกร้ามาถือได้ ขนาดโตตามน้ำหนักจริงไม่มีการย่อ — มะม่วงยักษ์สูงกว่าตัวละคร 3 เท่า",
+    desc: "หยิบผลจากตะกร้ามาถือได้ ขนาดโตตามน้ำหนักจริง — ถั่ววิเศษจากขนาดมือ 2.2 ช่อง ใหญ่ได้ถึง 63 ช่อง",
   },
   {
     icon: "🌙", tone: "sky", title: "อยากได้พันธุ์กลางคืนต้องปลูกกลางคืน",

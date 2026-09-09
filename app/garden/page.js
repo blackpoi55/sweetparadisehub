@@ -1,6 +1,7 @@
 import {
   meta, crops, plantChoices, mystery, care, variants, variantOdds,
-  giant, sizeTiers, sizeNote, fertilizers, fertNote, night, bee, rain,
+  giant, sizeTiers, sizeNote, spread, runt, megaRolls, megaNote,
+  displayRange, megaWeight, cropByKey, fertilizers, fertNote, night, bee, rain,
   seasons, seasonNote, plots, plotTotal, order, contest, steps, tips,
 } from "@/json/garden";
 import { fmtNum } from "@/lib/gameAssets";
@@ -194,7 +195,7 @@ export default function GardenPage() {
         <Section
           icon="🌾"
           title={`พืชทั้ง ${crops.length} ชนิด`}
-          sub="ผลที่เมล็ดปริศนาออกได้ · ทุกชนิดใช้เวลาโตเท่ากันหมด (45 นาที) ต่างกันแค่น้ำหนักกับราคา"
+          sub="ผลที่เมล็ดปริศนาออกได้ · ทุกชนิดใช้เวลาโตเท่ากันหมด (45 นาที) ต่างกันแค่น้ำหนักกับราคา · ตัวเลขคิดโบนัสดูแลเต็มกับตัวกระจายขนาดแล้ว (ตรงกับป้ายในเกม)"
         >
           <div className="overflow-x-auto rounded-2xl border border-white/10">
             <table className="w-full min-w-[720px] border-collapse text-xs">
@@ -226,16 +227,16 @@ export default function GardenPage() {
                       </span>
                     </td>
                     <td className="whitespace-nowrap px-3 py-2.5 text-center font-mono text-emerald-100/90">
-                      {c.wMin}–{c.wMax} กก.
+                      {displayRange(c).lo.toFixed(2)}–{displayRange(c).hi.toFixed(2)} กก.
                     </td>
                     <td className="whitespace-nowrap px-3 py-2.5 text-center font-mono font-semibold text-amber-200">
-                      {c.giant} กก.
+                      {displayRange(c).giantMax.toFixed(1)} กก.
                     </td>
                     <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono text-lime-200">
                       {fmtNum(c.baht)}
                     </td>
                     <td className="whitespace-nowrap px-3 py-2.5 text-right font-mono font-semibold text-amber-200">
-                      {fmtNum(c.giant * c.baht)}
+                      {fmtNum(Math.round(displayRange(c).giantMax * c.baht))}
                     </td>
                     <td className="px-3 py-2.5 text-right">
                       {c.rate === 0 ? (
@@ -250,8 +251,7 @@ export default function GardenPage() {
             </table>
           </div>
           <p className="mt-2.5 rounded-xl border border-white/10 bg-black/40 px-3 py-2.5 text-[11px] leading-relaxed text-emerald-100/75">
-            💰 “ผลยักษ์ขายได้” คิดที่สายพันธุ์ปกติ — ถ้าเป็น 🌈 รุ้งคูณอีก ×8 (ถั่ววิเศษรุ้ง 60 กก. ={" "}
-            <span className="font-semibold text-amber-200">{fmtNum(60 * 13000 * 8)}</span>)
+            💰 “ผลยักษ์ขายได้” คิดที่สายพันธุ์ปกติ — ถ้าเป็น 🌈 รุ้งคูณอีก ×8 · และถ้าติดชั้นโบนัสหางยาวจะหนักกว่านี้อีกหลายสิบเท่า
           </p>
           <div className="mt-2.5 grid gap-2 md:grid-cols-2">
             {crops.map((c) => (
@@ -393,28 +393,30 @@ export default function GardenPage() {
         </Section>
 
         {/* ===== ขนาด + ผลยักษ์ ===== */}
-        <Section icon="📏" title="ระดับขนาด + ผลยักษ์" sub={sizeNote}>
+        <Section icon="📏" title="ระดับขนาด" sub={sizeNote}>
           <div className="grid gap-3 lg:grid-cols-[1fr,auto]">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-sm font-bold text-white">6 ระดับ เรียงจากเล็กไปใหญ่</div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {sizeTiers.map((s, i) => (
-                  <span
-                    key={s.key}
-                    className={
-                      "flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold " +
-                      (s.key === "giant"
-                        ? "border-amber-300/60 bg-amber-500/20 text-amber-100"
-                        : "border-white/10 bg-black/40 text-emerald-100/85")
-                    }
-                  >
-                    <span>{s.icon}</span>
-                    {s.name}
-                    <span className="font-mono text-[9px] text-emerald-100/45">
-                      {i === sizeTiers.length - 1 ? "เกินช่วง" : `${Math.round(s.at * 100)}%+`}
+              <div className="text-sm font-bold text-white">ชั้นปกติ 6 ระดับ</div>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {sizeTiers
+                  .filter((t) => !t.mega)
+                  .map((t, i, arr) => (
+                    <span
+                      key={t.key}
+                      className={
+                        "flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold " +
+                        (t.key === "giant"
+                          ? "border-amber-300/60 bg-amber-500/20 text-amber-100"
+                          : "border-white/10 bg-black/40 text-emerald-100/85")
+                      }
+                    >
+                      <span>{t.icon}</span>
+                      {t.name}
+                      <span className="font-mono text-[9px] text-emerald-100/45">
+                        {i === arr.length - 1 ? "เกินช่วง" : Math.round(t.at * 100) + "%+"}
+                      </span>
                     </span>
-                  </span>
-                ))}
+                  ))}
               </div>
               <p className="mt-3 text-[11px] leading-relaxed text-emerald-100/70">
                 เปอร์เซ็นต์คือตำแหน่งในช่วงน้ำหนักของพืชชนิดนั้น — รดน้ำครบจึงได้ระดับดีกว่าโดยอัตโนมัติ
@@ -430,6 +432,91 @@ export default function GardenPage() {
             </div>
           </div>
         </Section>
+
+        {/* ===== 🎲 ระบบกระจายขนาด (ใหม่) ===== */}
+        <section className="mt-10">
+          <div className="rounded-3xl border-2 border-amber-400/40 bg-amber-500/[0.06] p-4 md:p-5">
+            <h2 className="flex flex-wrap items-center gap-2 text-lg font-bold leading-[1.5] text-white md:text-xl">
+              <span>🎲</span>
+              ขนาดผลหลากหลายขึ้น
+              <span className="rounded-full border border-amber-400/50 bg-amber-500/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-200">
+                อัปเดตใหม่
+              </span>
+            </h2>
+            <p className="mt-1.5 text-xs leading-relaxed text-emerald-50/85 md:text-sm">
+              {spread.why} — เพิ่มมา 2 ชั้นที่ซ้อนทับของเดิม: ชั้น{" "}
+              <span className="font-semibold text-emerald-200">ลูกแคระ</span> ฝั่งเล็ก (เจอบ่อย) กับชั้น{" "}
+              <span className="font-semibold text-amber-200">โบนัสหางยาว</span> ฝั่งใหญ่ (หายากมาก)
+            </p>
+
+            <div className="mt-4 grid gap-3 lg:grid-cols-[auto,1fr]">
+              <div className="rounded-2xl border border-emerald-400/35 bg-emerald-500/[0.08] p-4 text-center lg:w-56">
+                <div className="text-3xl">{runt.icon}</div>
+                <div className="mt-1 text-sm font-bold text-emerald-200">ลูกแคระ</div>
+                <div className="mt-1.5 text-2xl font-bold text-emerald-100">
+                  {Math.round(runt.chance * 100)}%
+                </div>
+                <div className="text-[10px] text-emerald-100/55">โอกาสต่อการเก็บ 1 ครั้ง</div>
+                <div className="mt-2 rounded-lg bg-black/40 px-2.5 py-2 font-mono text-xs font-semibold text-emerald-200">
+                  ×{runt.lo} – ×{runt.hi}
+                </div>
+                <p className="mt-2 text-[10px] leading-relaxed text-emerald-100/65">{runt.note}</p>
+              </div>
+
+              <div className="min-w-0 rounded-2xl border border-white/10 bg-black/40 p-4">
+                <div className="text-sm font-bold text-white">🎰 โบนัสขนาดหางยาว — 4 ชั้น</div>
+                <div className="mt-2.5 overflow-x-auto rounded-xl border border-white/10">
+                  <table className="w-full min-w-[460px] border-collapse text-xs">
+                    <thead>
+                      <tr className="bg-white/[0.06] text-left text-[11px] uppercase tracking-wide text-emerald-100/60">
+                        <th className="px-3 py-2 font-semibold">ชั้น</th>
+                        <th className="px-3 py-2 text-right font-semibold">โอกาส</th>
+                        <th className="px-3 py-2 text-right font-semibold">ถั่ววิเศษจะหนักราว</th>
+                        <th className="px-3 py-2 text-center font-semibold">ประกาศ</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/[0.06]">
+                      {megaRolls.map((m) => {
+                        const tier = sizeTiers.find((t) => t.key === m.key);
+                        const w = megaWeight(cropByKey.Beanstalk, m);
+                        return (
+                          <tr key={m.key} className="bg-black/30">
+                            <td className="whitespace-nowrap px-3 py-2">
+                              <span className="flex items-center gap-1.5 font-semibold text-amber-100">
+                                <span className="text-base">{tier.icon}</span>
+                                {tier.name}
+                              </span>
+                            </td>
+                            <td className="whitespace-nowrap px-3 py-2 text-right font-mono font-semibold text-amber-200">
+                              1 / {fmtNum(m.oneIn)}
+                            </td>
+                            <td className="whitespace-nowrap px-3 py-2 text-right font-mono text-lime-200">
+                              {fmtNum(Math.round(w.lo))}–{fmtNum(Math.round(w.hi))} กก.
+                            </td>
+                            <td className="px-3 py-2 text-center">
+                              {tier.shout ? (
+                                <span className="rounded-full border border-pink-400/40 bg-pink-500/15 px-2 py-0.5 text-[10px] font-semibold text-pink-200">
+                                  ทั้งเซิร์ฟ
+                                </span>
+                              ) : (
+                                <span className="text-[10px] text-emerald-100/35">—</span>
+                              )}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-2.5 text-[11px] leading-relaxed text-emerald-100/70">🎯 {megaNote}</p>
+              </div>
+            </div>
+
+            <p className="mt-4 rounded-2xl border border-white/10 bg-black/45 px-3.5 py-3 text-[11px] leading-relaxed text-emerald-100/80">
+              🛡️ <span className="font-semibold text-white">ผลยักษ์ยังหายากเท่าเดิม</span> — {spread.keepsGiantRare}
+            </p>
+          </div>
+        </section>
 
         {/* ===== ปุ๋ย ===== */}
         <Section icon="🧪" title="ปุ๋ย 3 ชนิด" sub="ใส่ได้ 1 ถุงต่อ 1 ต้น ตอนกดปลูก">

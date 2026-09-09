@@ -1280,6 +1280,14 @@ export const itemall = [
         "getby": "ยังไม่ระบุ",
     },
     {
+        "code": "DonateChestTool",
+        "nameTH": "🎁 กล่องโดเนท",
+        "icon": "/images/items/DonateChestTool.png",
+        "detail": "วางกล่องรับโดเนทของตัวเอง · เอาเกมพาสของตัวเองมาลงขายได้สูงสุด 8 ใบ โรบักเข้าบัญชีเจ้าของกล่องตรงๆ · ตั้งข้อความบนป้ายได้ · วางได้คนละ 1 กล่อง เก็บคืนแล้ววางใหม่ได้เรื่อยๆ",
+        "grouptype": "อัญเชิญ",
+        "getby": "ตกปลาสีรุ้ง",
+    },
+    {
         "code": "TotemTool",
         "nameTH": "🗿 โทเทมนำโชค",
         "icon": "/images/items/TotemTool.png",

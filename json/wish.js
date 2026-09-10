@@ -152,8 +152,12 @@ export const categories = [
     grant: "pet",
     dup: false,
     color: "#78D2F0",
-    items: ["Bunny", "SharkPet", "Dog", "frog", "Chicken", "Cat", "Kookped", "DarkDevil", "Haxigator", "404Demon"],
-    note: "10 ตัว (ดึงสดจาก PetConfig.Order) — 🍪 มอคค่า + 🎀 ซินนามอนโรล ไม่อยู่ในลิสต์ (ติดธง noWishPick: บัตรใบเดียว 500R ห้ามได้ของ 799R) แต่ยังแลกได้ทางแท็บ 🎫 บัตร → แลกเกมพาส",
+    items: [
+      "Bunny", "SharkPet", "Dog", "frog", "Chicken", "Cat", "Kookped",
+      "Raccoon", "Bee", "Kiwi",
+      "DarkDevil", "Haxigator", "404Demon",
+    ],
+    note: "13 ตัว (ดึงสดจาก PetConfig.Order) — 🍪 มอคค่า + 🎀 ซินนามอนโรล ไม่อยู่ในลิสต์ (ติดธง noWishPick: บัตรใบเดียว 500R ห้ามได้ของ 799R) แต่ยังแลกได้ทางแท็บ 🎫 บัตร → แลกเกมพาส",
     grantDesc: "เข้ากระเป๋าสัตว์เลี้ยงทันที",
   },
   {
@@ -232,7 +236,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 34 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–102) =====
+// ===== ปลารุ้งทั้ง 37 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–105) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -265,10 +269,13 @@ export const rainbowFish = [
   { id: 96, name: "ปลารุ้งกุ๊กเป็ด", price: 250000, score: 888, rate: 0.001, unlock: "🐤 สัตว์เลี้ยงกุ๊กเป็ด" },
   { id: 97, name: "ปลาโทเทมเรียกทรัพย์", price: 250000, score: 888, rate: 0.001, unlock: "🗿 โทเทมนำโชค" },
   { id: 98, name: "ปลาหีบทองเรียกน้ำใจ", price: 250000, score: 888, rate: 0.001, unlock: "🎁 กล่องโดเนท" },
-  { id: 99, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 100, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 101, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 102, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 99, name: "ปลารุ้งแรคคูนซน", price: 250000, score: 888, rate: 0.001, unlock: "🦝 แรคคูนสวนครัว" },
+  { id: 100, name: "ปลารุ้งผึ้งน้อย", price: 250000, score: 888, rate: 0.001, unlock: "🐝 ผึ้งผสมเกสร" },
+  { id: 101, name: "ปลารุ้งกีวีเลือด", price: 250000, score: 888, rate: 0.001, unlock: "🥝 กีวีเลือด" },
+  { id: 102, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 103, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 104, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 105, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
 ];
 
 // ===== ขั้นตอนการเล่น =====

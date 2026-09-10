@@ -2,7 +2,7 @@ import {
   meta, crops, plantChoices, mystery, care, variants, variantOdds,
   giant, sizeTiers, sizeNote, spread, runt, megaRolls, megaNote,
   displayRange, megaWeight, cropByKey, hold, holdSizes,
-  fertilizers, fertNote, night, bee, rain,
+  fertilizers, fertNote, gardenPets, gardenPetNote, night, bee, rain,
   seasons, seasonNote, plots, plotTotal, order, contest, steps, tips,
 } from "@/json/garden";
 import { fmtNum } from "@/lib/gameAssets";
@@ -12,7 +12,7 @@ export const revalidate = 3600;
 export const metadata = {
   title: "สวนปลูกผลไม้ — Sweet Paradise Hub",
   description:
-    "คู่มือ 🌱 สวนปลูกผลไม้ — พืช 6 ชนิด สายพันธุ์ 6 แบบ ตารางเวลาโต/น้ำหนัก/ราคา โบนัสรดน้ำ ปุ๋ย ฤดูกาล ออเดอร์ประจำวัน และการแข่งผลใหญ่รายสัปดาห์",
+    "คู่มือ 🌱 สวนปลูกผลไม้ — พืช 6 ชนิด สายพันธุ์ 6 แบบ ตารางเวลาโต/น้ำหนัก/ราคา โบนัสรดน้ำ ปุ๋ย สัตว์เลี้ยงสายสวน 3 ตัว ฤดูกาล ออเดอร์ประจำวัน และการแข่งผลใหญ่รายสัปดาห์",
 };
 
 const TONES = {
@@ -608,6 +608,73 @@ export default function GardenPage() {
           </div>
           <p className="mt-3 rounded-2xl border border-white/10 bg-black/40 px-3.5 py-3 text-[11px] leading-relaxed text-emerald-100/80">
             🎁 {fertNote}
+          </p>
+        </Section>
+
+        {/* ===== 🐾 สัตว์เลี้ยงสายสวน ===== */}
+        <Section
+          icon="🐾"
+          title="สัตว์เลี้ยงสายสวน 3 ตัว"
+          sub="ของใหม่ 10/09/2026 — ก่อนหน้านี้สวนไม่มีสัตว์เลี้ยงช่วยเลยสักตัว ทั้งสามจับคนละจุด ใส่พร้อมกันได้"
+        >
+          <div className="grid gap-3 md:grid-cols-3">
+            {gardenPets.map((g) => {
+              const t = TONES[g.tone];
+              return (
+                <div key={g.key} className={`flex flex-col rounded-2xl border p-4 ${t.box}`}>
+                  <div className="flex items-center gap-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={g.img} alt="" className="h-14 w-14 shrink-0 rounded-xl object-contain" />
+                    <div className="min-w-0">
+                      <div className={`text-sm font-bold ${t.text}`}>{g.emoji} {g.name}</div>
+                      <div className="mt-0.5 text-xs font-semibold text-white">{g.short}</div>
+                      <span className={`mt-1.5 inline-block rounded-full border px-2 py-0.5 text-[10px] ${t.chip}`}>
+                        {g.kind}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="mt-3 text-[11px] leading-relaxed text-emerald-100/80">{g.how}</p>
+
+                  <div className="mt-3 overflow-hidden rounded-xl border border-white/10">
+                    <table className="w-full border-collapse text-[11px]">
+                      <tbody className="divide-y divide-white/[0.06]">
+                        {g.levels.map((l) => (
+                          <tr key={l.lv} className="bg-black/40">
+                            <td className="px-2.5 py-1.5 text-emerald-100/60">Lv.{l.lv}</td>
+                            <td className="px-2.5 py-1.5 text-right font-mono font-semibold text-lime-200">
+                              {g.key === "Raccoon" && `ทำแทน ${l.q} ครั้ง/ต้น`}
+                              {g.key === "Bee" && `×${l.boost.toFixed(2)} · รุ้ง ${l.rainbow.toFixed(2)}%`}
+                              {g.key === "Kiwi" && `ผลยักษ์ ${l.pct.toFixed(1)}%`}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="mt-auto space-y-2 pt-3">
+                    <p className="rounded-xl bg-black/45 px-2.5 py-2 text-[11px] leading-relaxed text-amber-100/90">
+                      🧱 {g.cap}
+                    </p>
+                    <p className="rounded-xl bg-black/30 px-2.5 py-2 text-[11px] leading-relaxed text-emerald-100/70">
+                      {g.no}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 text-[10px]">
+                      <span className="rounded-full border border-pink-400/40 bg-pink-500/15 px-2 py-0.5 text-pink-200">
+                        🎣 {g.fish}
+                      </span>
+                      <span className="rounded-full border border-white/15 bg-black/40 px-2 py-0.5 text-emerald-100/70">
+                        🍚 กิน{g.food}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-3 rounded-2xl border border-white/10 bg-black/40 px-3.5 py-3 text-[11px] leading-relaxed text-emerald-100/80">
+            🐾 {gardenPetNote}
           </p>
         </Section>
 

@@ -1,6 +1,6 @@
 import {
   card, meta, buffs, rewardWays, crowd, giftPool, giftTotalWeight, giftPct,
-  finale, tips,
+  finale, wishCardSale, tips,
 } from "@/json/birthday";
 import { resolveAsset, rarityStyle, fmtNum } from "@/lib/gameAssets";
 
@@ -276,6 +276,32 @@ export default function BirthdayPage() {
             <p className="mx-auto mt-2.5 max-w-2xl text-[11px] leading-relaxed text-pink-100/85">{finale.desc}</p>
             <p className="mt-2 text-[10px] text-amber-200/85">💡 {finale.note}</p>
           </div>
+        </Section>
+
+        {/* ===== 🎫 ซื้อบัตรขอพรในงานวันเกิด ===== */}
+        <Section icon="🎫" title="ซื้อบัตรขอพรในวันเกิด" sub={wishCardSale.contact}>
+          <div className="grid grid-cols-3 gap-2">
+            <Stat v={`${wishCardSale.price} บาท`} k="ต่อใบ" tone="text-amber-200" />
+            <Stat v={`${wishCardSale.maxCards} ใบ`} k="สูงสุด (รวมตัวเอง)" tone="text-violet-200" />
+            <Stat v={`${wishCardSale.keepForSelf} ใบ`} k="เก็บใช้เองได้" tone="text-sky-200" />
+          </div>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            {wishCardSale.rules.map((r) => {
+              const tone = TONES[r.tone] || TONES.sky;
+              return (
+                <div key={r.title} className={`rounded-2xl border p-4 ${tone.box}`}>
+                  <div className={`flex items-center gap-2 text-sm font-bold ${tone.text}`}>
+                    <span>{r.icon}</span>
+                    {r.title}
+                  </div>
+                  <p className="mt-1.5 text-[11px] leading-relaxed text-pink-100/85 md:text-xs">{r.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-3 rounded-2xl border border-pink-400/30 bg-pink-500/[0.07] px-3.5 py-3 text-center text-xs font-semibold text-pink-100">
+            💬 {wishCardSale.contact} · ใบละ {wishCardSale.price} บาท
+          </p>
         </Section>
 
         {/* ===== ข้อควรรู้ ===== */}

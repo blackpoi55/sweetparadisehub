@@ -104,6 +104,7 @@ export const fishall = [
     { name: "ปลารุ้งแรคคูนซน", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลารุ้งผึ้งน้อย", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลารุ้งกีวีเลือด", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลารุ้งคิ้วท์ยูวู", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -155,6 +156,7 @@ export const fishgiveitem = [
     { fishname: "ปลารุ้งแรคคูนซน", itemname: "🦝 สัตว์เลี้ยงแรคคูนสวนครัว", itemimage: "/images/items/Raccoon.png" },
     { fishname: "ปลารุ้งผึ้งน้อย", itemname: "🐝 สัตว์เลี้ยงผึ้งผสมเกสร", itemimage: "/images/items/Bee.png" },
     { fishname: "ปลารุ้งกีวีเลือด", itemname: "🥝 สัตว์เลี้ยงกีวีเลือด", itemimage: "/images/items/Kiwi.png" },
+    { fishname: "ปลารุ้งคิ้วท์ยูวู", itemname: "🎀 หมวกคิ้วท์ยูวู [แฟชั่น]", itemimage: "/images/items/CuteuwuHat.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

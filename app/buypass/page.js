@@ -5,6 +5,7 @@ import QRCode from "qrcode";
 import * as htmlToImage from "html-to-image";
 import { robuxItems, shopCategories, RATE } from "@/json/robuxshop";
 import { orderConfig } from "@/json/orderconfig";
+import { customServices } from "@/json/customservices";
 import { promptPayPayload } from "@/lib/promptpay";
 
 const fmt = (n) => Number(n || 0).toLocaleString("en-US");
@@ -231,6 +232,62 @@ export default function BuyPassPage() {
                 ))}
               </div>
             </div>
+
+            {/* ✨ สั่งทำพิเศษ (ราคาเป็นบาท ไม่ผ่านตะกร้า) */}
+            {customServices.map((s) => (
+              <section
+                key={s.key}
+                className="mb-6 overflow-hidden rounded-2xl border border-amber-400/40 bg-gradient-to-br from-amber-500/[0.10] via-pink-500/[0.06] to-fuchsia-500/[0.08] p-4 md:p-5"
+              >
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400/30 to-pink-500/20 text-2xl">
+                      {s.icon}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-amber-200/80">✨ สั่งทำพิเศษ</p>
+                      <h2 className="flex flex-wrap items-center gap-2 text-base font-bold leading-[1.5] text-white md:text-lg">
+                        {s.name}
+                        {s.badge && (
+                          <span className="rounded-full border border-amber-300/60 bg-amber-400/15 px-2 py-0.5 text-[10px] font-semibold text-amber-200">
+                            {s.badge}
+                          </span>
+                        )}
+                      </h2>
+                    </div>
+                  </div>
+                  <div className="flex-shrink-0 text-left sm:text-right">
+                    <p className="text-3xl font-black leading-none text-emerald-300">฿{fmt(s.price)}</p>
+                    <p className="mt-1 text-[11px] text-pink-200/70">จ่ายเป็นเงินบาท · สั่งผ่านแอดมิน</p>
+                  </div>
+                </div>
+
+                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {s.perks.map((p) => (
+                    <li key={p.text} className="flex items-start gap-2 rounded-xl border border-white/10 bg-black/45 px-3 py-2.5 text-xs leading-relaxed text-pink-50">
+                      <span className="text-base leading-none">{p.icon}</span>
+                      <span className="min-w-0">{p.text}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+                  <p className="text-center text-[11px] text-pink-200/75 sm:text-left">
+                    💬 สนใจสั่งทำ ทักแอดมิน {orderConfig.discordLabel} ในดิสคอร์ด (ไม่ต้องใส่ตะกร้า)
+                  </p>
+                  {orderConfig.discordUrl && (
+                    <a
+                      href={orderConfig.discordUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-pink-500 px-4 py-2 text-xs font-semibold text-black transition hover:-translate-y-0.5"
+                    >
+                      💬 ทักแอดมินสั่งทำ
+                    </a>
+                  )}
+                </div>
+              </section>
+            ))}
 
             {/* tabs + search */}
             <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

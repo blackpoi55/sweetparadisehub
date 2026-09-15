@@ -105,6 +105,11 @@ export const fishall = [
     { name: "ปลารุ้งผึ้งน้อย", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลารุ้งกีวีเลือด", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     { name: "ปลารุ้งคิ้วท์ยูวู", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลารุ้งหมูอู๊ดอู๊ด", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลารุ้งหมาโฮ่งโฮ่ง", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลารุ้งแมวเหมียว", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลารุ้งหมีน้ำผึ้ง", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
+    { name: "ปลารุ้งสตรอว์เบอร์รี่โอวโอ", rarity: "สายรุ้ง", price: 250000, score: 888, rate: 0.001, status: "Active" },
     // { name: "aaa", rarity: "สายรุ้ง", price: 150000, score: 650, rate: 0.006, status: "Active" },
 
 ]
@@ -157,6 +162,11 @@ export const fishgiveitem = [
     { fishname: "ปลารุ้งผึ้งน้อย", itemname: "🐝 สัตว์เลี้ยงผึ้งผสมเกสร", itemimage: "/images/items/Bee.png" },
     { fishname: "ปลารุ้งกีวีเลือด", itemname: "🥝 สัตว์เลี้ยงกีวีเลือด", itemimage: "/images/items/Kiwi.png" },
     { fishname: "ปลารุ้งคิ้วท์ยูวู", itemname: "🎀 หมวกคิ้วท์ยูวู [แฟชั่น]", itemimage: "/images/items/CuteuwuHat.png" },
+    { fishname: "ปลารุ้งหมูอู๊ดอู๊ด", itemname: "🐷 เก้าอี้หมูอู๊ดอู๊ด", itemimage: "/images/items/PetChairPigTool.png" },
+    { fishname: "ปลารุ้งหมาโฮ่งโฮ่ง", itemname: "🐶 เก้าอี้หมาโฮ่งโฮ่ง", itemimage: "/images/items/PetChairDogTool.png" },
+    { fishname: "ปลารุ้งแมวเหมียว", itemname: "🐱 เก้าอี้แมวเหมียว", itemimage: "/images/items/PetChairCatTool.png" },
+    { fishname: "ปลารุ้งหมีน้ำผึ้ง", itemname: "🐻 เก้าอี้หมีน้ำผึ้ง", itemimage: "/images/items/PetChairBearTool.png" },
+    { fishname: "ปลารุ้งสตรอว์เบอร์รี่โอวโอ", itemname: "🍓 เก้าอี้โอวโอสตรอว์เบอร์รี่", itemimage: "/images/items/PetChairStrawberryTool.png" },
 ]
 export const rodall = [
     { rodname: "คันเบ็ด", detail: "เบ็ดตกปลาเริ่มต้น", rodimage: "/images/items/FishingRod.png", cooldown: "15", Luck: "100%", money: "100%", Score: "100%" },

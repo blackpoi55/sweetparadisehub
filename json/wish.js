@@ -236,7 +236,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 38 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–106) =====
+// ===== ปลารุ้งทั้ง 43 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–111) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -273,10 +273,15 @@ export const rainbowFish = [
   { id: 100, name: "ปลารุ้งผึ้งน้อย", price: 250000, score: 888, rate: 0.001, unlock: "🐝 ผึ้งผสมเกสร" },
   { id: 101, name: "ปลารุ้งกีวีเลือด", price: 250000, score: 888, rate: 0.001, unlock: "🥝 กีวีเลือด" },
   { id: 102, name: "ปลารุ้งคิ้วท์ยูวู", price: 250000, score: 888, rate: 0.001, unlock: "🎀 หมวกคิ้วท์ยูวู" },
-  { id: 103, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 104, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 105, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 106, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 103, name: "ปลารุ้งหมูอู๊ดอู๊ด", price: 250000, score: 888, rate: 0.001, unlock: "🐷 เก้าอี้หมูอู๊ดอู๊ด" },
+  { id: 104, name: "ปลารุ้งหมาโฮ่งโฮ่ง", price: 250000, score: 888, rate: 0.001, unlock: "🐶 เก้าอี้หมาโฮ่งโฮ่ง" },
+  { id: 105, name: "ปลารุ้งแมวเหมียว", price: 250000, score: 888, rate: 0.001, unlock: "🐱 เก้าอี้แมวเหมียว" },
+  { id: 106, name: "ปลารุ้งหมีน้ำผึ้ง", price: 250000, score: 888, rate: 0.001, unlock: "🐻 เก้าอี้หมีน้ำผึ้ง" },
+  { id: 107, name: "ปลารุ้งสตรอว์เบอร์รี่โอวโอ", price: 250000, score: 888, rate: 0.001, unlock: "🍓 เก้าอี้โอวโอสตรอว์เบอร์รี่" },
+  { id: 108, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 109, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 110, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 111, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
 ];
 
 // ===== ขั้นตอนการเล่น =====

@@ -23,8 +23,13 @@ function fmtPct(n) {
   return `${n.toFixed(1)}%`;
 }
 
+// รางวัลที่ไม่ใช่ไอเทมจริง (เช่นสกินฟองคำพูด) ส่งชื่อ/รูปมากับแถวในพูลเอง
+function assetOf(it) {
+  return it.display ? { label: it.display, img: it.img, emoji: "🗨️" } : resolveAsset(it.item);
+}
+
 function ItemRow({ it }) {
-  const a = resolveAsset(it.item);
+  const a = assetOf(it);
   const rs = rarityStyle(it.rarity);
   const range =
     it.min != null ? (it.max && it.max !== it.min ? `${fmtNum(it.min)}–${fmtNum(it.max)}` : fmtNum(it.min)) : null;
@@ -118,11 +123,12 @@ export default function GachaPage() {
               <div>
                 <h2 className="text-base font-semibold text-pink-50">{pool.displayName}</h2>
                 <p className="mt-0.5 text-[11px] text-pink-200/70">🎯 ที่มา: {pool.source}</p>
+                {pool.note && <p className="mt-1 text-[11px] leading-relaxed text-pink-100/80">✨ {pool.note}</p>}
               </div>
               <div className="flex items-center gap-3 text-xs">
                 {pool.price != null && (
                   <span className="rounded-full bg-pink-500/15 px-3 py-1 font-medium text-pink-200">
-                    💰 {pool.price === 0 ? "แจกฟรี/อีเวนต์" : `${fmtNum(pool.price)}/กล่อง`}
+                    💰 {pool.price === 0 ? (pool.craftOnly ? "คราฟเท่านั้น" : "แจกฟรี/อีเวนต์") : `${fmtNum(pool.price)}/กล่อง`}
                   </span>
                 )}
                 <span className="rounded-full bg-fuchsia-500/10 px-3 py-1 text-pink-100">
@@ -141,7 +147,7 @@ export default function GachaPage() {
               </button>
               {roll ? (
                 (() => {
-                  const a = resolveAsset(roll.item);
+                  const a = assetOf(roll);
                   const rs = rarityStyle(roll.rarity);
                   return (
                     <div className="flex min-w-0 flex-1 items-center gap-2">

@@ -48,4 +48,5 @@ export const materialMeta = {
   AdminGachaBox: { name: "กล่องกาชา Admin", emoji: "🎁" },
   SadnoobBossGachaBox: { name: "กล่องกาชาบอส", emoji: "🎁" },
   DecorGachaBox: { name: "กาชาของตกแต่งv1", emoji: "🎉" },
+  BubbleSkinGachaBox: { name: "กล่องกาชาฟองคำพูด", emoji: "🗨️", icon: "/images/items/BubbleSkinGachaBox.png" },
 };

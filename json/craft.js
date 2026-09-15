@@ -196,6 +196,18 @@ export const craftRecipes = {
         { kind: "money", amount: 100000 },
       ],
     },
+    {
+      id: "BubbleSkinGachaBox", name: "กาชาฟองคำพูด", chance: 0.2,
+      note: "เปิดแล้วปลดล็อกสกินฟองคำพูดทันที (เทรดไม่ได้) · ได้ซ้ำคืนเงิน 150,000",
+      result: { kind: "farm", item: "BubbleSkinGachaBox" },
+      cost: [
+        { kind: "farm", item: "RiceTop", amount: 20 },
+        { kind: "farm", item: "Rice", amount: 100 },
+        { kind: "farm", item: "GoldenTicket", amount: 8 },
+        { kind: "farm", item: "Iron", amount: 15 },
+        { kind: "money", amount: 900000 },
+      ],
+    },
   ],
   Gamepass: [
     {

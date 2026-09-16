@@ -136,6 +136,22 @@ export const craftRecipes = {
       ],
     },
     {
+      // 🎨 กระดานวาดรูป — ใช้สูตรชุดเดียวกับหนังสือวาร์ป (เจ้าของเกมสั่ง)
+      id: "PaintBoardTool", name: "🎨 กระดานวาดรูป", chance: 0.25,
+      note: "เสกกระดานของตัวเอง · กด E ที่กระดานเพื่อวาด · เซฟเก็บได้ 20 รูป",
+      result: { kind: "permanent", item: "PaintBoardTool" },
+      cost: [
+        { kind: "farm", item: "Rice", amount: 50 },
+        { kind: "farm", item: "RiceTop", amount: 20 },
+        { kind: "farm", item: "GoldenTicket", amount: 12 },
+        { kind: "farm", item: "ChairGachaBox", amount: 5 },
+        { kind: "farm", item: "OldClothes", amount: 10 },
+        { kind: "farm", item: "OldHat", amount: 10 },
+        { kind: "farm", item: "OldShoes", amount: 10 },
+        { kind: "money", amount: 500000 },
+      ],
+    },
+    {
       id: "Magicbook", name: "📖 หนังสือวาร์ป", chance: 0.25,
       result: { kind: "permanent", item: "Magicbook" },
       cost: [

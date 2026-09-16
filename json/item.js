@@ -1328,6 +1328,14 @@ export const itemall = [
         "getby": "ร้านค้า Limited",
     },
     {
+        "code": "PaintBoardTool",
+        "nameTH": "🎨 กระดานวาดรูป",
+        "icon": "/images/items/PaintBoardTool.png",
+        "detail": "เสกกระดานของตัวเอง กด E ที่กระดานเพื่อเปิดหน้าต่างวาด · ภาพ 128×128 เซฟเก็บในคลังได้ 20 รูป · ปกติเจ้าของวาดได้คนเดียว เปิดโหมดให้คนอื่นวาดได้ (ต้องยืนใกล้กระดาน) · คนรอบ ๆ เห็นเส้นที่ลากสด ๆ",
+        "grouptype": "อัญเชิญ",
+        "getby": "โต๊ะคราฟ",
+    },
+    {
         "code": "FerrariFXXKTool",
         "nameTH": "อัญเชิญเฟอร์รารี่",
         "icon": "/images/items/FerrariFXXKTool.png",

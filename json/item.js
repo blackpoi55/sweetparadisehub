@@ -1485,6 +1485,6 @@ export const itemall = [
         "icon": "/images/items/RideSharkTool.png",
         "detail": "อัญเชิญฉลามออกมาขี่ — วิ่งเร็ว กระโดดสูง และวิ่งบนน้ำได้",
         "grouptype": "ของขี่",
-        "getby": "ยังไม่ระบุ",
+        "getby": "ซื้อ Pass",
     },
 ]

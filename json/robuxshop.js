@@ -56,6 +56,7 @@ export const robuxItems = [
   { id: "lm-kratong", cat: "limited", pid: 1488597106, name: "กระทงหลงเธอ (Kratong Pass)", desc: "กระทงลอยน้ำ (ของซีซั่นลอยกระทง)", price: 149, iconId: 110361376903079 },
   { id: "lm-torchlim", cat: "limited", pid: 1410732658, name: "Torch Limited", desc: "สปีด 200 กระโดด 150 มี 3 โหมด", price: 2499, iconId: 116976362590999 },
   { id: "lm-motorhorse", cat: "limited", pid: 1630003660, name: "Motor Horse", desc: "ขี่ม้า", price: 1599, iconId: 108287418267309 },
+  { id: "lm-rideshark", cat: "limited", name: "🦈 ฉลามน่าขี่", desc: "สัตว์ขี่ เร็ว+กระโดดสูง+วิ่งบนน้ำ · เท่ากับเอาเป็ด+ยูนิคอร์น+คาปิบาร่า มารวมกัน", price: 1200, iconId: 133919821542214 },
   { id: "lm-fishtankM", cat: "limited", pid: 1581257954, name: "Fish Tank กลาง (Pass)", desc: "ตู้ปลา+tag Super", price: 7499, iconId: 82048517693322 },
   { id: "lm-fishtankS", cat: "limited", pid: 1581468020, name: "Fish Tank เล็ก (Pass)", desc: "ตู้ปลา 2 คน", price: 899, iconId: 113687496116160 },
   { id: "lm-glowstick", cat: "limited", pid: 1634875252, name: "Glow Stick", desc: "สปีด 90 + เปลี่ยนสีเทรลได้", price: 699, iconId: 81474986161148 },

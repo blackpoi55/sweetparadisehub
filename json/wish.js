@@ -236,7 +236,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 43 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–111) =====
+// ===== ปลารุ้งทั้ง 45 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–113) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -278,10 +278,12 @@ export const rainbowFish = [
   { id: 105, name: "ปลารุ้งแมวเหมียว", price: 250000, score: 888, rate: 0.001, unlock: "🐱 เก้าอี้แมวเหมียว" },
   { id: 106, name: "ปลารุ้งหมีน้ำผึ้ง", price: 250000, score: 888, rate: 0.001, unlock: "🐻 เก้าอี้หมีน้ำผึ้ง" },
   { id: 107, name: "ปลารุ้งสตรอว์เบอร์รี่โอวโอ", price: 250000, score: 888, rate: 0.001, unlock: "🍓 เก้าอี้โอวโอสตรอว์เบอร์รี่" },
-  { id: 108, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 109, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 110, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 111, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 108, name: "ปลารุ้งกรอบรูปวิบวับ", price: 250000, score: 888, rate: 0.001, unlock: "🖼️ กรอบรูปโชว์ภาพวาด" },
+  { id: 109, name: "ปลารุ้งพ่อค้าภาพวาด", price: 250000, score: 888, rate: 0.001, unlock: "🛒 บูธขายภาพวาด" },
+  { id: 110, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 111, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 112, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 113, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
 ];
 
 // ===== ขั้นตอนการเล่น =====

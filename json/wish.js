@@ -236,7 +236,7 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 45 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–113) =====
+// ===== ปลารุ้งทั้ง 46 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–114) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
   { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
@@ -284,6 +284,7 @@ export const rainbowFish = [
   { id: 111, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
   { id: 112, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
   { id: 113, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 114, name: "ปลารุ้งหิมะจอมปา", price: 250000, score: 888, rate: 0.001, unlock: "❄️ ก้อนหิมะ" },
 ];
 
 // ===== ขั้นตอนการเล่น =====

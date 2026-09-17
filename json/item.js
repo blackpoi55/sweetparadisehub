@@ -1432,6 +1432,14 @@ export const itemall = [
         "getby": "ตกปลาสีรุ้ง",
     },
     {
+        "code": "SnowballTool",
+        "nameTH": "❄️ ก้อนหิมะ — ปาโดนแล้วหิมะเกาะจอ",
+        "icon": "/images/items/SnowballTool.png",
+        "detail": "ปาใส่คนอื่น โดนแล้วหิมะเกาะจอคนโดน · แกล้งล้วน ๆ ไม่ทำดาเมจ ไม่ล้ม ไม่ทำให้เดินช้า · ปาไม่โดนคนที่ตกปลาออโต้ เก็บแอร์ดรอป หรืออยู่ในโซนห้ามแกล้ง",
+        "grouptype": "แกล้ง",
+        "getby": "ตกปลาสีรุ้ง",
+    },
+    {
         "code": "FootballTool",
         "nameTH": "⚽ ลูกฟุตบอล",
         "icon": "/images/items/FootballTool.png",
@@ -1470,5 +1478,13 @@ export const itemall = [
         "detail": "อัญเชิญบอลลูนออกมาขี่ — บินได้",
         "grouptype": "ของขี่",
         "getby": "ตกปลาสีรุ้ง",
+    },
+    {
+        "code": "RideSharkTool",
+        "nameTH": "🦈 ฉลามน่าขี่ (เร็ว+กระโดดสูง+วิ่งบนน้ำ)",
+        "icon": "/images/items/RideSharkTool.png",
+        "detail": "อัญเชิญฉลามออกมาขี่ — วิ่งเร็ว กระโดดสูง และวิ่งบนน้ำได้",
+        "grouptype": "ของขี่",
+        "getby": "ยังไม่ระบุ",
     },
 ]

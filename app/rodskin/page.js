@@ -22,7 +22,7 @@ export const revalidate = 3600;
 export const metadata = {
   title: "สกินเบ็ด — Sweet Paradise Hub",
   description:
-    "คู่มือระบบสกินเบ็ด (Rod Skin) — สกิน 8 แบบ ใส่ทับเบ็ดไหนก็ได้ โบนัสบวกเพิ่ม ตีบวกถึง +30 แยกลุคกับความสามารถ พร้อมสูตรคราฟและตารางตีบวก",
+    `คู่มือระบบสกินเบ็ด (Rod Skin) — สกิน ${skins.length} แบบ ใส่ทับเบ็ดไหนก็ได้ โบนัสบวกเพิ่ม ตีบวกถึง +30 แยกลุคกับความสามารถ พร้อมสูตรคราฟและตารางตีบวก`,
 };
 
 // ดึงรูปสกินจริงจาก Roblox (ฝั่ง server — เลี่ยง CORS + แคช 1 ชม.)
@@ -180,7 +180,7 @@ export default async function RodSkinPage() {
             สกินเบ็ด
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-xs text-sky-100/80 md:text-sm">
-            สกิน <b className="text-white">8 แบบ</b> ใส่ทับเบ็ดตัวไหนก็ได้ — เปลี่ยนทั้ง
+            สกิน <b className="text-white">{skins.length} แบบ</b> ใส่ทับเบ็ดตัวไหนก็ได้ — เปลี่ยนทั้ง
             <b className="text-fuchsia-200"> หน้าตา</b> และ
             <b className="text-amber-200"> เพิ่มพลังเบ็ด</b> แบบบวกเพิ่ม ตีบวกได้ถึง{" "}
             <b className="text-white">+{meta.maxLevel}</b> และเลือกใช้ “ลุค” กับ “ความสามารถ” ข้ามสกินกันได้
@@ -188,7 +188,7 @@ export default async function RodSkinPage() {
 
           <div className="mx-auto mt-5 grid max-w-2xl grid-cols-2 gap-2.5 sm:grid-cols-4">
             {[
-              { v: "8 แบบ", l: "สกินทั้งหมด" },
+              { v: `${skins.length} แบบ`, l: "สกินทั้งหมด" },
               { v: `+${meta.maxLevel}`, l: "ตีบวกสูงสุด" },
               { v: "บวก (+)", l: "ไม่ใช่คูณ" },
               { v: `${meta.appIcon} แอป`, l: meta.appName },
@@ -216,7 +216,7 @@ export default async function RodSkinPage() {
         <Section
           id="skins"
           icon="✨"
-          title="สกินทั้ง 8 แบบ"
+          title={`สกินทั้ง ${skins.length} แบบ`}
           sub="แต่ละสกินมี “สาย” ของตัวเอง — เลือกให้เข้ากับสไตล์การตกปลาของคุณ"
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

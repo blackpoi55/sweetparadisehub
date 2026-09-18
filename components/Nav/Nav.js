@@ -14,7 +14,7 @@ const navGroups = [
     icon: "🎮",
     items: [
       { href: "/fishing", label: "ตกปลา", icon: "🎣", desc: "ปลา 90+ ชนิด เรตดรอป" },
-      { href: "/rodskin", label: "สกินเบ็ด", icon: "✨", desc: "สกิน 8 แบบ ตีบวก +30", badge: "ใหม่" },
+      { href: "/rodskin", label: "สกินเบ็ด", icon: "✨", desc: "สกิน 21 แบบ ตีบวก +30", badge: "ใหม่" },
       { href: "/fishclash", label: "ศึกปลา", icon: "⚔️", desc: "PvP ออโต้จากปลาที่ตกได้" },
       { href: "/boss", label: "บอสโลก", icon: "🐉", desc: "ตีบอสร่วมเซิร์ฟ" },
       { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม", icon: "🥊", desc: "ต่อยมอน อัพหมัด", badge: "ใหม่" },

@@ -14,7 +14,7 @@ export const meta = {
   luckyBonus: 0.1,
 };
 
-// ===== สกิน 21 แบบ (rod1-rod21) — บาลานซ์ใหม่ทั้งชุด 18/09/2026 =====
+// ===== สกิน 21 แบบ (rod1-rod21) — บาลานซ์ใหม่ทั้งชุด 18/09/2026 (ปรับลด ×0.806 ให้สายเงินล้วน = +25% เท่ามาตรฐานเดิม) =====
 // ทุกสกินได้ "งบพลัง" เท่ากันที่ +30 · สายเดียว = เต็มด้านเดียว · 2 สาย = แบ่งครึ่ง/60-40 · 3-4 สาย = แบ่งเท่า ๆ กัน
 // "โชค" เดิม (แค่ลดขยะ) ถูกแทนด้วย "ปลาหายาก" (rare) = ปลาแรร์ขึ้นไปออกบ่อยขึ้น แทนที่ปลาธรรมดา · โอกาสปลาสายรุ้งเท่าเดิม
 // iconId = rbxassetid (ดึงรูปจริงจาก Roblox) · lane = สายของสกิน · color = สีธีมการ์ด (ของเว็บ)
@@ -22,107 +22,107 @@ export const skins = [
   {
     key: "rod1", order: 1, iconId: 101160609307839, emoji: "⭐", name: "ดาวนำโชค",
     lane: "ปลาหายากล้วน", color: "#FFD24A", desc: "ปลาหายากล้วน — ได้ปลาดีบ่อยสุด",
-    at0: { rare: 0.033 }, at30: { rare: 0.33 },
+    at0: { rare: 0.027 }, at30: { rare: 0.266 },
   },
   {
     key: "rod2", order: 2, iconId: 98510590165885, emoji: "❄️", name: "เกล็ดน้ำแข็ง",
     lane: "เงิน + สกอร์ อย่างละครึ่ง", color: "#A5F3FC", desc: "เงิน + สกอร์ อย่างละครึ่ง",
-    at0: { money: 0.016, score: 0.031 }, at30: { money: 0.16, score: 0.31 },
+    at0: { money: 0.013, score: 0.025 }, at30: { money: 0.129, score: 0.25 },
   },
   {
     key: "rod3", order: 3, iconId: 118338068086584, emoji: "🔥", name: "เปลวเพลิง",
     lane: "เร็วล้วน", color: "#FF6A2B", desc: "เร็วล้วน — ตกถี่สุด",
-    at0: { cast: -0.18 }, at30: { cast: -1.8 },
+    at0: { cast: -0.145 }, at30: { cast: -1.452 },
   },
   {
     key: "rod4", order: 4, iconId: 80553095881231, emoji: "⚡", name: "ราชาสายฟ้า",
     lane: "สมดุล", color: "#FDE047", desc: "สมดุล — ได้ครบทั้ง 4 ด้าน",
-    at0: { rare: 0.008, money: 0.008, score: 0.016, cast: -0.048 }, at30: { rare: 0.08, money: 0.08, score: 0.16, cast: -0.48 },
+    at0: { rare: 0.006, money: 0.006, score: 0.013, cast: -0.039 }, at30: { rare: 0.065, money: 0.065, score: 0.129, cast: -0.387 },
   },
   {
     key: "rod5", order: 5, iconId: 115339204240152, emoji: "🌸", name: "ซากุระ",
     lane: "เงินล้วน", color: "#FDA4CF", desc: "เงินล้วน — เงินต่อปลาสูงสุด",
-    at0: { money: 0.031 }, at30: { money: 0.31 },
+    at0: { money: 0.025 }, at30: { money: 0.25 },
   },
   {
     key: "rod6", order: 6, iconId: 78917313933034, emoji: "🌹", name: "กุหลาบ",
     lane: "ปลาหายาก + สกอร์ อย่างละครึ่ง", color: "#FB4E6D", desc: "ปลาหายาก + สกอร์ อย่างละครึ่ง",
-    at0: { rare: 0.016, score: 0.031 }, at30: { rare: 0.16, score: 0.31 },
+    at0: { rare: 0.013, score: 0.025 }, at30: { rare: 0.129, score: 0.25 },
   },
   {
     key: "rod7", order: 7, iconId: 87036865500486, emoji: "💎", name: "คริสตัล",
     lane: "เงิน + เร็ว อย่างละครึ่ง", color: "#A78BFA", desc: "เงิน + เร็ว อย่างละครึ่ง",
-    at0: { money: 0.016, cast: -0.096 }, at30: { money: 0.16, cast: -0.96 },
+    at0: { money: 0.013, cast: -0.077 }, at30: { money: 0.129, cast: -0.774 },
   },
   {
     key: "rod8", order: 8, iconId: 103966729015203, emoji: "☠️", name: "มรกตพิษ",
     lane: "ปลาหายาก + เร็ว อย่างละครึ่ง", color: "#4ADE80", desc: "ปลาหายาก + เร็ว อย่างละครึ่ง",
-    at0: { rare: 0.016, cast: -0.096 }, at30: { rare: 0.16, cast: -0.96 },
+    at0: { rare: 0.013, cast: -0.077 }, at30: { rare: 0.129, cast: -0.774 },
   },
   {
     key: "rod9", order: 9, iconId: 91806053293771, emoji: "🎋", name: "ไผ่ขยัน",
     lane: "สกอร์ล้วน", color: "#86EFAC", desc: "สกอร์ล้วน — สกอร์สูงสุด",
-    at0: { score: 0.062 }, at30: { score: 0.62 },
+    at0: { score: 0.05 }, at30: { score: 0.5 },
   },
   {
     key: "rod10", order: 10, iconId: 114770753839017, emoji: "🐍", name: "เขี้ยวหยก",
     lane: "ล่าปลาหายากเป็นหลัก + เร็ว", color: "#34D399", desc: "ล่าปลาหายากเป็นหลัก + เร็ว",
-    at0: { rare: 0.02, cast: -0.077 }, at30: { rare: 0.2, cast: -0.77 },
+    at0: { rare: 0.016, cast: -0.062 }, at30: { rare: 0.161, cast: -0.621 },
   },
   {
     key: "rod11", order: 11, iconId: 119998248664625, emoji: "🌺", name: "กระซิบซากุระ",
     lane: "เงินเป็นหลัก + สกอร์", color: "#F472B6", desc: "เงินเป็นหลัก + สกอร์",
-    at0: { money: 0.019, score: 0.025 }, at30: { money: 0.19, score: 0.25 },
+    at0: { money: 0.015, score: 0.02 }, at30: { money: 0.153, score: 0.202 },
   },
   {
     key: "rod12", order: 12, iconId: 91502499235202, emoji: "⛈️", name: "ทลายพายุ",
     lane: "เร็วเป็นหลัก + เงิน", color: "#60A5FA", desc: "เร็วเป็นหลัก + เงิน",
-    at0: { money: 0.012, cast: -0.12 }, at30: { money: 0.12, cast: -1.2 },
+    at0: { money: 0.01, cast: -0.097 }, at30: { money: 0.097, cast: -0.968 },
   },
   {
     key: "rod13", order: 13, iconId: 79602658962738, emoji: "🔮", name: "ไอริสเรืองแสง",
     lane: "สกอร์เป็นหลัก + เร็ว", color: "#C084FC", desc: "สกอร์เป็นหลัก + เร็ว",
-    at0: { score: 0.037, cast: -0.08 }, at30: { score: 0.37, cast: -0.8 },
+    at0: { score: 0.03, cast: -0.065 }, at30: { score: 0.298, cast: -0.645 },
   },
   {
     key: "rod14", order: 14, iconId: 115174966049190, emoji: "🌟", name: "คลื่นสวรรค์",
     lane: "เงินเป็นหลัก + ปลาหายาก", color: "#FCD34D", desc: "เงินเป็นหลัก + ปลาหายาก",
-    at0: { rare: 0.013, money: 0.019 }, at30: { rare: 0.13, money: 0.19 },
+    at0: { rare: 0.01, money: 0.015 }, at30: { rare: 0.105, money: 0.153 },
   },
   {
     key: "rod15", order: 15, iconId: 82591938215013, emoji: "🌈", name: "ปีกสวรรค์สายรุ้ง",
     lane: "ปลาหายาก + สกอร์ + เร็ว เท่า ๆ กัน", color: "#F9A8D4", desc: "ปลาหายาก + สกอร์ + เร็ว เท่า ๆ กัน",
-    at0: { rare: 0.011, score: 0.021, cast: -0.064 }, at30: { rare: 0.11, score: 0.21, cast: -0.64 },
+    at0: { rare: 0.009, score: 0.017, cast: -0.052 }, at30: { rare: 0.089, score: 0.169, cast: -0.516 },
   },
   {
     key: "rod16", order: 16, iconId: 112151578326846, emoji: "🔱", name: "ตรีศูลธารลึก",
     lane: "เงิน + ปลาหายาก + เร็ว เท่า ๆ กัน", color: "#22D3EE", desc: "เงิน + ปลาหายาก + เร็ว เท่า ๆ กัน",
-    at0: { rare: 0.011, money: 0.01, cast: -0.066 }, at30: { rare: 0.11, money: 0.1, cast: -0.66 },
+    at0: { rare: 0.009, money: 0.008, cast: -0.053 }, at30: { rare: 0.089, money: 0.081, cast: -0.532 },
   },
   {
     key: "rod17", order: 17, iconId: 101745102185740, emoji: "🌙", name: "แมงกะพรุนจันทรา",
     lane: "ปลาหายากเป็นหลัก + เงิน", color: "#A5B4FC", desc: "ปลาหายากเป็นหลัก + เงิน",
-    at0: { rare: 0.02, money: 0.012 }, at30: { rare: 0.2, money: 0.12 },
+    at0: { rare: 0.016, money: 0.01 }, at30: { rare: 0.161, money: 0.097 },
   },
   {
     key: "rod18", order: 18, iconId: 90507360226861, emoji: "👁️", name: "เนตรอสูรแดง",
     lane: "ครบทั้ง 4 ด้าน เน้นปลาหายาก", color: "#F87171", desc: "ครบทั้ง 4 ด้าน เน้นปลาหายาก",
-    at0: { rare: 0.011, money: 0.008, score: 0.016, cast: -0.03 }, at30: { rare: 0.11, money: 0.08, score: 0.16, cast: -0.3 },
+    at0: { rare: 0.009, money: 0.006, score: 0.013, cast: -0.024 }, at30: { rare: 0.089, money: 0.065, score: 0.129, cast: -0.242 },
   },
   {
     key: "rod19", order: 19, iconId: 101591740644813, emoji: "🌌", name: "เหวลึกไร้ขอบ",
     lane: "ปลาหายากจัดเต็ม + สกอร์นิดหน่อย", color: "#818CF8", desc: "ปลาหายากจัดเต็ม + สกอร์นิดหน่อย",
-    at0: { rare: 0.026, score: 0.012 }, at30: { rare: 0.26, score: 0.12 },
+    at0: { rare: 0.021, score: 0.01 }, at30: { rare: 0.21, score: 0.097 },
   },
   {
     key: "rod20", order: 20, iconId: 90026999267448, emoji: "👼", name: "ปีกเทวดานิรันดร์",
     lane: "เงิน + สกอร์ + ปลาหายาก เท่า ๆ กัน", color: "#FDE68A", desc: "เงิน + สกอร์ + ปลาหายาก เท่า ๆ กัน",
-    at0: { rare: 0.011, money: 0.01, score: 0.021 }, at30: { rare: 0.11, money: 0.1, score: 0.21 },
+    at0: { rare: 0.009, money: 0.008, score: 0.017 }, at30: { rare: 0.089, money: 0.081, score: 0.169 },
   },
   {
     key: "rod21", order: 21, iconId: 100758527398411, emoji: "✨", name: "ผู้ถักทอดวงดาว",
     lane: "เร็ว + สกอร์ อย่างละครึ่ง", color: "#FBBF24", desc: "เร็ว + สกอร์ อย่างละครึ่ง",
-    at0: { score: 0.031, cast: -0.096 }, at30: { score: 0.31, cast: -0.96 },
+    at0: { score: 0.025, cast: -0.077 }, at30: { score: 0.25, cast: -0.774 },
   },
 ];
 

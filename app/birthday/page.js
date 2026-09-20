@@ -9,7 +9,7 @@ export const revalidate = 3600;
 export const metadata = {
   title: "งานวันเกิด — Sweet Paradise Hub",
   description:
-    "คู่มือ 🎂 งานวันเกิดในเกม — บัฟโชคปลารุ้ง ×512 เงินขายปลา +100% · 4 ทางรับของ (รอบแจก เป่าเทียน กล่องของขวัญ อวยพร) พร้อมตารางของขวัญเต็มและโบนัสตามจำนวนคน",
+    `คู่มือ 🎂 งานวันเกิดในเกม — บัฟโชคปลารุ้ง ×512 เงินขายปลา +100% · ${rewardWays.length} ทางรับของ (รอบแจก เป่าเทียน กล่องของขวัญ อวยพร พลุ ปาเค้ก) พร้อมตารางของขวัญเต็มและโบนัสตามจำนวนคน`,
 };
 
 const TONES = {
@@ -71,7 +71,7 @@ export default function BirthdayPage() {
             ใช้บัตร 1 ใบเปิดงาน <span className="font-semibold text-white">{meta.durationMin} นาที</span> ตรงจุดที่ยืน —
             ทุกคนที่มาในรัศมี <span className="font-semibold text-white">{meta.radius} ช่อง</span> ได้{" "}
             <span className="text-sky-200">โชคปลารุ้ง ×512</span> · <span className="text-amber-200">เงินขายปลา +100%</span> ·
-            เดินเร็วขึ้น และรับเงินกับของ <span className="text-pink-200">4 ทาง</span>
+            เดินเร็วขึ้น และรับเงินกับของ <span className="text-pink-200">{rewardWays.length} ทาง</span>
           </p>
         </header>
 
@@ -127,7 +127,7 @@ export default function BirthdayPage() {
         {/* ===== 4 ทางรับของ ===== */}
         <Section
           icon="🎁"
-          title="4 ทางที่ได้เงินและของ"
+          title={`${rewardWays.length} ทางที่ได้เงินและของ`}
           sub="แต่ละทางเงื่อนไขต่างกัน — ทำครบทุกทางในงานเดียวได้"
         >
           <div className="grid gap-4 lg:grid-cols-2">

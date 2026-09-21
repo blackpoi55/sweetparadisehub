@@ -55,6 +55,7 @@ const navGroups = [
       { href: "/servers", label: "เซิร์ฟสด", icon: "🟢", desc: "คนออนไลน์ + เซิร์ฟเรียลไทม์" },
       { href: "/shop", label: "ร้านค้า NPC", icon: "🏪", desc: "ซื้อของด้วยเงินในเกม" },
       { href: "/marketplace", label: "ตลาดฝากขาย", icon: "🏬", desc: "ซื้อขายผู้เล่น" },
+      { href: "/streamer", label: "สตรีมเมอร์", icon: "📡", desc: "เชื่อมไลฟ์ TikTok กับตัวละคร", badge: "ใหม่" },
       { href: "/family", label: "ครอบครัว & คู่รัก", icon: "👨‍👩‍👧", desc: "ข้อมูลสด + อันดับ" },
       { href: "/poi", label: "จุดน่าสนใจ", icon: "📍", desc: "บวช/ATM/ดูดวง/เทรด" },
       { href: "/marketitems", label: "เจ้าของไอเทม", icon: "🏷️", desc: "ใครถืออะไรบ้าง" },

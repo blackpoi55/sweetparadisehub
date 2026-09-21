@@ -427,6 +427,13 @@ export const songall = [
     { name: "ตบปาก (On That Day) - PROXIE", songid: "79780604651474" },
     { name: "จางหาย- ก้อย อรัชพร", songid: "93180611747349" },
     { name: "ก่อนจะรักไปกว่านี้-ดิว อรุณพงศ์", songid: "129653473378145" },
+    { name: "ได้เวลาแยกย้าย - THE WHITE HAIR CUT", songid: "101519200645982" },
+    { name: "ไม่ต้องเดินลําพัง -the white hair cut", songid: "109444449911414" },
+    { name: "เผื่อว่าจะพบเธอสักวัน - THE WHITE HAIR CUT", songid: "94705316884342" },
+    { name: "เหงา เหงา - THE WHITE HAIR CUT ", songid: "93529336297810" },
+    { name: "PORZAX - เธอทีละสองฉันทีละคน", songid: "121196719648558" },
+    { name: "ความคิดถึงเต็มไปด้วยน้ําตา - โชเล่ย์ ชคัทพล ", songid: "84564097325655" },
+    { name: "ไม่อยากทำให้ลำบากใจ-บูโดกัน", songid: "95779528032804" },
 ]
 export const kpopsongall = [
     { name: "RHYTHM TA-IKON", songid: "133126620005604" },

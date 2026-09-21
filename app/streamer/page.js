@@ -324,7 +324,8 @@ function EffectCard({ e, onEdit, onChanged, flash }) {
   }
   const k = KIND_OF[e.kind] || KINDS[0];
   return (
-    <div className={`${card} space-y-3 ${e.enabled ? "" : "opacity-60"}`}>
+    // min-w-0: ไม่งั้นช่อง grid ยืดตามลิงก์ webhook ยาว ๆ จนจอมือถือเลื่อนข้างได้
+    <div className={`${card} min-w-0 space-y-3 ${e.enabled ? "" : "opacity-60"}`}>
       <div className="flex items-start gap-3">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-2xl">{k.icon}</div>
         <div className="min-w-0 flex-1">
@@ -441,7 +442,7 @@ export default function StreamerPage() {
           {me.allowed === false && <Msg bad>⛔ สิทธิ์สตรีมเมอร์ของบัญชีนี้ถูกถอดแล้ว — เอฟเฟกต์จะไม่ทำงานจนกว่าแอดมินจะเพิ่มกลับ</Msg>}
 
           <div className={`${card} flex flex-wrap items-center gap-3`}>
-            <div className="flex-1 text-sm text-pink-50">
+            <div className="basis-full text-sm text-pink-50 sm:basis-0 sm:flex-1">
               <b>การ์ด 1 ใบ = ลิงก์ 1 ลิงก์</b> เอาไปวางใน TikFinity แล้วเลือกว่าเกิดตอนไหน (ของขวัญ / คอมเมนต์ / ไลก์ / ฟอล)
               <br />
               <span className="text-pink-200/60">เอฟเฟกต์เกิดกับตัวละครคุณเท่านั้น · ต้องอยู่ในเกมตอนไลฟ์</span>

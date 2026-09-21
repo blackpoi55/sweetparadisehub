@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { COOKIE, cookieOptions, createSession, errorResponse, rateOk, redeemCode } from "@/lib/streamer";
+import { COOKIE, cookieOptions, createSession, errorResponse, notifyLinked, rateOk, redeemCode } from "@/lib/streamer";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +11,7 @@ export async function POST(req) {
   try {
     const body = await req.json().catch(() => ({}));
     const { uid, prof } = await redeemCode(body.code);
+    await notifyLinked(uid).catch(() => undefined); // ส่งไม่ถึงก็ไม่เป็นไร — ล็อกอินต้องสำเร็จอยู่ดี
     const res = NextResponse.json({ ok: true, name: prof.name });
     res.cookies.set(COOKIE, createSession(uid, prof.ver), cookieOptions);
     return res;

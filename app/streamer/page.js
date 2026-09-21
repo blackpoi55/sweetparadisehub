@@ -6,14 +6,17 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { streamerEmotes as EMOTES } from "@/json/streamerEmotes";
+import { KIND_GROUPS, KIND_SPEC, defaultParams } from "@/json/streamerKinds";
 
+// ชุดพื้นฐาน (ฟอร์มเฉพาะด้านล่าง) + ชุดใหม่จาก json/streamerKinds.js (ฟอร์มสร้างจากสเปก)
 const KINDS = [
-  { kind: "dance", icon: "💃", label: "เต้น", hint: "ตัวละครเต้นท่าที่เลือก" },
-  { kind: "soak", icon: "💦", label: "โดนฉีดน้ำ", hint: "เปียกทั้งตัว คนรอบ ๆ เห็นน้ำกระจาย" },
-  { kind: "launch", icon: "🌊", label: "กระเด็น", hint: "โดนน้ำแรงดันลอยไปข้างหลัง" },
-  { kind: "slap", icon: "👋", label: "โดนตบล้ม", hint: "ล้มกลิ้งไปด้านข้าง จอสั่น" },
-  { kind: "firework", icon: "🎆", label: "พลุ", hint: "ยิงพลุเหนือตัวละคร คนรอบ ๆ เห็นด้วย" },
-  { kind: "text", icon: "💬", label: "ข้อความลอย", hint: "ลอยขึ้นบนจอคุณคนเดียว คนอื่นไม่เห็น" },
+  { kind: "dance", group: "classic", icon: "💃", label: "เต้น", hint: "ตัวละครเต้นท่าที่เลือก" },
+  { kind: "soak", group: "classic", icon: "💦", label: "โดนฉีดน้ำ", hint: "เปียกทั้งตัว คนรอบ ๆ เห็นน้ำกระจาย" },
+  { kind: "launch", group: "classic", icon: "🌊", label: "กระเด็น", hint: "โดนน้ำแรงดันลอยไปข้างหลัง" },
+  { kind: "slap", group: "classic", icon: "👋", label: "โดนตบล้ม", hint: "ล้มกลิ้งไปด้านข้าง จอสั่น" },
+  { kind: "firework", group: "classic", icon: "🎆", label: "พลุ", hint: "ยิงพลุเหนือตัวละคร คนรอบ ๆ เห็นด้วย" },
+  { kind: "text", group: "classic", icon: "💬", label: "ข้อความลอย", hint: "ลอยขึ้นบนจอคุณคนเดียว คนอื่นไม่เห็น" },
+  ...Object.entries(KIND_SPEC).map(([kind, s]) => ({ kind, group: s.group, icon: s.icon, label: s.label, hint: s.hint })),
 ];
 const KIND_OF = Object.fromEntries(KINDS.map((k) => [k.kind, k]));
 const TEXT_STYLES = [
@@ -51,7 +54,7 @@ function blank(kind = "dance") {
           ? { color: "rainbow", n: 3 }
           : kind === "text"
             ? { text: "", style: "pink", sec: 3 }
-            : {};
+            : defaultParams(kind);
   return { name: "", kind, params, times: 1, cooldown: kind === "text" ? 1 : 3 };
 }
 
@@ -68,6 +71,14 @@ function describe(e) {
   if (e.kind === "slap") return `แรง ${p.power}x`;
   if (e.kind === "firework") return `${p.n} ลูก · ${FW_COLORS.find((c) => c.v === p.color)?.label ?? p.color}`;
   if (e.kind === "text") return `“${p.text}”`;
+  const spec = KIND_SPEC[e.kind];
+  if (spec) {
+    // ชุดใหม่: โชว์ตัวเลือกที่เลือก + เวลา
+    const parts = spec.fields
+      .filter((f) => !f.showIf || p[f.showIf[0]] === f.showIf[1])
+      .map((f) => (f.type === "choice" ? f.options.find(([v]) => v === p[f.key])?.[1] ?? p[f.key] : `${f.label} ${p[f.key]}${f.unit ? " " + f.unit : ""}`));
+    return parts.length ? parts.join(" · ") : spec.hint;
+  }
   return KIND_OF[e.kind]?.hint;
 }
 
@@ -187,18 +198,25 @@ function EffectForm({ initial, onCancel, onSaved }) {
       </div>
 
       {!d.id && (
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
-          {KINDS.map((k) => (
-            <button
-              key={k.kind}
-              onClick={() => setD({ ...blank(k.kind), name: d.name })}
-              className={`rounded-xl border p-3 text-center transition ${
-                d.kind === k.kind ? "border-pink-400 bg-pink-500/15" : "border-white/10 bg-white/5 hover:bg-white/10"
-              }`}
-            >
-              <div className="text-2xl">{k.icon}</div>
-              <div className="mt-1 text-xs font-semibold text-white">{k.label}</div>
-            </button>
+        <div className="space-y-3">
+          {KIND_GROUPS.map((g) => (
+            <div key={g.id}>
+              <div className="mb-1.5 text-xs font-semibold text-pink-200/70">{g.label}</div>
+              <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+                {KINDS.filter((k) => k.group === g.id).map((k) => (
+                  <button
+                    key={k.kind}
+                    onClick={() => setD({ ...blank(k.kind), name: d.name })}
+                    className={`rounded-xl border p-2.5 text-center transition ${
+                      d.kind === k.kind ? "border-pink-400 bg-pink-500/15" : "border-white/10 bg-white/5 hover:bg-white/10"
+                    }`}
+                  >
+                    <div className="text-2xl">{k.icon}</div>
+                    <div className="mt-1 text-[11px] font-semibold leading-tight text-white">{k.label}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       )}
@@ -278,6 +296,30 @@ function EffectForm({ initial, onCancel, onSaved }) {
             ))}
           </div>
           <Range label="ลอยนาน" unit="วิ" min={1} max={8} value={Number(d.params.sec ?? 3)} onChange={(v) => setP("sec", v)} />
+        </div>
+      )}
+
+      {KIND_SPEC[d.kind] && (
+        <div className="space-y-3">
+          {KIND_SPEC[d.kind].fields
+            .filter((f) => !f.showIf || d.params[f.showIf[0]] === f.showIf[1])
+            .map((f) =>
+              f.type === "choice" ? (
+                <div key={f.key} className="flex flex-wrap gap-2">
+                  {f.options.map(([v, l]) => (
+                    <button
+                      key={v}
+                      onClick={() => setP(f.key, v)}
+                      className={`rounded-lg px-3 py-1.5 text-sm ${d.params[f.key] === v ? "bg-pink-500 text-white" : "bg-white/5 text-pink-50 hover:bg-white/10"}`}
+                    >
+                      {l}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <Range key={f.key} label={f.label} unit={f.unit} min={f.min} max={f.max} value={Number(d.params[f.key] ?? f.def)} onChange={(v) => setP(f.key, v)} />
+              ),
+            )}
         </div>
       )}
 

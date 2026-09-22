@@ -28,7 +28,7 @@ export const KIND_SPEC = {
       sec(3, 15, 6),
     ],
   },
-  crack: { group: "screen", icon: "💥", label: "จอแตก", hint: "รอยร้าวทั่วจอเหมือนกระจกแตก", fields: [sec(2, 8, 4)] },
+  crack: { group: "screen", icon: "💥", label: "จอแตก", hint: "ทุบจอ 3 ครั้งร้าวทั้งจอ แล้วกระจกแตกร่วงเป็นเสี่ยง ๆ", fields: [sec(2, 8, 4)] },
   emoji: {
     group: "screen", icon: "🌧️", label: "ฝนอีโมจิ", hint: "อีโมจิร่วงเต็มจอ",
     fields: [
@@ -47,13 +47,22 @@ export const KIND_SPEC = {
       sec(2, 8, 4),
     ],
   },
+  scare: {
+    group: "screen", icon: "👻", label: "ผีหลอก", hint: "ไฟกะพริบแล้วหน้าผีพุ่งเต็มจอ พร้อมเสียงกรี๊ด (ซ้ำได้ทุก 2.5 วิ)",
+    fields: [
+      {
+        key: "style", type: "choice", def: "random",
+        options: [["random", "🎲 สุ่มทุกครั้ง"], ["1", "👻 ผีผ้าห่ม"], ["2", "💇‍♀️ ผีสาวผมยาว"], ["3", "💀 หัวกะโหลกเรืองแสง"], ["4", "🎃 ฟักทองผี"], ["5", "👁️ อสูรตาเดียว"], ["6", "😈 เงาดำยิ้มกว้าง"]],
+      },
+    ],
+  },
   // 🧍 ตัวละคร
   size: {
     group: "body", icon: "🦖", label: "ตัวเล็ก / ตัวยักษ์", hint: "หดเหลือจิ๋วหรือขยายยักษ์ชั่วคราว",
     fields: [{ key: "mode", type: "choice", def: "giant", options: [["tiny", "🐜 ตัวจิ๋ว"], ["giant", "🦖 ตัวยักษ์"]] }, sec(3, 15, 6)],
   },
   float: {
-    group: "body", icon: "🎈", label: "ลอยฟ้า / จรวด", hint: "ลอยขึ้นช้า ๆ พร้อมลูกโป่ง หรือพุ่งขึ้นฟ้าแล้วร่วง",
+    group: "body", icon: "🎈", label: "ลอยฟ้า / จรวด", hint: "ลูกโป่ง 3 ลูกพาลอย ลมพัดหมุนติ้ว แล้วแตกทีละลูกจนร่วงตุ้บ หรือพุ่งขึ้นฟ้าแบบจรวด",
     fields: [
       { key: "mode", type: "choice", def: "balloon", options: [["balloon", "🎈 ลูกโป่ง"], ["rocket", "🚀 จรวด"]] },
       { ...sec(3, 10, 6), showIf: ["mode", "balloon"] },
@@ -61,7 +70,7 @@ export const KIND_SPEC = {
   },
   freeze: { group: "body", icon: "🧊", label: "แช่แข็ง", hint: "ติดในก้อนน้ำแข็ง ขยับไม่ได้", fields: [sec(2, 8, 4)] },
   twirl: { group: "body", icon: "🌪️", label: "หมุนติ้ว", hint: "ตัวหมุนเป็นลูกข่าง", fields: [sec(2, 8, 4)] },
-  zap: { group: "body", icon: "⚡", label: "ฟ้าผ่า", hint: "ฟ้าผ่าลงหัว ตัวดำเกรียมมีควัน", fields: [] },
+  zap: { group: "body", icon: "⚡", label: "ฟ้าผ่า", hint: "เมฆพายุรวมหัว ผ่าซ้ำ 3 ที ช็อตชักล้ม ตัวดำเกรียม ผมฟูมีควัน", fields: [] },
   fire: { group: "body", icon: "🔥", label: "ไฟลุก", hint: "ไฟลุกท่วมตัว (เอฟเฟกต์ ไม่เสียเลือด)", fields: [sec(3, 10, 5)] },
   // 🎮 บังคับ
   bouncy: { group: "control", icon: "🦘", label: "กระโดดไม่หยุด", hint: "ตัวละครกระโดดเองรัว ๆ", fields: [sec(3, 12, 6)] },

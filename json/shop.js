@@ -15,8 +15,12 @@ export const shopVendors = [
       ["FrozenHammer", "SS4 หนาวนี้กอดใคร", 2800000, 50, true],
       ["RibbonRope", "SS5 โดนริบบิ้นอย่าดิ้นนะหนู", 3200000, 50, true],
       ["Sniperinvite", "SS6 สไนเปอร์อัญเชิญ", 5500000, 50, true],
+      ["ThunderHammerTool", "SS7 ค้อนสายฟ้า", 10000000, 50, true],
       ["SackBagTool", "ถุงจับคน", 10500000, 50, true],
       ["FishTankMediumTool", "ตู้หรรษาระดับกลาง", 9999999, 6, false],
+      ["JeskoTool", "🏎️ อัญเชิญซูเปอร์คาร์เจสโก้ (ลด 50% จาก 50,000,000)", 25000000, 6, false],
+      ["KamehamehaTool", "🌊 พลังคลื่นเต่าสีฟ้า", 100000000, 50, false],
+      ["SpeakerCartTool", "🔊 ลำโพงรถแห่ (รถเข็น) — ลด 50% จาก 50,000,000", 25000000, 6, false],
     ],
   },
   {

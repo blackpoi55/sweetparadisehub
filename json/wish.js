@@ -236,16 +236,16 @@ export const categories = [
   },
 ];
 
-// ===== ปลารุ้งทั้ง 46 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–114) =====
+// ===== ปลารุ้งทั้ง 47 ตัวในหมวด fish (FishConfig.DEFAULT_FISH id 69–115) =====
 // event=true → ปลากิจกรรม ปกติตกได้เฉพาะช่วงอีเวนต์เท่านั้น
 export const rainbowFish = [
-  { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.03 },
-  { id: 70, name: "คราเคนเจ็ดสี", price: 45000, score: 560, rate: 0.01 },
-  { id: 71, name: "มังกรมหาเทพรุ้ง", price: 45000, score: 560, rate: 0.01 },
-  { id: 72, name: "ปลากระป๋องหมดอายุ", price: 45000, score: 560, rate: 0.01 },
-  { id: 73, name: "เขียดตะปาดขาดวิตามิน", price: 45000, score: 560, rate: 0.01 },
-  { id: 74, name: "ปลาสุดหล่อมองท่อไม่มองทาง", price: 45000, score: 560, rate: 0.01 },
-  { id: 75, name: "ปลาทังก้าปลาทังกี้", price: 45000, score: 560, rate: 0.01 },
+  { id: 69, name: "ราชานาคเรนโบว์", price: 15000, score: 480, rate: 0.006 },
+  { id: 70, name: "คราเคนเจ็ดสี", price: 45000, score: 560, rate: 0.006 },
+  { id: 71, name: "มังกรมหาเทพรุ้ง", price: 45000, score: 560, rate: 0.006 },
+  { id: 72, name: "ปลากระป๋องหมดอายุ", price: 45000, score: 560, rate: 0.006 },
+  { id: 73, name: "เขียดตะปาดขาดวิตามิน", price: 45000, score: 560, rate: 0.006 },
+  { id: 74, name: "ปลาสุดหล่อมองท่อไม่มองทาง", price: 45000, score: 560, rate: 0.006 },
+  { id: 75, name: "ปลาทังก้าปลาทังกี้", price: 45000, score: 560, rate: 0.006 },
   { id: 76, name: "ปลาคราฟจักรพรรดิ์เรนโบว์", price: 150000, score: 1560, rate: 0.003 },
   { id: 77, name: "ปลาSadNoob", price: 150000, score: 1560, rate: 0.003 },
   { id: 78, name: "วาฬจักรวาลสีรุ้ง", price: 200000, score: 650, rate: 0.002 },
@@ -280,11 +280,12 @@ export const rainbowFish = [
   { id: 107, name: "ปลารุ้งสตรอว์เบอร์รี่โอวโอ", price: 250000, score: 888, rate: 0.001, unlock: "🍓 เก้าอี้โอวโอสตรอว์เบอร์รี่" },
   { id: 108, name: "ปลารุ้งกรอบรูปวิบวับ", price: 250000, score: 888, rate: 0.001, unlock: "🖼️ กรอบรูปโชว์ภาพวาด" },
   { id: 109, name: "ปลารุ้งพ่อค้าภาพวาด", price: 250000, score: 888, rate: 0.001, unlock: "🛒 บูธขายภาพวาด" },
-  { id: 110, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 111, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 112, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.1, event: true },
-  { id: 113, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.1, event: true },
+  { id: 110, name: "HBD Admin Boat", price: 10000, score: 480, rate: 0.005, event: true },
+  { id: 111, name: "ปลาแจ็กโอแลนเทิร์น", price: 10000, score: 480, rate: 0.005, event: true },
+  { id: 112, name: "ถึงไม่ใช่ซานต้าแต่คืนวันที่25ไปหาได้นะ", price: 10000, score: 480, rate: 0.005, event: true },
+  { id: 113, name: "ปลาลาลืนฉีดน้ำ", price: 10000, score: 480, rate: 0.005, event: true },
   { id: 114, name: "ปลารุ้งหิมะจอมปา", price: 250000, score: 888, rate: 0.001, unlock: "❄️ ก้อนหิมะ" },
+  { id: 115, name: "ปลารุ้งเชฟรถเข็น", price: 250000, score: 888, rate: 0.0007, unlock: "🍜 รถเข็นขายอาหารไทย" },
 ];
 
 // ===== ขั้นตอนการเล่น =====

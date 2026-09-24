@@ -69,6 +69,7 @@ const navGroups = [
       { href: "/items", label: "ไอเท็ม", icon: "🎒", desc: "ไอเทมทั้งหมด" },
       { href: "/passport", label: "พาสปอร์ต", icon: "🛂", desc: "แก้ข้อมูล + เพิ่มรูป", badge: "ใหม่" },
       { href: "/phone", label: "โทรศัพท์", icon: "📱", desc: "ฟีเจอร์มือถือ" },
+      { href: "/travel", label: "ไปเที่ยว", icon: "✈️", desc: "4 สถานที่ วาร์ปจากมือถือ", badge: "ใหม่" },
       { href: "/song", label: "เพลง", icon: "🎵", desc: "รายชื่อเพลง" },
       { href: "/map", label: "แผนที่", icon: "🗺️", desc: "โซนในแมพ" },
       { href: "/manual", label: "คู่มือ", icon: "📖", desc: "วิธีเล่น" },

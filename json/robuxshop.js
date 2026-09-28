@@ -33,6 +33,16 @@ export const robuxItems = [
     bonus: "🌾 ยอดข้าว 40 ต้น",
   },
 
+  {
+    id: "promo-pedal-3packs",
+    cat: "promo",
+    name: "🎉 รวม 3 แพ็ค รถจิ๋ว + เรือปั่นเป็ด + จักรยานจิ๋ว",
+    desc: "ยกชุดทั้ง 12 คัน — 🚗 รถจิ๋วการ์ตูน 4 คัน + 🦆 เรือปั่นเป็ด 4 ลำ + 🚲 จักรยานจิ๋ว 4 คัน",
+    price: 6000,
+    origPrice: 6597,
+    bundle: ["gp-pr1998525242", "gp-pr1999179273", "gp-pr1999821258"],
+  },
+
   // ===== gamepass ===== (pid = gamepass id → รูปพาสจริง)
   { id: "gp-vip", cat: "gamepass", pid: 1373421368, name: "VIP", desc: "มงกุฎ • เลเวล ×2 • เบ็ดลิมิเต็ด • โชค ×3 • เงิน&คะแนน ×2", price: 199, iconId: 98214942625909 },
   { id: "gp-autofish", cat: "gamepass", pid: 1613785479, name: "Auto Fishing", desc: "ตกปลาออโต้ (AFK ได้ไม่เกิน 20 นาที)", price: 222, iconId: 109883680838444 },

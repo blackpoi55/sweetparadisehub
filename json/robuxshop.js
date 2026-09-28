@@ -42,6 +42,7 @@ export const robuxItems = [
   { id: "gp-scissors", cat: "gamepass", pid: 1417958249, name: "Scissors", desc: "สกิลตัดผม AOE + FX", price: 219, iconId: 95577967778214 },
   { id: "gp-cambo", cat: "gamepass", pid: 1638407275, name: "Change Skin Cambo", desc: "เปลี่ยนสกินคนอื่นเป็นสไตล์กัมพูชา", price: 299, iconId: 81060982407465 },
   { id: "gp-banana", cat: "gamepass", pid: 1510751188, name: "Banana Peel", desc: "วางเปลือกกล้วยให้คนลื่น 🍌", price: 499, iconId: 123087290261249 },
+  { id: "gp-sealfisher", cat: "gamepass", pid: 1999719167, name: "🐾 อุ๋งๆ นักตกปลา", desc: "มาสคอตตกปลาแทนเรา · ป้อนอาหารรถเข็นแลกเวลา · เลือกชุดได้ 4 แบบ", price: 499, iconId: 81605518537128 },
 
   // ===== limited ===== (pid = gamepass id → รูปพาสจริง)
   { id: "lm-wing", cat: "limited", pid: 1447030821, name: "Wing Fly", desc: "บินได้ + ชื่อ Rich", price: 4900, iconId: 124858614324199 },

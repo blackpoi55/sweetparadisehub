@@ -188,6 +188,22 @@ export const gachaPools = [
       { item: "BubbleSkin_devil", display: "😈 ฟองราชาปีศาจ", img: "/images/bubbleskin/devil.png", rarity: "Legendary", weight: 0.16 },
     ],
   },
+  {
+    key: "Halloween26",
+    boxItem: "HalloweenGachaBox",
+    displayName: "กาชาฮัลโลวีน",
+    price: 0,
+    source: "ซุ้มออนไลน์งานฮาโลวีน (ออนไลน์ครบ 1 ชม. = 5 กล่อง)",
+    note: "กล่องได้จากซุ้มออนไลน์ในงานฮาโลวีน — ออนไลน์สะสมครบทุก 1 ชั่วโมง รับได้ 5 กล่อง (เทรดไม่ได้) · ลูกอมเอาไปแลกของที่ร้านหมู่บ้านผีน่ารัก · ได้ของซ้ำหรือฟักทองครบ 30 ลูกแล้ว จะได้ลูกอม ×6 แทน · กาชานี้ไม่มีโบนัสแมว",
+    items: [
+      { item: "HW_CandyBucket", display: "🍬 ลูกอม ×1–6", img: "/images/items/HW_CandyBucket.png", rarity: "Common", weight: 80, min: 1, max: 6 },
+      { item: "PumkinHat", display: "🎃 ฟักทองจิ๋ว (สะสมครบ 30 ลูก = ฟองแชทนักล่าฟักทอง)", img: "/images/items/PumkinHat.png", rarity: "Uncommon", weight: 15 },
+      { item: "HW_CrystalBall", display: "🔮 ลูกแก้วแม่มด", img: "/images/items/HW_CrystalBall.png", rarity: "Legendary", weight: 2 },
+      { item: "HW_Cauldron", display: "🧪 หม้อยาแม่มด", img: "/images/items/HW_Cauldron.png", rarity: "Legendary", weight: 1.5 },
+      { item: "HW_BatWings", display: "🦇 ปีกค้างคาว", img: "/images/items/HW_BatWings.png", rarity: "Legendary", weight: 1 },
+      { item: "HW_PumpkinCar", display: "🎃 รถฟักทองยักษ์", img: "/images/items/HW_PumpkinCar.png", rarity: "Legendary", weight: 0.5 },
+    ],
+  },
 ];
 
 export const gachaMeta = { rollSeconds: 10, maxPerBuy: 50 };

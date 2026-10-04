@@ -17,6 +17,78 @@ export const craftMeta = {
 export const craftRecipes = {
   Item: [
     {
+      id: "MineCrown", name: "👑 มงกุฎคริสตัลขนมหวาน", chance: 0.25,
+      note: "สวมแล้วมีประกายรอบหัว · ยืนนิ่งมีวงแสง · ทุกคนเห็น",
+      result: { kind: "permanent", item: "MineCrownTool" },
+      cost: [
+        { kind: "farm", item: "MineBar_Macaron", amount: 5 },
+        { kind: "farm", item: "MineBar_Rainbow", amount: 3 },
+        { kind: "farm", item: "MineBar_Diamond", amount: 1 },
+        { kind: "farm", item: "GoldenTicket", amount: 3 },
+        { kind: "money", amount: 3000000 },
+      ],
+    },
+    {
+      id: "MineWings", name: "🦋 ปีกคริสตัลสายรุ้ง", chance: 0.2,
+      note: "ปีกกระพือ · เดินมีประกายลากตาม · กระโดดมีคลื่นแสง",
+      result: { kind: "permanent", item: "MineWingsTool" },
+      cost: [
+        { kind: "farm", item: "MineBar_Rainbow", amount: 5 },
+        { kind: "farm", item: "MineBar_Diamond", amount: 2 },
+        { kind: "farm", item: "MineBar_Blue", amount: 10 },
+        { kind: "farm", item: "BossWeaponShard", amount: 30 },
+        { kind: "money", amount: 5000000 },
+      ],
+    },
+    {
+      id: "MineWand", name: "✨ คทาคริสตัลลูกอม", chance: 0.35,
+      note: "ถือแล้วแตะจอ ยิงประกายลูกอมระเบิดเป็นพลุพาสเทล (ไม่ทำดาเมจ)",
+      result: { kind: "permanent", item: "MineWandTool" },
+      cost: [
+        { kind: "farm", item: "MineBar_Mint", amount: 8 },
+        { kind: "farm", item: "MineBar_Straw", amount: 8 },
+        { kind: "farm", item: "MineBar_Matcha", amount: 3 },
+        { kind: "farm", item: "Iron", amount: 50 },
+        { kind: "money", amount: 1500000 },
+      ],
+    },
+    {
+      id: "MineCompass", name: "🧭 เข็มทิศแร่หายาก", chance: 0.6,
+      note: "สิทธิ์ติดตัว · กดใช้ = ร่อนแร่ 10 ครั้งถัดไป แร่หายาก x2 · คูลดาวน์ 1 ชม. (จ่าย 500,000 ปลดได้)",
+      result: { kind: "permanent", item: "MineCompassTool" },
+      cost: [
+        { kind: "farm", item: "MineBar_Choco", amount: 3 },
+        { kind: "farm", item: "MineBar_Caramel", amount: 2 },
+        { kind: "farm", item: "RiceTop", amount: 5 },
+        { kind: "money", amount: 200000 },
+      ],
+    },
+    {
+      id: "MineCartRide", name: "🛒 รถเข็นแร่ขี่ได้", chance: 0.3,
+      note: "อัญเชิญรถเข็นแร่ลูกอมมาขี่ · นั่งได้ 2 คน",
+      result: { kind: "permanent", item: "MineCartTool" },
+      cost: [
+        { kind: "farm", item: "MineBar_Choco", amount: 15 },
+        { kind: "farm", item: "MineBar_Caramel", amount: 10 },
+        { kind: "farm", item: "MineBar_Mint", amount: 5 },
+        { kind: "farm", item: "Iron", amount: 80 },
+        { kind: "money", amount: 2000000 },
+      ],
+    },
+    {
+      id: "PartyTable", name: "🎉 ชุดโต๊ะปาร์ตี้หรู", chance: 0.3,
+      note: "วางโต๊ะ 6 ที่นั่ง · เอาอาหารรถเข็นมาตั้งให้เพื่อนกิน · ชนแก้ว · เปลี่ยนธีม 4 สี",
+      result: { kind: "permanent", item: "MinePartyTableTool" },
+      cost: [
+        { kind: "farm", item: "MineBar_Sugar", amount: 20 },
+        { kind: "farm", item: "MineBar_Straw", amount: 10 },
+        { kind: "farm", item: "MineBar_Macaron", amount: 3 },
+        { kind: "farm", item: "GoldenTicket", amount: 2 },
+        { kind: "farm", item: "Rice", amount: 100 },
+        { kind: "money", amount: 3500000 },
+      ],
+    },
+    {
       // 🔧 เหล็กงัด — ของสิ้นเปลืองสำหรับมินิเกมงัดตู้ร้าน (หักทิ้งทุกครั้งที่เริ่มงัด)
       id: "Crowbar", name: "🔧 เหล็กงัด", chance: 0.3,
       note: "ใช้งัดตู้สินค้าในร้าน — หักทิ้งทุกครั้งที่เริ่มงัด ไม่ว่าจะได้ของหรือไม่",

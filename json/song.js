@@ -434,6 +434,16 @@ export const songall = [
     { name: "PORZAX - เธอทีละสองฉันทีละคน", songid: "121196719648558" },
     { name: "ความคิดถึงเต็มไปด้วยน้ําตา - โชเล่ย์ ชคัทพล ", songid: "84564097325655" },
     { name: "ไม่อยากทำให้ลำบากใจ-บูโดกัน", songid: "95779528032804" },
+    { name: "อย่ามากกว่าฉันก็พอ - GAVIN_D", songid: "104118151776217" },
+    { name: "ไม่รักดีกว่า - Z9", songid: "113846825903654" },
+    { name: "คาตา - NuNew", songid: "133669478097462" },
+    { name: "โปรดออกไปจากฝัน - THE WHITE HAI", songid: "110844576691725" },
+    { name: "ไม่เคยได้ลา - Three Man Down", songid: "94227572238491" },
+    { name: "รักใครไม่ไหว  - Three Man Down", songid: "86153560770436" },
+    { name: "รออยู่อย่างนั้น - SARAN", songid: "110379875089244" },
+    { name: "One of my life - BlackHeart", songid: "116819809714311" },
+    { name: "ครั้งหนึ่งเราเคยรักกัน BUNG G", songid: "114796404493078" },
+    { name: "ไม่จำเป็น- OneNight", songid: "96239994614654" },
 ]
 export const kpopsongall = [
     { name: "RHYTHM TA-IKON", songid: "133126620005604" },

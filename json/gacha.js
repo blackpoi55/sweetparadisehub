@@ -204,6 +204,26 @@ export const gachaPools = [
       { item: "HW_PumpkinCar", display: "🎃 รถฟักทองยักษ์", img: "/images/items/HW_PumpkinCar.png", rarity: "Legendary", weight: 0.5 },
     ],
   },
+  {
+    key: "HWCrystal",
+    boxItem: "HWCrystalGachaBox",
+    displayName: "กาชาผลึกแร่",
+    price: 0,
+    source: "ร้านแลกขนมฮาโลวีน 350 ลูกอม/กล่อง (ซื้อทีละ 1 / 5 / 10 ใบ ไม่จำกัด)",
+    note: "เปิด 1 กล่อง = ผลึกแร่เหมืองขนมหวาน 1 ชิ้น · เรทดีกว่าร่อนแร่เองนิดหน่อย (ร่อนแร่ 38 / 24 / 14 / 9 / 6 / 4 / 2.5 / 1.5 / 0.7 / 0.3) · กล่องกับผลึกเทรดได้ · กาชานี้ไม่มีโบนัสแมว",
+    items: [
+      { item: "MineCrystal_Sugar", display: "💎 ผลึกลูกอมน้ำตาล", img: "/images/items/MineCrystal_Sugar.png", rarity: "Common", weight: 30, min: 1, max: 1 },
+      { item: "MineCrystal_Choco", display: "💎 ผลึกช็อกโกแลต", img: "/images/items/MineCrystal_Choco.png", rarity: "Common", weight: 22, min: 1, max: 1 },
+      { item: "MineCrystal_Caramel", display: "💎 ผลึกคาราเมล", img: "/images/items/MineCrystal_Caramel.png", rarity: "Uncommon", weight: 15, min: 1, max: 1 },
+      { item: "MineCrystal_Straw", display: "💎 ผลึกสตรอว์เบอร์รี่", img: "/images/items/MineCrystal_Straw.png", rarity: "Uncommon", weight: 11, min: 1, max: 1 },
+      { item: "MineCrystal_Mint", display: "💎 ผลึกมิ้นต์", img: "/images/items/MineCrystal_Mint.png", rarity: "Rare", weight: 8, min: 1, max: 1 },
+      { item: "MineCrystal_Blue", display: "💎 ผลึกบลูเบอร์รี่", img: "/images/items/MineCrystal_Blue.png", rarity: "Rare", weight: 6, min: 1, max: 1 },
+      { item: "MineCrystal_Matcha", display: "💎 ผลึกมัทฉะ", img: "/images/items/MineCrystal_Matcha.png", rarity: "Epic", weight: 3.5, min: 1, max: 1 },
+      { item: "MineCrystal_Macaron", display: "💎 ผลึกมาการองพาสเทล", img: "/images/items/MineCrystal_Macaron.png", rarity: "Epic", weight: 2.5, min: 1, max: 1 },
+      { item: "MineCrystal_Rainbow", display: "💎 ผลึกอมยิ้มสายรุ้ง", img: "/images/items/MineCrystal_Rainbow.png", rarity: "Legendary", weight: 1.3, min: 1, max: 1 },
+      { item: "MineCrystal_Diamond", display: "💎 ผลึกเพชรน้ำตาลกรวด", img: "/images/items/MineCrystal_Diamond.png", rarity: "Legendary", weight: 0.7, min: 1, max: 1 },
+    ],
+  },
 ];
 
 export const gachaMeta = { rollSeconds: 10, maxPerBuy: 50 };

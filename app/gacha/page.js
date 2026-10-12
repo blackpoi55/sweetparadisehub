@@ -23,9 +23,10 @@ function fmtPct(n) {
   return `${n.toFixed(1)}%`;
 }
 
-// รางวัลที่ไม่ใช่ไอเทมจริง (เช่นสกินฟองคำพูด) ส่งชื่อ/รูปมากับแถวในพูลเอง
+// รางวัลที่ไม่ใช่ไอเทมจริง (สกินฟองคำพูด / ออร่า) ส่งชื่อ-รูป-อีโมจิมากับแถวในพูลเอง
+// ออร่าไม่มีรูปในเว็บ → ใช้อีโมจิประจำแบบนั้นแทน (ไม่งั้นได้ 🗨️ เหมือนฟองคำพูดหมด)
 function assetOf(it) {
-  return it.display ? { label: it.display, img: it.img, emoji: "🗨️" } : resolveAsset(it.item);
+  return it.display ? { label: it.display, img: it.img, emoji: it.emoji || "🗨️" } : resolveAsset(it.item);
 }
 
 function ItemRow({ it }) {

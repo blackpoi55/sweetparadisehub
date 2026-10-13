@@ -228,8 +228,8 @@ export const gachaPools = [
     key: "Aura",
     boxItem: "AuraGachaBox",
     displayName: "กาชาออร่า",
-    price: 0,
-    source: "คราฟที่โต๊ะคราฟ (โอกาสติด 20%) · แอดมินแจก (F2) · โค้ด",
+    price: 120000000,
+    source: "ซื้อกล่องที่ร้านกาชา 120,000,000 · คราฟที่โต๊ะคราฟ · แอดมินแจก (F2) · โค้ด",
     note:
       "เปิด 1 กล่อง = ปลดออร่า 1 แบบทันที · " +
       "ไม่ได้แบบที่มีอยู่แล้วแน่นอน — เซิร์ฟสุ่มเฉพาะแบบที่ยังไม่มี เรทจริงจึงขยับขึ้นเรื่อย ๆ ตามที่เก็บครบ " +
@@ -309,6 +309,76 @@ export const gachaPools = [
       { item: "WishTicket", rarity: "Epic", weight: 10, min: 1, max: 1 },
       { item: "GuaranteeCraftTicket", rarity: "Legendary", weight: 1, min: 1, max: 1 },
       { item: "RodSkinStartCard", rarity: "Legendary", weight: 1, min: 1, max: 1 },
+    ],
+  },
+  {
+    key: "GearSkate",
+    boxItem: "GearSkateGachaBox",
+    displayName: "กาชารองเท้าสเก็ต",
+    price: 120000000,
+    source: "ซื้อกล่องที่ร้านกาชา 120,000,000 · คราฟที่โต๊ะคราฟ · แอดมินแจก (F2) · โค้ด",
+    note:
+      "⛸️ รองเท้าสเก็ต 20 คู่ [แฟชั่น] · สวมจริงแล้วไถลเร็วขึ้น ×1.45 + เล่นท่าได้ (🌀 หมุนตัว · 🤸 ตีลังกา · ⛸️ แอกเซล 720 · 💃 ท่าเหินลม · ⚡ พุ่งเร็ว) · " +
+      "เปิด 1 กล่อง = ได้ 1 ชิ้นทันที · " +
+      "ไม่ได้ชิ้นที่มีอยู่แล้วแน่นอน — เซิร์ฟสุ่มเฉพาะชิ้นที่ยังไม่มีในกระเป๋า ครบแล้วกล่องไม่ถูกหัก (ร้านก็ขายไม่เกินจำนวนที่ยังไม่มี) · " +
+      "เรทด้านล่างคือตอนยังไม่มีสักชิ้น · " +
+      "สูตรคราฟ (ติด 20%): ข้าวชั้นดี 40 · ข้าว 200 · ตั๋วทอง 16 · เหล็ก 30 · แท่งแร่เหมืองครบ 10 ชนิด อย่างละ 2 · เงิน 1,800,000",
+    items: [
+      { item: "Gear_SK_rainbow", rarity: "Common", weight: 10 },
+      { item: "Gear_SK_neon", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_SK_princess", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_SK_galaxy", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_SK_flame", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_SK_candy", rarity: "Common", weight: 10 },
+      { item: "Gear_SK_royal", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_SK_shark", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_SK_dragon", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_SK_bolt", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_SK_berry", rarity: "Common", weight: 10 },
+      { item: "Gear_SK_angel", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_SK_panda", rarity: "Common", weight: 10 },
+      { item: "Gear_SK_frost", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_SK_bubble", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_SK_mecha", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_SK_kitty", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_SK_punk", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_SK_sakura", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_SK_ocean", rarity: "Rare", weight: 2.2 },
+    ],
+  },
+  {
+    key: "GearBoard",
+    boxItem: "GearBoardGachaBox",
+    displayName: "กาชาโฮเวอร์บอร์ด",
+    price: 120000000,
+    source: "ซื้อกล่องที่ร้านกาชา 120,000,000 · คราฟที่โต๊ะคราฟ · แอดมินแจก (F2) · โค้ด",
+    note:
+      "🛹 โฮเวอร์บอร์ด 20 แบบ [แฟชั่น] · ยืนบนบอร์ดลอยแล้วไถลเร็วขึ้น ×1.7 + เล่นท่าได้ (🌀 หมุนตัว · 🤸 ตีลังกา · 🛹 คิกฟลิป · ✋ จับบอร์ด · ⚡ พุ่งเร็ว) · " +
+      "เปิด 1 กล่อง = ได้ 1 ชิ้นทันที · " +
+      "ไม่ได้ชิ้นที่มีอยู่แล้วแน่นอน — เซิร์ฟสุ่มเฉพาะชิ้นที่ยังไม่มีในกระเป๋า ครบแล้วกล่องไม่ถูกหัก (ร้านก็ขายไม่เกินจำนวนที่ยังไม่มี) · " +
+      "เรทด้านล่างคือตอนยังไม่มีสักชิ้น · " +
+      "สูตรคราฟ (ติด 20%): ข้าวชั้นดี 40 · ข้าว 200 · ตั๋วทอง 16 · เหล็ก 30 · แท่งแร่เหมืองครบ 10 ชนิด อย่างละ 2 · เงิน 1,800,000",
+    items: [
+      { item: "Gear_HB_neon", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_HB_unicorn", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_HB_galaxy", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_HB_ice", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_HB_shark", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_HB_candy", rarity: "Common", weight: 10 },
+      { item: "Gear_HB_dragon", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_HB_ocean", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_HB_gold", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_HB_ghost", rarity: "Rare", weight: 2.2 },
+      { item: "Gear_HB_cloud", rarity: "Common", weight: 10 },
+      { item: "Gear_HB_thunder", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_HB_sakura", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_HB_phoenix", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_HB_melon", rarity: "Common", weight: 10 },
+      { item: "Gear_HB_mecha", rarity: "Legendary", weight: 0.3 },
+      { item: "Gear_HB_jungle", rarity: "Common", weight: 10 },
+      { item: "Gear_HB_heart", rarity: "Uncommon", weight: 5 },
+      { item: "Gear_HB_rune", rarity: "Epic", weight: 0.9 },
+      { item: "Gear_HB_lava", rarity: "Epic", weight: 0.9 },
     ],
   },
 ];

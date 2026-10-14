@@ -54,6 +54,7 @@ export const materialMeta = {
   AuraGachaBox: { name: "กล่องกาชาออร่า", emoji: "✨", icon: "/images/items/AuraGachaBox.png" },
   GearSkateGachaBox: { name: "กล่องกาชารองเท้าสเก็ต", emoji: "⛸️", icon: "/images/items/GearSkateGachaBox.png" },
   GearBoardGachaBox: { name: "กล่องกาชาโฮเวอร์บอร์ด", emoji: "🛹", icon: "/images/items/GearBoardGachaBox.png" },
+  PlaneSelectBox: { name: "กล่องเลือกเครื่องบินจิ๋ว", emoji: "✈️", icon: "/images/items/PlaneSelectBox.png" },
   MineCrystal_Sugar: { name: "ผลึกลูกอมน้ำตาล", emoji: "💎", icon: "/images/items/MineCrystal_Sugar.png" },
   MineCrystal_Choco: { name: "ผลึกช็อกโกแลต", emoji: "💎", icon: "/images/items/MineCrystal_Choco.png" },
   MineCrystal_Caramel: { name: "ผลึกคาราเมล", emoji: "💎", icon: "/images/items/MineCrystal_Caramel.png" },

@@ -362,6 +362,23 @@ export const craftRecipes = {
         { kind: "money", amount: 1800000 },
       ],
     },
+    {
+      id: "PlaneSelectBox", name: "กล่องเลือกเครื่องบินจิ๋ว", chance: 1,
+      note: "กดใช้ในกระเป๋า เลือกเครื่องบินจิ๋วได้ 1 ลำ (คุโรมิ · คิตตี้ · เป็ดเหลือง · ลายไทย · วันพีช) · ลำที่มีแล้วเลือกไม่ได้ · กล่องถูกหักตอนเลือกสำเร็จเท่านั้น",
+      result: { kind: "farm", item: "PlaneSelectBox" },
+      cost: [
+        { kind: "farm", item: "MineBar_Sugar", amount: 50 },
+        { kind: "farm", item: "MineBar_Choco", amount: 50 },
+        { kind: "farm", item: "MineBar_Caramel", amount: 50 },
+        { kind: "farm", item: "MineBar_Straw", amount: 50 },
+        { kind: "farm", item: "MineBar_Mint", amount: 50 },
+        { kind: "farm", item: "MineBar_Blue", amount: 50 },
+        { kind: "farm", item: "MineBar_Matcha", amount: 50 },
+        { kind: "farm", item: "MineBar_Macaron", amount: 50 },
+        { kind: "farm", item: "MineBar_Rainbow", amount: 50 },
+        { kind: "farm", item: "MineBar_Diamond", amount: 50 },
+      ],
+    },
   ],
   Gamepass: [
     {

@@ -19,6 +19,7 @@ const navGroups = [
       { href: "/fishpond", label: "สังเวียนปลา", icon: "🐟", desc: "ปล่อยปลารุ้งสู้ในตู้ 16 ตัว", badge: "ใหม่" },
       { href: "/boss", label: "บอสโลก", icon: "🐉", desc: "ตีบอสร่วมเซิร์ฟ" },
       { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม", icon: "🥊", desc: "ต่อยมอน อัพหมัด", badge: "ใหม่" },
+      { href: "/boxing", label: "ต่อยมวย", icon: "🥊", desc: "ขึ้นเวทีชกกับเพื่อน 1v1/ทีม/ต่อยมั่ว", badge: "ใหม่" },
       { href: "/farm", label: "ฟาร์ม", icon: "🌾", desc: "เก็บเกี่ยวผลผลิต" },
       { href: "/garden", label: "สวนปลูกผลไม้", icon: "🌱", desc: "ปลูก ลุ้นสายพันธุ์ แข่งผลใหญ่", badge: "ใหม่" },
       { href: "/pets", label: "สัตว์เลี้ยง", icon: "🐾", desc: "7 ตัว สกิลบัฟ" },

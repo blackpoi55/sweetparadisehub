@@ -12,6 +12,7 @@ const cols = [
       { href: "/fishclash", label: "ศึกปลา" },
       { href: "/boss", label: "บอสโลก" },
       { href: "/monsterfarm", label: "มอนสเตอร์ฟาร์ม" },
+      { href: "/boxing", label: "ต่อยมวย" },
       { href: "/farm", label: "ฟาร์ม" },
       { href: "/pets", label: "สัตว์เลี้ยง" },
     ],

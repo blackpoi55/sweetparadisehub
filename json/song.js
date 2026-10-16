@@ -488,6 +488,15 @@ export const kpopsongall = [
     { name: "GD-Without You", songid: "117060017755236" },
     { name: "방탄소년단-ARIRANG", songid: "78505874616531" },
     { name: "GD_X_TAEYANG - GOOD BOY", songid: "115206524379204" },
+    { name: "Playground-Got7", songid: "93506860580139" },
+	{ name: "Hooligan-BTS", songid: "101831389992456" },
+	{ name: "Blue-BigBang", songid: "124653422037419" },
+	{ name: "BLACK-GD Jennie", songid: "75757561614567" },
+	{ name: "XOXO-EXO", songid: "74264835622725" },
+	{ name: "That That - Spy Suga", songid: "115309661453980" },
+	{ name: "Let's Not Fall In Love-Bigbang", songid: "96690295138782" },
+	{ name: "Psycho-Red velvet", songid: "93270029765497" },
+	{ name: "Bad Boy-RedVelvet", songid: "80388399642615" },
 ]
 
 export const djsongall = [
